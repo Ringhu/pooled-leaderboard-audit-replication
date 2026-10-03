@@ -1,0 +1,5 @@
+layer,margin_lt_sd,pairs,reverse,reverse_ci
+L1,False,15,1,0
+L1,True,8,6,2
+L2,False,64,2,0
+L2,True,34,25,8

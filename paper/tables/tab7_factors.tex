@@ -1,0 +1,27 @@
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrrr@{}}
+\toprule
+ & & \multicolumn{3}{c}{Published methods} & \multicolumn{3}{c}{All pairs} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+Factor & Family & Comp. & Sign & Rev. & Comp. & Sign & Rev. \\
+\midrule
+Input representation & RCAEval RE1 & 12 & 5 & 1 & 42 & 16 & 8 \\
+ & RCAEval RE2 & -- & -- & -- & 18 & 5 & 7 \\
+\addlinespace
+Silent failure (duplicated header) & RCAEval RE1 & 30 & 2 & 2 & 84 & 3 & 4 \\
+\addlinespace
+Denominator (valid outputs only) & RCAEval RE1 & 30 & 0 & 0 & 84 & 0 & 0 \\
+ & RCAEval RE2 & 71 & 1 & 1 & 146 & 2 & 2 \\
+ & OpenRCA & 12 & 0 & 0 & 60 & 0 & 0 \\
+ & PetShop & 40 & 0 & 0 & 220 & 0 & 0 \\
+\addlinespace
+Fault re-weighting & RCAEval RE1 & 30 & 0 & 0 & 84 & 0 & 0 \\
+ & RCAEval RE2 & 71 & 0 & 0 & 146 & 0 & 0 \\
+ & OpenRCA & 12 & 3 & 3 & 60 & 13 & 15 \\
+ & PetShop & 40 & 1 & 1 & 220 & 2 & 1 \\
+\addlinespace
+Scoring (strict $=1$) & OpenRCA & 12 & 4 & 0 & 60 & 11 & 8 \\
+\addlinespace
+Scoring ($\geq 0.5$) & OpenRCA & 12 & 0 & 0 & 60 & 3 & 3 \\
+\bottomrule
+\end{tabular*}

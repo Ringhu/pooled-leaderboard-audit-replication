@@ -1,0 +1,6461 @@
+{
+ "config": {
+  "method": "simplerca-author:simplerca",
+  "dataset": "rcaeval_re2_ss",
+  "input_file": "simple_metrics.csv + traces.csv + logs.csv",
+  "author_repo": "LGU-SE-Internal/Simple-RCA",
+  "author_branch_commit": "author_rcaeval:5fd1f7f",
+  "converter": "rcabench_platform==0.3.27 sources/rcaeval.py (verbatim)",
+  "no_logs": false,
+  "code_sha256_12": {
+   "author_rcaeval/__init__.py": "e3b0c44298fc",
+   "author_rcaeval/baro.py": "7c62e0d185f6",
+   "author_rcaeval/nezha_adapter.py": "2e2c3e775e79",
+   "author_rcaeval/nezha_rca.py": "8896a48e51db",
+   "author_rcaeval/time_series.py": "e44a775a6ab4",
+   "author_re3ss/__init__.py": "e3b0c44298fc",
+   "author_re3ss/baro.py": "7c62e0d185f6",
+   "author_re3ss/nezha_adapter.py": "2e2c3e775e79",
+   "author_re3ss/nezha_rca.py": "4d408e429d77",
+   "author_re3ss/time_series.py": "5c1a39773745",
+   "run_author_simplerca.py": "28edb2abea36",
+   "stub/rcabench_platform/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/spec.py": "cdba429a62a6",
+   "stub/rcabench_platform/v2/graphs/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcabench.py": "e28531f006f5",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcaeval.py": "6c6fa90f6e40",
+   "stub/rcabench_platform/v2/logging.py": "c89dca086541",
+   "stub/rcabench_platform/v2/sources/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/sources/_convert_stub.py": "f862981d4de9",
+   "stub/rcabench_platform/v2/sources/rcaeval.py": "58ceb0e75128",
+   "stub/rcabench_platform/v2/utils/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/utils/env.py": "1755ee39c8f9",
+   "stub/rcabench_platform/v2/utils/serde.py": "c1b8900e5ac4"
+  },
+  "env": "$CONDA_ENVS/simplerca/bin/python",
+  "python": "3.13.15",
+  "polars": "1.31.0",
+  "argv": [
+   "run_author_simplerca.py",
+   "--dataset",
+   "rcaeval_re2_ss",
+   "--algo",
+   "simplerca",
+   "--procs",
+   "12",
+   "--out",
+   "$AUDIT_ROOT/runs/simplerca_author/simplerca_author_re2_ss.json"
+  ],
+  "run_started_utc": "2026-09-27T12:12:57.409923+00:00",
+  "limit": 0
+ },
+ "summary": {
+  "n": 90,
+  "AC@1": 0.244444,
+  "AC@2": 0.655556,
+  "AC@3": 0.877778,
+  "AC@4": 0.966667,
+  "AC@5": 0.966667,
+  "Avg@3": 0.592593,
+  "Avg@5": 0.742222,
+  "MRR_platform_hit_only": 0.565134,
+  "MRR_all_cases": 0.546296,
+  "n_exceptions": 0,
+  "n_empty": 0
+ },
+ "cases": [
+  {
+   "datapack": "carts_cpu_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_cpu/1",
+   "runtime_s": 0.35629868507385254,
+   "exception": null,
+   "convert_plus_run_s": 0.596315860748291,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     41719.291097983296
+    ],
+    [
+     "carts",
+     218.39230535391582
+    ],
+    [
+     "orders",
+     31.26588298011155
+    ],
+    [
+     "shipping",
+     15.08287736780862
+    ],
+    [
+     "payment",
+     10.5
+    ]
+   ],
+   "n_abnormal_logs": 43653,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_cpu/2",
+   "runtime_s": 0.432389497756958,
+   "exception": null,
+   "convert_plus_run_s": 0.6311619281768799,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "carts",
+     358.2611210112595
+    ],
+    [
+     "shipping",
+     262.51724137930904
+    ],
+    [
+     "catalogue",
+     11.25
+    ],
+    [
+     "orders",
+     7.7040551811194105
+    ]
+   ],
+   "n_abnormal_logs": 43035,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_cpu/3",
+   "runtime_s": 0.4431343078613281,
+   "exception": null,
+   "convert_plus_run_s": 0.6392076015472412,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq-exporter",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "rabbitmq-exporter",
+     16384.0
+    ],
+    [
+     "rabbitmq",
+     12288.0
+    ],
+    [
+     "carts",
+     391.95073357977685
+    ],
+    [
+     "shipping",
+     80.74957180092329
+    ]
+   ],
+   "n_abnormal_logs": 43598,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_delay/1",
+   "runtime_s": 0.37118983268737793,
+   "exception": null,
+   "convert_plus_run_s": 0.6056315898895264,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     37995.114560465045
+    ],
+    [
+     "carts",
+     2708.853201877636
+    ],
+    [
+     "orders",
+     1407.0104565268525
+    ],
+    [
+     "front-end",
+     763.2978994458999
+    ],
+    [
+     "queue-master",
+     13.26988153058504
+    ]
+   ],
+   "n_abnormal_logs": 39590,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_delay/2",
+   "runtime_s": 0.38578367233276367,
+   "exception": null,
+   "convert_plus_run_s": 0.5889039039611816,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "orders",
+     34119.397260272424
+    ],
+    [
+     "session-db",
+     30720.000000000004
+    ],
+    [
+     "carts",
+     2520.287012469944
+    ],
+    [
+     "front-end",
+     850.6352285131685
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ]
+   ],
+   "n_abnormal_logs": 39695,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_delay/3",
+   "runtime_s": 0.392561674118042,
+   "exception": null,
+   "convert_plus_run_s": 0.5778825283050537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "shipping",
+     4964352.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     5188.281690140769
+    ],
+    [
+     "carts",
+     3556.8215332031473
+    ],
+    [
+     "front-end",
+     1520.618836139352
+    ]
+   ],
+   "n_abnormal_logs": 39617,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_disk/1",
+   "runtime_s": 0.3842897415161133,
+   "exception": null,
+   "convert_plus_run_s": 0.6049165725708008,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     44902.433676825254
+    ],
+    [
+     "carts",
+     500.3598484848485
+    ],
+    [
+     "queue-master",
+     22.82999691380929
+    ],
+    [
+     "carts-db",
+     12.56
+    ],
+    [
+     "orders",
+     9.856893456675863
+    ]
+   ],
+   "n_abnormal_logs": 44030,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_disk/2",
+   "runtime_s": 0.45646095275878906,
+   "exception": null,
+   "convert_plus_run_s": 0.6858799457550049,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "carts",
+     564.9314159292036
+    ],
+    [
+     "orders",
+     69.26310028248572
+    ],
+    [
+     "catalogue",
+     41.14801644206208
+    ],
+    [
+     "payment",
+     33.672635419491996
+    ]
+   ],
+   "n_abnormal_logs": 43704,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_disk/3",
+   "runtime_s": 0.3921010494232178,
+   "exception": null,
+   "convert_plus_run_s": 0.6184155941009521,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40099.20375930036
+    ],
+    [
+     "carts",
+     1420.97311827957
+    ],
+    [
+     "orders",
+     105.65817000584943
+    ],
+    [
+     "catalogue-db",
+     88.0
+    ],
+    [
+     "catalogue",
+     54.07043791926947
+    ]
+   ],
+   "n_abnormal_logs": 43922,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_loss/1",
+   "runtime_s": 0.393291711807251,
+   "exception": null,
+   "convert_plus_run_s": 0.6254351139068604,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38135.435416795975
+    ],
+    [
+     "orders",
+     2013.8182838195828
+    ],
+    [
+     "carts",
+     687.2675893123669
+    ],
+    [
+     "front-end",
+     207.40460244974204
+    ],
+    [
+     "catalogue",
+     14.0
+    ]
+   ],
+   "n_abnormal_logs": 41244,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_loss/2",
+   "runtime_s": 0.3780543804168701,
+   "exception": null,
+   "convert_plus_run_s": 0.6146745681762695,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     37587.177291080385
+    ],
+    [
+     "carts",
+     3069.8399191333274
+    ],
+    [
+     "orders",
+     351.8489878542543
+    ],
+    [
+     "front-end",
+     229.47304279998036
+    ],
+    [
+     "carts-db",
+     7.554913294797688
+    ]
+   ],
+   "n_abnormal_logs": 41346,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_loss/3",
+   "runtime_s": 0.3331460952758789,
+   "exception": null,
+   "convert_plus_run_s": 0.5524170398712158,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40341.43138542351
+    ],
+    [
+     "orders",
+     11277.109838352111
+    ],
+    [
+     "carts",
+     4310.36802092838
+    ],
+    [
+     "front-end",
+     358.19784732063977
+    ],
+    [
+     "rabbitmq",
+     24.666666666666668
+    ]
+   ],
+   "n_abnormal_logs": 40727,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_mem/1",
+   "runtime_s": 0.38059449195861816,
+   "exception": null,
+   "convert_plus_run_s": 0.6455733776092529,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34248.446166281115
+    ],
+    [
+     "catalogue",
+     486.06201285006694
+    ],
+    [
+     "carts",
+     324.3819324758412
+    ],
+    [
+     "orders",
+     196.8028608229952
+    ],
+    [
+     "carts-db",
+     9.169014084507042
+    ]
+   ],
+   "n_abnormal_logs": 43617,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_mem/2",
+   "runtime_s": 0.38504981994628906,
+   "exception": null,
+   "convert_plus_run_s": 0.6215484142303467,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "queue-master",
+     118784.0
+    ],
+    [
+     "carts",
+     90466.0
+    ],
+    [
+     "session-db",
+     52907.87000833279
+    ],
+    [
+     "shipping",
+     18.485412804029373
+    ],
+    [
+     "front-end",
+     7.768262186297029
+    ]
+   ],
+   "n_abnormal_logs": 43533,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_mem/3",
+   "runtime_s": 0.3917081356048584,
+   "exception": null,
+   "convert_plus_run_s": 0.604442834854126,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     36760.12013709763
+    ],
+    [
+     "carts",
+     236.98789521228545
+    ],
+    [
+     "orders",
+     12.640419947506576
+    ],
+    [
+     "user-db",
+     7.1119303964872795
+    ],
+    [
+     "user",
+     6.395073311603324
+    ]
+   ],
+   "n_abnormal_logs": 43390,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_socket_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_socket/1",
+   "runtime_s": 0.41993093490600586,
+   "exception": null,
+   "convert_plus_run_s": 0.6641700267791748,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "queue-master",
+     35.0
+    ],
+    [
+     "catalogue",
+     34.61203466966215
+    ],
+    [
+     "carts",
+     14.011358617359898
+    ],
+    [
+     "payment",
+     14.0
+    ]
+   ],
+   "n_abnormal_logs": 44642,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_socket_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_socket/2",
+   "runtime_s": 0.38347887992858887,
+   "exception": null,
+   "convert_plus_run_s": 0.6380021572113037,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38148.458601099
+    ],
+    [
+     "orders",
+     345.510492456494
+    ],
+    [
+     "carts",
+     310.79933988586686
+    ],
+    [
+     "payment",
+     100.58131230089252
+    ],
+    [
+     "front-end",
+     70.84633187101356
+    ]
+   ],
+   "n_abnormal_logs": 42941,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_socket_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/carts_socket/3",
+   "runtime_s": 0.33120298385620117,
+   "exception": null,
+   "convert_plus_run_s": 0.5733752250671387,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end",
+    "user"
+   ],
+   "metric_top5": [
+    [
+     "queue-master",
+     602112.0
+    ],
+    [
+     "session-db",
+     35965.57981619154
+    ],
+    [
+     "orders",
+     1524.37690631806
+    ],
+    [
+     "carts",
+     919.0
+    ],
+    [
+     "shipping",
+     149.0
+    ]
+   ],
+   "n_abnormal_logs": 43644,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_cpu/1",
+   "runtime_s": 0.3525052070617676,
+   "exception": null,
+   "convert_plus_run_s": 0.5310792922973633,
+   "answers": [
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "rabbitmq",
+     131072.0
+    ],
+    [
+     "session-db",
+     41044.825973678926
+    ],
+    [
+     "catalogue-db",
+     8192.0
+    ],
+    [
+     "catalogue",
+     1096.620730995485
+    ],
+    [
+     "orders",
+     5.0
+    ]
+   ],
+   "n_abnormal_logs": 43429,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_cpu/2",
+   "runtime_s": 0.35551977157592773,
+   "exception": null,
+   "convert_plus_run_s": 0.5790483951568604,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     39315.309550471924
+    ],
+    [
+     "catalogue-db",
+     8192.0
+    ],
+    [
+     "catalogue",
+     1384.133985829527
+    ],
+    [
+     "rabbitmq",
+     134.0
+    ],
+    [
+     "carts",
+     4.931175882335701
+    ]
+   ],
+   "n_abnormal_logs": 43081,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_cpu/3",
+   "runtime_s": 0.40239882469177246,
+   "exception": null,
+   "convert_plus_run_s": 0.6279833316802979,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34191.26853835666
+    ],
+    [
+     "catalogue-db",
+     8192.0
+    ],
+    [
+     "catalogue",
+     4517.458386585345
+    ],
+    [
+     "carts",
+     16.635765627426906
+    ],
+    [
+     "payment",
+     12.666666666666666
+    ]
+   ],
+   "n_abnormal_logs": 43374,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_delay/1",
+   "runtime_s": 0.40813255310058594,
+   "exception": null,
+   "convert_plus_run_s": 0.6719498634338379,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue",
+     26343.88721709779
+    ],
+    [
+     "rabbitmq",
+     65.0
+    ],
+    [
+     "catalogue-db",
+     36.0
+    ],
+    [
+     "shipping",
+     11.836759265094878
+    ]
+   ],
+   "n_abnormal_logs": 43586,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_delay/2",
+   "runtime_s": 0.36080384254455566,
+   "exception": null,
+   "convert_plus_run_s": 0.57454514503479,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38546.96028609072
+    ],
+    [
+     "catalogue",
+     16816.19386626438
+    ],
+    [
+     "catalogue-db",
+     390.0
+    ],
+    [
+     "front-end",
+     329.65993745466716
+    ],
+    [
+     "queue-master",
+     16.5
+    ]
+   ],
+   "n_abnormal_logs": 41649,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_delay/3",
+   "runtime_s": 0.2701730728149414,
+   "exception": null,
+   "convert_plus_run_s": 0.44672632217407227,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34393.19301388267
+    ],
+    [
+     "catalogue",
+     21538.308869949666
+    ],
+    [
+     "catalogue-db",
+     538.0
+    ],
+    [
+     "front-end",
+     473.3784831610314
+    ],
+    [
+     "orders",
+     9.985311603832937
+    ]
+   ],
+   "n_abnormal_logs": 35626,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_disk/1",
+   "runtime_s": 0.4307692050933838,
+   "exception": null,
+   "convert_plus_run_s": 0.6795568466186523,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue",
+     18169271504.831535
+    ],
+    [
+     "catalogue-db",
+     135168.0
+    ],
+    [
+     "session-db",
+     37430.32075299278
+    ],
+    [
+     "orders",
+     8.428571428571429
+    ],
+    [
+     "carts",
+     7.466666666666667
+    ]
+   ],
+   "n_abnormal_logs": 45254,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_disk/2",
+   "runtime_s": 0.3811163902282715,
+   "exception": null,
+   "convert_plus_run_s": 0.5576965808868408,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue",
+     30784335698.287697
+    ],
+    [
+     "session-db",
+     39923.32434452061
+    ],
+    [
+     "catalogue-db",
+     31.0
+    ],
+    [
+     "carts-db",
+     5.099415204678363
+    ],
+    [
+     "user-db",
+     4.285106382978723
+    ]
+   ],
+   "n_abnormal_logs": 43058,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_disk/3",
+   "runtime_s": 0.37099266052246094,
+   "exception": null,
+   "convert_plus_run_s": 0.5389564037322998,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue",
+     28571895883.692413
+    ],
+    [
+     "session-db",
+     40563.82662661341
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "orders",
+     14.781610301189199
+    ],
+    [
+     "queue-master",
+     12.230489602899523
+    ]
+   ],
+   "n_abnormal_logs": 43216,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_loss/1",
+   "runtime_s": 0.28242993354797363,
+   "exception": null,
+   "convert_plus_run_s": 0.47562336921691895,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "catalogue",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     167936.0
+    ],
+    [
+     "catalogue",
+     165700.20903622734
+    ],
+    [
+     "payment",
+     12288.0
+    ],
+    [
+     "catalogue-db",
+     365.0
+    ],
+    [
+     "front-end",
+     117.84150854847987
+    ]
+   ],
+   "n_abnormal_logs": 13656,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_loss/2",
+   "runtime_s": 0.282825231552124,
+   "exception": null,
+   "convert_plus_run_s": 0.4622204303741455,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "catalogue",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "catalogue",
+     298607.45793507696
+    ],
+    [
+     "rabbitmq",
+     73728.0
+    ],
+    [
+     "session-db",
+     44706.99989454813
+    ],
+    [
+     "front-end",
+     152.3469914178082
+    ],
+    [
+     "catalogue-db",
+     64.0
+    ]
+   ],
+   "n_abnormal_logs": 19273,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_loss/3",
+   "runtime_s": 0.2829289436340332,
+   "exception": null,
+   "convert_plus_run_s": 0.4913902282714844,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "catalogue",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38078.710876975514
+    ],
+    [
+     "catalogue",
+     20287.59652017419
+    ],
+    [
+     "front-end",
+     160.72584499829262
+    ],
+    [
+     "shipping",
+     52.65877180608437
+    ],
+    [
+     "catalogue-db",
+     25.0
+    ]
+   ],
+   "n_abnormal_logs": 17575,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_mem/1",
+   "runtime_s": 0.35257720947265625,
+   "exception": null,
+   "convert_plus_run_s": 0.5659224987030029,
+   "answers": [
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "rabbitmq",
+     3063808.0
+    ],
+    [
+     "session-db",
+     52740.4936090004
+    ],
+    [
+     "catalogue",
+     30410.7
+    ],
+    [
+     "catalogue-db",
+     250.0
+    ],
+    [
+     "shipping",
+     27.891303828504995
+    ]
+   ],
+   "n_abnormal_logs": 43624,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_mem/2",
+   "runtime_s": 0.3544881343841553,
+   "exception": null,
+   "convert_plus_run_s": 0.5585384368896484,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34173.411157866154
+    ],
+    [
+     "catalogue",
+     21720.714285714286
+    ],
+    [
+     "orders",
+     825.5636604774259
+    ],
+    [
+     "catalogue-db",
+     322.0
+    ],
+    [
+     "front-end",
+     27.19847878049148
+    ]
+   ],
+   "n_abnormal_logs": 42579,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_mem/3",
+   "runtime_s": 0.3295431137084961,
+   "exception": null,
+   "convert_plus_run_s": 0.5764946937561035,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq-exporter",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     52066.81843297601
+    ],
+    [
+     "catalogue",
+     38001.25
+    ],
+    [
+     "rabbitmq-exporter",
+     28672.0
+    ],
+    [
+     "orders",
+     613.6443178008449
+    ],
+    [
+     "catalogue-db",
+     111.0
+    ]
+   ],
+   "n_abnormal_logs": 43012,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_socket_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_socket/1",
+   "runtime_s": 0.45986413955688477,
+   "exception": null,
+   "convert_plus_run_s": 0.7117857933044434,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "queue-master",
+     24576.0
+    ],
+    [
+     "catalogue",
+     3736.7962764381887
+    ],
+    [
+     "rabbitmq",
+     32.0
+    ],
+    [
+     "user",
+     12.666666666666666
+    ]
+   ],
+   "n_abnormal_logs": 44353,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_socket_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_socket/2",
+   "runtime_s": 0.3227827548980713,
+   "exception": null,
+   "convert_plus_run_s": 0.5294995307922363,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40551.77876047786
+    ],
+    [
+     "catalogue",
+     4942.24298033204
+    ],
+    [
+     "catalogue-db",
+     101.0
+    ],
+    [
+     "shipping",
+     49.685178942657124
+    ],
+    [
+     "payment",
+     13.0
+    ]
+   ],
+   "n_abnormal_logs": 44155,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_socket_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/catalogue_socket/3",
+   "runtime_s": 0.3396589756011963,
+   "exception": null,
+   "convert_plus_run_s": 0.5597615242004395,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "catalogue",
+     5742.8350384385185
+    ],
+    [
+     "orders",
+     762.8586970153551
+    ],
+    [
+     "queue-master",
+     178.5
+    ],
+    [
+     "shipping",
+     56.98194444444378
+    ]
+   ],
+   "n_abnormal_logs": 42816,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_cpu/1",
+   "runtime_s": 0.3592104911804199,
+   "exception": null,
+   "convert_plus_run_s": 0.575291633605957,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "queue-master",
+     208896.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "rabbitmq",
+     8192.0
+    ],
+    [
+     "orders",
+     441.15384644345767
+    ],
+    [
+     "shipping",
+     41.719475786826195
+    ]
+   ],
+   "n_abnormal_logs": 43097,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_cpu/2",
+   "runtime_s": 0.4527623653411865,
+   "exception": null,
+   "convert_plus_run_s": 0.6286582946777344,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     36508.60138578289
+    ],
+    [
+     "orders",
+     538.1223735583155
+    ],
+    [
+     "shipping",
+     35.92305483778331
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "queue-master",
+     6.460305330856134
+    ]
+   ],
+   "n_abnormal_logs": 43392,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_cpu/3",
+   "runtime_s": 0.34655117988586426,
+   "exception": null,
+   "convert_plus_run_s": 0.5768942832946777,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38862.70913058604
+    ],
+    [
+     "orders",
+     3870.846584546039
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "shipping",
+     15.462750106428308
+    ],
+    [
+     "user",
+     6.6
+    ]
+   ],
+   "n_abnormal_logs": 43551,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_delay/1",
+   "runtime_s": 0.41442370414733887,
+   "exception": null,
+   "convert_plus_run_s": 0.6197528839111328,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "catalogue-db",
+     131072.0
+    ],
+    [
+     "rabbitmq",
+     12288.0
+    ],
+    [
+     "shipping",
+     12288.0
+    ],
+    [
+     "payment",
+     1857.7500666811177
+    ]
+   ],
+   "n_abnormal_logs": 43730,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_delay/2",
+   "runtime_s": 0.4275360107421875,
+   "exception": null,
+   "convert_plus_run_s": 0.6066548824310303,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40208.1083734171
+    ],
+    [
+     "payment",
+     5332.668108108158
+    ],
+    [
+     "user",
+     1883.690339904112
+    ],
+    [
+     "orders",
+     1401.639097744366
+    ],
+    [
+     "shipping",
+     246.5414802949386
+    ]
+   ],
+   "n_abnormal_logs": 42568,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_delay/3",
+   "runtime_s": 0.33051133155822754,
+   "exception": null,
+   "convert_plus_run_s": 0.5286574363708496,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34107.75251894412
+    ],
+    [
+     "orders",
+     11021.917556986788
+    ],
+    [
+     "payment",
+     4918.298968068474
+    ],
+    [
+     "user",
+     2184.833899226598
+    ],
+    [
+     "shipping",
+     876.2554242167023
+    ]
+   ],
+   "n_abnormal_logs": 42422,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_disk/1",
+   "runtime_s": 0.2713322639465332,
+   "exception": null,
+   "convert_plus_run_s": 0.46480846405029297,
+   "answers": [
+    {
+     "level": "service",
+     "name": "rabbitmq-exporter",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "shipping",
+    "carts",
+    "orders",
+    "carts-db",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "rabbitmq-exporter",
+     4767744.0
+    ],
+    [
+     "session-db",
+     3702784.0
+    ],
+    [
+     "catalogue-db",
+     2786713.166771482
+    ],
+    [
+     "rabbitmq",
+     114820.48517520213
+    ],
+    [
+     "carts",
+     2158.4210526315787
+    ]
+   ],
+   "n_abnormal_logs": 27045,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_disk/2",
+   "runtime_s": 0.3091764450073242,
+   "exception": null,
+   "convert_plus_run_s": 0.5400815010070801,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     122880.0
+    ],
+    [
+     "orders",
+     67.72413793103448
+    ],
+    [
+     "payment",
+     62.02570842986967
+    ],
+    [
+     "catalogue",
+     52.9478951310856
+    ],
+    [
+     "carts",
+     15.338473311493493
+    ]
+   ],
+   "n_abnormal_logs": 44394,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_disk/3",
+   "runtime_s": 0.35340309143066406,
+   "exception": null,
+   "convert_plus_run_s": 0.5512709617614746,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "orders",
+     16428749503.690506
+    ],
+    [
+     "session-db",
+     41760.407816482584
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ],
+    [
+     "carts",
+     15.0
+    ],
+    [
+     "shipping",
+     8.363361224758604
+    ]
+   ],
+   "n_abnormal_logs": 43700,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_loss/1",
+   "runtime_s": 0.30361008644104004,
+   "exception": null,
+   "convert_plus_run_s": 0.5584323406219482,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     8217.288389513007
+    ],
+    [
+     "shipping",
+     2651.3881331618063
+    ],
+    [
+     "payment",
+     123.93784589186888
+    ],
+    [
+     "user",
+     24.673419692307093
+    ]
+   ],
+   "n_abnormal_logs": 46124,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_loss/2",
+   "runtime_s": 0.3331327438354492,
+   "exception": null,
+   "convert_plus_run_s": 0.579862117767334,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40035.187176229105
+    ],
+    [
+     "orders",
+     23872.9261219915
+    ],
+    [
+     "payment",
+     139.6737241280619
+    ],
+    [
+     "queue-master",
+     52.333333333333336
+    ],
+    [
+     "shipping",
+     44.702123869048926
+    ]
+   ],
+   "n_abnormal_logs": 45393,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_loss/3",
+   "runtime_s": 0.35208654403686523,
+   "exception": null,
+   "convert_plus_run_s": 0.6032390594482422,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     11924.368595987042
+    ],
+    [
+     "shipping",
+     2052.507861635207
+    ],
+    [
+     "payment",
+     432.77027027027015
+    ],
+    [
+     "catalogue-db",
+     59.0
+    ]
+   ],
+   "n_abnormal_logs": 44958,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_mem/1",
+   "runtime_s": 0.3642466068267822,
+   "exception": null,
+   "convert_plus_run_s": 0.5881681442260742,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     37534.36373633087
+    ],
+    [
+     "orders",
+     3413.9715639810424
+    ],
+    [
+     "queue-master",
+     34.491524117581626
+    ],
+    [
+     "payment",
+     33.0
+    ],
+    [
+     "catalogue-db",
+     31.0
+    ]
+   ],
+   "n_abnormal_logs": 43124,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_mem/2",
+   "runtime_s": 0.2746858596801758,
+   "exception": null,
+   "convert_plus_run_s": 0.47602415084838867,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     37247.65080327372
+    ],
+    [
+     "orders",
+     2134.518590522469
+    ],
+    [
+     "shipping",
+     60.456255718121184
+    ],
+    [
+     "carts",
+     44.542984187818305
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ]
+   ],
+   "n_abnormal_logs": 43185,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_mem/3",
+   "runtime_s": 0.3837890625,
+   "exception": null,
+   "convert_plus_run_s": 0.6390583515167236,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     36463.990029377725
+    ],
+    [
+     "orders",
+     163.37677304964538
+    ],
+    [
+     "carts",
+     16.085312223977013
+    ],
+    [
+     "carts-db",
+     6.530201342281879
+    ],
+    [
+     "front-end",
+     6.511565630140512
+    ]
+   ],
+   "n_abnormal_logs": 43416,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_socket_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_socket/1",
+   "runtime_s": 0.4350428581237793,
+   "exception": null,
+   "convert_plus_run_s": 0.7012395858764648,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "carts",
+     51.625
+    ],
+    [
+     "queue-master",
+     33.0
+    ],
+    [
+     "user",
+     32.055572037897456
+    ],
+    [
+     "catalogue",
+     25.842896297058022
+    ]
+   ],
+   "n_abnormal_logs": 43864,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_socket_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_socket/2",
+   "runtime_s": 0.37856078147888184,
+   "exception": null,
+   "convert_plus_run_s": 0.6045966148376465,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     46767.461108593874
+    ],
+    [
+     "orders",
+     522.7886754297263
+    ],
+    [
+     "payment",
+     104.98000110314943
+    ],
+    [
+     "queue-master",
+     40.666666666666664
+    ],
+    [
+     "shipping",
+     38.963733041381715
+    ]
+   ],
+   "n_abnormal_logs": 43581,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_socket_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/orders_socket/3",
+   "runtime_s": 0.3499155044555664,
+   "exception": null,
+   "convert_plus_run_s": 0.5598313808441162,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     37163.16346590051
+    ],
+    [
+     "payment",
+     133.01796126052434
+    ],
+    [
+     "orders",
+     130.3465043645021
+    ],
+    [
+     "shipping",
+     86.3132703531453
+    ],
+    [
+     "catalogue-db",
+     56.0
+    ]
+   ],
+   "n_abnormal_logs": 43115,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_cpu/1",
+   "runtime_s": 0.41851329803466797,
+   "exception": null,
+   "convert_plus_run_s": 0.6245191097259521,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "carts-db"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "payment",
+     1262.2227022903678
+    ],
+    [
+     "orders",
+     123.96323529411733
+    ],
+    [
+     "queue-master",
+     37.0
+    ],
+    [
+     "carts",
+     12.666666666666666
+    ]
+   ],
+   "n_abnormal_logs": 43383,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_cpu/2",
+   "runtime_s": 0.3826439380645752,
+   "exception": null,
+   "convert_plus_run_s": 0.6402256488800049,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     39310.27863975175
+    ],
+    [
+     "payment",
+     3780.924261573096
+    ],
+    [
+     "orders",
+     419.5764705882446
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "queue-master",
+     17.92156862745098
+    ]
+   ],
+   "n_abnormal_logs": 43121,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_cpu/3",
+   "runtime_s": 0.4259657859802246,
+   "exception": null,
+   "convert_plus_run_s": 0.658632755279541,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     36070.48231511254
+    ],
+    [
+     "payment",
+     4147.029290472587
+    ],
+    [
+     "orders",
+     450.96860104918585
+    ],
+    [
+     "shipping",
+     46.1246362094155
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ]
+   ],
+   "n_abnormal_logs": 43216,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_delay/1",
+   "runtime_s": 0.41811108589172363,
+   "exception": null,
+   "convert_plus_run_s": 0.7073488235473633,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40365.28480388936
+    ],
+    [
+     "rabbitmq",
+     12288.0
+    ],
+    [
+     "payment",
+     956.4468670354224
+    ],
+    [
+     "queue-master",
+     10.071230284254357
+    ],
+    [
+     "orders-db",
+     4.585714285714285
+    ]
+   ],
+   "n_abnormal_logs": 43482,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_delay/2",
+   "runtime_s": 0.3366107940673828,
+   "exception": null,
+   "convert_plus_run_s": 0.550797700881958,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38336.50516332325
+    ],
+    [
+     "payment",
+     6278.574317300529
+    ],
+    [
+     "orders",
+     366.9166666666666
+    ],
+    [
+     "queue-master",
+     59.5
+    ],
+    [
+     "shipping",
+     39.869405062334586
+    ]
+   ],
+   "n_abnormal_logs": 43751,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_delay/3",
+   "runtime_s": 0.39928388595581055,
+   "exception": null,
+   "convert_plus_run_s": 0.6180098056793213,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38986.008439354046
+    ],
+    [
+     "payment",
+     3459.3267133302284
+    ],
+    [
+     "orders",
+     167.9408753931723
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "rabbitmq",
+     23.3224043715847
+    ]
+   ],
+   "n_abnormal_logs": 42913,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_disk/1",
+   "runtime_s": 0.44420552253723145,
+   "exception": null,
+   "convert_plus_run_s": 0.6696562767028809,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders"
+   ],
+   "metric_top5": [
+    [
+     "payment",
+     5392752784.964321
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "rabbitmq",
+     12288.0
+    ],
+    [
+     "shipping",
+     12288.0
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ]
+   ],
+   "n_abnormal_logs": 43961,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_disk/2",
+   "runtime_s": 0.3368403911590576,
+   "exception": null,
+   "convert_plus_run_s": 0.5052073001861572,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "payment",
+     19958862583.78838
+    ],
+    [
+     "session-db",
+     37922.414591241555
+    ],
+    [
+     "orders",
+     33.047796399751526
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ],
+    [
+     "carts",
+     7.484585265479678
+    ]
+   ],
+   "n_abnormal_logs": 43218,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_disk/3",
+   "runtime_s": 0.4540247917175293,
+   "exception": null,
+   "convert_plus_run_s": 0.6218564510345459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "payment",
+     19002346024.39401
+    ],
+    [
+     "session-db",
+     48010.517267532996
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "carts",
+     15.466196405745851
+    ],
+    [
+     "orders",
+     12.372549019607844
+    ]
+   ],
+   "n_abnormal_logs": 43095,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_loss/1",
+   "runtime_s": 0.3667759895324707,
+   "exception": null,
+   "convert_plus_run_s": 0.6016099452972412,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "payment",
+     63230.22254974246
+    ],
+    [
+     "orders",
+     611.9151437970896
+    ],
+    [
+     "catalogue-db",
+     31.0
+    ],
+    [
+     "carts",
+     19.5
+    ]
+   ],
+   "n_abnormal_logs": 49516,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_loss/2",
+   "runtime_s": 0.3551783561706543,
+   "exception": null,
+   "convert_plus_run_s": 0.6059303283691406,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38526.414798557766
+    ],
+    [
+     "payment",
+     10226.18661502018
+    ],
+    [
+     "orders",
+     2104.0292272666497
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ],
+    [
+     "shipping",
+     31.943327817792387
+    ]
+   ],
+   "n_abnormal_logs": 48721,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_loss/3",
+   "runtime_s": 0.37578725814819336,
+   "exception": null,
+   "convert_plus_run_s": 0.617295503616333,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     258048.0
+    ],
+    [
+     "payment",
+     12992.621565789339
+    ],
+    [
+     "orders",
+     2312.6170964010967
+    ],
+    [
+     "catalogue-db",
+     57.0
+    ],
+    [
+     "shipping",
+     31.717676031502513
+    ]
+   ],
+   "n_abnormal_logs": 48325,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_mem/1",
+   "runtime_s": 0.3775002956390381,
+   "exception": null,
+   "convert_plus_run_s": 0.5976276397705078,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34832.89395356748
+    ],
+    [
+     "payment",
+     29047.619047619046
+    ],
+    [
+     "orders",
+     359.1675138264552
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "shipping",
+     14.935214116439482
+    ]
+   ],
+   "n_abnormal_logs": 43245,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_mem/2",
+   "runtime_s": 0.36429476737976074,
+   "exception": null,
+   "convert_plus_run_s": 0.5797238349914551,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "payment",
+     38107.75
+    ],
+    [
+     "session-db",
+     36632.86315435113
+    ],
+    [
+     "orders",
+     960.9968066374181
+    ],
+    [
+     "catalogue-db",
+     58.0
+    ],
+    [
+     "shipping",
+     43.146648739906
+    ]
+   ],
+   "n_abnormal_logs": 42753,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_mem/3",
+   "runtime_s": 0.33306097984313965,
+   "exception": null,
+   "convert_plus_run_s": 0.5358333587646484,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end"
+   ],
+   "metric_top5": [
+    [
+     "payment",
+     38110.5
+    ],
+    [
+     "session-db",
+     34586.44821067295
+    ],
+    [
+     "carts",
+     69.5
+    ],
+    [
+     "shipping",
+     31.150568181818574
+    ],
+    [
+     "orders",
+     11.14145770011562
+    ]
+   ],
+   "n_abnormal_logs": 43441,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_socket_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_socket/1",
+   "runtime_s": 0.3961482048034668,
+   "exception": null,
+   "convert_plus_run_s": 0.6578571796417236,
+   "answers": [
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "queue-master",
+     139264.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "shipping",
+     4096.0
+    ],
+    [
+     "payment",
+     1390.4900322386793
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ]
+   ],
+   "n_abnormal_logs": 43104,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_socket_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_socket/2",
+   "runtime_s": 0.38219261169433594,
+   "exception": null,
+   "convert_plus_run_s": 0.6097099781036377,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     258048.0
+    ],
+    [
+     "payment",
+     3914.2214491583413
+    ],
+    [
+     "orders",
+     1497.7414024776135
+    ],
+    [
+     "catalogue-db",
+     58.0
+    ],
+    [
+     "shipping",
+     46.10652704315632
+    ]
+   ],
+   "n_abnormal_logs": 43278,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_socket_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/payment_socket/3",
+   "runtime_s": 0.3662550449371338,
+   "exception": null,
+   "convert_plus_run_s": 0.5696730613708496,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     34057.64966740577
+    ],
+    [
+     "payment",
+     3464.6623201551156
+    ],
+    [
+     "orders",
+     328.57142857143515
+    ],
+    [
+     "shipping",
+     34.9649773281419
+    ],
+    [
+     "queue-master",
+     8.398569006567708
+    ]
+   ],
+   "n_abnormal_logs": 43559,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_cpu/1",
+   "runtime_s": 0.31464648246765137,
+   "exception": null,
+   "convert_plus_run_s": 0.49895501136779785,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     135168.0
+    ],
+    [
+     "session-db",
+     37428.04057141116
+    ],
+    [
+     "user",
+     44.71179638905712
+    ],
+    [
+     "queue-master",
+     34.0
+    ],
+    [
+     "orders",
+     28.67616800764181
+    ]
+   ],
+   "n_abnormal_logs": 43120,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_cpu/2",
+   "runtime_s": 0.36702632904052734,
+   "exception": null,
+   "convert_plus_run_s": 0.5727517604827881,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     65299.87564965087
+    ],
+    [
+     "catalogue-db",
+     8192.0
+    ],
+    [
+     "user",
+     245.66944800309022
+    ],
+    [
+     "orders",
+     188.22222222221984
+    ],
+    [
+     "carts",
+     19.70354861396934
+    ]
+   ],
+   "n_abnormal_logs": 42818,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_cpu/3",
+   "runtime_s": 0.36208271980285645,
+   "exception": null,
+   "convert_plus_run_s": 0.56524658203125,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     67220.27111300752
+    ],
+    [
+     "rabbitmq",
+     12288.0
+    ],
+    [
+     "user",
+     558.9056288841924
+    ],
+    [
+     "orders",
+     101.03320848938893
+    ],
+    [
+     "shipping",
+     37.66672006019065
+    ]
+   ],
+   "n_abnormal_logs": 42918,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_delay/1",
+   "runtime_s": 0.40016818046569824,
+   "exception": null,
+   "convert_plus_run_s": 0.6571409702301025,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     131072.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     6367.791574069266
+    ],
+    [
+     "front-end",
+     276.2122429050992
+    ],
+    [
+     "shipping",
+     7.4516129032258815
+    ]
+   ],
+   "n_abnormal_logs": 40435,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_delay/2",
+   "runtime_s": 0.33051490783691406,
+   "exception": null,
+   "convert_plus_run_s": 0.5562224388122559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38667.04427452091
+    ],
+    [
+     "user",
+     6362.322657256066
+    ],
+    [
+     "orders",
+     2157.051565388404
+    ],
+    [
+     "front-end",
+     516.9595873552925
+    ],
+    [
+     "catalogue-db",
+     43.0
+    ]
+   ],
+   "n_abnormal_logs": 40273,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_delay/3",
+   "runtime_s": 0.3669412136077881,
+   "exception": null,
+   "convert_plus_run_s": 0.5555286407470703,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     8697.586378803999
+    ],
+    [
+     "orders",
+     1871.4959264408853
+    ],
+    [
+     "front-end",
+     221.6614487469314
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ]
+   ],
+   "n_abnormal_logs": 40449,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_disk/1",
+   "runtime_s": 0.344433069229126,
+   "exception": null,
+   "convert_plus_run_s": 0.6148743629455566,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "user-db"
+   ],
+   "metric_top5": [
+    [
+     "user",
+     8758941766.205782
+    ],
+    [
+     "session-db",
+     114688.0
+    ],
+    [
+     "shipping",
+     12288.0
+    ],
+    [
+     "catalogue-db",
+     8192.0
+    ],
+    [
+     "queue-master",
+     8.0
+    ]
+   ],
+   "n_abnormal_logs": 41383,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_disk/2",
+   "runtime_s": 0.2964770793914795,
+   "exception": null,
+   "convert_plus_run_s": 0.4937858581542969,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "user-db"
+   ],
+   "metric_top5": [
+    [
+     "user",
+     18729742934.35066
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "rabbitmq",
+     8192.0
+    ],
+    [
+     "orders",
+     93.88838188838074
+    ],
+    [
+     "user-db",
+     21.4777164858277
+    ]
+   ],
+   "n_abnormal_logs": 43208,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_disk/3",
+   "runtime_s": 0.33953380584716797,
+   "exception": null,
+   "convert_plus_run_s": 0.5407741069793701,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "user-db"
+   ],
+   "metric_top5": [
+    [
+     "user",
+     18698940361.577
+    ],
+    [
+     "session-db",
+     52776.17591249024
+    ],
+    [
+     "orders",
+     63.64304154856935
+    ],
+    [
+     "user-db",
+     7.110122662473711
+    ],
+    [
+     "catalogue",
+     5.65991175803564
+    ]
+   ],
+   "n_abnormal_logs": 43199,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_loss/1",
+   "runtime_s": 0.24178671836853027,
+   "exception": null,
+   "convert_plus_run_s": 0.41905879974365234,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end",
+    "user"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38258.9202316458
+    ],
+    [
+     "user",
+     14169.675641023814
+    ],
+    [
+     "shipping",
+     4096.0
+    ],
+    [
+     "orders",
+     545.9298671335515
+    ],
+    [
+     "front-end",
+     75.52523275912952
+    ]
+   ],
+   "n_abnormal_logs": 9832,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_loss/2",
+   "runtime_s": 0.28514838218688965,
+   "exception": null,
+   "convert_plus_run_s": 0.4766523838043213,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end",
+    "user"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     176128.0
+    ],
+    [
+     "orders",
+     16113.09498127349
+    ],
+    [
+     "user",
+     10668.252602340961
+    ],
+    [
+     "front-end",
+     1004.8600052675187
+    ],
+    [
+     "shipping",
+     219.43262411347612
+    ]
+   ],
+   "n_abnormal_logs": 15708,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_loss/3",
+   "runtime_s": 0.30431318283081055,
+   "exception": null,
+   "convert_plus_run_s": 0.49596643447875977,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "orders",
+    "front-end",
+    "user"
+   ],
+   "metric_top5": [
+    [
+     "orders",
+     100959.41214322927
+    ],
+    [
+     "session-db",
+     36383.9328281211
+    ],
+    [
+     "user",
+     30100.542773510428
+    ],
+    [
+     "front-end",
+     1395.3081584739368
+    ],
+    [
+     "shipping",
+     132.69154818325705
+    ]
+   ],
+   "n_abnormal_logs": 24574,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_mem/1",
+   "runtime_s": 0.30916666984558105,
+   "exception": null,
+   "convert_plus_run_s": 0.5502643585205078,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     39211.1813134214
+    ],
+    [
+     "user",
+     10670.842105263158
+    ],
+    [
+     "catalogue-db",
+     86.0
+    ],
+    [
+     "orders",
+     52.80845901394723
+    ],
+    [
+     "front-end",
+     35.05526663227583
+    ]
+   ],
+   "n_abnormal_logs": 43650,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_mem/2",
+   "runtime_s": 0.376659631729126,
+   "exception": null,
+   "convert_plus_run_s": 0.6228663921356201,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     32909.584153220516
+    ],
+    [
+     "user",
+     3618.232981741213
+    ],
+    [
+     "orders",
+     148.37269815575038
+    ],
+    [
+     "front-end",
+     94.15281107877601
+    ],
+    [
+     "catalogue",
+     25.195286729332633
+    ]
+   ],
+   "n_abnormal_logs": 42635,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_mem/3",
+   "runtime_s": 0.39944028854370117,
+   "exception": null,
+   "convert_plus_run_s": 0.6002917289733887,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     40459.64900727668
+    ],
+    [
+     "user",
+     25330.375
+    ],
+    [
+     "orders",
+     350.95689635742036
+    ],
+    [
+     "front-end",
+     143.60730863343824
+    ],
+    [
+     "carts",
+     35.0889513503224
+    ]
+   ],
+   "n_abnormal_logs": 42628,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_socket_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_socket/1",
+   "runtime_s": 0.4069235324859619,
+   "exception": null,
+   "convert_plus_run_s": 0.6247944831848145,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     1003520.0
+    ],
+    [
+     "shipping",
+     12288.0
+    ],
+    [
+     "user",
+     1596.9104195277225
+    ],
+    [
+     "front-end",
+     19.563346832924967
+    ],
+    [
+     "carts",
+     17.636363636363637
+    ]
+   ],
+   "n_abnormal_logs": 41843,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_socket_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_socket/2",
+   "runtime_s": 0.3275916576385498,
+   "exception": null,
+   "convert_plus_run_s": 0.559485912322998,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     131072.0
+    ],
+    [
+     "session-db",
+     49645.97372569627
+    ],
+    [
+     "user",
+     2561.3260061970036
+    ],
+    [
+     "orders",
+     1343.9259678068365
+    ],
+    [
+     "shipping",
+     242.42242907801207
+    ]
+   ],
+   "n_abnormal_logs": 42565,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_socket_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-SS/user_socket/3",
+   "runtime_s": 0.34977030754089355,
+   "exception": null,
+   "convert_plus_run_s": 0.5317413806915283,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [
+    "queue-master",
+    "carts"
+   ],
+   "metric_top5": [
+    [
+     "session-db",
+     38894.69186212135
+    ],
+    [
+     "user",
+     713.4594556967903
+    ],
+    [
+     "orders",
+     108.4126098519889
+    ],
+    [
+     "catalogue-db",
+     86.0
+    ],
+    [
+     "front-end",
+     64.32974242815911
+    ]
+   ],
+   "n_abnormal_logs": 42692,
+   "n_abnormal_traces": 0
+  }
+ ]
+}

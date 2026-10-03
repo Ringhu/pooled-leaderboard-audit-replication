@@ -1,0 +1,25 @@
+\section{Background and Research Questions}
+\label{sec:background}
+
+\subsection{Offline RCA Benchmarks}
+\label{sec:bg-bench}
+
+In microservice root cause analysis, a method receives telemetry from a window around a failure (metrics and, in some benchmarks, logs and traces) and returns a ranked list of candidate root causes, usually services or components.
+A case is scored by whether the true root cause is ranked first (\acc) or, in \openrca, by the fraction of required answer items that are correct.
+Public RCA evaluation happens in four modes: (a) offline benchmarks that release fault cases, ground truth, and a scoring rule, so that every method can be scored on the same cases (\openrca~\citep{xu2025openrca}, \rcaeval~\citep{pham2024rcaeval}, \petshop~\citep{hardt2024petshop}); (b) single-application testbeds such as Train Ticket~\citep{zhou2018trainticket}, which each paper deploys and injects anew; (c) competitions with year-specific protocols; and (d) interactive benchmarks in which an agent queries a live system or a recorded state snapshot through diagnostic tools~\citep{aiopslab,jha2025itbench,wang2026cloudopsbench}.
+We audit mode (a), released static-telemetry datasets and their evaluation pipelines; interactive benchmarks are outside the scope of this audit.
+
+An offline benchmark is released as per-case data tables, a runner that loads them and executes the methods, and a scoring script.
+A pooled score is the product of that pipeline: which table the runner reads, what happens when a method fails on a case, which cases enter the denominator, and how cases are scored and weighted.
+The benchmark papers state the scoring rule; the other choices are made in code.
+Each benchmark also contains several applications or traffic scenarios, which we call subsystems; its paper and the method papers that use it report a score per subsystem and a score pooled over all of them, and it is the pooled score that is ranked.
+
+\subsection{Research Questions}
+\label{sec:rqs}
+
+A pooled leaderboard reports one number per method. Reading it as evidence that method $A$ should be preferred to method $B$ assumes two things the number does not state: on which systems the advantage holds, and how the score was produced. We ask one question about each.
+
+\begin{description}
+\item[RQ1 (scope).] How stable are comparisons between published methods across the subsystems of a benchmark, and across a second, independently collected release of the same applications?
+\item[RQ2 (provenance).] Which choices in the released evaluation pipeline---the input representation, the handling of failed outputs, the denominator, and the scoring and weighting rule---change these comparisons, and by how much?
+\end{description}

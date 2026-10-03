@@ -1,0 +1,8574 @@
+{
+ "config": {
+  "method": "simplerca-author",
+  "dataset": "rcaeval_re1_ss",
+  "input_file": "simple_data.csv (window=20)",
+  "author_repo": "LGU-SE-Internal/Simple-RCA",
+  "author_branch_commit": "author_rcaeval:5fd1f7f",
+  "converter": "rcabench_platform==0.3.27 sources/rcaeval.py (verbatim)",
+  "no_logs": false,
+  "code_sha256_12": {
+   "author_rcaeval/__init__.py": "e3b0c44298fc",
+   "author_rcaeval/baro.py": "7c62e0d185f6",
+   "author_rcaeval/nezha_adapter.py": "2e2c3e775e79",
+   "author_rcaeval/nezha_rca.py": "8896a48e51db",
+   "author_rcaeval/time_series.py": "e44a775a6ab4",
+   "author_re3ss/__init__.py": "e3b0c44298fc",
+   "author_re3ss/baro.py": "7c62e0d185f6",
+   "author_re3ss/nezha_adapter.py": "2e2c3e775e79",
+   "author_re3ss/nezha_rca.py": "4d408e429d77",
+   "author_re3ss/time_series.py": "5c1a39773745",
+   "run_author_simplerca.py": "2d3f68839402",
+   "stub/rcabench_platform/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/spec.py": "cdba429a62a6",
+   "stub/rcabench_platform/v2/graphs/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcabench.py": "e28531f006f5",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcaeval.py": "6c6fa90f6e40",
+   "stub/rcabench_platform/v2/logging.py": "c89dca086541",
+   "stub/rcabench_platform/v2/sources/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/sources/_convert_stub.py": "f862981d4de9",
+   "stub/rcabench_platform/v2/sources/rcaeval.py": "58ceb0e75128",
+   "stub/rcabench_platform/v2/utils/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/utils/env.py": "1755ee39c8f9",
+   "stub/rcabench_platform/v2/utils/serde.py": "c1b8900e5ac4"
+  },
+  "env": "$CONDA_ENVS/simplerca/bin/python",
+  "python": "3.13.15",
+  "polars": "1.31.0",
+  "argv": [
+   "run_author_simplerca.py",
+   "--dataset",
+   "rcaeval_re1_ss",
+   "--algo",
+   "simplerca",
+   "--re1-window",
+   "20",
+   "--procs",
+   "8",
+   "--out",
+   "$AUDIT_ROOT/runs/simplerca_author/simplerca_author_re1_ss_win20.json"
+  ],
+  "run_started_utc": "2026-09-27T12:19:33.486375+00:00",
+  "limit": 0
+ },
+ "summary": {
+  "n": 125,
+  "AC@1": 0.368,
+  "AC@2": 0.752,
+  "AC@3": 0.928,
+  "AC@4": 0.976,
+  "AC@5": 0.992,
+  "Avg@3": 0.682667,
+  "Avg@5": 0.8032,
+  "MRR_platform_hit_only": 0.638978,
+  "MRR_all_cases": 0.633867,
+  "n_exceptions": 0,
+  "n_empty": 0
+ },
+ "cases": [
+  {
+   "datapack": "carts_cpu_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_cpu/1",
+   "runtime_s": 0.144697904586792,
+   "exception": null,
+   "convert_plus_run_s": 0.17867803573608398,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     28672.0
+    ],
+    [
+     "carts",
+     61.98146555592509
+    ],
+    [
+     "front-end",
+     9.649875726132741
+    ],
+    [
+     "catalogue",
+     8.73722530192612
+    ],
+    [
+     "orders",
+     7.9133274395907875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_cpu/2",
+   "runtime_s": 0.21424460411071777,
+   "exception": null,
+   "convert_plus_run_s": 0.2492358684539795,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     180224.0
+    ],
+    [
+     "carts",
+     101.88246266775805
+    ],
+    [
+     "front-end",
+     13.247905524551113
+    ],
+    [
+     "orders",
+     11.738467791689088
+    ],
+    [
+     "orders-db",
+     3.484472049689441
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_cpu/3",
+   "runtime_s": 0.14704346656799316,
+   "exception": null,
+   "convert_plus_run_s": 0.17859792709350586,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     159744.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "carts",
+     334.36013128396974
+    ],
+    [
+     "orders",
+     131.7001549700679
+    ],
+    [
+     "payment",
+     15.65
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_4",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_cpu/4",
+   "runtime_s": 0.14319372177124023,
+   "exception": null,
+   "convert_plus_run_s": 0.17609643936157227,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     278528.0
+    ],
+    [
+     "carts",
+     123.90066157660206
+    ],
+    [
+     "front-end",
+     8.541835616844185
+    ],
+    [
+     "orders",
+     7.6925588633322475
+    ],
+    [
+     "catalogue",
+     7.138888888888889
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_cpu_5",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_cpu/5",
+   "runtime_s": 0.16000962257385254,
+   "exception": null,
+   "convert_plus_run_s": 0.20901918411254883,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     102400.0
+    ],
+    [
+     "carts",
+     290.7311322895166
+    ],
+    [
+     "orders",
+     277.0021038248357
+    ],
+    [
+     "queue-master",
+     17.754493083904972
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_delay/1",
+   "runtime_s": 0.1571192741394043,
+   "exception": null,
+   "convert_plus_run_s": 0.19364285469055176,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     28672.0
+    ],
+    [
+     "orders",
+     5369.301291252591
+    ],
+    [
+     "carts",
+     3075.4624389528067
+    ],
+    [
+     "front-end",
+     990.796101105109
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_delay/2",
+   "runtime_s": 0.15859556198120117,
+   "exception": null,
+   "convert_plus_run_s": 0.19417977333068848,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     7349.989185275874
+    ],
+    [
+     "front-end",
+     1355.2497064873157
+    ],
+    [
+     "orders",
+     914.6728100621057
+    ],
+    [
+     "payment",
+     9.158667741457819
+    ],
+    [
+     "catalogue",
+     7.0588235294117645
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_delay/3",
+   "runtime_s": 0.14219331741333008,
+   "exception": null,
+   "convert_plus_run_s": 0.1713085174560547,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     5249.486447509686
+    ],
+    [
+     "carts",
+     4361.390120522023
+    ],
+    [
+     "front-end",
+     905.5800715655865
+    ],
+    [
+     "queue-master",
+     13.225806451612904
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_4",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_delay/4",
+   "runtime_s": 0.1627659797668457,
+   "exception": null,
+   "convert_plus_run_s": 0.1985478401184082,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     28672.0
+    ],
+    [
+     "carts",
+     4814.631053030665
+    ],
+    [
+     "front-end",
+     897.6072052223163
+    ],
+    [
+     "orders",
+     779.5620496276474
+    ],
+    [
+     "rabbitmq",
+     4.095238095238095
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_delay_5",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_delay/5",
+   "runtime_s": 0.16922616958618164,
+   "exception": null,
+   "convert_plus_run_s": 0.19534873962402344,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     28672.0
+    ],
+    [
+     "orders",
+     4350.640955840785
+    ],
+    [
+     "carts",
+     3373.9658689775397
+    ],
+    [
+     "front-end",
+     682.5338643950803
+    ],
+    [
+     "queue-master",
+     22.529462611788873
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_disk/1",
+   "runtime_s": 0.1325979232788086,
+   "exception": null,
+   "convert_plus_run_s": 0.16756463050842285,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     138.185224726946
+    ],
+    [
+     "catalogue",
+     25.884738326214816
+    ],
+    [
+     "shipping",
+     23.566535472526173
+    ],
+    [
+     "orders",
+     14.778513494302358
+    ],
+    [
+     "user",
+     12.450334645815513
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_disk/2",
+   "runtime_s": 0.12863397598266602,
+   "exception": null,
+   "convert_plus_run_s": 0.14950299263000488,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     4096.0
+    ],
+    [
+     "carts",
+     402.4208021521373
+    ],
+    [
+     "orders",
+     104.61273494312836
+    ],
+    [
+     "catalogue",
+     40.70515864566815
+    ],
+    [
+     "queue-master",
+     38.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_disk/3",
+   "runtime_s": 0.1389167308807373,
+   "exception": null,
+   "convert_plus_run_s": 0.16818976402282715,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     471.87364171577207
+    ],
+    [
+     "front-end",
+     63.249999999999915
+    ],
+    [
+     "orders",
+     36.19859509487496
+    ],
+    [
+     "catalogue-db",
+     36.0
+    ],
+    [
+     "session-db",
+     32.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_4",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_disk/4",
+   "runtime_s": 0.14738035202026367,
+   "exception": null,
+   "convert_plus_run_s": 0.1769394874572754,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     332.53393537645235
+    ],
+    [
+     "front-end",
+     159.7499999999998
+    ],
+    [
+     "orders",
+     45.264972340928296
+    ],
+    [
+     "catalogue-db",
+     32.0
+    ],
+    [
+     "catalogue",
+     28.03382400731328
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_disk_5",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_disk/5",
+   "runtime_s": 0.19327998161315918,
+   "exception": null,
+   "convert_plus_run_s": 0.22449874877929688,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     299.8504607212961
+    ],
+    [
+     "front-end",
+     243.12499999999977
+    ],
+    [
+     "catalogue-db",
+     33.0
+    ],
+    [
+     "session-db",
+     31.0
+    ],
+    [
+     "orders",
+     27.715102635734073
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_loss/1",
+   "runtime_s": 0.1290748119354248,
+   "exception": null,
+   "convert_plus_run_s": 0.1530296802520752,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "carts",
+     527.0904773584803
+    ],
+    [
+     "orders",
+     455.81697979558083
+    ],
+    [
+     "front-end",
+     90.60476859275526
+    ],
+    [
+     "queue-master",
+     14.03225806451613
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_loss/2",
+   "runtime_s": 0.15663838386535645,
+   "exception": null,
+   "convert_plus_run_s": 0.19162487983703613,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     57344.0
+    ],
+    [
+     "carts",
+     435.58910361659275
+    ],
+    [
+     "front-end",
+     31.78235604908546
+    ],
+    [
+     "orders",
+     19.78086605070373
+    ],
+    [
+     "user",
+     8.929824561403509
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_loss/3",
+   "runtime_s": 0.19535446166992188,
+   "exception": null,
+   "convert_plus_run_s": 0.2217550277709961,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     69632.0
+    ],
+    [
+     "orders",
+     1303.786392999086
+    ],
+    [
+     "carts",
+     604.0750147807272
+    ],
+    [
+     "front-end",
+     64.943443073685
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_4",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_loss/4",
+   "runtime_s": 0.13669729232788086,
+   "exception": null,
+   "convert_plus_run_s": 0.16396498680114746,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     360448.0
+    ],
+    [
+     "carts",
+     367.28703007840943
+    ],
+    [
+     "front-end",
+     58.1359398626107
+    ],
+    [
+     "orders",
+     9.490764317496359
+    ],
+    [
+     "payment",
+     5.513513513513513
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_loss_5",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_loss/5",
+   "runtime_s": 0.14850544929504395,
+   "exception": null,
+   "convert_plus_run_s": 0.1892237663269043,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     126976.0
+    ],
+    [
+     "orders",
+     533.0329751923142
+    ],
+    [
+     "carts",
+     518.4587875530465
+    ],
+    [
+     "front-end",
+     76.88679777049457
+    ],
+    [
+     "queue-master",
+     16.42080469803005
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_1",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_mem/1",
+   "runtime_s": 0.136061429977417,
+   "exception": null,
+   "convert_plus_run_s": 0.17054033279418945,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     1167360.0
+    ],
+    [
+     "carts",
+     1002.9598992867869
+    ],
+    [
+     "catalogue",
+     226.64665612294172
+    ],
+    [
+     "front-end",
+     223.60229119866804
+    ],
+    [
+     "orders",
+     72.72023570204036
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_2",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_mem/2",
+   "runtime_s": 0.1644754409790039,
+   "exception": null,
+   "convert_plus_run_s": 0.20675277709960938,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     893.2705971241261
+    ],
+    [
+     "front-end",
+     250.1797410546939
+    ],
+    [
+     "orders",
+     233.95819537281017
+    ],
+    [
+     "catalogue",
+     178.4455294701354
+    ],
+    [
+     "user",
+     33.1204114269431
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_3",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_mem/3",
+   "runtime_s": 0.1718432903289795,
+   "exception": null,
+   "convert_plus_run_s": 0.1962754726409912,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     114688.0
+    ],
+    [
+     "orders",
+     2266.90680785706
+    ],
+    [
+     "carts",
+     1604.5379915158132
+    ],
+    [
+     "catalogue",
+     282.9469584109983
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_4",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_mem/4",
+   "runtime_s": 0.12998414039611816,
+   "exception": null,
+   "convert_plus_run_s": 0.14975738525390625,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     835.0495347282591
+    ],
+    [
+     "front-end",
+     157.53594666522534
+    ],
+    [
+     "catalogue",
+     139.4265694854445
+    ],
+    [
+     "orders",
+     90.68618031200394
+    ],
+    [
+     "user",
+     40.40039920976729
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "carts_mem_5",
+   "label": "carts",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/carts_mem/5",
+   "runtime_s": 0.1346907615661621,
+   "exception": null,
+   "convert_plus_run_s": 0.1592855453491211,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     143360.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     2278.7634847478857
+    ],
+    [
+     "carts",
+     1422.6018019323146
+    ],
+    [
+     "front-end",
+     299.08830257811377
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_cpu/1",
+   "runtime_s": 0.19689369201660156,
+   "exception": null,
+   "convert_plus_run_s": 0.22510123252868652,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     454656.0
+    ],
+    [
+     "catalogue",
+     4885.342367902786
+    ],
+    [
+     "carts",
+     9.52641445258166
+    ],
+    [
+     "payment",
+     5.277777777777778
+    ],
+    [
+     "session-db",
+     4.491080652634387
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_cpu/2",
+   "runtime_s": 0.14721941947937012,
+   "exception": null,
+   "convert_plus_run_s": 0.17346906661987305,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1691.5955848066321
+    ],
+    [
+     "user",
+     20.126995766267843
+    ],
+    [
+     "catalogue-db",
+     12.538461538461538
+    ],
+    [
+     "carts",
+     8.7649231150888
+    ],
+    [
+     "rabbitmq",
+     4.734133790737564
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_cpu/3",
+   "runtime_s": 0.13996481895446777,
+   "exception": null,
+   "convert_plus_run_s": 0.16813445091247559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1925.8021212264312
+    ],
+    [
+     "catalogue-db",
+     35.6
+    ],
+    [
+     "rabbitmq",
+     10.26
+    ],
+    [
+     "carts",
+     7.583404474787231
+    ],
+    [
+     "session-db",
+     5.019743587622288
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_4",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_cpu/4",
+   "runtime_s": 0.16012787818908691,
+   "exception": null,
+   "convert_plus_run_s": 0.18380117416381836,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1439.723266076618
+    ],
+    [
+     "catalogue-db",
+     14.454545454545455
+    ],
+    [
+     "carts",
+     11.047944956979581
+    ],
+    [
+     "rabbitmq",
+     10.91304347826087
+    ],
+    [
+     "payment",
+     4.974475380964291
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_cpu_5",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_cpu/5",
+   "runtime_s": 0.14572954177856445,
+   "exception": null,
+   "convert_plus_run_s": 0.1762852668762207,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     262144.0
+    ],
+    [
+     "catalogue-db",
+     126976.0
+    ],
+    [
+     "catalogue",
+     3659.480980910474
+    ],
+    [
+     "orders",
+     88.60064077315626
+    ],
+    [
+     "carts",
+     26.897730425633842
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_delay/1",
+   "runtime_s": 0.13137125968933105,
+   "exception": null,
+   "convert_plus_run_s": 0.1522529125213623,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     1605632.0
+    ],
+    [
+     "catalogue",
+     31329.20563672332
+    ],
+    [
+     "front-end",
+     22.475668804425315
+    ],
+    [
+     "carts",
+     13.138601565698513
+    ],
+    [
+     "orders-db",
+     4.3642824639441375
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_delay/2",
+   "runtime_s": 0.13088583946228027,
+   "exception": null,
+   "convert_plus_run_s": 0.15555477142333984,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     139264.0
+    ],
+    [
+     "catalogue",
+     23960.78591068609
+    ],
+    [
+     "orders",
+     66.92952851276291
+    ],
+    [
+     "shipping",
+     49.46153846153846
+    ],
+    [
+     "front-end",
+     37.682031594828565
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_delay/3",
+   "runtime_s": 0.12987613677978516,
+   "exception": null,
+   "convert_plus_run_s": 0.15604448318481445,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     1413120.0
+    ],
+    [
+     "catalogue",
+     7627.845836706129
+    ],
+    [
+     "front-end",
+     60.2336999078097
+    ],
+    [
+     "carts",
+     24.12929337663101
+    ],
+    [
+     "payment",
+     8.91304347826087
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_4",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_delay/4",
+   "runtime_s": 0.15000534057617188,
+   "exception": null,
+   "convert_plus_run_s": 0.17351746559143066,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue",
+     30660.066969905834
+    ],
+    [
+     "front-end",
+     60.315953273860735
+    ],
+    [
+     "orders",
+     55.04150957174529
+    ],
+    [
+     "catalogue-db",
+     43.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_delay_5",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_delay/5",
+   "runtime_s": 0.1380164623260498,
+   "exception": null,
+   "convert_plus_run_s": 0.16100263595581055,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     7502.758267465551
+    ],
+    [
+     "catalogue-db",
+     26.5
+    ],
+    [
+     "front-end",
+     22.8232216722486
+    ],
+    [
+     "session-db",
+     10.466440092175667
+    ],
+    [
+     "carts",
+     6.1295265882159695
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_disk/1",
+   "runtime_s": 0.16021418571472168,
+   "exception": null,
+   "convert_plus_run_s": 0.18735790252685547,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1186.133434204604
+    ],
+    [
+     "payment",
+     75.75
+    ],
+    [
+     "user",
+     72.03642148334974
+    ],
+    [
+     "session-db",
+     12.640958045383368
+    ],
+    [
+     "rabbitmq",
+     12.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_disk/2",
+   "runtime_s": 0.1652529239654541,
+   "exception": null,
+   "convert_plus_run_s": 0.19584274291992188,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1150.5477838106092
+    ],
+    [
+     "front-end",
+     156.24999999999986
+    ],
+    [
+     "orders",
+     34.81675694967624
+    ],
+    [
+     "session-db",
+     31.0
+    ],
+    [
+     "user",
+     19.833333333333332
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_disk/3",
+   "runtime_s": 0.1799309253692627,
+   "exception": null,
+   "convert_plus_run_s": 0.21343421936035156,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     1304.7323594613451
+    ],
+    [
+     "front-end",
+     39.58333333333331
+    ],
+    [
+     "catalogue-db",
+     31.0
+    ],
+    [
+     "session-db",
+     31.0
+    ],
+    [
+     "orders",
+     17.142857142857142
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_4",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_disk/4",
+   "runtime_s": 0.14194202423095703,
+   "exception": null,
+   "convert_plus_run_s": 0.165665864944458,
+   "answers": [
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "carts",
+     20060.00000000221
+    ],
+    [
+     "user",
+     1972.6027397260166
+    ],
+    [
+     "catalogue",
+     70.13518764858095
+    ],
+    [
+     "orders",
+     4.0
+    ],
+    [
+     "shipping",
+     2.678049014728424
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_disk_5",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_disk/5",
+   "runtime_s": 0.14868736267089844,
+   "exception": null,
+   "convert_plus_run_s": 0.17339015007019043,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     945.1581760102117
+    ],
+    [
+     "session-db",
+     26.0
+    ],
+    [
+     "carts",
+     11.687849267095917
+    ],
+    [
+     "payment",
+     11.333333333333334
+    ],
+    [
+     "user",
+     5.6990214820296705
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_loss/1",
+   "runtime_s": 0.13005590438842773,
+   "exception": null,
+   "convert_plus_run_s": 0.15057873725891113,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     155648.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue",
+     12649.47667928561
+    ],
+    [
+     "carts",
+     23.692201962625568
+    ],
+    [
+     "orders",
+     17.310279788769847
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_loss/2",
+   "runtime_s": 0.1419389247894287,
+   "exception": null,
+   "convert_plus_run_s": 0.16521406173706055,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     7638.105887275751
+    ],
+    [
+     "catalogue-db",
+     188.66666666666666
+    ],
+    [
+     "carts",
+     10.780685456396295
+    ],
+    [
+     "front-end",
+     10.06866007607917
+    ],
+    [
+     "shipping",
+     8.6
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_loss/3",
+   "runtime_s": 0.14207839965820312,
+   "exception": null,
+   "convert_plus_run_s": 0.16410470008850098,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     12843.575132140311
+    ],
+    [
+     "catalogue-db",
+     4096.0
+    ],
+    [
+     "orders",
+     57.52728157181057
+    ],
+    [
+     "user",
+     50.98490562498288
+    ],
+    [
+     "queue-master",
+     24.06603039533558
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_4",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_loss/4",
+   "runtime_s": 0.1373581886291504,
+   "exception": null,
+   "convert_plus_run_s": 0.1590559482574463,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     14730.135960996166
+    ],
+    [
+     "catalogue-db",
+     75.875
+    ],
+    [
+     "carts",
+     14.139663469076815
+    ],
+    [
+     "front-end",
+     6.8378033205619415
+    ],
+    [
+     "shipping",
+     3.3333333333333335
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_loss_5",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_loss/5",
+   "runtime_s": 0.14020299911499023,
+   "exception": null,
+   "convert_plus_run_s": 0.16431140899658203,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     45056.0
+    ],
+    [
+     "catalogue",
+     9002.930084165851
+    ],
+    [
+     "user",
+     36.53292502808372
+    ],
+    [
+     "queue-master",
+     24.730527576664254
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_1",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_mem/1",
+   "runtime_s": 0.2095470428466797,
+   "exception": null,
+   "convert_plus_run_s": 0.2522611618041992,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     3575808.0
+    ],
+    [
+     "catalogue",
+     47896.67156057325
+    ],
+    [
+     "front-end",
+     47.21657408300249
+    ],
+    [
+     "payment",
+     28.272727272727273
+    ],
+    [
+     "user",
+     13.077972198470288
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_2",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_mem/2",
+   "runtime_s": 0.14333510398864746,
+   "exception": null,
+   "convert_plus_run_s": 0.1791377067565918,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     3497984.0
+    ],
+    [
+     "catalogue",
+     24982.612900162254
+    ],
+    [
+     "front-end",
+     164.0662424905973
+    ],
+    [
+     "user",
+     122.69066854061508
+    ],
+    [
+     "carts",
+     15.812467625088077
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_3",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_mem/3",
+   "runtime_s": 0.16145777702331543,
+   "exception": null,
+   "convert_plus_run_s": 0.19508719444274902,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     188416.0
+    ],
+    [
+     "catalogue",
+     36527.90881624467
+    ],
+    [
+     "user",
+     55.510816642272296
+    ],
+    [
+     "front-end",
+     48.390184862635756
+    ],
+    [
+     "orders",
+     41.48521476506248
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_4",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_mem/4",
+   "runtime_s": 0.16466331481933594,
+   "exception": null,
+   "convert_plus_run_s": 0.20267128944396973,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     3301376.0
+    ],
+    [
+     "catalogue",
+     15298.685880867017
+    ],
+    [
+     "user",
+     48.3876682663276
+    ],
+    [
+     "front-end",
+     45.860422296898115
+    ],
+    [
+     "orders",
+     17.589933983176838
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "catalogue_mem_5",
+   "label": "catalogue",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/catalogue_mem/5",
+   "runtime_s": 0.14243435859680176,
+   "exception": null,
+   "convert_plus_run_s": 0.17009234428405762,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     339968.0
+    ],
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "catalogue",
+     63718.22558484024
+    ],
+    [
+     "front-end",
+     151.7723985810196
+    ],
+    [
+     "user",
+     96.50058433609429
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_cpu/1",
+   "runtime_s": 0.16869282722473145,
+   "exception": null,
+   "convert_plus_run_s": 0.1953141689300537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     45056.0
+    ],
+    [
+     "orders",
+     28.198894774005726
+    ],
+    [
+     "carts",
+     16.89415153827173
+    ],
+    [
+     "front-end",
+     6.246106098426857
+    ],
+    [
+     "carts-db",
+     4.398357289527721
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_cpu/2",
+   "runtime_s": 0.12679266929626465,
+   "exception": null,
+   "convert_plus_run_s": 0.15573811531066895,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     24.392765206513587
+    ],
+    [
+     "carts",
+     13.945754295297393
+    ],
+    [
+     "catalogue",
+     5.610454981617237
+    ],
+    [
+     "rabbitmq",
+     5.108108108108108
+    ],
+    [
+     "front-end",
+     5.083682008368201
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_cpu/3",
+   "runtime_s": 0.16603493690490723,
+   "exception": null,
+   "convert_plus_run_s": 0.19060492515563965,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     28672.0
+    ],
+    [
+     "orders",
+     310.7975661370063
+    ],
+    [
+     "queue-master",
+     18.452320058459172
+    ],
+    [
+     "carts",
+     17.375262936551966
+    ],
+    [
+     "user",
+     14.6
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_4",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_cpu/4",
+   "runtime_s": 0.1329495906829834,
+   "exception": null,
+   "convert_plus_run_s": 0.15373778343200684,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     21.7153829878199
+    ],
+    [
+     "payment",
+     13.409090909090908
+    ],
+    [
+     "rabbitmq",
+     7.509803921568627
+    ],
+    [
+     "carts",
+     5.340852561942033
+    ],
+    [
+     "session-db",
+     4.666666666666667
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_cpu_5",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_cpu/5",
+   "runtime_s": 0.14880633354187012,
+   "exception": null,
+   "convert_plus_run_s": 0.17298531532287598,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     213.36101149129115
+    ],
+    [
+     "carts",
+     20.94297464625261
+    ],
+    [
+     "queue-master",
+     13.47787610619469
+    ],
+    [
+     "rabbitmq",
+     10.947368421052632
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_delay/1",
+   "runtime_s": 0.13898444175720215,
+   "exception": null,
+   "convert_plus_run_s": 0.17536139488220215,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     57344.0
+    ],
+    [
+     "orders",
+     19107.187571926213
+    ],
+    [
+     "carts",
+     22.119512369911806
+    ],
+    [
+     "queue-master",
+     17.96408713903743
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_delay/2",
+   "runtime_s": 0.140486478805542,
+   "exception": null,
+   "convert_plus_run_s": 0.1710367202758789,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     3252.725426881047
+    ],
+    [
+     "carts",
+     23.27644225036533
+    ],
+    [
+     "front-end",
+     9.029926663906142
+    ],
+    [
+     "orders-db",
+     4.587209302325581
+    ],
+    [
+     "payment",
+     4.387096774193548
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_delay/3",
+   "runtime_s": 0.14659762382507324,
+   "exception": null,
+   "convert_plus_run_s": 0.17194128036499023,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     21199.521671398914
+    ],
+    [
+     "user",
+     43.83778571074633
+    ],
+    [
+     "carts",
+     14.733371202400033
+    ],
+    [
+     "queue-master",
+     13.027910428784091
+    ],
+    [
+     "front-end",
+     11.048508644503288
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_4",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_delay/4",
+   "runtime_s": 0.17429757118225098,
+   "exception": null,
+   "convert_plus_run_s": 0.19704484939575195,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     2189.6260929638297
+    ],
+    [
+     "carts",
+     21.823989017047122
+    ],
+    [
+     "catalogue",
+     11.45
+    ],
+    [
+     "front-end",
+     6.371719811201409
+    ],
+    [
+     "rabbitmq",
+     6.340246805628951
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_delay_5",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_delay/5",
+   "runtime_s": 0.13797593116760254,
+   "exception": null,
+   "convert_plus_run_s": 0.16697478294372559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     188416.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     11164.232055181501
+    ],
+    [
+     "carts",
+     23.699497869680666
+    ],
+    [
+     "front-end",
+     21.2869036482288
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_disk/1",
+   "runtime_s": 0.1667475700378418,
+   "exception": null,
+   "convert_plus_run_s": 0.1928727626800537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue",
+     36.58206337041251
+    ],
+    [
+     "orders",
+     34.40670172469372
+    ],
+    [
+     "session-db",
+     32.0
+    ],
+    [
+     "queue-master",
+     6.263157894736925
+    ],
+    [
+     "user",
+     5.757575757575758
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_disk/2",
+   "runtime_s": 0.1299588680267334,
+   "exception": null,
+   "convert_plus_run_s": 0.15580511093139648,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     37.166666666666664
+    ],
+    [
+     "orders",
+     31.138489500235263
+    ],
+    [
+     "rabbitmq",
+     21.310344827586206
+    ],
+    [
+     "catalogue",
+     15.557497012882534
+    ],
+    [
+     "front-end",
+     3.6621484795179238
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_disk/3",
+   "runtime_s": 0.14514660835266113,
+   "exception": null,
+   "convert_plus_run_s": 0.1733694076538086,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     205.9283022045333
+    ],
+    [
+     "payment",
+     53.68947293745429
+    ],
+    [
+     "catalogue",
+     44.5255343642621
+    ],
+    [
+     "rabbitmq",
+     41.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_4",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_disk/4",
+   "runtime_s": 0.18108296394348145,
+   "exception": null,
+   "convert_plus_run_s": 0.20528459548950195,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     61.05003246805834
+    ],
+    [
+     "payment",
+     31.22472248603049
+    ],
+    [
+     "catalogue",
+     29.234127961768777
+    ],
+    [
+     "queue-master",
+     27.967741935483872
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_disk_5",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_disk/5",
+   "runtime_s": 0.16968083381652832,
+   "exception": null,
+   "convert_plus_run_s": 0.19455432891845703,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     73.3525694781214
+    ],
+    [
+     "catalogue",
+     50.055869825907145
+    ],
+    [
+     "queue-master",
+     44.074046441187555
+    ],
+    [
+     "payment",
+     34.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_loss/1",
+   "runtime_s": 0.16730618476867676,
+   "exception": null,
+   "convert_plus_run_s": 0.1981978416442871,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     122880.0
+    ],
+    [
+     "orders",
+     5053.325483358378
+    ],
+    [
+     "shipping",
+     1861.1196052006976
+    ],
+    [
+     "payment",
+     67.9512862617157
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_loss/2",
+   "runtime_s": 0.1486799716949463,
+   "exception": null,
+   "convert_plus_run_s": 0.17455768585205078,
+   "answers": [
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "rabbitmq",
+     1929216.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     122880.0
+    ],
+    [
+     "payment",
+     12040.474501566796
+    ],
+    [
+     "orders",
+     5643.00895134797
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_loss/3",
+   "runtime_s": 0.17069506645202637,
+   "exception": null,
+   "convert_plus_run_s": 0.19608044624328613,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     352256.0
+    ],
+    [
+     "payment",
+     5361.30803520448
+    ],
+    [
+     "orders",
+     622.4831952056688
+    ],
+    [
+     "shipping",
+     61.06460644910876
+    ],
+    [
+     "user",
+     15.0658755157852
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_4",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_loss/4",
+   "runtime_s": 0.14922833442687988,
+   "exception": null,
+   "convert_plus_run_s": 0.17049026489257812,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     5755.514279727709
+    ],
+    [
+     "orders",
+     496.06862450443464
+    ],
+    [
+     "shipping",
+     98.67880822999663
+    ],
+    [
+     "front-end",
+     8.983969015636333
+    ],
+    [
+     "carts",
+     7.158730158730159
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_loss_5",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_loss/5",
+   "runtime_s": 0.1766359806060791,
+   "exception": null,
+   "convert_plus_run_s": 0.19961881637573242,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     16013.58471207127
+    ],
+    [
+     "shipping",
+     5930.214189943754
+    ],
+    [
+     "payment",
+     4288.6499700816275
+    ],
+    [
+     "user",
+     34.63961347464256
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_1",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_mem/1",
+   "runtime_s": 0.1718285083770752,
+   "exception": null,
+   "convert_plus_run_s": 0.19405555725097656,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     308.1979667634611
+    ],
+    [
+     "user",
+     23.074857203332225
+    ],
+    [
+     "payment",
+     19.714285714285715
+    ],
+    [
+     "carts",
+     15.092986846837794
+    ],
+    [
+     "catalogue",
+     14.516745736914215
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_2",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_mem/2",
+   "runtime_s": 0.23684167861938477,
+   "exception": null,
+   "convert_plus_run_s": 0.31297731399536133,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     626688.0
+    ],
+    [
+     "orders",
+     392.11397849462367
+    ],
+    [
+     "carts",
+     17.949589871497444
+    ],
+    [
+     "catalogue",
+     8.401070760527398
+    ],
+    [
+     "front-end",
+     8.330950882799456
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_3",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_mem/3",
+   "runtime_s": 0.17861366271972656,
+   "exception": null,
+   "convert_plus_run_s": 0.242478609085083,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     122880.0
+    ],
+    [
+     "orders",
+     17814.527497035742
+    ],
+    [
+     "payment",
+     77.75
+    ],
+    [
+     "shipping",
+     70.44752500641458
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_4",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_mem/4",
+   "runtime_s": 0.1674051284790039,
+   "exception": null,
+   "convert_plus_run_s": 0.23701930046081543,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     888832.0
+    ],
+    [
+     "orders",
+     1029.2937853107344
+    ],
+    [
+     "carts",
+     16.890379742166907
+    ],
+    [
+     "catalogue",
+     15.286812023072004
+    ],
+    [
+     "front-end",
+     13.855513004198954
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "orders_mem_5",
+   "label": "orders",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/orders_mem/5",
+   "runtime_s": 0.2590963840484619,
+   "exception": null,
+   "convert_plus_run_s": 0.3058023452758789,
+   "answers": [
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "orders",
+     614.078231292517
+    ],
+    [
+     "catalogue-db",
+     31.142857142857142
+    ],
+    [
+     "front-end",
+     29.660980260052238
+    ],
+    [
+     "carts",
+     14.419107002862265
+    ],
+    [
+     "user",
+     11.882503015665165
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_cpu/1",
+   "runtime_s": 0.16003990173339844,
+   "exception": null,
+   "convert_plus_run_s": 0.20955324172973633,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     57344.0
+    ],
+    [
+     "payment",
+     3924.878404633582
+    ],
+    [
+     "carts",
+     12.700677800686993
+    ],
+    [
+     "orders",
+     4.080577165032112
+    ],
+    [
+     "carts-db",
+     3.421916899258209
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_cpu/2",
+   "runtime_s": 0.1578230857849121,
+   "exception": null,
+   "convert_plus_run_s": 0.19619297981262207,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     3101.6482926334065
+    ],
+    [
+     "carts",
+     12.590121783146376
+    ],
+    [
+     "orders",
+     4.555190706740928
+    ],
+    [
+     "front-end",
+     4.506025294962678
+    ],
+    [
+     "session-db",
+     4.333333333333333
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_cpu/3",
+   "runtime_s": 0.19548940658569336,
+   "exception": null,
+   "convert_plus_run_s": 0.2205502986907959,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     155648.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "payment",
+     3577.516781528523
+    ],
+    [
+     "orders",
+     137.41118507509876
+    ],
+    [
+     "carts",
+     25.611376073644223
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_4",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_cpu/4",
+   "runtime_s": 0.17319273948669434,
+   "exception": null,
+   "convert_plus_run_s": 0.23058843612670898,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     3668.1371346959936
+    ],
+    [
+     "orders",
+     45.657150981367785
+    ],
+    [
+     "carts",
+     14.59762252671352
+    ],
+    [
+     "carts-db",
+     3.4876543209876543
+    ],
+    [
+     "session-db",
+     3.1875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_cpu_5",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_cpu/5",
+   "runtime_s": 0.12923741340637207,
+   "exception": null,
+   "convert_plus_run_s": 0.16134214401245117,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "payment",
+     5011.104896759839
+    ],
+    [
+     "orders",
+     388.11316834546267
+    ],
+    [
+     "user",
+     34.61205164768183
+    ],
+    [
+     "carts",
+     27.63934157436705
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_delay/1",
+   "runtime_s": 0.17450666427612305,
+   "exception": null,
+   "convert_plus_run_s": 0.20664429664611816,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     4057.065827087576
+    ],
+    [
+     "orders",
+     41.97645692207594
+    ],
+    [
+     "carts",
+     15.573673362330881
+    ],
+    [
+     "rabbitmq",
+     5.6
+    ],
+    [
+     "session-db",
+     4.833333333333333
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_delay/2",
+   "runtime_s": 0.13410472869873047,
+   "exception": null,
+   "convert_plus_run_s": 0.1619265079498291,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     9591.41342118121
+    ],
+    [
+     "orders",
+     147.33512632883662
+    ],
+    [
+     "front-end",
+     13.059312711746495
+    ],
+    [
+     "carts",
+     9.163533108043692
+    ],
+    [
+     "session-db",
+     4.833333333333333
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_delay/3",
+   "runtime_s": 0.1687946319580078,
+   "exception": null,
+   "convert_plus_run_s": 0.19536757469177246,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     4589.521536923373
+    ],
+    [
+     "orders",
+     1642.8051987219949
+    ],
+    [
+     "carts",
+     14.089098763656358
+    ],
+    [
+     "queue-master",
+     11.377496890996092
+    ],
+    [
+     "front-end",
+     7.033764888955838
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_4",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_delay/4",
+   "runtime_s": 0.13657879829406738,
+   "exception": null,
+   "convert_plus_run_s": 0.16730189323425293,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     8654.048021055009
+    ],
+    [
+     "orders",
+     271.83888189904064
+    ],
+    [
+     "front-end",
+     9.328233009549722
+    ],
+    [
+     "carts",
+     7.728994455243566
+    ],
+    [
+     "queue-master",
+     6.079120879120879
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_delay_5",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_delay/5",
+   "runtime_s": 0.13392996788024902,
+   "exception": null,
+   "convert_plus_run_s": 0.16077518463134766,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     233472.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "payment",
+     11422.592108063032
+    ],
+    [
+     "orders",
+     874.1249103176103
+    ],
+    [
+     "queue-master",
+     21.184782608695652
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_disk/1",
+   "runtime_s": 0.13259196281433105,
+   "exception": null,
+   "convert_plus_run_s": 0.15854549407958984,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     1690.2198294567415
+    ],
+    [
+     "orders",
+     75.70324254834173
+    ],
+    [
+     "session-db",
+     32.0
+    ],
+    [
+     "queue-master",
+     18.337287442396438
+    ],
+    [
+     "shipping",
+     15.88205132759662
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_disk/2",
+   "runtime_s": 0.13300776481628418,
+   "exception": null,
+   "convert_plus_run_s": 0.15461277961730957,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     4096.0
+    ],
+    [
+     "payment",
+     1333.979122385454
+    ],
+    [
+     "orders",
+     77.30216656995509
+    ],
+    [
+     "shipping",
+     18.060741829245035
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_disk/3",
+   "runtime_s": 0.14499521255493164,
+   "exception": null,
+   "convert_plus_run_s": 0.16988730430603027,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     163840.0
+    ],
+    [
+     "shipping",
+     25404.666666666668
+    ],
+    [
+     "payment",
+     2353.286566397166
+    ],
+    [
+     "user",
+     607.0
+    ],
+    [
+     "orders",
+     86.15823522083791
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_4",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_disk/4",
+   "runtime_s": 0.1327376365661621,
+   "exception": null,
+   "convert_plus_run_s": 0.15356063842773438,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     1053.6514961201642
+    ],
+    [
+     "orders",
+     59.013113872512065
+    ],
+    [
+     "session-db",
+     23.0
+    ],
+    [
+     "carts",
+     13.75
+    ],
+    [
+     "catalogue",
+     11.525007948596562
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_disk_5",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_disk/5",
+   "runtime_s": 0.1746053695678711,
+   "exception": null,
+   "convert_plus_run_s": 0.2039172649383545,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "payment",
+     868.3608066160687
+    ],
+    [
+     "queue-master",
+     279.5
+    ],
+    [
+     "orders",
+     73.36864023399461
+    ],
+    [
+     "shipping",
+     34.50272826282485
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_loss/1",
+   "runtime_s": 0.1468203067779541,
+   "exception": null,
+   "convert_plus_run_s": 0.16771388053894043,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     126976.0
+    ],
+    [
+     "orders",
+     280.3644232473544
+    ],
+    [
+     "catalogue",
+     33.5
+    ],
+    [
+     "shipping",
+     33.0
+    ],
+    [
+     "carts",
+     25.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_loss/2",
+   "runtime_s": 0.1432487964630127,
+   "exception": null,
+   "convert_plus_run_s": 0.1696789264678955,
+   "answers": [
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "shipping",
+     135168.0
+    ],
+    [
+     "queue-master",
+     64.37332524832502
+    ],
+    [
+     "user",
+     36.5
+    ],
+    [
+     "payment",
+     25.50458048776095
+    ],
+    [
+     "orders",
+     14.957998447893736
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_loss/3",
+   "runtime_s": 0.12916350364685059,
+   "exception": null,
+   "convert_plus_run_s": 0.15303421020507812,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     71.13632292951489
+    ],
+    [
+     "orders",
+     20.324408985553625
+    ],
+    [
+     "user",
+     14.045454545454545
+    ],
+    [
+     "carts",
+     10.030884561889197
+    ],
+    [
+     "catalogue",
+     9.11111111111111
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_4",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_loss/4",
+   "runtime_s": 0.14545488357543945,
+   "exception": null,
+   "convert_plus_run_s": 0.17267489433288574,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     126976.0
+    ],
+    [
+     "orders",
+     161.66270586179832
+    ],
+    [
+     "payment",
+     24.70384762048559
+    ],
+    [
+     "user",
+     9.857142857142858
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_loss_5",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_loss/5",
+   "runtime_s": 0.13953232765197754,
+   "exception": null,
+   "convert_plus_run_s": 0.16681122779846191,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     69632.0
+    ],
+    [
+     "orders",
+     564.9100353464419
+    ],
+    [
+     "user",
+     23.666666666666668
+    ],
+    [
+     "payment",
+     18.99785971902915
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_1",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_mem/1",
+   "runtime_s": 0.13004422187805176,
+   "exception": null,
+   "convert_plus_run_s": 0.15649724006652832,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     248580.43957381672
+    ],
+    [
+     "catalogue-db",
+     172032.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "orders",
+     10533.659714515474
+    ],
+    [
+     "shipping",
+     103.42013320414011
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_2",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_mem/2",
+   "runtime_s": 0.1536860466003418,
+   "exception": null,
+   "convert_plus_run_s": 0.17794585227966309,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     191262.28449598316
+    ],
+    [
+     "orders",
+     379.6605981836342
+    ],
+    [
+     "catalogue-db",
+     15.5
+    ],
+    [
+     "carts",
+     14.682556928646324
+    ],
+    [
+     "shipping",
+     10.75
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_3",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_mem/3",
+   "runtime_s": 0.13219070434570312,
+   "exception": null,
+   "convert_plus_run_s": 0.1581861972808838,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     222146.49017887356
+    ],
+    [
+     "orders",
+     16731.59143273986
+    ],
+    [
+     "session-db",
+     32.0
+    ],
+    [
+     "carts",
+     25.96254265913841
+    ],
+    [
+     "queue-master",
+     16.843503520528966
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_4",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_mem/4",
+   "runtime_s": 0.14466595649719238,
+   "exception": null,
+   "convert_plus_run_s": 0.17088580131530762,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     228219.17553474577
+    ],
+    [
+     "orders",
+     312.40300810195936
+    ],
+    [
+     "shipping",
+     13.0
+    ],
+    [
+     "carts",
+     6.8028052060055835
+    ],
+    [
+     "user",
+     5.9982062842693376
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "payment_mem_5",
+   "label": "payment",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/payment_mem/5",
+   "runtime_s": 0.18784856796264648,
+   "exception": null,
+   "convert_plus_run_s": 0.21656012535095215,
+   "answers": [
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "payment",
+     164206.81663775456
+    ],
+    [
+     "orders",
+     17863.762541162265
+    ],
+    [
+     "shipping",
+     100.03472049468917
+    ],
+    [
+     "session-db",
+     33.0
+    ],
+    [
+     "carts",
+     30.872311336351277
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_cpu/1",
+   "runtime_s": 0.14356350898742676,
+   "exception": null,
+   "convert_plus_run_s": 0.17276930809020996,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     737280.0
+    ],
+    [
+     "user",
+     2855.570918968691
+    ],
+    [
+     "orders",
+     29.461984971539195
+    ],
+    [
+     "front-end",
+     27.435774963900837
+    ],
+    [
+     "carts",
+     8.826228563052485
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_cpu/2",
+   "runtime_s": 0.14403390884399414,
+   "exception": null,
+   "convert_plus_run_s": 0.16807842254638672,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     651264.0
+    ],
+    [
+     "user",
+     843.1049072008681
+    ],
+    [
+     "orders",
+     71.70010012624635
+    ],
+    [
+     "front-end",
+     24.502365979588618
+    ],
+    [
+     "carts",
+     12.917797927952046
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_cpu/3",
+   "runtime_s": 0.14640593528747559,
+   "exception": null,
+   "convert_plus_run_s": 0.1712653636932373,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     620.1271832561274
+    ],
+    [
+     "orders",
+     293.93022080733
+    ],
+    [
+     "front-end",
+     40.22676962810394
+    ],
+    [
+     "carts",
+     37.78179451785666
+    ],
+    [
+     "queue-master",
+     13.749999999999991
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_4",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_cpu/4",
+   "runtime_s": 0.1305253505706787,
+   "exception": null,
+   "convert_plus_run_s": 0.15631723403930664,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     151552.0
+    ],
+    [
+     "user",
+     4587.256831017441
+    ],
+    [
+     "orders",
+     849.7202321141335
+    ],
+    [
+     "session-db",
+     33.0
+    ],
+    [
+     "queue-master",
+     16.1304537623608
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_cpu_5",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_cpu/5",
+   "runtime_s": 0.13807940483093262,
+   "exception": null,
+   "convert_plus_run_s": 0.1660299301147461,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     1557.2895813849548
+    ],
+    [
+     "orders",
+     91.52134886995773
+    ],
+    [
+     "front-end",
+     59.297275521529464
+    ],
+    [
+     "catalogue-db",
+     18.0
+    ],
+    [
+     "carts",
+     17.1364862608006
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_delay/1",
+   "runtime_s": 0.13250494003295898,
+   "exception": null,
+   "convert_plus_run_s": 0.1571505069732666,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     163840.0
+    ],
+    [
+     "user",
+     86698.3319856275
+    ],
+    [
+     "orders",
+     4110.655177340666
+    ],
+    [
+     "front-end",
+     526.4177244067155
+    ],
+    [
+     "carts",
+     30.664181731116532
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_delay/2",
+   "runtime_s": 0.15442681312561035,
+   "exception": null,
+   "convert_plus_run_s": 0.1822812557220459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "user-db",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     24563.473741445287
+    ],
+    [
+     "orders",
+     1945.6019957311698
+    ],
+    [
+     "front-end",
+     398.50993687359096
+    ],
+    [
+     "carts",
+     12.38029762152723
+    ],
+    [
+     "user-db",
+     5.924287305556999
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_delay/3",
+   "runtime_s": 0.13135385513305664,
+   "exception": null,
+   "convert_plus_run_s": 0.15584111213684082,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     37671.741357546154
+    ],
+    [
+     "orders",
+     4137.547225191866
+    ],
+    [
+     "front-end",
+     498.65487403164195
+    ],
+    [
+     "queue-master",
+     25.146012019404353
+    ],
+    [
+     "carts",
+     18.084877297441622
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_4",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_delay/4",
+   "runtime_s": 0.1360938549041748,
+   "exception": null,
+   "convert_plus_run_s": 0.16295695304870605,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     32000.620608533474
+    ],
+    [
+     "orders",
+     944.0661915147671
+    ],
+    [
+     "front-end",
+     332.66675998655086
+    ],
+    [
+     "rabbitmq",
+     17.625
+    ],
+    [
+     "carts",
+     12.554072110953404
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_delay_5",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_delay/5",
+   "runtime_s": 0.13369250297546387,
+   "exception": null,
+   "convert_plus_run_s": 0.15669751167297363,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     303104.0
+    ],
+    [
+     "session-db",
+     135168.0
+    ],
+    [
+     "user",
+     49031.729020285544
+    ],
+    [
+     "orders",
+     3049.599898684761
+    ],
+    [
+     "front-end",
+     233.33056685561456
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_disk/1",
+   "runtime_s": 0.13923335075378418,
+   "exception": null,
+   "convert_plus_run_s": 0.1611037254333496,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shipping",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     196.45420853743212
+    ],
+    [
+     "front-end",
+     32.49157436702073
+    ],
+    [
+     "orders",
+     32.1695073848019
+    ],
+    [
+     "shipping",
+     23.94486455367266
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_disk/2",
+   "runtime_s": 0.13064193725585938,
+   "exception": null,
+   "convert_plus_run_s": 0.1580181121826172,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     251.64940715434122
+    ],
+    [
+     "queue-master",
+     151.33333333333334
+    ],
+    [
+     "payment",
+     24.863615551484216
+    ],
+    [
+     "front-end",
+     24.34892439034801
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_disk/3",
+   "runtime_s": 0.1395854949951172,
+   "exception": null,
+   "convert_plus_run_s": 0.16330599784851074,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     211.81854871943736
+    ],
+    [
+     "catalogue",
+     35.33206878560714
+    ],
+    [
+     "front-end",
+     34.397273911778086
+    ],
+    [
+     "orders",
+     32.38545011662218
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_4",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_disk/4",
+   "runtime_s": 0.14702630043029785,
+   "exception": null,
+   "convert_plus_run_s": 0.17087721824645996,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     305.06623623893057
+    ],
+    [
+     "payment",
+     66.0
+    ],
+    [
+     "catalogue",
+     35.9861032409411
+    ],
+    [
+     "orders",
+     12.571428571428571
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_disk_5",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_disk/5",
+   "runtime_s": 0.1319878101348877,
+   "exception": null,
+   "convert_plus_run_s": 0.1589069366455078,
+   "answers": [
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "session-db",
+     4096.0
+    ],
+    [
+     "user",
+     255.17974061184947
+    ],
+    [
+     "orders",
+     66.16203935192851
+    ],
+    [
+     "payment",
+     34.0
+    ],
+    [
+     "catalogue",
+     19.782332728622546
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_loss/1",
+   "runtime_s": 0.1503443717956543,
+   "exception": null,
+   "convert_plus_run_s": 0.1780235767364502,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     389120.0
+    ],
+    [
+     "catalogue",
+     131072.0
+    ],
+    [
+     "catalogue-db",
+     126976.0
+    ],
+    [
+     "queue-master",
+     76.0409477800781
+    ],
+    [
+     "orders",
+     32.77239499181898
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_loss/2",
+   "runtime_s": 0.13042593002319336,
+   "exception": null,
+   "convert_plus_run_s": 0.1591932773590088,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "carts",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     32768.0
+    ],
+    [
+     "user",
+     10692.668948549364
+    ],
+    [
+     "orders",
+     123.75262011832575
+    ],
+    [
+     "front-end",
+     98.06200356299543
+    ],
+    [
+     "carts",
+     14.814254037556196
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_loss/3",
+   "runtime_s": 0.13910627365112305,
+   "exception": null,
+   "convert_plus_run_s": 0.1639556884765625,
+   "answers": [
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "user",
+     8185.3599512167175
+    ],
+    [
+     "orders",
+     2050.1633997231343
+    ],
+    [
+     "front-end",
+     279.92650409771807
+    ],
+    [
+     "session-db",
+     32.0
+    ],
+    [
+     "rabbitmq",
+     21.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_4",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_loss/4",
+   "runtime_s": 0.14192557334899902,
+   "exception": null,
+   "convert_plus_run_s": 0.1719496250152588,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     405504.0
+    ],
+    [
+     "user",
+     6549.695031720548
+    ],
+    [
+     "front-end",
+     197.97142857142856
+    ],
+    [
+     "orders",
+     110.5980711973579
+    ],
+    [
+     "payment",
+     32.46711013671439
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_loss_5",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_loss/5",
+   "runtime_s": 0.13412761688232422,
+   "exception": null,
+   "convert_plus_run_s": 0.16019225120544434,
+   "answers": [
+    {
+     "level": "service",
+     "name": "rabbitmq",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "queue-master",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "rabbitmq",
+     245760.0
+    ],
+    [
+     "user",
+     147456.0
+    ],
+    [
+     "queue-master",
+     56.0
+    ],
+    [
+     "orders",
+     53.182788442165126
+    ],
+    [
+     "catalogue",
+     33.5
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_1",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_mem/1",
+   "runtime_s": 0.13755440711975098,
+   "exception": null,
+   "convert_plus_run_s": 0.16263866424560547,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     1175552.0
+    ],
+    [
+     "user",
+     226339.33579391614
+    ],
+    [
+     "front-end",
+     759.106248917053
+    ],
+    [
+     "orders",
+     384.8007371842849
+    ],
+    [
+     "catalogue",
+     60.66346934335612
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_2",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_mem/2",
+   "runtime_s": 0.1491107940673828,
+   "exception": null,
+   "convert_plus_run_s": 0.17502975463867188,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     692224.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     63569.01008522185
+    ],
+    [
+     "orders",
+     4275.353800754506
+    ],
+    [
+     "front-end",
+     1692.400886248466
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_3",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_mem/3",
+   "runtime_s": 0.1315011978149414,
+   "exception": null,
+   "convert_plus_run_s": 0.16009116172790527,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "payment",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     921600.0
+    ],
+    [
+     "user",
+     57918.22558037103
+    ],
+    [
+     "front-end",
+     292.29757238099745
+    ],
+    [
+     "orders",
+     275.5124784455822
+    ],
+    [
+     "payment",
+     25.020015835691076
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_4",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_mem/4",
+   "runtime_s": 0.13364481925964355,
+   "exception": null,
+   "convert_plus_run_s": 0.16136550903320312,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "session-db",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     405504.0
+    ],
+    [
+     "session-db",
+     131072.0
+    ],
+    [
+     "user",
+     22920.884710597784
+    ],
+    [
+     "orders",
+     1850.5354862897088
+    ],
+    [
+     "front-end",
+     591.9475553507689
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "user_mem_5",
+   "label": "user",
+   "src": "$HOME/rcaeval_repo/data/sock-shop-2/user_mem/5",
+   "runtime_s": 0.14241886138916016,
+   "exception": null,
+   "convert_plus_run_s": 0.16918110847473145,
+   "answers": [
+    {
+     "level": "service",
+     "name": "catalogue-db",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "user",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "catalogue",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "front-end",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "orders",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "catalogue-db",
+     286720.0
+    ],
+    [
+     "user",
+     63095.153463431365
+    ],
+    [
+     "catalogue",
+     135.7967139305932
+    ],
+    [
+     "front-end",
+     98.02236177424571
+    ],
+    [
+     "orders",
+     24.408870845431906
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  }
+ ]
+}

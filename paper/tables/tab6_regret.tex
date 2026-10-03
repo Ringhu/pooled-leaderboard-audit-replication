@@ -1,0 +1,17 @@
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllrcrcr@{}}
+\toprule
+ & & & & \multicolumn{2}{c}{All subsystems} & \multicolumn{2}{c}{Held out} \\
+\cmidrule(lr){5-6} \cmidrule(lr){7-8}
+Family & Layer & Pooled winner & \shortstack{Winner\\pooled acc.} & \shortstack{Regret\\$> 0$} & \shortstack{Max regret\\(subsystem)} & \shortstack{Regret\\$> 0$} & Max \\
+\midrule
+RCAEval RE1 & Published & BARO & 0.715 & 0 of 3 & 0 & 0 of 3 & 0 \\
+RCAEval RE1 & All & BARO & 0.715 & 1 of 3 & 0.080 (RE1-SS) & 2 of 3 & 0.280 \\
+RCAEval RE2 & Published & CIRCA & 0.663 & 1 of 3 & 0.256 (RE2-TT) & -- & -- \\
+RCAEval RE2 & All & CD-1min & 0.822 & 2 of 3 & 0.044 (RE2-OB) & -- & -- \\
+OpenRCA & Published & BARO & 0.127 & 1 of 4 & 0.010 (Telecom) & 1 of 4 & 0.010 \\
+OpenRCA & All & Alert-count & 0.189 & 2 of 4 & 0.017 (Market-1) & 4 of 4 & 0.078 \\
+PetShop & Published & CIRCA & 0.445 & 2 of 4 & 0.125 (Temporal-1) & 2 of 4 & 0.125 \\
+PetShop & All & Ranked correlation & 0.639 & 1 of 4 & 0.375 (Temporal-2) & 3 of 4 & 0.375 \\
+\bottomrule
+\end{tabular}

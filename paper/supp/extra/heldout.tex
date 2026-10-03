@@ -1,0 +1,58 @@
+\begin{table}[h]
+\centering
+\caption{Held-out subsystems: adjacent pairs of the leaderboard built on the other subsystems of a family. A decision is passed when the margin on the remaining subsystems is at least $c$ times their spread ($c = 1$ is the line of the main text; $c = 0$ passes every decision with a direction). Wrong: the higher-ranked method is less accurate on the held-out subsystem. The last two columns pass the same number of decisions by the largest system-equal and case-weighted pooled margins.}\label{supp:heldout}
+\scriptsize
+\begin{tabular}{@{}llrrrrrrrr@{}}
+\toprule
+Layer & Family & $c$ & Decisions & Passed & Wrong & Flagged & Wrong & \shortstack{Margin only\\(equal) wrong} & \shortstack{Margin only\\(case-wtd.) wrong} \\
+\midrule
+Published & All three & 0.0 & 36 & 36 & 8 & 0 & 0 & 8 & 10 \\
+ &  & 0.5 & 36 & 26 & 6 & 10 & 2 & 5 & 7 \\
+ &  & 1.0 & 36 & 19 & 4 & 17 & 4 & 3 & 3 \\
+ &  & 1.5 & 36 & 10 & 2 & 26 & 6 & 2 & 2 \\
+ &  & 2.0 & 36 & 7 & 1 & 29 & 7 & 2 & 1 \\
+\addlinespace
+ & \rcaeval RE1 & 0.0 & 12 & 12 & 3 & 0 & 0 & 3 & 3 \\
+ &  & 0.5 & 12 & 10 & 1 & 2 & 2 & 1 & 1 \\
+ &  & 1.0 & 12 & 9 & 1 & 3 & 2 & 0 & 0 \\
+ &  & 1.5 & 12 & 5 & 1 & 7 & 2 & 0 & 0 \\
+ &  & 2.0 & 12 & 3 & 1 & 9 & 2 & 0 & 0 \\
+\addlinespace
+ & \openrca & 0.0 & 8 & 8 & 1 & 0 & 0 & 1 & 1 \\
+ &  & 0.5 & 8 & 7 & 1 & 1 & 0 & 1 & 1 \\
+ &  & 1.0 & 8 & 4 & 1 & 4 & 0 & 1 & 1 \\
+ &  & 1.5 & 8 & 0 & 0 & 8 & 1 & 0 & 0 \\
+ &  & 2.0 & 8 & 0 & 0 & 8 & 1 & 0 & 0 \\
+\addlinespace
+ & \petshop & 0.0 & 16 & 16 & 4 & 0 & 0 & 4 & 6 \\
+ &  & 0.5 & 16 & 9 & 4 & 7 & 0 & 2 & 2 \\
+ &  & 1.0 & 16 & 6 & 2 & 10 & 2 & 2 & 2 \\
+ &  & 1.5 & 16 & 5 & 1 & 11 & 3 & 2 & 2 \\
+ &  & 2.0 & 16 & 4 & 0 & 12 & 4 & 2 & 2 \\
+\addlinespace
+All pairs & All three & 0.0 & 81 & 79 & 27 & 2 & 0 & 27 & 27 \\
+ &  & 0.5 & 81 & 44 & 13 & 37 & 14 & 14 & 15 \\
+ &  & 1.0 & 81 & 20 & 6 & 61 & 21 & 5 & 4 \\
+ &  & 1.5 & 81 & 9 & 3 & 72 & 24 & 2 & 2 \\
+ &  & 2.0 & 81 & 6 & 1 & 75 & 26 & 1 & 1 \\
+\addlinespace
+ & \rcaeval RE1 & 0.0 & 21 & 21 & 8 & 0 & 0 & 8 & 8 \\
+ &  & 0.5 & 21 & 12 & 4 & 9 & 4 & 3 & 3 \\
+ &  & 1.0 & 21 & 8 & 2 & 13 & 6 & 1 & 1 \\
+ &  & 1.5 & 21 & 5 & 2 & 16 & 6 & 1 & 1 \\
+ &  & 2.0 & 21 & 3 & 1 & 18 & 7 & 0 & 0 \\
+\addlinespace
+ & \openrca & 0.0 & 20 & 20 & 6 & 0 & 0 & 6 & 5 \\
+ &  & 0.5 & 20 & 10 & 2 & 10 & 4 & 1 & 1 \\
+ &  & 1.0 & 20 & 4 & 1 & 16 & 5 & 0 & 0 \\
+ &  & 1.5 & 20 & 0 & 0 & 20 & 6 & 0 & 0 \\
+ &  & 2.0 & 20 & 0 & 0 & 20 & 6 & 0 & 0 \\
+\addlinespace
+ & \petshop & 0.0 & 40 & 38 & 13 & 2 & 0 & 13 & 14 \\
+ &  & 0.5 & 40 & 22 & 7 & 18 & 6 & 6 & 7 \\
+ &  & 1.0 & 40 & 8 & 3 & 32 & 10 & 3 & 3 \\
+ &  & 1.5 & 40 & 4 & 1 & 36 & 12 & 2 & 1 \\
+ &  & 2.0 & 40 & 3 & 0 & 37 & 13 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

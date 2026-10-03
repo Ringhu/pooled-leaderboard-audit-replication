@@ -1,0 +1,13 @@
+    method dataset  acc1_len10  cov_len10  long_matched  long_equal  acc1_len20  cov_len20  flip_10to20_lost  flip_10to20_gained  scorer_agree_len10  scorer_agree_len20
+      baro  re1-ob       0.728        125           125         125       0.736        125                 3                   4                 NaN                 NaN
+      baro  re1-ss       0.832        125           125         125       0.848        125                 1                   3                 NaN                 NaN
+      baro  re1-tt       0.592        125           125         125       0.560        125                 9                   5                 NaN                 NaN
+     zbase  re1-ob       0.712        125           125         125       0.504        125                32                   6               125.0               125.0
+     zbase  re1-ss       0.840        125           125         125       0.744        125                16                   4               125.0               125.0
+     zbase  re1-tt       0.448        125           125         125       0.424        125                 9                   6               125.0               125.0
+alertcount  re1-ob       0.432        125           125         125       0.392        125                 7                   2               125.0               125.0
+alertcount  re1-ss       0.320        125           125         125       0.376        125                 3                  10               125.0               125.0
+alertcount  re1-tt       0.072        125           125         125       0.048        125                 5                   2               125.0               125.0
+    cd1min  re1-ob       0.792        125           125         125       0.728        125                 8                   0                 NaN                 NaN
+    cd1min  re1-ss       0.944        125           125         125       0.928        125                 3                   1                 NaN                 NaN
+    cd1min  re1-tt       0.304        125           125         125       0.280        125                 4                   1                 NaN                 NaN

@@ -1,0 +1,213 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+\providecommand{\checkmark}{$\surd$}
+
+\input{../macros}
+\input{../numbers}
+
+\sloppy
+\begin{document}
+
+\title{Additional Tables and Diagnostics for ``What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks''}
+\author{Anonymous Author(s)}
+\date{}
+\maketitle
+
+This document gives additional definitions, run details, diagnostics, and complete result tables for the paper.
+Section numbers of the paper are written as ``paper \S''.
+All tables in \cref{sec:full} are generated from the analysis outputs of the frozen per-case table; the diagnostic tables in \cref{sec:simplerca,sec:table6,sec:window} are generated from the stored outputs of the diagnostic runs named in their captions.
+Accuracy is always computed over all cases of a subsystem, with invalid outputs scored 0, unless a column says otherwise.
+
+\section{Probe Definitions}
+\label{sec:probes}
+
+All three probes receive the same input as the published methods on each family: a table of metric time series, the injection (or query) time $t_0$, and a mapping from each metric to its component (the service prefix of the metric name on \rcaeval, the node on \petshop, and the component parser of the \openrca wrapper in \cref{sec:openrca}).
+Let $x_m(t)$ be metric $m$, $B$ the time points before $t_0$ in the analysis window, and $A$ the time points at or after $t_0$.
+Non-numeric columns and the time column are ignored.
+
+\textbf{\maxz.}
+For each metric, $\mu_m$ and $\sigma_m$ are the mean and the population standard deviation of $x_m$ over $B$, and the score is $z_m = \max_{t\in A} |x_m(t)-\mu_m|/\sigma_m$.
+Metrics with $\sigma_m = 0$, or with no finite value in $A$, score 0.
+Metrics are ranked by $z_m$ in descending order, ties by name; the answer is the component of the first metric (on \openrca, of the first metric that belongs to a candidate component; \cref{sec:openrca}).
+
+\textbf{\alertcount.}
+With $z_m$ as above, a metric raises an alert if $z_m > 3$.
+Components are ranked by their number of alerting metrics in descending order, ties by name; within a component, metrics are ordered by $z_m$.
+The answer is the first component.
+
+\textbf{\cdmin.}
+For each metric with at least 10 finite baseline values, $\mu_m$ and $s_m$ are the mean and sample standard deviation over $B$ (metrics with $s_m < 10^{-8}$ are skipped).
+The peak $p_m$ is the value in $A$ farthest from $\mu_m$ (the maximum or the minimum).
+The metric is flagged if both $|p_m-\mu_m|/s_m \ge 3$ and $100\,|p_m-\mu_m|/(|\mu_m|+10^{-8}) \ge 5$.
+Each component receives the largest relative change among its flagged metrics, and components are ranked by it (ties by the largest $z$, then by name).
+If no metric is flagged, the output is empty and counts as invalid.
+On \openrca, \cdmin runs on one-minute data with a baseline of 4 hours before a detection window that starts 30 minutes before the query midpoint and ends one minute after it; this is the resolution for which it was written.
+
+\section{\openrca Wrapper and Invalid Outputs}
+\label{sec:openrca}
+
+\openrca asks for a root-cause component, a reason, and an occurrence time, while the audited methods rank metrics.
+For each query, the wrapper loads the metrics that cover the query window (a 4-hour baseline and 30 minutes on either side of the window midpoint) and passes them to the method.
+The answer component is the component of the first ranked metric that belongs to the system's candidate component list; the reason is mapped from the type of that metric; the time is the moment at which that metric deviates most from its baseline.
+The official scorer then awards the fraction of the required items that match (component and reason by exact string, time within 60\,s).
+
+When the wrapper cannot produce an answer (no data for the window, an exception in the method, an empty ranking, or no candidate component in the ranking), it returns a fixed answer per system.
+Such fixed answers can earn partial credit, because every query is scored on each required item separately.
+We therefore record the wrapper status of every query and treat every fixed answer as an invalid output that scores 0 (paper \S3.3).
+This matters most for \ediag on Telecom: the method returns exactly three metrics per query, none of which belonged to a candidate component in 32 of the 51 queries.
+The per-subsystem coverage of every method is listed in \cref{supp:s5-coverage}.
+One earlier run of \alertcount on \openrca passed a wrongly named keyword argument, so every query fell back to the fixed answer; the main analysis uses the corrected run, and the earlier run is kept only as a diagnostic in the released table.
+
+\section{Under-Specified Choices and Silent Failures in \rcaeval}
+\label{sec:defects}
+
+This section gives the details of the under-specified input choice and the two silent failures that paper \S3.3 and \S5.2 discuss; all refer to the audited repository version (commit \texttt{497505b}).
+
+\textbf{Input file.}
+For RE1-SS and RE1-TT, each case directory contains a raw export (\texttt{data.csv}) and a reduced table (\texttt{simple\_data.csv}).
+The released runner globs for \texttt{data.csv} first and falls back to \texttt{simple\_metrics.csv} (the RE2 file name); the lines that would switch to \texttt{simple\_data.csv} are commented out.
+RE1-OB has only \texttt{data.csv}, with 51--60 columns.
+Accuracy of every method on both inputs is in \cref{supp:s6-input}.
+
+\textbf{Dependency version.}
+\causalrca ranks the nodes of its learned graph with the PageRank implementation of scikit-network.
+The \texttt{fit\_transform} method it calls was removed in scikit-network 0.32 (as stated in the maintainers' later fix); the released requirements set only a lower bound.
+Under a newer version, every call raises an exception that the wrapper catches, and the wrapper returns the input column order.
+In a permutation test on 30 cases (10 each from RE1-OB, RE2-OB, and RE2-SS), the ranking equalled the input column order in 30 of 30 cases under scikit-network 0.33.0, and after permuting the columns it equalled the permuted order in 30 of 30; under 0.31.0 it equalled the column order in 0 of 30.
+All \causalrca results in the paper use 0.31.0.
+
+\textbf{Duplicated header.}
+Fifty of the 125 RE1-OB tables (all 25 CPU and all 25 memory faults) contain a second column named \texttt{time}, which pandas reads as \texttt{time.1}.
+No other \rcaeval input file we use has a repeated column name.
+On the audited release, \circa returned the input column order in 49 of the 50 affected cases and in none of the 75 unaffected cases; \ediag ranked \texttt{time.1} first in 49 of the 50.
+We reran \circa, \ediag, and \rcd (three seeds) on all 125 RE1-OB cases with the duplicated column dropped when the table is read, which is the same change as the upstream fix.
+When \circa was rerun on all 125 RE1-OB cases, 1 of the 75 unaffected cases gave a different top-1 than the older run, which came from a different run script and environment; we kept the older values for those 75 cases and replaced only the 50 affected ones, so the fixed condition combines two runs that differ in one case.
+On the 50 affected cases, \circa's top-1 accuracy rose from 0.220 to 0.820 (32 case scores changed); \ediag's scores did not change (0.000 before and after); \rcd changed 5, 4, and 3 case scores for its three seeds.
+\baro and the three probes gave identical scores with and without the fix, so their original runs are kept.
+The as-shipped outputs remain in the released table under a separate role and are compared with the fixed outputs in \cref{supp:s8-release-defect}.
+
+\section{\causalrca Runs}
+\label{sec:causalrca}
+
+\textbf{Seeds.}
+The \rcaeval version of \causalrca defines a seed but never sets it, and in the original implementation the seed calls are commented out; the original repository's scripts repeat every configuration ten times.
+We set the Python, NumPy, and PyTorch seeds to 0, 1, and 2.
+Rerunning 18 case--seed combinations reproduced the top-20 ranking of the main run in all 18, so the runs are reproducible given the seed, and the differences between seeds come from the random initialization.
+Per-seed accuracy varies widely, for example 0.160, 0.208, and 0.040 on RE1-TT; per-seed pair results are in \cref{supp:s2-seeds}.
+
+\textbf{Empty graphs.}
+The learned adjacency matrix is thresholded at 0.3.
+On RE2-TT with seed 1, 43 of the 90 thresholded graphs were empty; PageRank then raises an error and the wrapper returns the column order.
+We count these 43 outputs as invalid (coverage in \cref{supp:s5-coverage}).
+No other dataset or seed returned the column order.
+
+\textbf{Difference from the original implementation.}
+The \rcaeval version divides every metric by its column maximum before training; the original training scripts do not normalize.
+Hyperparameters, network architecture, and the thresholding steps are identical.
+On RE2-TT our three-seed mean top-1 accuracy is 0.207, against 0.22 in \rcaeval's Table 6.
+
+\section{Authors' \simplerca Branch}
+\label{sec:simplerca}
+
+The default branch of the authors' repository is not the code behind the \rcaeval results in the \simplerca paper.
+Two other branches are: one for RE2 and RE3 (commit \texttt{5fd1f7f}), and one that changes the preprocessing and \baro setting for RE3-SS (commit \texttt{7f7f295}).
+Both run on a benchmark platform whose data converter must produce log tables with an error attribute that the code reads; the version pinned in the authors' lock file does not, and the first platform release that does was published about seven hours after the branch commit.
+We copy the algorithm files unchanged, replace only the platform input and output layer, and convert the data with that platform release.
+\Cref{supp:simplerca} shows that this reproduces every value the authors report for \simplerca and their \baro baseline on RE2 and RE3 to two decimals.
+
+The branch ranks services by \baro's metric scores (the maximum per service), and then adds points from trace and log evidence to the top three services.
+This differs from the procedure described in the paper's text, which counts threshold alerts per service.
+RE1 contains only metrics, so on RE1 the branch adds no trace or log evidence; its RE1 results (bottom of \cref{supp:simplerca}) are therefore reported here and not as a separate method in the main analysis.
+They are close to those of the authors' own \baro adapter on RE1-OB and RE1-SS and higher on RE1-TT.
+The RE1-OB inputs of these runs include the 50 tables with the duplicated header; we did not rerun them, because they enter no comparison.
+
+The branch's code differs from the method description in the \simplerca paper's Section 3.1.2 in details of the scoring step; we use the code as released because it reproduces the authors' reported values, and we do not attempt to reconcile the text.
+
+\input{extra/simplerca}
+
+\section{Comparison with \rcaeval's Published RE2 Table}
+\label{sec:table6}
+
+\rcaeval's paper reports per-fault accuracy only for RE2-TT (its Table 6).
+\Cref{supp:table6} lists our runs next to it.
+For \tracerca and \microrank, the 18 per-fault cells computed over valid outputs only are within 0.01 of Table 6, while the same accuracy over all cases is lower by up to 0.41 on the memory and socket faults: both methods raise an error on the same 17 of the 90 cases, because a service--operation pair that appears only after the injection has no baseline entry.
+The multi-source variant of \baro uses its trace input only if the dataset name passed to it is \texttt{mm-tt}; with the name that the released runner passes (\texttt{re2-tt}), its AC@1 is almost unchanged (0.68 against 0.69), and with the raw metric export instead of the reduced one it drops to 0.14.
+\circa, run with the configuration shipped in the repository, has a higher AC@1 than Table 6 on five of the six faults and the same on the sixth; we could not identify the configuration behind the published values.
+
+\input{extra/table6}
+
+\section{Window Length on RE1}
+\label{sec:window}
+
+All RE1 and RE2 runs in the paper use \rcaeval's default window of 20 minutes (10 minutes before and after the injection).
+\Cref{supp:window} compares it with a 10-minute window for \baro and the three probes.
+The accuracy changes by up to 0.208 (\maxz on RE1-OB); we report this as a diagnostic and do not use the 10-minute runs in any comparison.
+
+\input{extra/window}
+
+\section{Margin and Spread}
+\label{sec:margin}
+
+The paper describes comparisons by margin and spread only to read the forest figure; this section gives the counts.
+A pooled comparison can be described by its margin $|\bar\Delta|$ and the spread of its subsystem differences, and the audited comparisons sort along this description.
+Among published pairs, \NPubBelow have a margin smaller than the spread; \NPubBelowRev of them reverse, \NPubBelowRevCI with CI support, whereas of the \NPubAbove whose margin exceeds the spread \NPubAboveRev reverses, without CI support (with probes and shipped baselines: \NAllBelowRev of \NAllBelow, and \NAllAboveRev of \NAllAbove).
+The same split appears in two tables that the benchmarks' authors published: in \rcaeval's RE2-TT accuracy by fault type (RCAEval paper, Table 6), \NTabRcaevalBelowRev of the \NTabRcaevalBelow pairs with margin below spread reverse on some fault type, against \NTabRcaevalAboveRev of \NTabRcaevalAbove above it; in \petshop's accuracy by scenario and fault type (PetShop paper, Table 8), \NTabPetshopBelowRev of \NTabPetshopBelow and \NTabPetshopAboveRev of \NTabPetshopAbove.
+The split is partly definitional, since a pair whose differences change sign has a spread comparable to its mean, and it describes these samples rather than giving a selection rule: applied to the remaining subsystems in the held-out analysis, it did not reduce the \HErr wrong choices (\cref{supp:heldout-sec}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{../figures/fig2_margin_spread.pdf}
+\caption{Pooled margin $|\bar\Delta|$ against between-subsystem spread (sample standard deviation of $\Delta_s$). Left: every pair in the main analysis, coloured by family (filled: pairs of published methods); orange marks pairs that reverse on some subsystem. Right: pairs inside two published tables, RCAEval Table 6 (RE2-TT by fault type) and PetShop Table 8 (by scenario and fault type). The diagonal is margin = spread.}
+\label{fig:margin}
+\end{figure}
+
+\section{Held-Out Subsystems}
+\label{supp:heldout-sec}
+For each family, each subsystem is held out in turn; methods present on every subsystem of the family are ranked by their mean over the remaining subsystems (subsystems weighted equally, ties by name), and every adjacent pair of that ranking is one decision. Margin and spread are computed from the remaining subsystems only, so the spread rests on two differences for RE1 and three for \openrca and \petshop. \Cref{supp:heldout} gives the counts for several multiples $c$ of the spread, by layer and family.
+
+\input{extra/heldout}
+
+\section{Cross-Family Comparison Set}
+\label{supp:cross-sec}
+Six methods have outputs on all 11 subsystems of the main analysis: \baro, \rcd, \ediag, and the three probes (on \petshop, \rcd and \ediag are the implementations \petshop ships). \Cref{supp:cross-loso} lists, for each of the 15 pairs, the held-out subsystems on which the pooled winner of the other ten is less accurate; \cref{supp:cross-robust} gives the robustness checks summarized in the main text.
+
+\input{extra/cross}
+
+\section{Survey of Reporting Practice}
+\label{supp:survey-sec}
+\textbf{Selection.} We listed 26 microservice RCA method and benchmark papers from 2021 to 2026: the papers of the audited benchmarks and methods, and papers found by keyword search in software-engineering, systems, and machine-learning venues, with at most five papers per research group. This is a convenience sample, not a systematic review. Full text was available for 23 papers; the other three were coded from their abstracts.
+
+\textbf{Items.} Q1: are results reported per system? Q2: are per-case outputs released? Q3: does a cross-system superiority claim rest on pooled numbers alone? Q4: is the input representation or preprocessing documented precisely enough to reproduce the input? The codebook defines yes, partial, no, and not applicable for each item, with boundary cases, and is in the artifact.
+
+\textbf{Coders.} Two independent sessions of the same LLM (Claude Sonnet~5, run as separate agents with the platform's default sampling settings, which we did not change) coded every paper. Each received the codebook and the paper list as its instructions, one in list order and one in reverse order, and neither saw the other's output. For every code, a coder quoted the supporting sentence verbatim with its location; every quote was checked against the source text. One author resolved the 27 disagreements (summed over the four items) by the codebook's rules.
+
+\textbf{Agreement and results.} \Cref{supp:survey-kappa} gives the counts after adjudication and the agreement before it. The main text uses Q1, and for released outputs the release check below instead of the coded Q2, because the coders read the papers but not the releases, and three papers were coded from their abstracts. Agreement on Q3 was low: one coder judged from summary sentences in the abstract, the other from sentences next to per-system numbers in the results, and only \SurveyQThreeYesAgree of the \SurveyQThreeYes papers coded yes after adjudication was coded yes by both coders. We therefore do not report a count for Q3 in the paper and quote two papers only as examples. Per-paper codes are in \cref{supp:s11-survey}.
+
+\begin{table}[h]
+\centering
+\caption{Reporting practice in 26 microservice RCA papers (2021--2026), after adjudication. Cohen's $\kappa$: agreement of the two coders before adjudication.}\label{supp:survey-kappa}
+\small
+\input{../tables/tab1_survey}
+\end{table}
+
+\textbf{Release check.} On 2 October 2026 a further session of the same LLM listed the files of every repository and archive linked from each paper, at the current commit, without downloading data, and recorded whether the release contains per-case predictions or scores of any method, which methods and cases they cover, and whether they suffice to recompute every pairwise comparison of the paper's main table. A separate session rechecked the three positive findings and the file lists of eight negative ones against the repositories. Three papers release per-case outputs: \openrca's repository has the predictions of its agent with one model on all 335 queries, and the repositories of Nezha and CausalRCA have the rankings of the authors' own method, as unstructured logs and as text files per fault type and setting. None of the three includes outputs of the other methods in the paper's comparison. For two papers the linked release had expired (an anonymous review link) or was a single shared file that could not be listed, and for one an external results folder could not be listed. \Cref{supp:release} lists the result per paper; the notes in the package give every link and the files found.
+
+\input{extra/release}
+
+\section{Complete Result Tables}
+\label{sec:full}
+
+\input{tables/index}
+
+\end{document}

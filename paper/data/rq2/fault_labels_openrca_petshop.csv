@@ -1,0 +1,404 @@
+case_id,reason,fault_class,multi_failure
+openrca::bank|bank/task_1#0,high memory usage,memory,False
+openrca::bank|bank/task_6#0,high memory usage,memory,False
+openrca::bank|bank/task_6#1,high memory usage,memory,False
+openrca::bank|bank/task_1#1,network latency,network,False
+openrca::bank|bank/task_6#2,network latency,network,False
+openrca::bank|bank/task_5#0,network latency,network,False
+openrca::bank|bank/task_7#0,network packet loss,network,False
+openrca::bank|bank/task_3#0,network latency,network,False
+openrca::bank|bank/task_7#1,network latency,network,False
+openrca::bank|bank/task_6#3,network packet loss,network,False
+openrca::bank|bank/task_3#1,network latency,network,False
+openrca::bank|bank/task_1#2,network latency,network,True
+openrca::bank|bank/task_3#2,network packet loss,network,False
+openrca::bank|bank/task_4#0,network latency,network,False
+openrca::bank|bank/task_2#0,network packet loss,network,False
+openrca::bank|bank/task_4#1,network packet loss,network,False
+openrca::bank|bank/task_1#3,network packet loss,network,False
+openrca::bank|bank/task_6#4,network latency,network,False
+openrca::bank|bank/task_6#5,network packet loss,network,False
+openrca::bank|bank/task_3#3,network latency,network,False
+openrca::bank|bank/task_5#1,network packet loss,network,False
+openrca::bank|bank/task_5#2,network latency,network,False
+openrca::bank|bank/task_1#4,network latency,network,False
+openrca::bank|bank/task_7#2,network packet loss,network,False
+openrca::bank|bank/task_6#6,network latency,network,False
+openrca::bank|bank/task_3#4,network latency,network,False
+openrca::bank|bank/task_7#3,network packet loss,network,False
+openrca::bank|bank/task_6#7,network packet loss,network,False
+openrca::bank|bank/task_5#3,network latency,network,True
+openrca::bank|bank/task_5#4,network latency,network,False
+openrca::bank|bank/task_2#1,network packet loss,network,False
+openrca::bank|bank/task_2#2,network packet loss,network,False
+openrca::bank|bank/task_3#5,network packet loss,network,False
+openrca::bank|bank/task_7#4,network packet loss,network,False
+openrca::bank|bank/task_2#3,network packet loss,network,False
+openrca::bank|bank/task_7#5,network packet loss,network,True
+openrca::bank|bank/task_5#5,network packet loss,network,False
+openrca::bank|bank/task_1#5,network packet loss,network,False
+openrca::bank|bank/task_5#6,network packet loss,network,False
+openrca::bank|bank/task_3#6,network packet loss,network,False
+openrca::bank|bank/task_4#2,network packet loss,network,False
+openrca::bank|bank/task_1#6,network latency,network,False
+openrca::bank|bank/task_1#7,network latency,network,False
+openrca::bank|bank/task_7#6,network latency,network,False
+openrca::bank|bank/task_7#7,network packet loss,network,False
+openrca::bank|bank/task_3#7,high JVM CPU load,cpu,False
+openrca::bank|bank/task_2#4,high JVM CPU load,cpu,False
+openrca::bank|bank/task_1#8,high JVM CPU load,cpu,False
+openrca::bank|bank/task_2#5,JVM Out of Memory (OOM) Heap,memory,False
+openrca::bank|bank/task_5#7,JVM Out of Memory (OOM) Heap,memory,True
+openrca::bank|bank/task_1#9,JVM Out of Memory (OOM) Heap,memory,True
+openrca::bank|bank/task_1#10,JVM Out of Memory (OOM) Heap,memory,True
+openrca::bank|bank/task_6#8,high disk I/O read usage,disk,False
+openrca::bank|bank/task_1#11,high disk I/O read usage,disk,False
+openrca::bank|bank/task_7#8,high disk space usage,disk,False
+openrca::bank|bank/task_5#8,high disk I/O read usage,disk,False
+openrca::bank|bank/task_7#9,high disk I/O read usage,disk,False
+openrca::bank|bank/task_2#6,high disk I/O read usage,disk,False
+openrca::bank|bank/task_2#7,high disk space usage,disk,False
+openrca::bank|bank/task_6#9,high disk I/O read usage,disk,False
+openrca::bank|bank/task_4#3,high disk space usage,disk,False
+openrca::bank|bank/task_5#9,high disk I/O read usage,disk,False
+openrca::bank|bank/task_2#8,high disk space usage,disk,False
+openrca::bank|bank/task_3#8,high disk I/O read usage,disk,False
+openrca::bank|bank/task_5#10,high disk I/O read usage,disk,False
+openrca::bank|bank/task_7#10,high disk I/O read usage,disk,True
+openrca::bank|bank/task_5#11,high disk I/O read usage,disk,True
+openrca::bank|bank/task_4#4,high disk I/O read usage,disk,True
+openrca::bank|bank/task_2#9,high CPU usage,cpu,False
+openrca::bank|bank/task_5#12,high CPU usage,cpu,False
+openrca::bank|bank/task_7#11,high CPU usage,cpu,False
+openrca::bank|bank/task_6#10,high CPU usage,cpu,False
+openrca::bank|bank/task_6#11,high CPU usage,cpu,False
+openrca::bank|bank/task_2#10,high CPU usage,cpu,False
+openrca::bank|bank/task_4#5,high CPU usage,cpu,False
+openrca::bank|bank/task_6#12,high CPU usage,cpu,False
+openrca::bank|bank/task_6#13,high CPU usage,cpu,False
+openrca::bank|bank/task_3#9,high CPU usage,cpu,False
+openrca::bank|bank/task_4#6,high CPU usage,cpu,False
+openrca::bank|bank/task_5#13,high CPU usage,cpu,False
+openrca::bank|bank/task_4#7,high CPU usage,cpu,False
+openrca::bank|bank/task_1#12,high CPU usage,cpu,False
+openrca::bank|bank/task_2#11,high CPU usage,cpu,False
+openrca::bank|bank/task_2#12,high CPU usage,cpu,False
+openrca::bank|bank/task_1#13,high CPU usage,cpu,False
+openrca::bank|bank/task_3#10,high CPU usage,cpu,False
+openrca::bank|bank/task_1#14,high CPU usage,cpu,False
+openrca::bank|bank/task_5#14,high CPU usage,cpu,True
+openrca::bank|bank/task_5#15,high CPU usage,cpu,False
+openrca::bank|bank/task_2#13,high CPU usage,cpu,False
+openrca::bank|bank/task_5#16,high CPU usage,cpu,False
+openrca::bank|bank/task_2#14,high memory usage,memory,False
+openrca::bank|bank/task_1#15,high memory usage,memory,False
+openrca::bank|bank/task_1#16,high memory usage,memory,True
+openrca::bank|bank/task_1#17,high memory usage,memory,False
+openrca::bank|bank/task_1#18,network packet loss,network,False
+openrca::bank|bank/task_7#12,network packet loss,network,False
+openrca::bank|bank/task_3#11,network packet loss,network,False
+openrca::bank|bank/task_2#15,network latency,network,False
+openrca::bank|bank/task_3#12,network latency,network,False
+openrca::bank|bank/task_6#14,network latency,network,False
+openrca::bank|bank/task_4#8,network latency,network,False
+openrca::bank|bank/task_2#16,network packet loss,network,False
+openrca::bank|bank/task_5#17,network latency,network,True
+openrca::bank|bank/task_2#17,network packet loss,network,False
+openrca::bank|bank/task_6#15,network latency,network,False
+openrca::bank|bank/task_4#9,network packet loss,network,False
+openrca::bank|bank/task_2#18,network latency,network,False
+openrca::bank|bank/task_7#13,network packet loss,network,True
+openrca::bank|bank/task_4#10,network latency,network,False
+openrca::bank|bank/task_7#14,network packet loss,network,False
+openrca::bank|bank/task_4#11,network packet loss,network,False
+openrca::bank|bank/task_2#19,JVM Out of Memory (OOM) Heap,memory,False
+openrca::bank|bank/task_1#19,JVM Out of Memory (OOM) Heap,memory,False
+openrca::bank|bank/task_1#20,JVM Out of Memory (OOM) Heap,memory,False
+openrca::bank|bank/task_6#16,high disk I/O read usage,disk,False
+openrca::bank|bank/task_4#12,high disk I/O read usage,disk,False
+openrca::bank|bank/task_3#13,high disk I/O read usage,disk,False
+openrca::bank|bank/task_4#13,high disk I/O read usage,disk,False
+openrca::bank|bank/task_4#14,high disk space usage,disk,False
+openrca::bank|bank/task_4#15,high disk I/O read usage,disk,True
+openrca::bank|bank/task_1#21,high disk I/O read usage,disk,False
+openrca::bank|bank/task_6#17,high disk I/O read usage,disk,False
+openrca::bank|bank/task_6#18,high CPU usage,cpu,False
+openrca::bank|bank/task_6#19,high CPU usage,cpu,False
+openrca::bank|bank/task_1#22,high CPU usage,cpu,False
+openrca::bank|bank/task_1#23,high CPU usage,cpu,False
+openrca::bank|bank/task_4#16,high CPU usage,cpu,False
+openrca::bank|bank/task_6#20,high CPU usage,cpu,False
+openrca::bank|bank/task_3#14,high CPU usage,cpu,False
+openrca::bank|bank/task_7#15,high CPU usage,cpu,True
+openrca::bank|bank/task_7#16,high CPU usage,cpu,False
+openrca::bank|bank/task_1#24,high CPU usage,cpu,False
+openrca::bank|bank/task_2#20,high memory usage,memory,False
+openrca::bank|bank/task_2#21,high memory usage,memory,False
+openrca::bank|bank/task_4#17,high memory usage,memory,False
+openrca::mkt1|mkt1/task_6#0,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_1#0,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_1#1,node memory consumption,memory,False
+openrca::mkt1|mkt1/task_6#1,node memory consumption,memory,False
+openrca::mkt1|mkt1/task_3#0,container memory load,memory,False
+openrca::mkt1|mkt1/task_2#0,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_6#2,node disk read I/O consumption,disk,False
+openrca::mkt1|mkt1/task_6#3,container CPU load,cpu,False
+openrca::mkt1|mkt1/task_5#0,node disk write I/O consumption,disk,False
+openrca::mkt1|mkt1/task_4#0,node CPU load,cpu,True
+openrca::mkt1|mkt1/task_1#2,node CPU load,cpu,True
+openrca::mkt1|mkt1/task_1#3,container CPU load,cpu,True
+openrca::mkt1|mkt1/task_2#1,container network packet retransmission,network,False
+openrca::mkt1|mkt1/task_5#1,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_5#2,node CPU spike,cpu,True
+openrca::mkt1|mkt1/task_1#4,node disk write I/O consumption,disk,False
+openrca::mkt1|mkt1/task_5#3,container memory load,memory,True
+openrca::mkt1|mkt1/task_2#2,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_6#4,container network packet retransmission,network,False
+openrca::mkt1|mkt1/task_6#5,node disk read I/O consumption,disk,False
+openrca::mkt1|mkt1/task_6#6,container CPU load,cpu,False
+openrca::mkt1|mkt1/task_5#4,container packet loss,network,False
+openrca::mkt1|mkt1/task_4#1,container memory load,memory,True
+openrca::mkt1|mkt1/task_5#5,node disk space consumption,disk,True
+openrca::mkt1|mkt1/task_3#1,node disk read I/O consumption,disk,False
+openrca::mkt1|mkt1/task_7#0,container memory load,memory,False
+openrca::mkt1|mkt1/task_7#1,container CPU load,cpu,False
+openrca::mkt1|mkt1/task_7#2,container network latency,network,True
+openrca::mkt1|mkt1/task_2#3,container network latency,network,False
+openrca::mkt1|mkt1/task_6#7,container network latency,network,False
+openrca::mkt1|mkt1/task_3#2,container process termination,other,False
+openrca::mkt1|mkt1/task_2#4,container process termination,other,False
+openrca::mkt1|mkt1/task_2#5,container process termination,other,False
+openrca::mkt1|mkt1/task_7#3,container network packet retransmission,network,False
+openrca::mkt1|mkt1/task_1#5,container network packet retransmission,network,True
+openrca::mkt1|mkt1/task_4#2,container read I/O load,disk,True
+openrca::mkt1|mkt1/task_5#6,node disk read I/O consumption,disk,False
+openrca::mkt1|mkt1/task_3#3,node disk write I/O consumption,disk,False
+openrca::mkt1|mkt1/task_7#4,node disk write I/O consumption,disk,False
+openrca::mkt1|mkt1/task_4#3,container network packet retransmission,network,False
+openrca::mkt1|mkt1/task_5#7,node memory consumption,memory,False
+openrca::mkt1|mkt1/task_1#6,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_4#4,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_1#7,node disk read I/O consumption,disk,True
+openrca::mkt1|mkt1/task_7#5,container CPU load,cpu,True
+openrca::mkt1|mkt1/task_6#8,container CPU load,cpu,False
+openrca::mkt1|mkt1/task_5#8,node CPU load,cpu,False
+openrca::mkt1|mkt1/task_7#6,container CPU load,cpu,True
+openrca::mkt1|mkt1/task_3#4,container memory load,memory,False
+openrca::mkt1|mkt1/task_5#9,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_2#6,node CPU spike,cpu,False
+openrca::mkt1|mkt1/task_6#9,node disk space consumption,disk,False
+openrca::mkt1|mkt1/task_1#8,node memory consumption,memory,True
+openrca::mkt1|mkt1/task_1#9,container memory load,memory,False
+openrca::mkt1|mkt1/task_6#10,container memory load,memory,False
+openrca::mkt1|mkt1/task_2#7,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_7#7,container write I/O load,disk,True
+openrca::mkt1|mkt1/task_3#5,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_1#10,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_7#8,container packet loss,network,False
+openrca::mkt1|mkt1/task_2#8,container read I/O load,disk,False
+openrca::mkt1|mkt1/task_7#9,node disk space consumption,disk,False
+openrca::mkt1|mkt1/task_1#11,node disk space consumption,disk,False
+openrca::mkt1|mkt1/task_4#5,node memory consumption,memory,False
+openrca::mkt1|mkt1/task_3#6,node disk write I/O consumption,disk,False
+openrca::mkt1|mkt1/task_4#6,node disk space consumption,disk,False
+openrca::mkt1|mkt1/task_6#11,node CPU load,cpu,False
+openrca::mkt1|mkt1/task_7#10,container network packet corruption,network,False
+openrca::mkt1|mkt1/task_3#7,container network latency,network,False
+openrca::mkt1|mkt1/task_2#9,container process termination,other,False
+openrca::mkt2|mkt2/task_3#0,container write I/O load,disk,False
+openrca::mkt2|mkt2/task_3#1,node CPU load,cpu,False
+openrca::mkt2|mkt2/task_2#0,container memory load,memory,False
+openrca::mkt2|mkt2/task_6#0,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_3#2,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_6#1,node disk read I/O consumption,disk,False
+openrca::mkt2|mkt2/task_6#2,container CPU load,cpu,False
+openrca::mkt2|mkt2/task_6#3,container CPU load,cpu,False
+openrca::mkt2|mkt2/task_1#0,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_5#0,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_6#4,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_2#1,node CPU load,cpu,False
+openrca::mkt2|mkt2/task_5#1,node disk read I/O consumption,disk,False
+openrca::mkt2|mkt2/task_6#5,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_2#2,container write I/O load,disk,False
+openrca::mkt2|mkt2/task_2#3,container CPU load,cpu,False
+openrca::mkt2|mkt2/task_4#0,container network packet retransmission,network,True
+openrca::mkt2|mkt2/task_4#1,node CPU load,cpu,True
+openrca::mkt2|mkt2/task_3#3,node CPU spike,cpu,False
+openrca::mkt2|mkt2/task_6#6,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_6#7,node disk space consumption,disk,False
+openrca::mkt2|mkt2/task_5#2,node CPU spike,cpu,False
+openrca::mkt2|mkt2/task_2#4,container memory load,memory,False
+openrca::mkt2|mkt2/task_6#8,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_3#4,node disk write I/O consumption,disk,False
+openrca::mkt2|mkt2/task_7#0,node disk write I/O consumption,disk,False
+openrca::mkt2|mkt2/task_1#1,container write I/O load,disk,False
+openrca::mkt2|mkt2/task_2#5,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_7#1,node disk write I/O consumption,disk,False
+openrca::mkt2|mkt2/task_1#2,container network latency,network,False
+openrca::mkt2|mkt2/task_7#2,container network latency,network,False
+openrca::mkt2|mkt2/task_3#5,container network latency,network,False
+openrca::mkt2|mkt2/task_4#2,node disk read I/O consumption,disk,True
+openrca::mkt2|mkt2/task_3#6,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_1#3,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_2#6,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_5#3,node disk space consumption,disk,False
+openrca::mkt2|mkt2/task_6#9,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_3#7,node disk space consumption,disk,False
+openrca::mkt2|mkt2/task_2#7,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_6#10,container packet loss,network,False
+openrca::mkt2|mkt2/task_4#3,container write I/O load,disk,False
+openrca::mkt2|mkt2/task_4#4,node memory consumption,memory,False
+openrca::mkt2|mkt2/task_6#11,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_4#5,node CPU load,cpu,False
+openrca::mkt2|mkt2/task_2#8,container packet loss,network,False
+openrca::mkt2|mkt2/task_3#8,node disk write I/O consumption,disk,False
+openrca::mkt2|mkt2/task_2#9,container memory load,memory,False
+openrca::mkt2|mkt2/task_2#10,node CPU load,cpu,False
+openrca::mkt2|mkt2/task_6#12,container memory load,memory,False
+openrca::mkt2|mkt2/task_5#4,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_5#5,container packet loss,network,True
+openrca::mkt2|mkt2/task_3#9,node disk read I/O consumption,disk,False
+openrca::mkt2|mkt2/task_6#13,node disk write I/O consumption,disk,False
+openrca::mkt2|mkt2/task_5#6,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_3#10,container read I/O load,disk,False
+openrca::mkt2|mkt2/task_2#11,container network packet retransmission,network,False
+openrca::mkt2|mkt2/task_2#12,container packet loss,network,False
+openrca::mkt2|mkt2/task_5#7,container packet loss,network,False
+openrca::mkt2|mkt2/task_4#6,container memory load,memory,True
+openrca::mkt2|mkt2/task_1#4,container CPU load,cpu,True
+openrca::mkt2|mkt2/task_7#3,node disk space consumption,disk,False
+openrca::mkt2|mkt2/task_1#5,container network packet corruption,network,True
+openrca::mkt2|mkt2/task_2#13,container packet loss,network,False
+openrca::mkt2|mkt2/task_6#14,node memory consumption,memory,False
+openrca::mkt2|mkt2/task_2#14,container memory load,memory,False
+openrca::mkt2|mkt2/task_7#4,container CPU load,cpu,False
+openrca::mkt2|mkt2/task_6#15,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_4#7,node memory consumption,memory,False
+openrca::mkt2|mkt2/task_5#8,node disk space consumption,disk,False
+openrca::mkt2|mkt2/task_1#6,container read I/O load,disk,True
+openrca::mkt2|mkt2/task_4#8,node memory consumption,memory,True
+openrca::mkt2|mkt2/task_4#9,container network packet corruption,network,False
+openrca::mkt2|mkt2/task_5#9,container CPU load,cpu,False
+openrca::mkt2|mkt2/task_4#10,container network latency,network,False
+openrca::mkt2|mkt2/task_5#10,container process termination,other,True
+openrca::mkt2|mkt2/task_5#11,container process termination,other,False
+openrca::mkt2|mkt2/task_7#5,container process termination,other,False
+openrca::tel|tel/task_2#0,CPU fault,cpu,False
+openrca::tel|tel/task_4#0,CPU fault,cpu,False
+openrca::tel|tel/task_2#1,db connection limit,other,False
+openrca::tel|tel/task_2#2,CPU fault,cpu,False
+openrca::tel|tel/task_7#0,CPU fault,cpu,False
+openrca::tel|tel/task_1#0,db close,other,False
+openrca::tel|tel/task_4#1,db close,other,False
+openrca::tel|tel/task_7#1,CPU fault,cpu,False
+openrca::tel|tel/task_5#0,network delay,network,False
+openrca::tel|tel/task_1#1,CPU fault,cpu,False
+openrca::tel|tel/task_1#2,CPU fault,cpu,False
+openrca::tel|tel/task_6#0,db connection limit,other,False
+openrca::tel|tel/task_7#2,network loss,network,False
+openrca::tel|tel/task_1#3,network loss,network,False
+openrca::tel|tel/task_1#4,network delay,network,False
+openrca::tel|tel/task_7#3,CPU fault,cpu,False
+openrca::tel|tel/task_7#4,db close,other,False
+openrca::tel|tel/task_2#3,CPU fault,cpu,False
+openrca::tel|tel/task_2#4,CPU fault,cpu,False
+openrca::tel|tel/task_4#2,network delay,network,False
+openrca::tel|tel/task_2#5,network loss,network,False
+openrca::tel|tel/task_7#5,db close,other,False
+openrca::tel|tel/task_4#3,db connection limit,other,False
+openrca::tel|tel/task_1#5,CPU fault,cpu,False
+openrca::tel|tel/task_2#6,network delay,network,False
+openrca::tel|tel/task_4#4,network loss,network,False
+openrca::tel|tel/task_3#0,network delay,network,False
+openrca::tel|tel/task_7#6,network delay,network,False
+openrca::tel|tel/task_7#7,CPU fault,cpu,False
+openrca::tel|tel/task_4#5,network delay,network,False
+openrca::tel|tel/task_3#1,network delay,network,False
+openrca::tel|tel/task_4#6,CPU fault,cpu,False
+openrca::tel|tel/task_6#1,db connection limit,other,False
+openrca::tel|tel/task_6#2,db close,other,False
+openrca::tel|tel/task_7#8,db connection limit,other,False
+openrca::tel|tel/task_6#3,CPU fault,cpu,False
+openrca::tel|tel/task_4#7,network delay,network,False
+openrca::tel|tel/task_2#7,CPU fault,cpu,False
+openrca::tel|tel/task_2#8,network loss,network,False
+openrca::tel|tel/task_3#2,db connection limit,other,False
+openrca::tel|tel/task_2#9,CPU fault,cpu,False
+openrca::tel|tel/task_1#6,CPU fault,cpu,False
+openrca::tel|tel/task_5#1,network loss,network,False
+openrca::tel|tel/task_6#4,network delay,network,False
+openrca::tel|tel/task_5#2,network delay,network,False
+openrca::tel|tel/task_1#7,CPU fault,cpu,False
+openrca::tel|tel/task_6#5,network loss,network,False
+openrca::tel|tel/task_3#3,network delay,network,False
+openrca::tel|tel/task_1#8,network delay,network,False
+openrca::tel|tel/task_1#9,db connection limit,other,False
+openrca::tel|tel/task_5#3,CPU fault,cpu,False
+petshop::high_traffic|train/issue_0#0,,latency,
+petshop::high_traffic|train/issue_1#0,,latency,
+petshop::high_traffic|train/issue_2#0,,latency,
+petshop::high_traffic|train/issue_3#0,,latency,
+petshop::high_traffic|train/issue_4#0,,availability,
+petshop::high_traffic|train/issue_5#0,,availability,
+petshop::high_traffic|train/issue_6#0,,availability,
+petshop::high_traffic|train/issue_7#0,,availability,
+petshop::high_traffic|test/issue_0#0,,latency,
+petshop::high_traffic|test/issue_1#0,,latency,
+petshop::high_traffic|test/issue_10#0,,availability,
+petshop::high_traffic|test/issue_11#0,,availability,
+petshop::high_traffic|test/issue_12#0,,availability,
+petshop::high_traffic|test/issue_13#0,,availability,
+petshop::high_traffic|test/issue_14#0,,availability,
+petshop::high_traffic|test/issue_15#0,,availability,
+petshop::high_traffic|test/issue_16#0,,availability,
+petshop::high_traffic|test/issue_17#0,,availability,
+petshop::high_traffic|test/issue_2#0,,latency,
+petshop::high_traffic|test/issue_3#0,,latency,
+petshop::high_traffic|test/issue_4#0,,latency,
+petshop::high_traffic|test/issue_5#0,,latency,
+petshop::high_traffic|test/issue_6#0,,latency,
+petshop::high_traffic|test/issue_7#0,,latency,
+petshop::high_traffic|test/issue_8#0,,latency,
+petshop::high_traffic|test/issue_9#0,,latency,
+petshop::low_traffic|train/issue_0#0,,latency,
+petshop::low_traffic|train/issue_1#0,,latency,
+petshop::low_traffic|train/issue_2#0,,latency,
+petshop::low_traffic|train/issue_3#0,,latency,
+petshop::low_traffic|train/issue_4#0,,availability,
+petshop::low_traffic|train/issue_5#0,,availability,
+petshop::low_traffic|train/issue_6#0,,availability,
+petshop::low_traffic|train/issue_7#0,,availability,
+petshop::low_traffic|test/issue_0#0,,latency,
+petshop::low_traffic|test/issue_1#0,,latency,
+petshop::low_traffic|test/issue_10#0,,availability,
+petshop::low_traffic|test/issue_11#0,,availability,
+petshop::low_traffic|test/issue_12#0,,availability,
+petshop::low_traffic|test/issue_13#0,,availability,
+petshop::low_traffic|test/issue_14#0,,availability,
+petshop::low_traffic|test/issue_15#0,,availability,
+petshop::low_traffic|test/issue_16#0,,availability,
+petshop::low_traffic|test/issue_17#0,,availability,
+petshop::low_traffic|test/issue_2#0,,latency,
+petshop::low_traffic|test/issue_3#0,,latency,
+petshop::low_traffic|test/issue_4#0,,latency,
+petshop::low_traffic|test/issue_5#0,,latency,
+petshop::low_traffic|test/issue_6#0,,latency,
+petshop::low_traffic|test/issue_7#0,,latency,
+petshop::low_traffic|test/issue_8#0,,latency,
+petshop::low_traffic|test/issue_9#0,,latency,
+petshop::temporal_traffic1|train/issue_0#0,,latency,
+petshop::temporal_traffic1|train/issue_1#0,,availability,
+petshop::temporal_traffic1|test/issue_0#0,,latency,
+petshop::temporal_traffic1|test/issue_1#0,,latency,
+petshop::temporal_traffic1|test/issue_2#0,,latency,
+petshop::temporal_traffic1|test/issue_3#0,,availability,
+petshop::temporal_traffic1|test/issue_4#0,,availability,
+petshop::temporal_traffic1|test/issue_5#0,,availability,
+petshop::temporal_traffic2|train/issue_0#0,,latency,
+petshop::temporal_traffic2|train/issue_1#0,,availability,
+petshop::temporal_traffic2|test/issue_0#0,,latency,
+petshop::temporal_traffic2|test/issue_1#0,,latency,
+petshop::temporal_traffic2|test/issue_2#0,,latency,
+petshop::temporal_traffic2|test/issue_3#0,,availability,
+petshop::temporal_traffic2|test/issue_4#0,,availability,
+petshop::temporal_traffic2|test/issue_5#0,,availability,

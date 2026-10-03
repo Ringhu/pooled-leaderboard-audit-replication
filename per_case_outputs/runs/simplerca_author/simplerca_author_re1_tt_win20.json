@@ -1,0 +1,8574 @@
+{
+ "config": {
+  "method": "simplerca-author",
+  "dataset": "rcaeval_re1_tt",
+  "input_file": "simple_data.csv (window=20)",
+  "author_repo": "LGU-SE-Internal/Simple-RCA",
+  "author_branch_commit": "author_rcaeval:5fd1f7f",
+  "converter": "rcabench_platform==0.3.27 sources/rcaeval.py (verbatim)",
+  "no_logs": false,
+  "code_sha256_12": {
+   "author_rcaeval/__init__.py": "e3b0c44298fc",
+   "author_rcaeval/baro.py": "7c62e0d185f6",
+   "author_rcaeval/nezha_adapter.py": "2e2c3e775e79",
+   "author_rcaeval/nezha_rca.py": "8896a48e51db",
+   "author_rcaeval/time_series.py": "e44a775a6ab4",
+   "author_re3ss/__init__.py": "e3b0c44298fc",
+   "author_re3ss/baro.py": "7c62e0d185f6",
+   "author_re3ss/nezha_adapter.py": "2e2c3e775e79",
+   "author_re3ss/nezha_rca.py": "4d408e429d77",
+   "author_re3ss/time_series.py": "5c1a39773745",
+   "run_author_simplerca.py": "2d3f68839402",
+   "stub/rcabench_platform/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/spec.py": "cdba429a62a6",
+   "stub/rcabench_platform/v2/graphs/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcabench.py": "e28531f006f5",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcaeval.py": "6c6fa90f6e40",
+   "stub/rcabench_platform/v2/logging.py": "c89dca086541",
+   "stub/rcabench_platform/v2/sources/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/sources/_convert_stub.py": "f862981d4de9",
+   "stub/rcabench_platform/v2/sources/rcaeval.py": "58ceb0e75128",
+   "stub/rcabench_platform/v2/utils/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/utils/env.py": "1755ee39c8f9",
+   "stub/rcabench_platform/v2/utils/serde.py": "c1b8900e5ac4"
+  },
+  "env": "$CONDA_ENVS/simplerca/bin/python",
+  "python": "3.13.15",
+  "polars": "1.31.0",
+  "argv": [
+   "run_author_simplerca.py",
+   "--dataset",
+   "rcaeval_re1_tt",
+   "--algo",
+   "simplerca",
+   "--re1-window",
+   "20",
+   "--procs",
+   "8",
+   "--out",
+   "$AUDIT_ROOT/runs/simplerca_author/simplerca_author_re1_tt_win20.json"
+  ],
+  "run_started_utc": "2026-09-27T12:19:47.712421+00:00",
+  "limit": 0
+ },
+ "summary": {
+  "n": 125,
+  "AC@1": 0.568,
+  "AC@2": 0.776,
+  "AC@3": 0.856,
+  "AC@4": 0.912,
+  "AC@5": 0.952,
+  "Avg@3": 0.733333,
+  "Avg@5": 0.8128,
+  "MRR_platform_hit_only": 0.757003,
+  "MRR_all_cases": 0.720667,
+  "n_exceptions": 0,
+  "n_empty": 0
+ },
+ "cases": [
+  {
+   "datapack": "ts-auth-service_cpu_1",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_cpu/1",
+   "runtime_s": 0.7467246055603027,
+   "exception": null,
+   "convert_plus_run_s": 0.8749301433563232,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     57.348578973408905
+    ],
+    [
+     "ts-consign-price-service",
+     55.45454545454582
+    ],
+    [
+     "ts-travel-service",
+     36.16666666666548
+    ],
+    [
+     "ts-contacts-service",
+     29.553314121037456
+    ],
+    [
+     "ts-order-service",
+     23.100985340859776
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_cpu_2",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_cpu/2",
+   "runtime_s": 0.6291584968566895,
+   "exception": null,
+   "convert_plus_run_s": 0.7650377750396729,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-assurance-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-payment-service",
+     264.26147511818084
+    ],
+    [
+     "ts-auth-service",
+     31.140186915889032
+    ],
+    [
+     "ts-train-service",
+     29.72590732998482
+    ],
+    [
+     "ts-food-map-service",
+     25.974425048926285
+    ],
+    [
+     "ts-assurance-service",
+     20.03171629641462
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_cpu_3",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_cpu/3",
+   "runtime_s": 0.6742374897003174,
+   "exception": null,
+   "convert_plus_run_s": 0.7864298820495605,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-assurance-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-assurance-service",
+     87.26436781608822
+    ],
+    [
+     "ts-consign-price-service",
+     49.63473053892204
+    ],
+    [
+     "ts-train-service",
+     47.99999999995143
+    ],
+    [
+     "ts-route-plan-service",
+     41.99999999995837
+    ],
+    [
+     "ts-cancel-service",
+     39.99999999995837
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_cpu_4",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_cpu/4",
+   "runtime_s": 0.6287915706634521,
+   "exception": null,
+   "convert_plus_run_s": 0.7507450580596924,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     579.0000000014294
+    ],
+    [
+     "ts-travel-service",
+     155.6428571428558
+    ],
+    [
+     "ts-admin-travel-service",
+     87.66666666657878
+    ],
+    [
+     "ts-config-service",
+     49.93197596176504
+    ],
+    [
+     "ts-route-service",
+     36.499999999965304
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_cpu_5",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_cpu/5",
+   "runtime_s": 0.7337322235107422,
+   "exception": null,
+   "convert_plus_run_s": 0.8762657642364502,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-ticketinfo-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     1378.9999999986262
+    ],
+    [
+     "ts-train-service",
+     34.999999999965304
+    ],
+    [
+     "ts-ticketinfo-service",
+     33.54964157851893
+    ],
+    [
+     "ts-travel-service",
+     27.250000000019515
+    ],
+    [
+     "ts-admin-travel-service",
+     20.857142857142716
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_delay_1",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_delay/1",
+   "runtime_s": 0.6718900203704834,
+   "exception": null,
+   "convert_plus_run_s": 0.8087244033813477,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-verification-code-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-consign-service",
+     90.87999999999738
+    ],
+    [
+     "ts-admin-route-service",
+     60.99999999993755
+    ],
+    [
+     "ts-auth-service",
+     53.818700215311196
+    ],
+    [
+     "ts-execute-service",
+     47.99999999995143
+    ],
+    [
+     "ts-verification-code-service",
+     41.99999999995837
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_delay_2",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_delay/2",
+   "runtime_s": 0.581897497177124,
+   "exception": null,
+   "convert_plus_run_s": 0.7041566371917725,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-payment-service",
+     55.13561084666801
+    ],
+    [
+     "ts-auth-service",
+     47.78113934995916
+    ],
+    [
+     "ts-travel-plan-service",
+     30.999999999965304
+    ],
+    [
+     "ts-seat-service",
+     30.405038920547838
+    ],
+    [
+     "ts-user-service",
+     29.382152026600735
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_delay_3",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_delay/3",
+   "runtime_s": 0.6982982158660889,
+   "exception": null,
+   "convert_plus_run_s": 0.8115625381469727,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     788.5063092213371
+    ],
+    [
+     "ts-admin-travel-service",
+     214.33333333311822
+    ],
+    [
+     "ts-train-service",
+     64.99999999993061
+    ],
+    [
+     "ts-auth-service",
+     48.19533985974261
+    ],
+    [
+     "ts-contacts-service",
+     27.115956527052262
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_delay_4",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_delay/4",
+   "runtime_s": 0.7301793098449707,
+   "exception": null,
+   "convert_plus_run_s": 0.9186451435089111,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-station-service",
+     84.99999999991674
+    ],
+    [
+     "ts-auth-service",
+     62.26557619845092
+    ],
+    [
+     "ts-config-service",
+     55.44580024473843
+    ],
+    [
+     "ts-food-service",
+     48.60624676371351
+    ],
+    [
+     "ts-train-service",
+     33.500000000085
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_delay_5",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_delay/5",
+   "runtime_s": 0.6649949550628662,
+   "exception": null,
+   "convert_plus_run_s": 0.8016660213470459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-price-service",
+     69.40600860594512
+    ],
+    [
+     "ts-train-service",
+     68.99999999993061
+    ],
+    [
+     "ts-auth-service",
+     62.011724669549935
+    ],
+    [
+     "ts-ui-dashboard",
+     44.482748101849204
+    ],
+    [
+     "ts-food-map-service",
+     43.51799633865434
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_disk_1",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_disk/1",
+   "runtime_s": 0.7503104209899902,
+   "exception": null,
+   "convert_plus_run_s": 0.8677549362182617,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     259.5001085120828
+    ],
+    [
+     "ts-auth-service",
+     197.25000000014614
+    ],
+    [
+     "ts-contacts-service",
+     40.751403676231554
+    ],
+    [
+     "ts-security-service",
+     38.72774304660772
+    ],
+    [
+     "ts-admin-user-service",
+     23.733502888685965
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_disk_2",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_disk/2",
+   "runtime_s": 0.677875280380249,
+   "exception": null,
+   "convert_plus_run_s": 0.7865524291992188,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     395.0000000009784
+    ],
+    [
+     "ts-food-map-service",
+     153.06268693907518
+    ],
+    [
+     "ts-route-plan-service",
+     24.570443742973332
+    ],
+    [
+     "ts-food-service",
+     23.666666666643536
+    ],
+    [
+     "ts-payment-service",
+     21.773406255118484
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_disk_3",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_disk/3",
+   "runtime_s": 0.6479823589324951,
+   "exception": null,
+   "convert_plus_run_s": 0.7350165843963623,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-assurance-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     263.66666666701286
+    ],
+    [
+     "ts-user-service",
+     207.70497129349053
+    ],
+    [
+     "ts-assurance-service",
+     204.99999999979184
+    ],
+    [
+     "ts-security-service",
+     86.67213246895234
+    ],
+    [
+     "ts-food-map-service",
+     54.08100738736172
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_disk_4",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_disk/4",
+   "runtime_s": 0.7274861335754395,
+   "exception": null,
+   "convert_plus_run_s": 0.8182394504547119,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-station-service",
+     178.40000000006995
+    ],
+    [
+     "ts-auth-service",
+     157.20000000005996
+    ],
+    [
+     "ts-preserve-service",
+     60.16710354740904
+    ],
+    [
+     "ts-route-plan-service",
+     51.966409282794594
+    ],
+    [
+     "ts-admin-user-service",
+     45.24031941800696
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_disk_5",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_disk/5",
+   "runtime_s": 0.6339457035064697,
+   "exception": null,
+   "convert_plus_run_s": 0.7375118732452393,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-basic-info-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     262.9999999997363
+    ],
+    [
+     "ts-admin-basic-info-service",
+     63.904564556203084
+    ],
+    [
+     "ts-admin-user-service",
+     38.45960989028143
+    ],
+    [
+     "ts-security-service",
+     27.791774086892925
+    ],
+    [
+     "ts-route-plan-service",
+     24.419812604586465
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_loss_1",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_loss/1",
+   "runtime_s": 0.6853654384613037,
+   "exception": null,
+   "convert_plus_run_s": 0.8395264148712158,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-rebook-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-payment-service",
+     573.3000000002224
+    ],
+    [
+     "ts-rebook-service",
+     48.22882477069407
+    ],
+    [
+     "ts-inside-payment-service",
+     42.21128998370561
+    ],
+    [
+     "ts-auth-service",
+     33.19410963688915
+    ],
+    [
+     "ts-order-service",
+     29.43859649122728
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_loss_2",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_loss/2",
+   "runtime_s": 0.6313745975494385,
+   "exception": null,
+   "convert_plus_run_s": 0.7386777400970459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     31.775411745261664
+    ],
+    [
+     "ts-food-service",
+     29.26803178401686
+    ],
+    [
+     "ts-admin-travel-service",
+     20.339049659413096
+    ],
+    [
+     "ts-travel-service",
+     18.3611111111104
+    ],
+    [
+     "ts-ui-dashboard",
+     15.654502093727006
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_loss_3",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_loss/3",
+   "runtime_s": 0.6020405292510986,
+   "exception": null,
+   "convert_plus_run_s": 0.7260622978210449,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-seat-service",
+     45.32186974339104
+    ],
+    [
+     "ts-auth-service",
+     34.846160543762096
+    ],
+    [
+     "ts-preserve-service",
+     23.99975593054869
+    ],
+    [
+     "ts-food-map-service",
+     21.827032290689644
+    ],
+    [
+     "ts-user-service",
+     17.81623931623896
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_loss_4",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_loss/4",
+   "runtime_s": 0.5755820274353027,
+   "exception": null,
+   "convert_plus_run_s": 0.7396881580352783,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-verification-code-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-notification-service",
+     64.5868542565724
+    ],
+    [
+     "ts-preserve-other-service",
+     49.82592129508376
+    ],
+    [
+     "ts-preserve-service",
+     46.83216053395632
+    ],
+    [
+     "ts-payment-service",
+     39.77750153996826
+    ],
+    [
+     "ts-verification-code-service",
+     37.8163467271966
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_loss_5",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_loss/5",
+   "runtime_s": 0.5342936515808105,
+   "exception": null,
+   "convert_plus_run_s": 0.637261152267456,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-rebook-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-rebook-service",
+     90.55196590918283
+    ],
+    [
+     "ts-contacts-service",
+     80.24866533587767
+    ],
+    [
+     "ts-cancel-service",
+     66.38650244294794
+    ],
+    [
+     "ts-consign-price-service",
+     49.38779994424257
+    ],
+    [
+     "ts-preserve-service",
+     40.14306004991404
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_mem_1",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_mem/1",
+   "runtime_s": 0.5634326934814453,
+   "exception": null,
+   "convert_plus_run_s": 0.7309529781341553,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     84337.99999991566
+    ],
+    [
+     "ts-food-service",
+     301.508869494648
+    ],
+    [
+     "ts-seat-service",
+     185.62644686198277
+    ],
+    [
+     "ts-travel-service",
+     127.39999999987232
+    ],
+    [
+     "ts-order-service",
+     49.178986347990616
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_mem_2",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_mem/2",
+   "runtime_s": 0.614126443862915,
+   "exception": null,
+   "convert_plus_run_s": 0.7510321140289307,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     508.67841152247536
+    ],
+    [
+     "ts-auth-service",
+     303.89679715302117
+    ],
+    [
+     "ts-food-service",
+     278.4949909981401
+    ],
+    [
+     "ts-train-service",
+     99.99999999990285
+    ],
+    [
+     "ts-admin-travel-service",
+     82.91810712455215
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_mem_3",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_mem/3",
+   "runtime_s": 0.5741949081420898,
+   "exception": null,
+   "convert_plus_run_s": 0.691011905670166,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     84776.99999991522
+    ],
+    [
+     "ts-food-service",
+     647.7467158396299
+    ],
+    [
+     "ts-contacts-service",
+     139.86684163256874
+    ],
+    [
+     "ts-admin-travel-service",
+     122.45981984748522
+    ],
+    [
+     "ts-food-map-service",
+     73.80527162060238
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_mem_4",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_mem/4",
+   "runtime_s": 0.5214643478393555,
+   "exception": null,
+   "convert_plus_run_s": 0.6687591075897217,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     83722.99999991627
+    ],
+    [
+     "ts-consign-price-service",
+     311.98696698753116
+    ],
+    [
+     "ts-consign-service",
+     231.41698924060867
+    ],
+    [
+     "ts-ui-dashboard",
+     121.078579828513
+    ],
+    [
+     "ts-security-service",
+     99.49999999989592
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-auth-service_mem_5",
+   "label": "ts-auth-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-auth-service_mem/5",
+   "runtime_s": 0.5320472717285156,
+   "exception": null,
+   "convert_plus_run_s": 0.6321310997009277,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-auth-service",
+     16642.199999983357
+    ],
+    [
+     "ts-admin-travel-service",
+     2232.999999997766
+    ],
+    [
+     "ts-consign-price-service",
+     550.3342120312894
+    ],
+    [
+     "ts-consign-service",
+     289.3140904456344
+    ],
+    [
+     "ts-food-service",
+     259.23364622144607
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_cpu_1",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_cpu/1",
+   "runtime_s": 0.5897665023803711,
+   "exception": null,
+   "convert_plus_run_s": 0.7019774913787842,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-basic-info-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     62.58159233681568
+    ],
+    [
+     "ts-admin-basic-info-service",
+     37.35175044791911
+    ],
+    [
+     "ts-config-service",
+     32.947166314466884
+    ],
+    [
+     "ts-contacts-service",
+     22.535294117647062
+    ],
+    [
+     "ts-notification-service",
+     21.33414689265585
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_cpu_2",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_cpu/2",
+   "runtime_s": 0.5338761806488037,
+   "exception": null,
+   "convert_plus_run_s": 0.6727023124694824,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-assurance-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     209.41624255019602
+    ],
+    [
+     "ts-order-service",
+     110.71187961310214
+    ],
+    [
+     "ts-contacts-service",
+     67.0573248407566
+    ],
+    [
+     "ts-assurance-service",
+     54.94059405940382
+    ],
+    [
+     "ts-travel-service",
+     54.90643919979845
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_cpu_3",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_cpu/3",
+   "runtime_s": 0.48595571517944336,
+   "exception": null,
+   "convert_plus_run_s": 0.633068323135376,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-basic-info-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     266.8731566625924
+    ],
+    [
+     "ts-config-service",
+     95.25877108396584
+    ],
+    [
+     "ts-admin-basic-info-service",
+     31.432330948108113
+    ],
+    [
+     "ts-food-service",
+     30.90442468159867
+    ],
+    [
+     "ts-admin-travel-service",
+     24.854903735372474
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_cpu_4",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_cpu/4",
+   "runtime_s": 0.5001943111419678,
+   "exception": null,
+   "convert_plus_run_s": 0.6084554195404053,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     488.1042141890276
+    ],
+    [
+     "ts-consign-price-service",
+     76.66292134830961
+    ],
+    [
+     "ts-admin-travel-service",
+     36.444444444445416
+    ],
+    [
+     "ts-consign-service",
+     34.32380952380966
+    ],
+    [
+     "ts-ui-dashboard",
+     19.534469136387276
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_cpu_5",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_cpu/5",
+   "runtime_s": 0.6023745536804199,
+   "exception": null,
+   "convert_plus_run_s": 0.714526891708374,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     369.60545643995806
+    ],
+    [
+     "ts-consign-price-service",
+     41.44210526315273
+    ],
+    [
+     "ts-ui-dashboard",
+     34.99999999999913
+    ],
+    [
+     "ts-food-service",
+     30.795077037208824
+    ],
+    [
+     "ts-travel2-service",
+     28.705955526555847
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_delay_1",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_delay/1",
+   "runtime_s": 0.7184579372406006,
+   "exception": null,
+   "convert_plus_run_s": 0.8828115463256836,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-seat-service",
+     1458.8586332595978
+    ],
+    [
+     "ts-order-service",
+     1030.4692996626734
+    ],
+    [
+     "ts-inside-payment-service",
+     370.00000000000114
+    ],
+    [
+     "ts-security-service",
+     260.83409004053794
+    ],
+    [
+     "ts-consign-service",
+     116.39325842697686
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_delay_2",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_delay/2",
+   "runtime_s": 0.5424008369445801,
+   "exception": null,
+   "convert_plus_run_s": 0.6551780700683594,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-seat-service",
+     1135.9447964855024
+    ],
+    [
+     "ts-order-service",
+     535.020304164792
+    ],
+    [
+     "ts-inside-payment-service",
+     246.58333333333326
+    ],
+    [
+     "ts-price-service",
+     153.6035858483892
+    ],
+    [
+     "ts-admin-travel-service",
+     139.49999999986122
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_delay_3",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_delay/3",
+   "runtime_s": 0.608424186706543,
+   "exception": null,
+   "convert_plus_run_s": 0.7142846584320068,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ticket-office-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-inside-payment-service",
+     234.90177160643162
+    ],
+    [
+     "ts-order-service",
+     119.49995021272802
+    ],
+    [
+     "ts-ui-dashboard",
+     30.99999999999924
+    ],
+    [
+     "ts-admin-travel-service",
+     24.999999999975714
+    ],
+    [
+     "ts-ticket-office-service",
+     22.587349767100854
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_delay_4",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_delay/4",
+   "runtime_s": 0.5649230480194092,
+   "exception": null,
+   "convert_plus_run_s": 0.6767542362213135,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-assurance-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     502.29487179487086
+    ],
+    [
+     "ts-inside-payment-service",
+     212.58119658119676
+    ],
+    [
+     "ts-consign-price-service",
+     31.219458221662418
+    ],
+    [
+     "ts-config-service",
+     20.46831462507284
+    ],
+    [
+     "ts-assurance-service",
+     17.262281766835546
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_delay_5",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_delay/5",
+   "runtime_s": 0.5902636051177979,
+   "exception": null,
+   "convert_plus_run_s": 0.6855506896972656,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-inside-payment-service",
+     1580.2597495676912
+    ],
+    [
+     "ts-order-service",
+     529.9470899470899
+    ],
+    [
+     "ts-auth-service",
+     33.999999999965304
+    ],
+    [
+     "ts-price-service",
+     26.162274019646823
+    ],
+    [
+     "ts-ui-dashboard",
+     21.822081649803597
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_disk_1",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_disk/1",
+   "runtime_s": 0.633289098739624,
+   "exception": null,
+   "convert_plus_run_s": 0.7694265842437744,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-basic-info-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-verification-code-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-user-service",
+     196.9999999998057
+    ],
+    [
+     "ts-admin-basic-info-service",
+     46.20852188614175
+    ],
+    [
+     "ts-verification-code-service",
+     41.111220139535504
+    ],
+    [
+     "ts-admin-route-service",
+     39.14538578240804
+    ],
+    [
+     "ts-travel-plan-service",
+     37.19309216332775
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_disk_2",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_disk/2",
+   "runtime_s": 0.643057107925415,
+   "exception": null,
+   "convert_plus_run_s": 0.753110408782959,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-user-service",
+     169.99999999983348
+    ],
+    [
+     "ts-order-service",
+     79.0909090908795
+    ],
+    [
+     "ts-notification-service",
+     51.72221078449825
+    ],
+    [
+     "ts-seat-service",
+     43.44492975184666
+    ],
+    [
+     "ts-consign-price-service",
+     34.999999999972246
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_disk_3",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_disk/3",
+   "runtime_s": 0.5646240711212158,
+   "exception": null,
+   "convert_plus_run_s": 0.6737313270568848,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-mongo",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     106.40909090911886
+    ],
+    [
+     "ts-preserve-other-service",
+     95.9888311053717
+    ],
+    [
+     "ts-auth-mongo",
+     89.66666666668016
+    ],
+    [
+     "ts-contacts-service",
+     65.90429326364165
+    ],
+    [
+     "ts-consign-price-service",
+     45.815647634412095
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_disk_4",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_disk/4",
+   "runtime_s": 0.5676817893981934,
+   "exception": null,
+   "convert_plus_run_s": 0.7163476943969727,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-security-service",
+     121.3304657560495
+    ],
+    [
+     "ts-notification-service",
+     58.10420031801463
+    ],
+    [
+     "ts-seat-service",
+     50.179176759943914
+    ],
+    [
+     "ts-order-service",
+     46.78947368423213
+    ],
+    [
+     "ts-contacts-service",
+     25.499999999979185
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_disk_5",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_disk/5",
+   "runtime_s": 0.6195597648620605,
+   "exception": null,
+   "convert_plus_run_s": 0.753781795501709,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-rebook-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     85.49999999999352
+    ],
+    [
+     "ts-security-service",
+     58.1655315286729
+    ],
+    [
+     "ts-payment-service",
+     38.92792885251919
+    ],
+    [
+     "ts-contacts-service",
+     38.11437106119505
+    ],
+    [
+     "ts-rebook-service",
+     28.676958678628875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_loss_1",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_loss/1",
+   "runtime_s": 0.5585415363311768,
+   "exception": null,
+   "convert_plus_run_s": 0.6855630874633789,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-security-service",
+     2485.618299980585
+    ],
+    [
+     "ts-seat-service",
+     736.3971872703294
+    ],
+    [
+     "ts-preserve-service",
+     377.77777777777544
+    ],
+    [
+     "ts-order-service",
+     335.4294122180772
+    ],
+    [
+     "ts-inside-payment-service",
+     168.18181818181847
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_loss_2",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_loss/2",
+   "runtime_s": 0.6314616203308105,
+   "exception": null,
+   "convert_plus_run_s": 0.7541806697845459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     690.2464458824148
+    ],
+    [
+     "ts-seat-service",
+     490.05834372017944
+    ],
+    [
+     "ts-security-service",
+     392.1461802868965
+    ],
+    [
+     "ts-inside-payment-service",
+     109.66351209253398
+    ],
+    [
+     "ts-auth-service",
+     33.934959349593996
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_loss_3",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_loss/3",
+   "runtime_s": 0.5234854221343994,
+   "exception": null,
+   "convert_plus_run_s": 0.6330900192260742,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     407.80958285899976
+    ],
+    [
+     "ts-inside-payment-service",
+     255.61749886991635
+    ],
+    [
+     "ts-consign-service",
+     48.06060606060593
+    ],
+    [
+     "ts-train-service",
+     36.000000000086736
+    ],
+    [
+     "ts-food-service",
+     28.96664898562145
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_loss_4",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_loss/4",
+   "runtime_s": 0.5169715881347656,
+   "exception": null,
+   "convert_plus_run_s": 0.6048481464385986,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     1615.4810181955725
+    ],
+    [
+     "ts-inside-payment-service",
+     191.88235892282523
+    ],
+    [
+     "ts-route-service",
+     36.499999999965304
+    ],
+    [
+     "ts-consign-service",
+     35.80303030303053
+    ],
+    [
+     "ts-execute-service",
+     31.999999999965304
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_loss_5",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_loss/5",
+   "runtime_s": 0.54654860496521,
+   "exception": null,
+   "convert_plus_run_s": 0.6567869186401367,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     918.4430562285802
+    ],
+    [
+     "ts-inside-payment-service",
+     673.1170440462669
+    ],
+    [
+     "ts-preserve-service",
+     61.99999999993755
+    ],
+    [
+     "ts-travel-plan-service",
+     47.99999999995143
+    ],
+    [
+     "ts-execute-service",
+     46.99999999994449
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_mem_1",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_mem/1",
+   "runtime_s": 0.6434280872344971,
+   "exception": null,
+   "convert_plus_run_s": 0.7410783767700195,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-basic-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     279.390749454812
+    ],
+    [
+     "ts-basic-service",
+     192.87821112809365
+    ],
+    [
+     "ts-station-service",
+     126.85714285714172
+    ],
+    [
+     "ts-food-map-service",
+     105.79368875820846
+    ],
+    [
+     "ts-order-other-service",
+     80.66051646824658
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_mem_2",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_mem/2",
+   "runtime_s": 0.558610200881958,
+   "exception": null,
+   "convert_plus_run_s": 0.6919257640838623,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     306.05930945480776
+    ],
+    [
+     "ts-station-service",
+     85.6249999999884
+    ],
+    [
+     "ts-inside-payment-service",
+     59.38707088490167
+    ],
+    [
+     "ts-admin-order-service",
+     18.999999999986123
+    ],
+    [
+     "ts-price-service",
+     13.33911507676578
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_mem_3",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_mem/3",
+   "runtime_s": 0.6683523654937744,
+   "exception": null,
+   "convert_plus_run_s": 0.8026223182678223,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-service",
+     132.218446601942
+    ],
+    [
+     "ts-station-service",
+     118.99999999998438
+    ],
+    [
+     "ts-order-other-service",
+     51.90885343286825
+    ],
+    [
+     "ts-travel2-service",
+     32.87266340106571
+    ],
+    [
+     "ts-travel-service",
+     32.5133117084912
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_mem_4",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_mem/4",
+   "runtime_s": 0.5740242004394531,
+   "exception": null,
+   "convert_plus_run_s": 0.6874017715454102,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-basic-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-basic-service",
+     349.28012383295317
+    ],
+    [
+     "ts-travel-service",
+     180.76539816140078
+    ],
+    [
+     "ts-station-service",
+     158.85714285714124
+    ],
+    [
+     "ts-order-service",
+     144.74061433447022
+    ],
+    [
+     "ts-order-other-service",
+     89.54801495732949
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-order-service_mem_5",
+   "label": "ts-order-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-order-service_mem/5",
+   "runtime_s": 0.6610918045043945,
+   "exception": null,
+   "convert_plus_run_s": 0.7950828075408936,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-basic-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-consign-price-service",
+     363.2721817926768
+    ],
+    [
+     "ts-order-service",
+     272.4736406311735
+    ],
+    [
+     "ts-inside-payment-service",
+     153.14722733670294
+    ],
+    [
+     "ts-station-service",
+     102.50000000001677
+    ],
+    [
+     "ts-basic-service",
+     58.77283319784637
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_cpu_1",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_cpu/1",
+   "runtime_s": 0.648646354675293,
+   "exception": null,
+   "convert_plus_run_s": 0.8091051578521729,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     121.10000000004732
+    ],
+    [
+     "ts-food-service",
+     36.041126323837254
+    ],
+    [
+     "ts-seat-service",
+     33.282727637893224
+    ],
+    [
+     "ts-payment-service",
+     32.699579352686534
+    ],
+    [
+     "ts-admin-travel-service",
+     20.802801629257885
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_cpu_2",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_cpu/2",
+   "runtime_s": 0.6181082725524902,
+   "exception": null,
+   "convert_plus_run_s": 0.7589335441589355,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-plan-service",
+     243.9999999997502
+    ],
+    [
+     "ts-route-service",
+     215.5975380396522
+    ],
+    [
+     "ts-food-service",
+     110.41627634660396
+    ],
+    [
+     "ts-consign-price-service",
+     66.66901408450555
+    ],
+    [
+     "ts-train-service",
+     63.99999999993755
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_cpu_3",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_cpu/3",
+   "runtime_s": 0.6209249496459961,
+   "exception": null,
+   "convert_plus_run_s": 0.7585389614105225,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-contacts-service",
+     182.36111111110452
+    ],
+    [
+     "ts-route-service",
+     101.6155975013497
+    ],
+    [
+     "ts-travel-plan-service",
+     56.99999999994449
+    ],
+    [
+     "ts-preserve-service",
+     55.99999999999844
+    ],
+    [
+     "ts-inside-payment-service",
+     41.42468789580939
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_cpu_4",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_cpu/4",
+   "runtime_s": 0.6381654739379883,
+   "exception": null,
+   "convert_plus_run_s": 0.7351503372192383,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     1169.9999999988274
+    ],
+    [
+     "ts-config-service",
+     91.73733167399746
+    ],
+    [
+     "ts-consign-price-service",
+     84.75409836066751
+    ],
+    [
+     "ts-food-service",
+     41.09807292204004
+    ],
+    [
+     "ts-train-service",
+     35.999999999965304
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_cpu_5",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_cpu/5",
+   "runtime_s": 0.5211291313171387,
+   "exception": null,
+   "convert_plus_run_s": 0.6370000839233398,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ticketinfo-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     299.74999999969987
+    ],
+    [
+     "ts-config-service",
+     132.47126741147113
+    ],
+    [
+     "ts-price-service",
+     70.76907133492607
+    ],
+    [
+     "ts-admin-travel-service",
+     43.746593700476446
+    ],
+    [
+     "ts-ticketinfo-service",
+     42.865863745450206
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_delay_1",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_delay/1",
+   "runtime_s": 0.6643340587615967,
+   "exception": null,
+   "convert_plus_run_s": 0.7993505001068115,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     1186.5804727530258
+    ],
+    [
+     "ts-seat-service",
+     981.2339456320551
+    ],
+    [
+     "ts-route-service",
+     627.1419038365901
+    ],
+    [
+     "ts-travel2-service",
+     546.5724970789175
+    ],
+    [
+     "ts-admin-travel-service",
+     385.8131970318256
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_delay_2",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_delay/2",
+   "runtime_s": 0.5779883861541748,
+   "exception": null,
+   "convert_plus_run_s": 0.7441940307617188,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     10430.48745301544
+    ],
+    [
+     "ts-food-service",
+     676.2251718611872
+    ],
+    [
+     "ts-order-service",
+     655.318977277595
+    ],
+    [
+     "ts-travel-service",
+     612.8643462536811
+    ],
+    [
+     "ts-travel2-service",
+     485.45765201717313
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_delay_3",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_delay/3",
+   "runtime_s": 0.719688892364502,
+   "exception": null,
+   "convert_plus_run_s": 0.8678092956542969,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     1030.2852576507892
+    ],
+    [
+     "ts-route-service",
+     730.6264616630062
+    ],
+    [
+     "ts-travel2-service",
+     540.1971493372354
+    ],
+    [
+     "ts-travel-service",
+     493.24135432878074
+    ],
+    [
+     "ts-food-service",
+     322.469807613974
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_delay_4",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_delay/4",
+   "runtime_s": 0.548412561416626,
+   "exception": null,
+   "convert_plus_run_s": 0.6676642894744873,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     890.4668767561938
+    ],
+    [
+     "ts-admin-travel-service",
+     504.28584460987923
+    ],
+    [
+     "ts-travel2-service",
+     412.3270563395555
+    ],
+    [
+     "ts-route-service",
+     323.0876281314001
+    ],
+    [
+     "ts-food-service",
+     263.7045454545452
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_delay_5",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_delay/5",
+   "runtime_s": 0.5222799777984619,
+   "exception": null,
+   "convert_plus_run_s": 0.6261317729949951,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     2250.75889413353
+    ],
+    [
+     "ts-route-service",
+     1983.8109207893979
+    ],
+    [
+     "ts-travel2-service",
+     1018.2637391402866
+    ],
+    [
+     "ts-travel-service",
+     918.8684643626447
+    ],
+    [
+     "ts-food-service",
+     634.2919920926116
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_disk_1",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_disk/1",
+   "runtime_s": 0.5694725513458252,
+   "exception": null,
+   "convert_plus_run_s": 0.6833486557006836,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-food-map-service",
+     56.069944961067876
+    ],
+    [
+     "ts-route-service",
+     48.68750000001477
+    ],
+    [
+     "ts-food-service",
+     36.960089375282344
+    ],
+    [
+     "ts-security-service",
+     36.14360662611119
+    ],
+    [
+     "ts-admin-route-service",
+     35.50948470177832
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_disk_2",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_disk/2",
+   "runtime_s": 0.6263659000396729,
+   "exception": null,
+   "convert_plus_run_s": 0.7338688373565674,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     389.99999999960795
+    ],
+    [
+     "ts-admin-travel-service",
+     66.67214080718112
+    ],
+    [
+     "ts-order-other-service",
+     38.420771117727355
+    ],
+    [
+     "ts-admin-route-service",
+     26.20135250710472
+    ],
+    [
+     "ts-cancel-service",
+     26.132890808338196
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_disk_3",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_disk/3",
+   "runtime_s": 0.6040537357330322,
+   "exception": null,
+   "convert_plus_run_s": 0.6995425224304199,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     261.9999999997363
+    ],
+    [
+     "ts-notification-service",
+     97.3342982662263
+    ],
+    [
+     "ts-preserve-service",
+     85.00000000000001
+    ],
+    [
+     "ts-cancel-service",
+     30.352727568652323
+    ],
+    [
+     "ts-food-map-service",
+     27.808500069908145
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_disk_4",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_disk/4",
+   "runtime_s": 0.6077911853790283,
+   "exception": null,
+   "convert_plus_run_s": 0.705000638961792,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     393.9999999996045
+    ],
+    [
+     "ts-order-other-service",
+     90.53118731415225
+    ],
+    [
+     "ts-admin-travel-service",
+     41.30066045377937
+    ],
+    [
+     "ts-station-service",
+     31.351430792333552
+    ],
+    [
+     "ts-order-service",
+     26.100000000009853
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_disk_5",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_disk/5",
+   "runtime_s": 0.5328447818756104,
+   "exception": null,
+   "convert_plus_run_s": 0.6679399013519287,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     158.00000000006105
+    ],
+    [
+     "ts-order-other-service",
+     150.85941311155796
+    ],
+    [
+     "ts-config-service",
+     58.99999999994449
+    ],
+    [
+     "ts-cancel-service",
+     26.490131985350647
+    ],
+    [
+     "ts-admin-route-service",
+     22.564476847177037
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_loss_1",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_loss/1",
+   "runtime_s": 0.5040524005889893,
+   "exception": null,
+   "convert_plus_run_s": 0.6033360958099365,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-food-service",
+     2442.463997289443
+    ],
+    [
+     "ts-travel-service",
+     890.7488734458033
+    ],
+    [
+     "ts-route-service",
+     371.60815732113554
+    ],
+    [
+     "ts-travel2-service",
+     321.84945216955623
+    ],
+    [
+     "ts-admin-travel-service",
+     302.8172792195327
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_loss_2",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_loss/2",
+   "runtime_s": 0.5877668857574463,
+   "exception": null,
+   "convert_plus_run_s": 0.7056748867034912,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     705.9081339153978
+    ],
+    [
+     "ts-food-service",
+     542.9492486256723
+    ],
+    [
+     "ts-seat-service",
+     400.9618786864275
+    ],
+    [
+     "ts-travel-service",
+     297.421811291371
+    ],
+    [
+     "ts-route-service",
+     195.51319000331134
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_loss_3",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_loss/3",
+   "runtime_s": 0.5725607872009277,
+   "exception": null,
+   "convert_plus_run_s": 0.719313383102417,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-seat-service",
+     894.6112131723626
+    ],
+    [
+     "ts-admin-travel-service",
+     559.2754442241013
+    ],
+    [
+     "ts-route-service",
+     545.6775611400669
+    ],
+    [
+     "ts-food-service",
+     481.4256362057402
+    ],
+    [
+     "ts-travel-service",
+     450.9261888785176
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_loss_4",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_loss/4",
+   "runtime_s": 0.4914252758026123,
+   "exception": null,
+   "convert_plus_run_s": 0.6206264495849609,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     1528.865440513079
+    ],
+    [
+     "ts-travel-service",
+     1386.112922799427
+    ],
+    [
+     "ts-travel2-service",
+     650.522584291954
+    ],
+    [
+     "ts-route-service",
+     305.46230405866095
+    ],
+    [
+     "ts-admin-order-service",
+     110.09446239938025
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_loss_5",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_loss/5",
+   "runtime_s": 0.5138087272644043,
+   "exception": null,
+   "convert_plus_run_s": 0.637387752532959,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-food-service",
+     497.92202883695813
+    ],
+    [
+     "ts-travel-service",
+     410.6515586848682
+    ],
+    [
+     "ts-admin-travel-service",
+     379.2000000001474
+    ],
+    [
+     "ts-travel2-service",
+     219.6112997003232
+    ],
+    [
+     "ts-route-service",
+     124.01292073814982
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_mem_1",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_mem/1",
+   "runtime_s": 0.5022621154785156,
+   "exception": null,
+   "convert_plus_run_s": 0.6292226314544678,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     6785.833333334394
+    ],
+    [
+     "ts-food-map-service",
+     141.54260872217148
+    ],
+    [
+     "ts-station-service",
+     140.454545454582
+    ],
+    [
+     "ts-travel2-service",
+     110.40207740719599
+    ],
+    [
+     "ts-order-other-service",
+     97.7173814838172
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_mem_2",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_mem/2",
+   "runtime_s": 0.5023653507232666,
+   "exception": null,
+   "convert_plus_run_s": 0.6164867877960205,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     8170.799999997498
+    ],
+    [
+     "ts-inside-payment-service",
+     401.8461538461536
+    ],
+    [
+     "ts-consign-price-service",
+     230.7251233172926
+    ],
+    [
+     "ts-order-service",
+     167.16617017211038
+    ],
+    [
+     "ts-travel2-service",
+     128.98398761883004
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_mem_3",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_mem/3",
+   "runtime_s": 0.52142333984375,
+   "exception": null,
+   "convert_plus_run_s": 0.6165876388549805,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     20355.999999979642
+    ],
+    [
+     "ts-admin-travel-service",
+     388.64876451343747
+    ],
+    [
+     "ts-food-service",
+     219.0467858645757
+    ],
+    [
+     "ts-order-service",
+     94.26228676912278
+    ],
+    [
+     "ts-inside-payment-service",
+     76.26086956522396
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_mem_4",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_mem/4",
+   "runtime_s": 0.5468437671661377,
+   "exception": null,
+   "convert_plus_run_s": 0.6606862545013428,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-route-service",
+     369.48636363635535
+    ],
+    [
+     "ts-order-other-service",
+     146.26006017504963
+    ],
+    [
+     "ts-station-service",
+     93.00000000001445
+    ],
+    [
+     "ts-consign-price-service",
+     82.73020737946008
+    ],
+    [
+     "ts-travel-service",
+     65.34152195914061
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-route-service_mem_5",
+   "label": "ts-route-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-route-service_mem/5",
+   "runtime_s": 0.5337932109832764,
+   "exception": null,
+   "convert_plus_run_s": 0.6301980018615723,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-basic-info-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-basic-info-service",
+     775.3730910535845
+    ],
+    [
+     "ts-food-service",
+     468.28598874708285
+    ],
+    [
+     "ts-admin-travel-service",
+     308.6913834419435
+    ],
+    [
+     "ts-consign-price-service",
+     255.63636363636388
+    ],
+    [
+     "ts-route-service",
+     255.1838006230515
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_cpu_1",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_cpu/1",
+   "runtime_s": 0.599555492401123,
+   "exception": null,
+   "convert_plus_run_s": 0.7185533046722412,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-mongo",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     197.1666666666981
+    ],
+    [
+     "ts-route-plan-service",
+     38.99999999995837
+    ],
+    [
+     "ts-seat-service",
+     29.67440016348509
+    ],
+    [
+     "ts-admin-travel-service",
+     18.59258309309908
+    ],
+    [
+     "ts-route-mongo",
+     13.105263157893555
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_cpu_2",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_cpu/2",
+   "runtime_s": 0.6744909286499023,
+   "exception": null,
+   "convert_plus_run_s": 0.7838542461395264,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     1207.000000007168
+    ],
+    [
+     "ts-order-service",
+     368.5700360585183
+    ],
+    [
+     "ts-notification-service",
+     160.0
+    ],
+    [
+     "ts-admin-travel-service",
+     85.11925693394272
+    ],
+    [
+     "ts-security-service",
+     57.88235294117251
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_cpu_3",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_cpu/3",
+   "runtime_s": 0.7596948146820068,
+   "exception": null,
+   "convert_plus_run_s": 0.8876991271972656,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     1164.000000006918
+    ],
+    [
+     "ts-preserve-other-service",
+     51.41757723412964
+    ],
+    [
+     "ts-station-service",
+     41.99999999995837
+    ],
+    [
+     "ts-seat-service",
+     41.81033968765536
+    ],
+    [
+     "ts-admin-travel-service",
+     30.323629638129688
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_cpu_4",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_cpu/4",
+   "runtime_s": 0.5367546081542969,
+   "exception": null,
+   "convert_plus_run_s": 0.6670210361480713,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     166.1428571428553
+    ],
+    [
+     "ts-consign-price-service",
+     41.324074580566574
+    ],
+    [
+     "ts-admin-travel-service",
+     26.413057599655925
+    ],
+    [
+     "ts-food-service",
+     24.101469852034352
+    ],
+    [
+     "ts-ui-dashboard",
+     16.000000000000433
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_cpu_5",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_cpu/5",
+   "runtime_s": 0.6722362041473389,
+   "exception": null,
+   "convert_plus_run_s": 0.8346469402313232,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-mongo",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     194.50000000003064
+    ],
+    [
+     "ts-consign-price-service",
+     187.67073170731996
+    ],
+    [
+     "ts-config-service",
+     42.19800695600419
+    ],
+    [
+     "ts-admin-travel-service",
+     32.5490144810171
+    ],
+    [
+     "ts-consign-mongo",
+     24.777777777781377
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_delay_1",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_delay/1",
+   "runtime_s": 0.7092936038970947,
+   "exception": null,
+   "convert_plus_run_s": 0.923154354095459,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     3971.450291490791
+    ],
+    [
+     "ts-travel-service",
+     1404.983035891972
+    ],
+    [
+     "ts-admin-travel-service",
+     1284.9841270940583
+    ],
+    [
+     "ts-seat-service",
+     1040.8998472920493
+    ],
+    [
+     "ts-travel2-service",
+     561.0004510103761
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_delay_2",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_delay/2",
+   "runtime_s": 0.6901998519897461,
+   "exception": null,
+   "convert_plus_run_s": 0.8571679592132568,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     20913.475577059653
+    ],
+    [
+     "ts-travel-service",
+     1469.7027790751981
+    ],
+    [
+     "ts-travel2-service",
+     828.4207320793248
+    ],
+    [
+     "ts-ui-dashboard",
+     424.62053196918936
+    ],
+    [
+     "ts-seat-service",
+     365.26678270145044
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_delay_3",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_delay/3",
+   "runtime_s": 0.6470539569854736,
+   "exception": null,
+   "convert_plus_run_s": 0.8336153030395508,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     1828.9074590344414
+    ],
+    [
+     "ts-seat-service",
+     1342.5030138339207
+    ],
+    [
+     "ts-travel2-service",
+     995.3701560194296
+    ],
+    [
+     "ts-travel-service",
+     933.2864402846932
+    ],
+    [
+     "ts-admin-travel-service",
+     657.4369930569699
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_delay_4",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_delay/4",
+   "runtime_s": 0.487170934677124,
+   "exception": null,
+   "convert_plus_run_s": 0.594144344329834,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     2896.623152664484
+    ],
+    [
+     "ts-travel-service",
+     2760.3523761842143
+    ],
+    [
+     "ts-travel2-service",
+     1472.32555081448
+    ],
+    [
+     "ts-admin-travel-service",
+     662.6349454543625
+    ],
+    [
+     "ts-ui-dashboard",
+     211.3324301653743
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_delay_5",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_delay/5",
+   "runtime_s": 0.6057417392730713,
+   "exception": null,
+   "convert_plus_run_s": 0.6945571899414062,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     3350.2579763190797
+    ],
+    [
+     "ts-train-service",
+     3320.504718830813
+    ],
+    [
+     "ts-travel2-service",
+     2699.8383501615112
+    ],
+    [
+     "ts-travel-service",
+     642.9708074028795
+    ],
+    [
+     "ts-ui-dashboard",
+     584.9239893447575
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_disk_1",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_disk/1",
+   "runtime_s": 0.5039591789245605,
+   "exception": null,
+   "convert_plus_run_s": 0.6012184619903564,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-verification-code-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     196.99999999980224
+    ],
+    [
+     "ts-notification-service",
+     57.55478402124966
+    ],
+    [
+     "ts-verification-code-service",
+     55.99999999994449
+    ],
+    [
+     "ts-admin-travel-service",
+     54.36062679434776
+    ],
+    [
+     "ts-order-service",
+     31.769468661629755
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_disk_2",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_disk/2",
+   "runtime_s": 0.600858211517334,
+   "exception": null,
+   "convert_plus_run_s": 0.6957962512969971,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-other-service",
+     288.0105832922755
+    ],
+    [
+     "ts-train-service",
+     195.62500000014506
+    ],
+    [
+     "ts-travel2-service",
+     38.256913217982024
+    ],
+    [
+     "ts-preserve-other-service",
+     35.34758403927553
+    ],
+    [
+     "ts-route-plan-service",
+     24.69304542485467
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_disk_3",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_disk/3",
+   "runtime_s": 0.6040899753570557,
+   "exception": null,
+   "convert_plus_run_s": 0.7312133312225342,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-route-plan-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-other-service",
+     302.33564583264854
+    ],
+    [
+     "ts-train-service",
+     261.99999999973863
+    ],
+    [
+     "ts-route-plan-service",
+     38.9311521014047
+    ],
+    [
+     "ts-admin-user-service",
+     35.807963060082734
+    ],
+    [
+     "ts-preserve-other-service",
+     33.399601815089966
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_disk_4",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_disk/4",
+   "runtime_s": 0.6143381595611572,
+   "exception": null,
+   "convert_plus_run_s": 0.7230491638183594,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     396.4999999996045
+    ],
+    [
+     "ts-order-other-service",
+     291.2288943424357
+    ],
+    [
+     "ts-contacts-service",
+     138.85425078709142
+    ],
+    [
+     "ts-preserve-other-service",
+     82.70701447072716
+    ],
+    [
+     "ts-order-service",
+     73.88888888892959
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_disk_5",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_disk/5",
+   "runtime_s": 0.5016140937805176,
+   "exception": null,
+   "convert_plus_run_s": 0.5969254970550537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     378.9999999996218
+    ],
+    [
+     "ts-consign-price-service",
+     115.56249999998488
+    ],
+    [
+     "ts-order-service",
+     97.7647058823348
+    ],
+    [
+     "ts-contacts-service",
+     62.99999999994449
+    ],
+    [
+     "ts-preserve-other-service",
+     51.2158992212138
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_loss_1",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_loss/1",
+   "runtime_s": 0.5672004222869873,
+   "exception": null,
+   "convert_plus_run_s": 0.6587142944335938,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     2737.6918431075874
+    ],
+    [
+     "ts-admin-travel-service",
+     2316.9357632073643
+    ],
+    [
+     "ts-travel-service",
+     586.1858264062264
+    ],
+    [
+     "ts-ui-dashboard",
+     564.097838164367
+    ],
+    [
+     "ts-travel2-service",
+     530.1600468305284
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_loss_2",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_loss/2",
+   "runtime_s": 0.5853712558746338,
+   "exception": null,
+   "convert_plus_run_s": 0.7376821041107178,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     5456.34452342951
+    ],
+    [
+     "ts-admin-travel-service",
+     1130.2841602675037
+    ],
+    [
+     "ts-seat-service",
+     622.6481576982511
+    ],
+    [
+     "ts-travel2-service",
+     163.829731720131
+    ],
+    [
+     "ts-travel-service",
+     148.66911796681006
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_loss_3",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_loss/3",
+   "runtime_s": 0.5750839710235596,
+   "exception": null,
+   "convert_plus_run_s": 0.6779518127441406,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     1502.277221792252
+    ],
+    [
+     "ts-travel2-service",
+     1049.7026679251524
+    ],
+    [
+     "ts-seat-service",
+     1009.8917182843135
+    ],
+    [
+     "ts-admin-travel-service",
+     615.5419218297986
+    ],
+    [
+     "ts-travel-service",
+     466.8475209178886
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_loss_4",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_loss/4",
+   "runtime_s": 0.6474883556365967,
+   "exception": null,
+   "convert_plus_run_s": 0.7825741767883301,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     2214.700020414838
+    ],
+    [
+     "ts-travel-service",
+     1837.0591452848544
+    ],
+    [
+     "ts-admin-travel-service",
+     1195.7514189180988
+    ],
+    [
+     "ts-travel2-service",
+     904.5414266355244
+    ],
+    [
+     "ts-ui-dashboard",
+     57.38961261131638
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_loss_5",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_loss/5",
+   "runtime_s": 0.6370782852172852,
+   "exception": null,
+   "convert_plus_run_s": 0.7633762359619141,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-rebook-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     515.4312706832835
+    ],
+    [
+     "ts-train-service",
+     498.52362295827163
+    ],
+    [
+     "ts-admin-travel-service",
+     427.2495135833957
+    ],
+    [
+     "ts-travel2-service",
+     282.8672062955736
+    ],
+    [
+     "ts-rebook-service",
+     59.99999999993755
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_mem_1",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_mem/1",
+   "runtime_s": 0.7296497821807861,
+   "exception": null,
+   "convert_plus_run_s": 0.8803884983062744,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     43191.1999999568
+    ],
+    [
+     "ts-admin-travel-service",
+     263.7113219861361
+    ],
+    [
+     "ts-seat-service",
+     174.95625740034637
+    ],
+    [
+     "ts-ui-dashboard",
+     86.27565137134064
+    ],
+    [
+     "ts-travel2-service",
+     53.24782873828077
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_mem_2",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_mem/2",
+   "runtime_s": 0.6880264282226562,
+   "exception": null,
+   "convert_plus_run_s": 0.8266406059265137,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     71850.66666659481
+    ],
+    [
+     "ts-food-map-service",
+     577.8400339150618
+    ],
+    [
+     "ts-seat-service",
+     568.2605443468992
+    ],
+    [
+     "ts-travel-service",
+     492.42785985784883
+    ],
+    [
+     "ts-payment-service",
+     314.9285714285684
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_mem_3",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_mem/3",
+   "runtime_s": 0.7563490867614746,
+   "exception": null,
+   "convert_plus_run_s": 0.8869802951812744,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     71786.66666659487
+    ],
+    [
+     "ts-seat-service",
+     591.1768888953548
+    ],
+    [
+     "ts-security-service",
+     376.20989028392273
+    ],
+    [
+     "ts-order-service",
+     299.99451539272343
+    ],
+    [
+     "ts-travel2-service",
+     163.60472213599596
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_mem_4",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_mem/4",
+   "runtime_s": 0.6148195266723633,
+   "exception": null,
+   "convert_plus_run_s": 0.7690446376800537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     3671.9152542375023
+    ],
+    [
+     "ts-station-service",
+     326.00000000008515
+    ],
+    [
+     "ts-travel2-service",
+     208.16033111685297
+    ],
+    [
+     "ts-travel-service",
+     176.30438569355715
+    ],
+    [
+     "ts-admin-travel-service",
+     144.65298845260855
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-train-service_mem_5",
+   "label": "ts-train-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-train-service_mem/5",
+   "runtime_s": 0.6129941940307617,
+   "exception": null,
+   "convert_plus_run_s": 0.7506780624389648,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-train-service",
+     43185.20000001674
+    ],
+    [
+     "ts-order-service",
+     131.03438171229072
+    ],
+    [
+     "ts-inside-payment-service",
+     129.7916267290741
+    ],
+    [
+     "ts-station-service",
+     105.91666666668334
+    ],
+    [
+     "ts-travel-service",
+     99.03354432356028
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_cpu_1",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_cpu/1",
+   "runtime_s": 0.6869361400604248,
+   "exception": null,
+   "convert_plus_run_s": 0.8311200141906738,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     216.5037540040937
+    ],
+    [
+     "ts-seat-service",
+     198.86285608756597
+    ],
+    [
+     "ts-preserve-other-service",
+     177.37692307689713
+    ],
+    [
+     "ts-preserve-service",
+     120.0
+    ],
+    [
+     "ts-travel-service",
+     118.69999999996371
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_cpu_2",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_cpu/2",
+   "runtime_s": 0.7141497135162354,
+   "exception": null,
+   "convert_plus_run_s": 0.8650755882263184,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-payment-service",
+     1482.4814814822048
+    ],
+    [
+     "ts-seat-service",
+     242.06522219977697
+    ],
+    [
+     "ts-travel-service",
+     198.33333333336495
+    ],
+    [
+     "ts-food-service",
+     197.75325831066482
+    ],
+    [
+     "ts-admin-travel-service",
+     175.00648148147724
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_cpu_3",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_cpu/3",
+   "runtime_s": 0.6038675308227539,
+   "exception": null,
+   "convert_plus_run_s": 0.8130333423614502,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     297.24999999970333
+    ],
+    [
+     "ts-seat-service",
+     116.85040646898
+    ],
+    [
+     "ts-notification-service",
+     104.1702127659455
+    ],
+    [
+     "ts-food-service",
+     79.8421232494181
+    ],
+    [
+     "ts-train-service",
+     77.99999999992367
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_cpu_4",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_cpu/4",
+   "runtime_s": 0.5179126262664795,
+   "exception": null,
+   "convert_plus_run_s": 0.6400954723358154,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-auth-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     150.87499999997993
+    ],
+    [
+     "ts-food-service",
+     54.792211168010745
+    ],
+    [
+     "ts-auth-service",
+     34.999999999965304
+    ],
+    [
+     "ts-station-service",
+     32.99999999996877
+    ],
+    [
+     "ts-config-service",
+     30.630793615189074
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_cpu_5",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_cpu/5",
+   "runtime_s": 0.5272622108459473,
+   "exception": null,
+   "convert_plus_run_s": 0.6486272811889648,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     274.71428571428345
+    ],
+    [
+     "ts-travel-service",
+     160.32703427682748
+    ],
+    [
+     "ts-config-service",
+     51.78328320825655
+    ],
+    [
+     "ts-price-service",
+     45.12860322468754
+    ],
+    [
+     "ts-food-service",
+     43.391923547443014
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_delay_1",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_delay/1",
+   "runtime_s": 0.560704231262207,
+   "exception": null,
+   "convert_plus_run_s": 0.6908228397369385,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     5195.666666666614
+    ],
+    [
+     "ts-seat-service",
+     2268.1548089828557
+    ],
+    [
+     "ts-travel-service",
+     1733.5248635743203
+    ],
+    [
+     "ts-route-service",
+     819.5327991121649
+    ],
+    [
+     "ts-food-service",
+     609.2789632101816
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_delay_2",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_delay/2",
+   "runtime_s": 0.5485596656799316,
+   "exception": null,
+   "convert_plus_run_s": 0.6631698608398438,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-inside-payment-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-plan-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-basic-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-inside-payment-service",
+     81.43661971830794
+    ],
+    [
+     "ts-travel-plan-service",
+     59.99999999994449
+    ],
+    [
+     "ts-consign-service",
+     51.290909090909594
+    ],
+    [
+     "ts-basic-service",
+     49.153825085588316
+    ],
+    [
+     "ts-seat-service",
+     42.99999999995837
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_delay_3",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_delay/3",
+   "runtime_s": 0.5086784362792969,
+   "exception": null,
+   "convert_plus_run_s": 0.6378521919250488,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     1790.6217623949206
+    ],
+    [
+     "ts-food-service",
+     650.8509363991019
+    ],
+    [
+     "ts-admin-travel-service",
+     398.499999999601
+    ],
+    [
+     "ts-route-service",
+     390.33333333294246
+    ],
+    [
+     "ts-train-service",
+     209.78702543614958
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_delay_4",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_delay/4",
+   "runtime_s": 0.46460866928100586,
+   "exception": null,
+   "convert_plus_run_s": 0.5540945529937744,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     1512.2598013163677
+    ],
+    [
+     "ts-food-service",
+     690.4234881986156
+    ],
+    [
+     "ts-admin-travel-service",
+     435.3035182293962
+    ],
+    [
+     "ts-train-service",
+     386.29098305124154
+    ],
+    [
+     "ts-route-service",
+     188.8332178434703
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_delay_5",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_delay/5",
+   "runtime_s": 0.49488210678100586,
+   "exception": null,
+   "convert_plus_run_s": 0.6401939392089844,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-food-service",
+     1698.3622973363115
+    ],
+    [
+     "ts-admin-travel-service",
+     590.2888981089525
+    ],
+    [
+     "ts-travel-service",
+     530.8750422394354
+    ],
+    [
+     "ts-ui-dashboard",
+     241.5233003136227
+    ],
+    [
+     "ts-train-service",
+     197.80879547014857
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_disk_1",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_disk/1",
+   "runtime_s": 0.555821418762207,
+   "exception": null,
+   "convert_plus_run_s": 0.6813244819641113,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     97.99999999998698
+    ],
+    [
+     "ts-execute-service",
+     48.50717233394559
+    ],
+    [
+     "ts-preserve-other-service",
+     45.0
+    ],
+    [
+     "ts-user-service",
+     39.99999999995837
+    ],
+    [
+     "ts-security-service",
+     36.50813042736209
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_disk_2",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_disk/2",
+   "runtime_s": 0.5648043155670166,
+   "exception": null,
+   "convert_plus_run_s": 0.6718802452087402,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-preserve-other-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-other-service",
+     371.9029172563813
+    ],
+    [
+     "ts-travel-service",
+     84.44444444442551
+    ],
+    [
+     "ts-preserve-other-service",
+     74.77433610960118
+    ],
+    [
+     "ts-admin-travel-service",
+     34.00266320180848
+    ],
+    [
+     "ts-execute-service",
+     20.73222389148527
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_disk_3",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_disk/3",
+   "runtime_s": 0.5376636981964111,
+   "exception": null,
+   "convert_plus_run_s": 0.654155969619751,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-station-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-other-service",
+     184.4437689224018
+    ],
+    [
+     "ts-payment-service",
+     176.99999999981958
+    ],
+    [
+     "ts-travel-service",
+     126.8333333333528
+    ],
+    [
+     "ts-order-service",
+     111.06254216744776
+    ],
+    [
+     "ts-station-service",
+     66.91666666667697
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_disk_4",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_disk/4",
+   "runtime_s": 0.5179507732391357,
+   "exception": null,
+   "convert_plus_run_s": 0.6189625263214111,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-security-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-order-other-service",
+     480.76059016679864
+    ],
+    [
+     "ts-travel-service",
+     128.49999999987162
+    ],
+    [
+     "ts-admin-travel-service",
+     47.3333357167341
+    ],
+    [
+     "ts-travel2-service",
+     27.92587272760835
+    ],
+    [
+     "ts-security-service",
+     25.0298391529532
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_disk_5",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_disk/5",
+   "runtime_s": 0.5870568752288818,
+   "exception": null,
+   "convert_plus_run_s": 0.6999053955078125,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-order-other-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-user-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     538.3333333327944
+    ],
+    [
+     "ts-order-other-service",
+     472.8022698930722
+    ],
+    [
+     "ts-travel-service",
+     108.999999999999
+    ],
+    [
+     "ts-user-service",
+     61.90429413245257
+    ],
+    [
+     "ts-order-service",
+     36.74388560816313
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_loss_1",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_loss/1",
+   "runtime_s": 0.519270658493042,
+   "exception": null,
+   "convert_plus_run_s": 0.67938232421875,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-order-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-admin-travel-service",
+     12534.429613321372
+    ],
+    [
+     "ts-food-service",
+     1552.9979177745754
+    ],
+    [
+     "ts-order-service",
+     964.678682124703
+    ],
+    [
+     "ts-seat-service",
+     862.1198989842645
+    ],
+    [
+     "ts-travel-service",
+     621.6501039596794
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_loss_2",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_loss/2",
+   "runtime_s": 0.46935272216796875,
+   "exception": null,
+   "convert_plus_run_s": 0.574376106262207,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-config-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-execute-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-travel2-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-config-service",
+     163.01062872841342
+    ],
+    [
+     "ts-food-service",
+     108.3773642636523
+    ],
+    [
+     "ts-execute-service",
+     65.00000000038163
+    ],
+    [
+     "ts-food-map-service",
+     54.98178845459173
+    ],
+    [
+     "ts-travel2-service",
+     41.463190976083226
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_loss_3",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_loss/3",
+   "runtime_s": 0.6275908946990967,
+   "exception": null,
+   "convert_plus_run_s": 0.7674758434295654,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-notification-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     592.0917415724688
+    ],
+    [
+     "ts-admin-travel-service",
+     221.77896516383657
+    ],
+    [
+     "ts-food-service",
+     212.44274364699257
+    ],
+    [
+     "ts-notification-service",
+     60.82815635852468
+    ],
+    [
+     "ts-admin-user-service",
+     58.50118597233763
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_loss_4",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_loss/4",
+   "runtime_s": 0.6124169826507568,
+   "exception": null,
+   "convert_plus_run_s": 0.7489190101623535,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-cancel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-train-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     414.2260402827958
+    ],
+    [
+     "ts-admin-travel-service",
+     72.97480907163275
+    ],
+    [
+     "ts-cancel-service",
+     68.47948645545388
+    ],
+    [
+     "ts-train-service",
+     63.21429787261722
+    ],
+    [
+     "ts-food-service",
+     62.75118008396644
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_loss_5",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_loss/5",
+   "runtime_s": 0.5613725185394287,
+   "exception": null,
+   "convert_plus_run_s": 0.6694679260253906,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-route-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     292.2687743799218
+    ],
+    [
+     "ts-admin-travel-service",
+     124.48277912287625
+    ],
+    [
+     "ts-food-service",
+     108.63111134100508
+    ],
+    [
+     "ts-contacts-service",
+     49.49999999995143
+    ],
+    [
+     "ts-admin-route-service",
+     49.24967234709303
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_mem_1",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_mem/1",
+   "runtime_s": 0.5895519256591797,
+   "exception": null,
+   "convert_plus_run_s": 0.6979401111602783,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-food-map-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-user-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     340.9910956123206
+    ],
+    [
+     "ts-admin-travel-service",
+     300.83139707963267
+    ],
+    [
+     "ts-food-service",
+     91.51248141771975
+    ],
+    [
+     "ts-food-map-service",
+     49.414057623329974
+    ],
+    [
+     "ts-admin-user-service",
+     23.00000000008327
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_mem_2",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_mem/2",
+   "runtime_s": 0.6467275619506836,
+   "exception": null,
+   "convert_plus_run_s": 0.7792749404907227,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-ui-dashboard",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     1877.476190476174
+    ],
+    [
+     "ts-food-service",
+     795.9318727491025
+    ],
+    [
+     "ts-admin-travel-service",
+     229.6628857872487
+    ],
+    [
+     "ts-consign-service",
+     75.59398496240617
+    ],
+    [
+     "ts-ui-dashboard",
+     56.028677662115875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_mem_3",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_mem/3",
+   "runtime_s": 0.5444028377532959,
+   "exception": null,
+   "convert_plus_run_s": 0.6692054271697998,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     11180.285714285616
+    ],
+    [
+     "ts-food-service",
+     757.8665217391219
+    ],
+    [
+     "ts-admin-travel-service",
+     326.8325011260861
+    ],
+    [
+     "ts-consign-price-service",
+     218.9520905968755
+    ],
+    [
+     "ts-consign-service",
+     204.59998398303918
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_mem_4",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_mem/4",
+   "runtime_s": 0.484112024307251,
+   "exception": null,
+   "convert_plus_run_s": 0.587191104888916,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-food-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-price-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-consign-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     1644.5000000000196
+    ],
+    [
+     "ts-food-service",
+     614.0862251038119
+    ],
+    [
+     "ts-consign-price-service",
+     489.27442528735395
+    ],
+    [
+     "ts-consign-service",
+     483.4045454545464
+    ],
+    [
+     "ts-admin-travel-service",
+     136.43719340154462
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "ts-travel-service_mem_5",
+   "label": "ts-travel-service",
+   "src": "$HOME/rcaeval_repo/data/train-ticket/ts-travel-service_mem/5",
+   "runtime_s": 0.5541703701019287,
+   "exception": null,
+   "convert_plus_run_s": 0.7146801948547363,
+   "answers": [
+    {
+     "level": "service",
+     "name": "ts-travel-service",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "ts-seat-service",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "ts-admin-travel-service",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "ts-contacts-service",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "ts-payment-service",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "ts-travel-service",
+     2476.29032258094
+    ],
+    [
+     "ts-seat-service",
+     543.8859165100914
+    ],
+    [
+     "ts-admin-travel-service",
+     337.19979095781935
+    ],
+    [
+     "ts-contacts-service",
+     312.7265199846904
+    ],
+    [
+     "ts-payment-service",
+     121.33386215764943
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "config": {
+  "script_sha256": "4db126025a0ae8193ba137ce64c4756c3ab3b6802a790707b056161b2143f69e",
+  "rq1_main_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
+  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+  "B": 10000,
+  "seed": 20260929,
+  "run_utc": "2026-10-02T13:43:04Z",
+  "wall_s": 18.9
+ },
+ "summary": {
+  "input_RE1_L1": {
+   "methods": [
+    "baro",
+    "circa",
+    "e_diagnosis",
+    "rcd"
+   ],
+   "pairs": 6,
+   "rev_instances_alt": 2,
+   "rev_instances_ref": 0,
+   "rev_alt_absent_in_ref": 2,
+   "rev_ref_absent_in_alt": 0,
+   "rev_ci_instances_alt": 1,
+   "rev_ci_instances_ref": 0,
+   "rev_ci_alt_absent_in_ref": 1,
+   "rev_pairs_alt": 2,
+   "rev_pairs_ref": 0,
+   "sign_changes": 5,
+   "comparisons": 18,
+   "G4_share_alt_reversals_gone": 1.0
+  },
+  "input_RE1_L2": {
+   "methods": [
+    "alertcount",
+    "baro",
+    "cd1min",
+    "circa",
+    "e_diagnosis",
+    "max_z",
+    "rcd"
+   ],
+   "pairs": 21,
+   "rev_instances_alt": 10,
+   "rev_instances_ref": 6,
+   "rev_alt_absent_in_ref": 9,
+   "rev_ref_absent_in_alt": 5,
+   "rev_ci_instances_alt": 6,
+   "rev_ci_instances_ref": 2,
+   "rev_ci_alt_absent_in_ref": 6,
+   "rev_pairs_alt": 9,
+   "rev_pairs_ref": 5,
+   "sign_changes": 16,
+   "comparisons": 63,
+   "G4_share_alt_reversals_gone": 0.9
+  },
+  "input_RE2_L2": {
+   "methods": [
+    "alertcount",
+    "cd1min",
+    "max_z",
+    "mmbaro"
+   ],
+   "pairs": 6,
+   "rev_instances_alt": 3,
+   "rev_instances_ref": 4,
+   "rev_alt_absent_in_ref": 3,
+   "rev_ref_absent_in_alt": 4,
+   "rev_ci_instances_alt": 0,
+   "rev_ci_instances_ref": 2,
+   "rev_ci_alt_absent_in_ref": 0,
+   "rev_pairs_alt": 3,
+   "rev_pairs_ref": 3,
+   "sign_changes": 5,
+   "comparisons": 18,
+   "G4_share_alt_reversals_gone": 1.0
+  },
+  "release_defect_RE1_L1": {
+   "methods_rerun": [
+    "circa",
+    "e_diagnosis",
+    "rcd"
+   ],
+   "pairs": 10,
+   "comparisons": 30,
+   "sign_changes": 2,
+   "rev_ref": 2,
+   "rev_alt": 4,
+   "rev_ci_ref": 0,
+   "rev_ci_alt": 1,
+   "rev_alt_absent_in_ref": 2,
+   "rev_ci_alt_absent_in_ref": 1,
+   "pooled_sign_flips": 0
+  },
+  "release_defect_RE1_L2": {
+   "methods_rerun": [
+    "circa",
+    "e_diagnosis",
+    "rcd"
+   ],
+   "pairs": 28,
+   "comparisons": 84,
+   "sign_changes": 3,
+   "rev_ref": 10,
+   "rev_alt": 10,
+   "rev_ci_ref": 4,
+   "rev_ci_alt": 5,
+   "rev_alt_absent_in_ref": 2,
+   "rev_ci_alt_absent_in_ref": 1,
+   "pooled_sign_flips": 1
+  },
+  "scoring_strict_L1": {
+   "pairs": 3,
+   "pooled_sign_flips": 0,
+   "rev_instances_ref": 1,
+   "rev_instances_alt": 1,
+   "rev_ci_ref": 0,
+   "rev_ci_alt": 0,
+   "sign_changes": 4,
+   "comparisons": 12
+  },
+  "scoring_strict_L2": {
+   "pairs": 15,
+   "pooled_sign_flips": 2,
+   "rev_instances_ref": 9,
+   "rev_instances_alt": 7,
+   "rev_ci_ref": 0,
+   "rev_ci_alt": 0,
+   "sign_changes": 11,
+   "comparisons": 60
+  },
+  "scoring_ge05_L1": {
+   "pairs": 3,
+   "pooled_sign_flips": 0,
+   "rev_instances_ref": 1,
+   "rev_instances_alt": 1,
+   "rev_ci_ref": 0,
+   "rev_ci_alt": 0,
+   "sign_changes": 0,
+   "comparisons": 12
+  },
+  "scoring_ge05_L2": {
+   "pairs": 15,
+   "pooled_sign_flips": 0,
+   "rev_instances_ref": 9,
+   "rev_instances_alt": 8,
+   "rev_ci_ref": 0,
+   "rev_ci_alt": 0,
+   "sign_changes": 3,
+   "comparisons": 60
+  },
+  "denominator_RE1_L1": {
+   "comparisons": 30,
+   "sign_changes": 0,
+   "rev_ref": 2,
+   "rev_alt": 2,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  },
+  "denominator_RE1_L2": {
+   "comparisons": 84,
+   "sign_changes": 0,
+   "rev_ref": 10,
+   "rev_alt": 10,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  },
+  "denominator_RE2_L1": {
+   "comparisons": 71,
+   "sign_changes": 1,
+   "rev_ref": 12,
+   "rev_alt": 13,
+   "rev_only_valid_only": 1,
+   "rev_only_all_cases": 0
+  },
+  "denominator_RE2_L2": {
+   "comparisons": 146,
+   "sign_changes": 2,
+   "rev_ref": 25,
+   "rev_alt": 27,
+   "rev_only_valid_only": 2,
+   "rev_only_all_cases": 0
+  },
+  "denominator_openrca_L1": {
+   "comparisons": 12,
+   "sign_changes": 0,
+   "rev_ref": 1,
+   "rev_alt": 1,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  },
+  "denominator_openrca_L2": {
+   "comparisons": 60,
+   "sign_changes": 0,
+   "rev_ref": 9,
+   "rev_alt": 9,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  },
+  "denominator_petshop_L1": {
+   "comparisons": 40,
+   "sign_changes": 0,
+   "rev_ref": 5,
+   "rev_alt": 5,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  },
+  "denominator_petshop_L2": {
+   "comparisons": 220,
+   "sign_changes": 0,
+   "rev_ref": 12,
+   "rev_alt": 12,
+   "rev_only_valid_only": 0,
+   "rev_only_all_cases": 0
+  }
+ }
+}

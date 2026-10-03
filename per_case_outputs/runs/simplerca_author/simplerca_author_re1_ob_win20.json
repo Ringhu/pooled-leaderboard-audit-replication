@@ -1,0 +1,8574 @@
+{
+ "config": {
+  "method": "simplerca-author",
+  "dataset": "rcaeval_re1_ob",
+  "input_file": "data.csv (window=20)",
+  "author_repo": "LGU-SE-Internal/Simple-RCA",
+  "author_branch_commit": "author_rcaeval:5fd1f7f",
+  "converter": "rcabench_platform==0.3.27 sources/rcaeval.py (verbatim)",
+  "no_logs": false,
+  "code_sha256_12": {
+   "author_rcaeval/__init__.py": "e3b0c44298fc",
+   "author_rcaeval/baro.py": "7c62e0d185f6",
+   "author_rcaeval/nezha_adapter.py": "2e2c3e775e79",
+   "author_rcaeval/nezha_rca.py": "8896a48e51db",
+   "author_rcaeval/time_series.py": "e44a775a6ab4",
+   "author_re3ss/__init__.py": "e3b0c44298fc",
+   "author_re3ss/baro.py": "7c62e0d185f6",
+   "author_re3ss/nezha_adapter.py": "2e2c3e775e79",
+   "author_re3ss/nezha_rca.py": "4d408e429d77",
+   "author_re3ss/time_series.py": "5c1a39773745",
+   "run_author_simplerca.py": "2d3f68839402",
+   "stub/rcabench_platform/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/spec.py": "cdba429a62a6",
+   "stub/rcabench_platform/v2/graphs/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcabench.py": "e28531f006f5",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcaeval.py": "6c6fa90f6e40",
+   "stub/rcabench_platform/v2/logging.py": "c89dca086541",
+   "stub/rcabench_platform/v2/sources/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/sources/_convert_stub.py": "f862981d4de9",
+   "stub/rcabench_platform/v2/sources/rcaeval.py": "58ceb0e75128",
+   "stub/rcabench_platform/v2/utils/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/utils/env.py": "1755ee39c8f9",
+   "stub/rcabench_platform/v2/utils/serde.py": "c1b8900e5ac4"
+  },
+  "env": "$CONDA_ENVS/simplerca/bin/python",
+  "python": "3.13.15",
+  "polars": "1.31.0",
+  "argv": [
+   "run_author_simplerca.py",
+   "--dataset",
+   "rcaeval_re1_ob",
+   "--algo",
+   "simplerca",
+   "--re1-window",
+   "20",
+   "--procs",
+   "8",
+   "--out",
+   "$AUDIT_ROOT/runs/simplerca_author/simplerca_author_re1_ob_win20.json"
+  ],
+  "run_started_utc": "2026-09-27T12:19:17.095329+00:00",
+  "limit": 0
+ },
+ "summary": {
+  "n": 125,
+  "AC@1": 0.784,
+  "AC@2": 0.904,
+  "AC@3": 0.936,
+  "AC@4": 0.96,
+  "AC@5": 0.976,
+  "Avg@3": 0.874667,
+  "Avg@5": 0.912,
+  "MRR_platform_hit_only": 0.885109,
+  "MRR_all_cases": 0.863867,
+  "n_exceptions": 0,
+  "n_empty": 0
+ },
+ "cases": [
+  {
+   "datapack": "adservice_cpu_1",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_cpu/1",
+   "runtime_s": 0.1238551139831543,
+   "exception": null,
+   "convert_plus_run_s": 0.18936634063720703,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     621.0594511038599
+    ],
+    [
+     "redis",
+     32.000000000000924
+    ],
+    [
+     "checkoutservice",
+     17.750211473915154
+    ],
+    [
+     "emailservice",
+     12.000000000002313
+    ],
+    [
+     "recommendationservice",
+     6.73532961895143
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_cpu_2",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_cpu/2",
+   "runtime_s": 0.12449383735656738,
+   "exception": null,
+   "convert_plus_run_s": 0.1857917308807373,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     1363.477228160135
+    ],
+    [
+     "cartservice",
+     54.53842435797878
+    ],
+    [
+     "recommendationservice",
+     43.99999999995663
+    ],
+    [
+     "checkoutservice",
+     41.39904934466605
+    ],
+    [
+     "redis",
+     31.99999999999924
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_cpu_3",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_cpu/3",
+   "runtime_s": 0.14780783653259277,
+   "exception": null,
+   "convert_plus_run_s": 0.20894956588745117,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     1464.635693698715
+    ],
+    [
+     "emailservice",
+     187.00000000013705
+    ],
+    [
+     "checkoutservice",
+     22.696788239838767
+    ],
+    [
+     "main",
+     5.371980676328435
+    ],
+    [
+     "recommendationservice",
+     5.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_cpu_4",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_cpu/4",
+   "runtime_s": 0.119781494140625,
+   "exception": null,
+   "convert_plus_run_s": 0.17903947830200195,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     118.62611914795457
+    ],
+    [
+     "recommendationservice",
+     63.499999999991324
+    ],
+    [
+     "productcatalogservice",
+     6.169230769230772
+    ],
+    [
+     "cartservice",
+     4.525989938926412
+    ],
+    [
+     "checkoutservice",
+     4.5
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_cpu_5",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_cpu/5",
+   "runtime_s": 0.1239933967590332,
+   "exception": null,
+   "convert_plus_run_s": 0.20293116569519043,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     72.65857575241172
+    ],
+    [
+     "redis",
+     63.99999999999848
+    ],
+    [
+     "cartservice",
+     31.363636363634658
+    ],
+    [
+     "recommendationservice",
+     25.714285714285513
+    ],
+    [
+     "emailservice",
+     11.3333333333289
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_delay_1",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_delay/1",
+   "runtime_s": 0.14253783226013184,
+   "exception": null,
+   "convert_plus_run_s": 0.17415332794189453,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     4534.203928669714
+    ],
+    [
+     "checkoutservice",
+     221.86251080593496
+    ],
+    [
+     "cartservice",
+     20.000000000013877
+    ],
+    [
+     "productcatalogservice",
+     8.35135135135136
+    ],
+    [
+     "main",
+     7.833333333334875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_delay_2",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_delay/2",
+   "runtime_s": 0.17833781242370605,
+   "exception": null,
+   "convert_plus_run_s": 0.21823477745056152,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     6370.305425695921
+    ],
+    [
+     "checkoutservice",
+     267.3100806060023
+    ],
+    [
+     "shippingservice",
+     23.04860873702146
+    ],
+    [
+     "frontend",
+     6.558823529411734
+    ],
+    [
+     "paymentservice",
+     6.2
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_delay_3",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_delay/3",
+   "runtime_s": 0.1481320858001709,
+   "exception": null,
+   "convert_plus_run_s": 0.18050312995910645,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     5145.145200342557
+    ],
+    [
+     "checkoutservice",
+     162.33828694186718
+    ],
+    [
+     "cartservice",
+     6.144927536231884
+    ],
+    [
+     "frontend",
+     5.888888888888889
+    ],
+    [
+     "recommendationservice",
+     4.906016684350391
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_delay_4",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_delay/4",
+   "runtime_s": 0.13620781898498535,
+   "exception": null,
+   "convert_plus_run_s": 0.16061067581176758,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     9058.785076340868
+    ],
+    [
+     "checkoutservice",
+     315.2642345564862
+    ],
+    [
+     "currencyservice",
+     14.67169272633907
+    ],
+    [
+     "productcatalogservice",
+     14.18421052631585
+    ],
+    [
+     "cartservice",
+     10.60803481436646
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_delay_5",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_delay/5",
+   "runtime_s": 0.16843557357788086,
+   "exception": null,
+   "convert_plus_run_s": 0.2006690502166748,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     6323.326288365367
+    ],
+    [
+     "checkoutservice",
+     199.2210840175383
+    ],
+    [
+     "main",
+     7.199999999998057
+    ],
+    [
+     "currencyservice",
+     3.868421052631595
+    ],
+    [
+     "paymentservice",
+     3.2222222222222223
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_disk_1",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_disk/1",
+   "runtime_s": 0.13889694213867188,
+   "exception": null,
+   "convert_plus_run_s": 0.16135954856872559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     168.1077114491657
+    ],
+    [
+     "recommendationservice",
+     53.14285714285629
+    ],
+    [
+     "cartservice",
+     49.14913216243607
+    ],
+    [
+     "emailservice",
+     24.98899744510333
+    ],
+    [
+     "currencyservice",
+     6.1724581724581435
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_disk_2",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_disk/2",
+   "runtime_s": 0.1433122158050537,
+   "exception": null,
+   "convert_plus_run_s": 0.16974329948425293,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     333.0000000002446
+    ],
+    [
+     "adservice",
+     217.43439008601362
+    ],
+    [
+     "productcatalogservice",
+     17.558987230530132
+    ],
+    [
+     "checkoutservice",
+     8.016119953598748
+    ],
+    [
+     "cartservice",
+     6.333333333333269
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_disk_3",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_disk/3",
+   "runtime_s": 0.14301037788391113,
+   "exception": null,
+   "convert_plus_run_s": 0.16643285751342773,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     178.7124695807643
+    ],
+    [
+     "emailservice",
+     70.43032993180536
+    ],
+    [
+     "cartservice",
+     34.56978378918715
+    ],
+    [
+     "productcatalogservice",
+     13.2010005703106
+    ],
+    [
+     "checkoutservice",
+     12.552916322770743
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_disk_4",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_disk/4",
+   "runtime_s": 0.1571347713470459,
+   "exception": null,
+   "convert_plus_run_s": 0.18225669860839844,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     222.34450107778156
+    ],
+    [
+     "emailservice",
+     136.0000000001006
+    ],
+    [
+     "productcatalogservice",
+     26.444059238935747
+    ],
+    [
+     "checkoutservice",
+     6.5281308200400145
+    ],
+    [
+     "currencyservice",
+     4.555555555555519
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_disk_5",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_disk/5",
+   "runtime_s": 0.14086031913757324,
+   "exception": null,
+   "convert_plus_run_s": 0.16445136070251465,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     152.72232258490664
+    ],
+    [
+     "emailservice",
+     28.29651628136878
+    ],
+    [
+     "productcatalogservice",
+     12.92656087882227
+    ],
+    [
+     "frontend",
+     11.975609756097748
+    ],
+    [
+     "checkoutservice",
+     9.843013668382373
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_loss_1",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_loss/1",
+   "runtime_s": 0.1459028720855713,
+   "exception": null,
+   "convert_plus_run_s": 0.17100262641906738,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     5635.031399354592
+    ],
+    [
+     "checkoutservice",
+     589.9461339128829
+    ],
+    [
+     "cartservice",
+     96.4238648344795
+    ],
+    [
+     "recommendationservice",
+     60.87499999999187
+    ],
+    [
+     "redis",
+     31.99999999999924
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_loss_2",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_loss/2",
+   "runtime_s": 0.13770818710327148,
+   "exception": null,
+   "convert_plus_run_s": 0.16073274612426758,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     168.00000000012315
+    ],
+    [
+     "checkoutservice",
+     45.960673502234265
+    ],
+    [
+     "redis",
+     33.99999999999924
+    ],
+    [
+     "adservice",
+     18.181043131617997
+    ],
+    [
+     "productcatalogservice",
+     6.064516129032323
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_loss_3",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_loss/3",
+   "runtime_s": 0.22920870780944824,
+   "exception": null,
+   "convert_plus_run_s": 0.2829604148864746,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     276.1737698561345
+    ],
+    [
+     "checkoutservice",
+     62.791256968671725
+    ],
+    [
+     "redis",
+     32.99999999999924
+    ],
+    [
+     "frontend",
+     8.380952380952305
+    ],
+    [
+     "paymentservice",
+     5.160201942518328
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_loss_4",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_loss/4",
+   "runtime_s": 0.15268802642822266,
+   "exception": null,
+   "convert_plus_run_s": 0.1811072826385498,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     37.798076923076955
+    ],
+    [
+     "redis",
+     32.99999999999924
+    ],
+    [
+     "paymentservice",
+     16.933333333332115
+    ],
+    [
+     "recommendationservice",
+     8.535500304875972
+    ],
+    [
+     "productcatalogservice",
+     7.849131456385406
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_loss_5",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_loss/5",
+   "runtime_s": 0.14005374908447266,
+   "exception": null,
+   "convert_plus_run_s": 0.16659283638000488,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     36.27270597915876
+    ],
+    [
+     "cartservice",
+     32.96851792269414
+    ],
+    [
+     "adservice",
+     27.812294616238297
+    ],
+    [
+     "main",
+     12.272727272726742
+    ],
+    [
+     "frontend",
+     8.441857679917801
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_mem_1",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_mem/1",
+   "runtime_s": 0.10827159881591797,
+   "exception": null,
+   "convert_plus_run_s": 0.1693096160888672,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     4912.127490040089
+    ],
+    [
+     "recommendationservice",
+     26.272727272725955
+    ],
+    [
+     "cartservice",
+     16.45833333333358
+    ],
+    [
+     "productcatalogservice",
+     6.5984848484848415
+    ],
+    [
+     "currencyservice",
+     6.393162393162449
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_mem_2",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_mem/2",
+   "runtime_s": 0.12171363830566406,
+   "exception": null,
+   "convert_plus_run_s": 0.17656826972961426,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     6160.5600000002505
+    ],
+    [
+     "cartservice",
+     16.48000000000064
+    ],
+    [
+     "main",
+     9.500000000000382
+    ],
+    [
+     "emailservice",
+     8.0
+    ],
+    [
+     "shippingservice",
+     6.5
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_mem_3",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_mem/3",
+   "runtime_s": 0.11446595191955566,
+   "exception": null,
+   "convert_plus_run_s": 0.20546984672546387,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     4893.269841269798
+    ],
+    [
+     "cartservice",
+     35.58333333333113
+    ],
+    [
+     "currencyservice",
+     9.095022624434423
+    ],
+    [
+     "checkoutservice",
+     7.0168995042812154
+    ],
+    [
+     "paymentservice",
+     5.8613138686130775
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_mem_4",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_mem/4",
+   "runtime_s": 0.12108325958251953,
+   "exception": null,
+   "convert_plus_run_s": 0.1764812469482422,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     7705.900000000314
+    ],
+    [
+     "recommendationservice",
+     45.09090909091376
+    ],
+    [
+     "cartservice",
+     25.999999999998874
+    ],
+    [
+     "checkoutservice",
+     6.586997808619437
+    ],
+    [
+     "emailservice",
+     6.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "adservice_mem_5",
+   "label": "adservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/adservice_mem/5",
+   "runtime_s": 0.13363957405090332,
+   "exception": null,
+   "convert_plus_run_s": 0.21659207344055176,
+   "answers": [
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "adservice",
+     3464.505617977439
+    ],
+    [
+     "cartservice",
+     18.19999999999915
+    ],
+    [
+     "productcatalogservice",
+     8.725806451612902
+    ],
+    [
+     "shippingservice",
+     7.528029209871892
+    ],
+    [
+     "emailservice",
+     6.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_cpu_1",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_cpu/1",
+   "runtime_s": 0.11776137351989746,
+   "exception": null,
+   "convert_plus_run_s": 0.17018604278564453,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     71.73036133319377
+    ],
+    [
+     "main",
+     13.090909090904102
+    ],
+    [
+     "paymentservice",
+     6.5
+    ],
+    [
+     "currencyservice",
+     5.250000000000015
+    ],
+    [
+     "productcatalogservice",
+     4.769633507853404
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_cpu_2",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_cpu/2",
+   "runtime_s": 0.11692261695861816,
+   "exception": null,
+   "convert_plus_run_s": 0.1798090934753418,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     108.73684210526353
+    ],
+    [
+     "checkoutservice",
+     12.110457220461738
+    ],
+    [
+     "paymentservice",
+     8.848837209302395
+    ],
+    [
+     "emailservice",
+     7.0
+    ],
+    [
+     "currencyservice",
+     5.937106918238953
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_cpu_3",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_cpu/3",
+   "runtime_s": 0.11387300491333008,
+   "exception": null,
+   "convert_plus_run_s": 0.17844343185424805,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     82.36842105263186
+    ],
+    [
+     "checkoutservice",
+     7.5
+    ],
+    [
+     "currencyservice",
+     6.46153846153847
+    ],
+    [
+     "productcatalogservice",
+     5.925925925925901
+    ],
+    [
+     "emailservice",
+     5.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_cpu_4",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_cpu/4",
+   "runtime_s": 0.12192940711975098,
+   "exception": null,
+   "convert_plus_run_s": 0.17955994606018066,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     148.89670587214775
+    ],
+    [
+     "currencyservice",
+     14.12307692307675
+    ],
+    [
+     "checkoutservice",
+     7.5
+    ],
+    [
+     "main",
+     6.230769230769744
+    ],
+    [
+     "emailservice",
+     5.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_cpu_5",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_cpu/5",
+   "runtime_s": 0.11278009414672852,
+   "exception": null,
+   "convert_plus_run_s": 0.18065524101257324,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     121.41706188749116
+    ],
+    [
+     "main",
+     12.777777777785145
+    ],
+    [
+     "adservice",
+     10.490566037735675
+    ],
+    [
+     "currencyservice",
+     8.339285714285648
+    ],
+    [
+     "productcatalogservice",
+     5.809523809523799
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_delay_1",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_delay/1",
+   "runtime_s": 0.14382576942443848,
+   "exception": null,
+   "convert_plus_run_s": 0.1746196746826172,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     5803.795431929607
+    ],
+    [
+     "checkoutservice",
+     1331.1293190229185
+    ],
+    [
+     "frontend",
+     435.92330654694496
+    ],
+    [
+     "main",
+     6.642857142857037
+    ],
+    [
+     "adservice",
+     6.470717262557577
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_delay_2",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_delay/2",
+   "runtime_s": 0.14983558654785156,
+   "exception": null,
+   "convert_plus_run_s": 0.18483233451843262,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     4787.555147792453
+    ],
+    [
+     "checkoutservice",
+     795.1160589454397
+    ],
+    [
+     "frontend",
+     459.17836706629026
+    ],
+    [
+     "main",
+     79.80000000003095
+    ],
+    [
+     "adservice",
+     62.900000000002585
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_delay_3",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_delay/3",
+   "runtime_s": 0.14291930198669434,
+   "exception": null,
+   "convert_plus_run_s": 0.17286920547485352,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     4680.244695750061
+    ],
+    [
+     "checkoutservice",
+     1821.6679505820161
+    ],
+    [
+     "frontend",
+     584.9027598203618
+    ],
+    [
+     "recommendationservice",
+     3.8333333333333335
+    ],
+    [
+     "productcatalogservice",
+     3.5938189845474615
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_delay_4",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_delay/4",
+   "runtime_s": 0.14973902702331543,
+   "exception": null,
+   "convert_plus_run_s": 0.17403388023376465,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     2823.3087473690534
+    ],
+    [
+     "checkoutservice",
+     942.8195125133694
+    ],
+    [
+     "frontend",
+     333.93995926418137
+    ],
+    [
+     "redis",
+     64.99999999999848
+    ],
+    [
+     "emailservice",
+     5.5456642292781755
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_delay_5",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_delay/5",
+   "runtime_s": 0.14054203033447266,
+   "exception": null,
+   "convert_plus_run_s": 0.17175006866455078,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     3542.3743161145003
+    ],
+    [
+     "checkoutservice",
+     968.6364112803628
+    ],
+    [
+     "frontend",
+     234.76008870755996
+    ],
+    [
+     "adservice",
+     6.054054054054054
+    ],
+    [
+     "main",
+     3.9705882352941897
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_disk_1",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_disk/1",
+   "runtime_s": 0.14513230323791504,
+   "exception": null,
+   "convert_plus_run_s": 0.17614221572875977,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     262.57893938898167
+    ],
+    [
+     "paymentservice",
+     71.12587174177189
+    ],
+    [
+     "recommendationservice",
+     32.00000000002342
+    ],
+    [
+     "checkoutservice",
+     19.778234218872054
+    ],
+    [
+     "emailservice",
+     17.458916332076804
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_disk_2",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_disk/2",
+   "runtime_s": 0.1468822956085205,
+   "exception": null,
+   "convert_plus_run_s": 0.1719343662261963,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     164.3266236228025
+    ],
+    [
+     "emailservice",
+     59.99999999999219
+    ],
+    [
+     "checkoutservice",
+     32.26075897022723
+    ],
+    [
+     "redis",
+     15.000000000000433
+    ],
+    [
+     "productcatalogservice",
+     7.612447548177099
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_disk_3",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_disk/3",
+   "runtime_s": 0.1412036418914795,
+   "exception": null,
+   "convert_plus_run_s": 0.17464184761047363,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     98.24231630621671
+    ],
+    [
+     "emailservice",
+     25.968409795733105
+    ],
+    [
+     "checkoutservice",
+     12.539195792189261
+    ],
+    [
+     "adservice",
+     10.939854658142284
+    ],
+    [
+     "paymentservice",
+     8.261578015547046
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_disk_4",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_disk/4",
+   "runtime_s": 0.1557450294494629,
+   "exception": null,
+   "convert_plus_run_s": 0.18397188186645508,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     397.60911554342243
+    ],
+    [
+     "currencyservice",
+     90.27147576271419
+    ],
+    [
+     "adservice",
+     38.617052660919605
+    ],
+    [
+     "emailservice",
+     30.262391400513117
+    ],
+    [
+     "checkoutservice",
+     29.028708258786367
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_disk_5",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_disk/5",
+   "runtime_s": 0.15251946449279785,
+   "exception": null,
+   "convert_plus_run_s": 0.18405914306640625,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     92.49492763778245
+    ],
+    [
+     "emailservice",
+     21.332271100495646
+    ],
+    [
+     "paymentservice",
+     17.761570077783862
+    ],
+    [
+     "checkoutservice",
+     11.960654274250839
+    ],
+    [
+     "productcatalogservice",
+     10.252761792798564
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_loss_1",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_loss/1",
+   "runtime_s": 0.14195966720581055,
+   "exception": null,
+   "convert_plus_run_s": 0.16800808906555176,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     2538.2166493765585
+    ],
+    [
+     "checkoutservice",
+     199.1160034885476
+    ],
+    [
+     "frontend",
+     51.321832986705054
+    ],
+    [
+     "shippingservice",
+     27.00763357039414
+    ],
+    [
+     "recommendationservice",
+     13.528695124519418
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_loss_2",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_loss/2",
+   "runtime_s": 0.1672067642211914,
+   "exception": null,
+   "convert_plus_run_s": 0.19396209716796875,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1889.2082785432724
+    ],
+    [
+     "recommendationservice",
+     457.0000000003348
+    ],
+    [
+     "adservice",
+     11.524064797300472
+    ],
+    [
+     "frontend",
+     10.614709239280433
+    ],
+    [
+     "productcatalogservice",
+     8.363636363636372
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_loss_3",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_loss/3",
+   "runtime_s": 0.1391150951385498,
+   "exception": null,
+   "convert_plus_run_s": 0.1681520938873291,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1401.0532208409095
+    ],
+    [
+     "recommendationservice",
+     36.8077651760548
+    ],
+    [
+     "redis",
+     33.00000000000282
+    ],
+    [
+     "adservice",
+     21.199999999998333
+    ],
+    [
+     "shippingservice",
+     8.454545454545684
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_loss_4",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_loss/4",
+   "runtime_s": 0.17594051361083984,
+   "exception": null,
+   "convert_plus_run_s": 0.2074899673461914,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1141.7854883323653
+    ],
+    [
+     "frontend",
+     10.779472474757668
+    ],
+    [
+     "checkoutservice",
+     8.234042553191465
+    ],
+    [
+     "adservice",
+     8.020407196935743
+    ],
+    [
+     "recommendationservice",
+     6.153136950718523
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_loss_5",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_loss/5",
+   "runtime_s": 0.16634273529052734,
+   "exception": null,
+   "convert_plus_run_s": 0.19335126876831055,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1816.4982668179593
+    ],
+    [
+     "recommendationservice",
+     38.41581655489619
+    ],
+    [
+     "frontend",
+     12.499894010934437
+    ],
+    [
+     "adservice",
+     9.509461277816344
+    ],
+    [
+     "currencyservice",
+     6.083121248709915
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_mem_1",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_mem/1",
+   "runtime_s": 0.11908245086669922,
+   "exception": null,
+   "convert_plus_run_s": 0.17074966430664062,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     3916.3103448276524
+    ],
+    [
+     "main",
+     23.66666666666975
+    ],
+    [
+     "currencyservice",
+     8.027272727272676
+    ],
+    [
+     "checkoutservice",
+     6.481082518784494
+    ],
+    [
+     "shippingservice",
+     6.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_mem_2",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_mem/2",
+   "runtime_s": 0.1268460750579834,
+   "exception": null,
+   "convert_plus_run_s": 0.20253252983093262,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     8689.999999999427
+    ],
+    [
+     "emailservice",
+     9.999999999989592
+    ],
+    [
+     "checkoutservice",
+     5.76712328767122
+    ],
+    [
+     "currencyservice",
+     5.619820063245776
+    ],
+    [
+     "shippingservice",
+     5.61285
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_mem_3",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_mem/3",
+   "runtime_s": 0.14539718627929688,
+   "exception": null,
+   "convert_plus_run_s": 0.21079587936401367,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     10364.454545453988
+    ],
+    [
+     "emailservice",
+     38.000000000027754
+    ],
+    [
+     "main",
+     21.842105263156107
+    ],
+    [
+     "checkoutservice",
+     8.0
+    ],
+    [
+     "recommendationservice",
+     6.881221596931956
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_mem_4",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_mem/4",
+   "runtime_s": 0.11996054649353027,
+   "exception": null,
+   "convert_plus_run_s": 0.1791667938232422,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     7103.812499999827
+    ],
+    [
+     "emailservice",
+     32.00000000002255
+    ],
+    [
+     "adservice",
+     19.976190476190286
+    ],
+    [
+     "checkoutservice",
+     6.098915989159876
+    ],
+    [
+     "currencyservice",
+     5.614457831325194
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "cartservice_mem_5",
+   "label": "cartservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/cartservice_mem/5",
+   "runtime_s": 0.11301207542419434,
+   "exception": null,
+   "convert_plus_run_s": 0.17912960052490234,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     9468.833333333445
+    ],
+    [
+     "emailservice",
+     60.999999999939284
+    ],
+    [
+     "checkoutservice",
+     15.368740359966722
+    ],
+    [
+     "currencyservice",
+     6.148148148148119
+    ],
+    [
+     "paymentservice",
+     5.5
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_cpu_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_cpu/1",
+   "runtime_s": 0.12102866172790527,
+   "exception": null,
+   "convert_plus_run_s": 0.205122709274292,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     314.3384682699074
+    ],
+    [
+     "productcatalogservice",
+     7.938271604938285
+    ],
+    [
+     "shippingservice",
+     5.444444444444445
+    ],
+    [
+     "currencyservice",
+     5.245901639344291
+    ],
+    [
+     "emailservice",
+     5.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_cpu_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_cpu/2",
+   "runtime_s": 0.1151423454284668,
+   "exception": null,
+   "convert_plus_run_s": 0.17645525932312012,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     252.90830986777252
+    ],
+    [
+     "cartservice",
+     15.578947368421087
+    ],
+    [
+     "adservice",
+     12.102564102563846
+    ],
+    [
+     "paymentservice",
+     11.438813349814588
+    ],
+    [
+     "redis",
+     11.33333333333308
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_cpu_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_cpu/3",
+   "runtime_s": 0.11093568801879883,
+   "exception": null,
+   "convert_plus_run_s": 0.1749267578125,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     312.67223873863645
+    ],
+    [
+     "cartservice",
+     20.658536585366186
+    ],
+    [
+     "currencyservice",
+     4.609589041095881
+    ],
+    [
+     "paymentservice",
+     4.0
+    ],
+    [
+     "shippingservice",
+     3.875
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_cpu_4",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_cpu/4",
+   "runtime_s": 0.11984086036682129,
+   "exception": null,
+   "convert_plus_run_s": 0.18268847465515137,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     283.69754503310236
+    ],
+    [
+     "cartservice",
+     18.708333333333545
+    ],
+    [
+     "redis",
+     16.49999999999962
+    ],
+    [
+     "currencyservice",
+     12.761904761904987
+    ],
+    [
+     "productcatalogservice",
+     6.175438596491252
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_cpu_5",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_cpu/5",
+   "runtime_s": 0.11386466026306152,
+   "exception": null,
+   "convert_plus_run_s": 0.1931009292602539,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     263.01741197879215
+    ],
+    [
+     "cartservice",
+     24.866666666667683
+    ],
+    [
+     "redis",
+     16.49999999999962
+    ],
+    [
+     "currencyservice",
+     8.302631578947208
+    ],
+    [
+     "adservice",
+     7.799999999999805
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_delay_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_delay/1",
+   "runtime_s": 0.1483156681060791,
+   "exception": null,
+   "convert_plus_run_s": 0.18032574653625488,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     3237.024342364467
+    ],
+    [
+     "cartservice",
+     300.7785672426617
+    ],
+    [
+     "frontend",
+     17.722626194369838
+    ],
+    [
+     "recommendationservice",
+     8.302631578947421
+    ],
+    [
+     "adservice",
+     5.8
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_delay_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_delay/2",
+   "runtime_s": 0.1475670337677002,
+   "exception": null,
+   "convert_plus_run_s": 0.18382620811462402,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     3070.239844356137
+    ],
+    [
+     "cartservice",
+     209.4110963468385
+    ],
+    [
+     "redis",
+     33.00000000000271
+    ],
+    [
+     "frontend",
+     27.240642368580474
+    ],
+    [
+     "main",
+     25.111111111110255
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_delay_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_delay/3",
+   "runtime_s": 0.20038843154907227,
+   "exception": null,
+   "convert_plus_run_s": 0.22318005561828613,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     2246.3947675401937
+    ],
+    [
+     "emailservice",
+     104.00000000007633
+    ],
+    [
+     "cartservice",
+     33.549793995539126
+    ],
+    [
+     "frontend",
+     22.062669218377426
+    ],
+    [
+     "adservice",
+     11.102550344491746
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_delay_4",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_delay/4",
+   "runtime_s": 0.1426982879638672,
+   "exception": null,
+   "convert_plus_run_s": 0.16841459274291992,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1987.630967815198
+    ],
+    [
+     "checkoutservice",
+     1812.0309245300161
+    ],
+    [
+     "frontend",
+     37.048323077355676
+    ],
+    [
+     "adservice",
+     11.009610625643058
+    ],
+    [
+     "currencyservice",
+     8.497347685470444
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_delay_5",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_delay/5",
+   "runtime_s": 0.13620495796203613,
+   "exception": null,
+   "convert_plus_run_s": 0.15932488441467285,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     4133.748177342502
+    ],
+    [
+     "recommendationservice",
+     476.00000000035044
+    ],
+    [
+     "emailservice",
+     339.0000000002498
+    ],
+    [
+     "cartservice",
+     11.666666666668593
+    ],
+    [
+     "frontend",
+     9.649572052024023
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_disk_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_disk/1",
+   "runtime_s": 0.1431894302368164,
+   "exception": null,
+   "convert_plus_run_s": 0.16542959213256836,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     143.62203098923078
+    ],
+    [
+     "cartservice",
+     38.792452997870264
+    ],
+    [
+     "emailservice",
+     19.037442036740757
+    ],
+    [
+     "productcatalogservice",
+     11.387079534210168
+    ],
+    [
+     "paymentservice",
+     9.742664045883428
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_disk_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_disk/2",
+   "runtime_s": 0.1505880355834961,
+   "exception": null,
+   "convert_plus_run_s": 0.1833961009979248,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     327.00000000024113
+    ],
+    [
+     "checkoutservice",
+     149.44912145033385
+    ],
+    [
+     "redis",
+     127.99999999998309
+    ],
+    [
+     "cartservice",
+     23.71854306974835
+    ],
+    [
+     "productcatalogservice",
+     17.89048514632612
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_disk_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_disk/3",
+   "runtime_s": 0.14933562278747559,
+   "exception": null,
+   "convert_plus_run_s": 0.17303085327148438,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     242.04633143480245
+    ],
+    [
+     "checkoutservice",
+     137.43558708231765
+    ],
+    [
+     "emailservice",
+     123.9999999998751
+    ],
+    [
+     "recommendationservice",
+     91.99999999990979
+    ],
+    [
+     "productcatalogservice",
+     28.808740946964416
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_disk_4",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_disk/4",
+   "runtime_s": 0.15211200714111328,
+   "exception": null,
+   "convert_plus_run_s": 0.17978191375732422,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     121.18321153945129
+    ],
+    [
+     "emailservice",
+     51.39992804573057
+    ],
+    [
+     "paymentservice",
+     23.70577945257
+    ],
+    [
+     "productcatalogservice",
+     16.892630332183664
+    ],
+    [
+     "frontend",
+     6.431818181818222
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_disk_5",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_disk/5",
+   "runtime_s": 0.15453100204467773,
+   "exception": null,
+   "convert_plus_run_s": 0.18441987037658691,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     365.00000000026887
+    ],
+    [
+     "checkoutservice",
+     193.99216837663016
+    ],
+    [
+     "cartservice",
+     47.588235294118654
+    ],
+    [
+     "currencyservice",
+     42.922944154951395
+    ],
+    [
+     "productcatalogservice",
+     32.21411748738647
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_loss_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_loss/1",
+   "runtime_s": 0.1430222988128662,
+   "exception": null,
+   "convert_plus_run_s": 0.167222261428833,
+   "answers": [
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "paymentservice",
+     3124.748828491023
+    ],
+    [
+     "cartservice",
+     1386.3514232191192
+    ],
+    [
+     "recommendationservice",
+     29.815085355048787
+    ],
+    [
+     "emailservice",
+     23.710062770559556
+    ],
+    [
+     "redis",
+     15.11111111111132
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_loss_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_loss/2",
+   "runtime_s": 0.15404725074768066,
+   "exception": null,
+   "convert_plus_run_s": 0.1829674243927002,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     8339.54887218078
+    ],
+    [
+     "redis",
+     32.500000000001
+    ],
+    [
+     "paymentservice",
+     19.337610702157964
+    ],
+    [
+     "checkoutservice",
+     11.047617767463253
+    ],
+    [
+     "recommendationservice",
+     9.731164380389364
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_loss_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_loss/3",
+   "runtime_s": 0.15295124053955078,
+   "exception": null,
+   "convert_plus_run_s": 0.1806938648223877,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend-external",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     12.96287814597834
+    ],
+    [
+     "checkoutservice",
+     10.834313186901468
+    ],
+    [
+     "paymentservice",
+     9.585643369304284
+    ],
+    [
+     "frontend-external",
+     4.166666666666667
+    ],
+    [
+     "productcatalogservice",
+     3.3770389610389615
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_loss_4",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_loss/4",
+   "runtime_s": 0.1448230743408203,
+   "exception": null,
+   "convert_plus_run_s": 0.16972827911376953,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     56.623497029759626
+    ],
+    [
+     "recommendationservice",
+     15.344495405123672
+    ],
+    [
+     "checkoutservice",
+     12.167348222711563
+    ],
+    [
+     "paymentservice",
+     10.91803488026708
+    ],
+    [
+     "frontend",
+     5.812416286296394
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_loss_5",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_loss/5",
+   "runtime_s": 0.1594524383544922,
+   "exception": null,
+   "convert_plus_run_s": 0.19689226150512695,
+   "answers": [
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "paymentservice",
+     16.307919060971805
+    ],
+    [
+     "emailservice",
+     9.306502849668568
+    ],
+    [
+     "main",
+     7.461538461538955
+    ],
+    [
+     "checkoutservice",
+     6.954090988031872
+    ],
+    [
+     "productcatalogservice",
+     4.476190476190476
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_mem_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_mem/1",
+   "runtime_s": 0.12453436851501465,
+   "exception": null,
+   "convert_plus_run_s": 0.1906733512878418,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     1715.9315068493117
+    ],
+    [
+     "cartservice",
+     56.391921941039506
+    ],
+    [
+     "shippingservice",
+     53.60106685237494
+    ],
+    [
+     "productcatalogservice",
+     14.223705728071442
+    ],
+    [
+     "recommendationservice",
+     6.127578823563348
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_mem_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_mem/2",
+   "runtime_s": 0.13771796226501465,
+   "exception": null,
+   "convert_plus_run_s": 0.22462058067321777,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     2120.915254237287
+    ],
+    [
+     "redis",
+     31.49999999999924
+    ],
+    [
+     "currencyservice",
+     6.463157894736751
+    ],
+    [
+     "paymentservice",
+     5.356382007425893
+    ],
+    [
+     "adservice",
+     4.91603889614882
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_mem_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_mem/3",
+   "runtime_s": 0.13477659225463867,
+   "exception": null,
+   "convert_plus_run_s": 0.22599577903747559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     2361.660377358486
+    ],
+    [
+     "emailservice",
+     52.999999999946226
+    ],
+    [
+     "paymentservice",
+     39.83012559862654
+    ],
+    [
+     "recommendationservice",
+     27.225410144677095
+    ],
+    [
+     "cartservice",
+     19.00800449478589
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_mem_4",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_mem/4",
+   "runtime_s": 0.14368987083435059,
+   "exception": null,
+   "convert_plus_run_s": 0.21810412406921387,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     2502.7400000000152
+    ],
+    [
+     "productcatalogservice",
+     41.717600760308706
+    ],
+    [
+     "recommendationservice",
+     28.000000000020815
+    ],
+    [
+     "adservice",
+     22.00677758672429
+    ],
+    [
+     "cartservice",
+     14.017458283723693
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "checkoutservice_mem_5",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/checkoutservice_mem/5",
+   "runtime_s": 0.15819287300109863,
+   "exception": null,
+   "convert_plus_run_s": 0.23545241355895996,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     2120.5423728813553
+    ],
+    [
+     "shippingservice",
+     57.00844591916411
+    ],
+    [
+     "frontend",
+     17.670907848564227
+    ],
+    [
+     "recommendationservice",
+     16.56103949907102
+    ],
+    [
+     "main",
+     12.886363636362978
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_cpu_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_cpu/1",
+   "runtime_s": 0.11968231201171875,
+   "exception": null,
+   "convert_plus_run_s": 0.1780402660369873,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     280.0548015056417
+    ],
+    [
+     "emailservice",
+     147.88575679273515
+    ],
+    [
+     "checkoutservice",
+     61.49505504866453
+    ],
+    [
+     "shippingservice",
+     49.6198864993893
+    ],
+    [
+     "main",
+     19.164416328673205
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_cpu_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_cpu/2",
+   "runtime_s": 0.13259625434875488,
+   "exception": null,
+   "convert_plus_run_s": 0.21132779121398926,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     15.169580609122905
+    ],
+    [
+     "redis",
+     12.000000000000144
+    ],
+    [
+     "cartservice",
+     11.133333333333704
+    ],
+    [
+     "checkoutservice",
+     6.5145
+    ],
+    [
+     "emailservice",
+     6.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_cpu_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_cpu/3",
+   "runtime_s": 0.14028573036193848,
+   "exception": null,
+   "convert_plus_run_s": 0.20514655113220215,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     40.74381070221794
+    ],
+    [
+     "redis",
+     34.00000000000103
+    ],
+    [
+     "cartservice",
+     11.359999999999726
+    ],
+    [
+     "checkoutservice",
+     8.5
+    ],
+    [
+     "paymentservice",
+     8.5
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_cpu_4",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_cpu/4",
+   "runtime_s": 0.14534378051757812,
+   "exception": null,
+   "convert_plus_run_s": 0.24614953994750977,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     31.86223996003351
+    ],
+    [
+     "emailservice",
+     26.860249619665943
+    ],
+    [
+     "cartservice",
+     18.740740740741245
+    ],
+    [
+     "checkoutservice",
+     16.933215771678537
+    ],
+    [
+     "redis",
+     16.49999999999962
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_cpu_5",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_cpu/5",
+   "runtime_s": 0.17725801467895508,
+   "exception": null,
+   "convert_plus_run_s": 0.2654552459716797,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     34.57142857142827
+    ],
+    [
+     "currencyservice",
+     29.90361119119192
+    ],
+    [
+     "redis",
+     28.799999999998594
+    ],
+    [
+     "cartservice",
+     18.291666666665567
+    ],
+    [
+     "paymentservice",
+     5.516375
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_delay_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_delay/1",
+   "runtime_s": 0.20084095001220703,
+   "exception": null,
+   "convert_plus_run_s": 0.23148131370544434,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     1348.5426969520045
+    ],
+    [
+     "currencyservice",
+     742.1978167876696
+    ],
+    [
+     "frontend",
+     72.81417007961824
+    ],
+    [
+     "shippingservice",
+     12.9818181818181
+    ],
+    [
+     "emailservice",
+     5.548295454546494
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_delay_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_delay/2",
+   "runtime_s": 0.1723775863647461,
+   "exception": null,
+   "convert_plus_run_s": 0.2022538185119629,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     7660.955872670473
+    ],
+    [
+     "checkoutservice",
+     2386.616027627866
+    ],
+    [
+     "frontend",
+     555.746070027204
+    ],
+    [
+     "shippingservice",
+     59.172489398862496
+    ],
+    [
+     "cartservice",
+     26.818101579269605
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_delay_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_delay/3",
+   "runtime_s": 0.19263076782226562,
+   "exception": null,
+   "convert_plus_run_s": 0.2161400318145752,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     3356.0894037603293
+    ],
+    [
+     "checkoutservice",
+     707.5032784853697
+    ],
+    [
+     "frontend",
+     499.37649568475234
+    ],
+    [
+     "cartservice",
+     32.39554713209674
+    ],
+    [
+     "redis",
+     15.99999999999962
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_delay_4",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_delay/4",
+   "runtime_s": 0.2523031234741211,
+   "exception": null,
+   "convert_plus_run_s": 0.2849917411804199,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     2920.5626165616823
+    ],
+    [
+     "checkoutservice",
+     1347.03870638728
+    ],
+    [
+     "frontend",
+     502.4045319564909
+    ],
+    [
+     "cartservice",
+     323.6596263752414
+    ],
+    [
+     "adservice",
+     44.3888888888887
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_delay_5",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_delay/5",
+   "runtime_s": 0.2138965129852295,
+   "exception": null,
+   "convert_plus_run_s": 0.2375643253326416,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     13940.928240187053
+    ],
+    [
+     "checkoutservice",
+     3479.9240528988503
+    ],
+    [
+     "frontend",
+     533.5252084526215
+    ],
+    [
+     "redis",
+     63.99999999999848
+    ],
+    [
+     "cartservice",
+     27.267605633804862
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_disk_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_disk/1",
+   "runtime_s": 0.17563533782958984,
+   "exception": null,
+   "convert_plus_run_s": 0.20855474472045898,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     136.2540487074274
+    ],
+    [
+     "currencyservice",
+     134.56432971245275
+    ],
+    [
+     "checkoutservice",
+     75.23490686383907
+    ],
+    [
+     "emailservice",
+     39.9999999999601
+    ],
+    [
+     "adservice",
+     20.811236116593548
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_disk_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_disk/2",
+   "runtime_s": 0.23341751098632812,
+   "exception": null,
+   "convert_plus_run_s": 0.2844350337982178,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     127.99999999986817
+    ],
+    [
+     "currencyservice",
+     89.9692109704298
+    ],
+    [
+     "checkoutservice",
+     23.886324679920758
+    ],
+    [
+     "emailservice",
+     23.420002845622932
+    ],
+    [
+     "frontend",
+     17.81191193877173
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_disk_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_disk/3",
+   "runtime_s": 0.1941242218017578,
+   "exception": null,
+   "convert_plus_run_s": 0.2562596797943115,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     104.42995162233602
+    ],
+    [
+     "checkoutservice",
+     69.80590477142741
+    ],
+    [
+     "paymentservice",
+     16.468601134450186
+    ],
+    [
+     "cartservice",
+     16.16345554004016
+    ],
+    [
+     "recommendationservice",
+     15.000000000010408
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_disk_4",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_disk/4",
+   "runtime_s": 0.17000889778137207,
+   "exception": null,
+   "convert_plus_run_s": 0.21656441688537598,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     48.5344666083009
+    ],
+    [
+     "currencyservice",
+     33.9221024271448
+    ],
+    [
+     "emailservice",
+     21.802190254504232
+    ],
+    [
+     "paymentservice",
+     16.131231785700244
+    ],
+    [
+     "recommendationservice",
+     11.94736842105267
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_disk_5",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_disk/5",
+   "runtime_s": 0.20682072639465332,
+   "exception": null,
+   "convert_plus_run_s": 0.23863911628723145,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     55.16892093716669
+    ],
+    [
+     "checkoutservice",
+     52.222693756829585
+    ],
+    [
+     "paymentservice",
+     50.95028826857745
+    ],
+    [
+     "emailservice",
+     44.48450140978772
+    ],
+    [
+     "frontend",
+     13.055138597131897
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_loss_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_loss/1",
+   "runtime_s": 0.21726393699645996,
+   "exception": null,
+   "convert_plus_run_s": 0.2515287399291992,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     859.1807033376857
+    ],
+    [
+     "checkoutservice",
+     102.76941907110579
+    ],
+    [
+     "currencyservice",
+     45.26017310252514
+    ],
+    [
+     "frontend",
+     37.86233987752148
+    ],
+    [
+     "recommendationservice",
+     17.061789067496424
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_loss_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_loss/2",
+   "runtime_s": 0.2398054599761963,
+   "exception": null,
+   "convert_plus_run_s": 0.2654228210449219,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     206.71834825202356
+    ],
+    [
+     "productcatalogservice",
+     67.20518471722
+    ],
+    [
+     "recommendationservice",
+     57.41633534749833
+    ],
+    [
+     "redis",
+     34.99999999999913
+    ],
+    [
+     "cartservice",
+     28.387086185467744
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_loss_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_loss/3",
+   "runtime_s": 0.21262121200561523,
+   "exception": null,
+   "convert_plus_run_s": 0.26784586906433105,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1967.72173320143
+    ],
+    [
+     "currencyservice",
+     347.7016468927768
+    ],
+    [
+     "main",
+     49.17647058822625
+    ],
+    [
+     "recommendationservice",
+     46.38803819340548
+    ],
+    [
+     "frontend",
+     37.21810255317988
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_loss_4",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_loss/4",
+   "runtime_s": 0.19182586669921875,
+   "exception": null,
+   "convert_plus_run_s": 0.24570012092590332,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     344.0182418110896
+    ],
+    [
+     "main",
+     67.99999999993061
+    ],
+    [
+     "recommendationservice",
+     38.69481638472945
+    ],
+    [
+     "redis",
+     32.49999999999919
+    ],
+    [
+     "productcatalogservice",
+     30.28080542538554
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_loss_5",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_loss/5",
+   "runtime_s": 0.17628145217895508,
+   "exception": null,
+   "convert_plus_run_s": 0.19862604141235352,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     460.45715365539536
+    ],
+    [
+     "recommendationservice",
+     45.352796328233666
+    ],
+    [
+     "redis",
+     33.99999999999924
+    ],
+    [
+     "cartservice",
+     25.454852277941757
+    ],
+    [
+     "adservice",
+     9.847105969074256
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_mem_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_mem/1",
+   "runtime_s": 0.12301993370056152,
+   "exception": null,
+   "convert_plus_run_s": 0.20885896682739258,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     6583.168263017367
+    ],
+    [
+     "checkoutservice",
+     1601.3673600522393
+    ],
+    [
+     "cartservice",
+     1079.7233678814998
+    ],
+    [
+     "adservice",
+     175.17437902630536
+    ],
+    [
+     "frontend",
+     124.58635523769314
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_mem_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_mem/2",
+   "runtime_s": 0.14217782020568848,
+   "exception": null,
+   "convert_plus_run_s": 0.212846040725708,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     4676.726557474315
+    ],
+    [
+     "checkoutservice",
+     1940.521766266193
+    ],
+    [
+     "adservice",
+     319.9437450004076
+    ],
+    [
+     "shippingservice",
+     113.31651694789244
+    ],
+    [
+     "emailservice",
+     97.00000000007113
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_mem_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_mem/3",
+   "runtime_s": 0.11354422569274902,
+   "exception": null,
+   "convert_plus_run_s": 0.1932966709136963,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     3220.4923241783767
+    ],
+    [
+     "checkoutservice",
+     1197.775893397939
+    ],
+    [
+     "cartservice",
+     342.1503817740648
+    ],
+    [
+     "frontend",
+     74.91523944774505
+    ],
+    [
+     "productcatalogservice",
+     56.97622104950794
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_mem_4",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_mem/4",
+   "runtime_s": 0.11498165130615234,
+   "exception": null,
+   "convert_plus_run_s": 0.20500946044921875,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     1460.5308641975091
+    ],
+    [
+     "redis",
+     17.499999999999567
+    ],
+    [
+     "checkoutservice",
+     8.175457627118636
+    ],
+    [
+     "emailservice",
+     7.00975
+    ],
+    [
+     "paymentservice",
+     6.979062811565305
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "currencyservice_mem_5",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/currencyservice_mem/5",
+   "runtime_s": 0.12527132034301758,
+   "exception": null,
+   "convert_plus_run_s": 0.21627497673034668,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "currencyservice",
+     1248.1052631579
+    ],
+    [
+     "recommendationservice",
+     61.49999999999176
+    ],
+    [
+     "redis",
+     16.999999999999567
+    ],
+    [
+     "adservice",
+     13.940000000000563
+    ],
+    [
+     "cartservice",
+     11.736842105263213
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_cpu_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_cpu/1",
+   "runtime_s": 0.11947417259216309,
+   "exception": null,
+   "convert_plus_run_s": 0.1746959686279297,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     175.407060780337
+    ],
+    [
+     "cartservice",
+     51.904233460246544
+    ],
+    [
+     "emailservice",
+     46.99999999995316
+    ],
+    [
+     "adservice",
+     13.161290322580808
+    ],
+    [
+     "main",
+     8.078947368421131
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_cpu_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_cpu/2",
+   "runtime_s": 0.11679863929748535,
+   "exception": null,
+   "convert_plus_run_s": 0.1875169277191162,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     235.72626726265585
+    ],
+    [
+     "checkoutservice",
+     34.61878512175544
+    ],
+    [
+     "frontend",
+     8.803493260352914
+    ],
+    [
+     "adservice",
+     5.945945945945614
+    ],
+    [
+     "paymentservice",
+     5.607407407407425
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_cpu_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_cpu/3",
+   "runtime_s": 0.1411147117614746,
+   "exception": null,
+   "convert_plus_run_s": 0.18618416786193848,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     151.11897552204286
+    ],
+    [
+     "recommendationservice",
+     16.999999999984386
+    ],
+    [
+     "checkoutservice",
+     7.713509879751011
+    ],
+    [
+     "frontend",
+     5.293608050482268
+    ],
+    [
+     "shippingservice",
+     3.022727272727256
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_cpu_4",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_cpu/4",
+   "runtime_s": 0.12108445167541504,
+   "exception": null,
+   "convert_plus_run_s": 0.18992400169372559,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     639.6999999999706
+    ],
+    [
+     "productcatalogservice",
+     85.16523533680737
+    ],
+    [
+     "recommendationservice",
+     15.761904761904649
+    ],
+    [
+     "redis",
+     13.333333333333009
+    ],
+    [
+     "emailservice",
+     9.0
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_cpu_5",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_cpu/5",
+   "runtime_s": 0.11280274391174316,
+   "exception": null,
+   "convert_plus_run_s": 0.18619728088378906,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     95.6964041524909
+    ],
+    [
+     "redis",
+     16.99999999999962
+    ],
+    [
+     "main",
+     11.666666666666341
+    ],
+    [
+     "cartservice",
+     9.119999999999735
+    ],
+    [
+     "paymentservice",
+     6.63905325443776
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_delay_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_delay/1",
+   "runtime_s": 0.1660778522491455,
+   "exception": null,
+   "convert_plus_run_s": 0.20183134078979492,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     3673.6118716455585
+    ],
+    [
+     "productcatalogservice",
+     2872.049118795784
+    ],
+    [
+     "recommendationservice",
+     839.6343277382377
+    ],
+    [
+     "frontend",
+     561.0897326553791
+    ],
+    [
+     "cartservice",
+     44.08747271811131
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_delay_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_delay/2",
+   "runtime_s": 0.13601469993591309,
+   "exception": null,
+   "convert_plus_run_s": 0.16053509712219238,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     17107.89344257632
+    ],
+    [
+     "frontend",
+     1726.1848959224255
+    ],
+    [
+     "recommendationservice",
+     1412.9269462549196
+    ],
+    [
+     "checkoutservice",
+     1073.425133424196
+    ],
+    [
+     "main",
+     31.333333333330867
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_delay_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_delay/3",
+   "runtime_s": 0.14422917366027832,
+   "exception": null,
+   "convert_plus_run_s": 0.17383980751037598,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     11563.346118556185
+    ],
+    [
+     "recommendationservice",
+     1175.80143755567
+    ],
+    [
+     "frontend",
+     1132.747536816819
+    ],
+    [
+     "checkoutservice",
+     593.7127715540539
+    ],
+    [
+     "cartservice",
+     49.22666666666299
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_delay_4",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_delay/4",
+   "runtime_s": 0.1467435359954834,
+   "exception": null,
+   "convert_plus_run_s": 0.16905593872070312,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     17327.648349030776
+    ],
+    [
+     "frontend",
+     2418.342512653911
+    ],
+    [
+     "recommendationservice",
+     1596.700941322058
+    ],
+    [
+     "checkoutservice",
+     1157.281054850847
+    ],
+    [
+     "cartservice",
+     647.911442064595
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_delay_5",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_delay/5",
+   "runtime_s": 0.17176008224487305,
+   "exception": null,
+   "convert_plus_run_s": 0.20551609992980957,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     20039.78236252867
+    ],
+    [
+     "frontend",
+     1362.8296180392408
+    ],
+    [
+     "recommendationservice",
+     1252.389032513717
+    ],
+    [
+     "cartservice",
+     941.6869724281416
+    ],
+    [
+     "checkoutservice",
+     924.1634513751857
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_disk_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_disk/1",
+   "runtime_s": 0.1361837387084961,
+   "exception": null,
+   "convert_plus_run_s": 0.1564502716064453,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     419.5912648795473
+    ],
+    [
+     "cartservice",
+     394.0741915449788
+    ],
+    [
+     "recommendationservice",
+     123.00000000009021
+    ],
+    [
+     "checkoutservice",
+     72.26304247460781
+    ],
+    [
+     "redis",
+     32.99999999999913
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_disk_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_disk/2",
+   "runtime_s": 0.15707755088806152,
+   "exception": null,
+   "convert_plus_run_s": 0.18334388732910156,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     304.590861800765
+    ],
+    [
+     "cartservice",
+     203.56042664912704
+    ],
+    [
+     "recommendationservice",
+     96.66666666668189
+    ],
+    [
+     "emailservice",
+     82.66666666663178
+    ],
+    [
+     "checkoutservice",
+     58.8937865972209
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_disk_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_disk/3",
+   "runtime_s": 0.1696474552154541,
+   "exception": null,
+   "convert_plus_run_s": 0.19755029678344727,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     411.8286601586052
+    ],
+    [
+     "recommendationservice",
+     153.00000000011102
+    ],
+    [
+     "checkoutservice",
+     118.72203873263082
+    ],
+    [
+     "cartservice",
+     106.36418119041625
+    ],
+    [
+     "emailservice",
+     35.09365262058397
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_disk_4",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_disk/4",
+   "runtime_s": 0.13909196853637695,
+   "exception": null,
+   "convert_plus_run_s": 0.1630561351776123,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     194.0685651250163
+    ],
+    [
+     "recommendationservice",
+     46.24951407551979
+    ],
+    [
+     "checkoutservice",
+     33.04513989635465
+    ],
+    [
+     "paymentservice",
+     20.724681616815623
+    ],
+    [
+     "cartservice",
+     19.8181818181807
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_disk_5",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_disk/5",
+   "runtime_s": 0.16322970390319824,
+   "exception": null,
+   "convert_plus_run_s": 0.19146466255187988,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     242.15437371585503
+    ],
+    [
+     "recommendationservice",
+     72.49999999999002
+    ],
+    [
+     "cartservice",
+     30.33383064332735
+    ],
+    [
+     "paymentservice",
+     30.03567272581369
+    ],
+    [
+     "checkoutservice",
+     23.91994350314719
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_loss_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_loss/1",
+   "runtime_s": 0.14391565322875977,
+   "exception": null,
+   "convert_plus_run_s": 0.16839218139648438,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     1156.4875606047503
+    ],
+    [
+     "frontend",
+     119.73427775608364
+    ],
+    [
+     "recommendationservice",
+     119.50664349650543
+    ],
+    [
+     "checkoutservice",
+     113.4382974516693
+    ],
+    [
+     "productcatalogservice",
+     109.68339568345445
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_loss_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_loss/2",
+   "runtime_s": 0.16333580017089844,
+   "exception": null,
+   "convert_plus_run_s": 0.20284628868103027,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     175.20286637428157
+    ],
+    [
+     "recommendationservice",
+     144.56762988818548
+    ],
+    [
+     "adservice",
+     104.92395674288093
+    ],
+    [
+     "frontend",
+     99.11724148100548
+    ],
+    [
+     "currencyservice",
+     25.84176045360698
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_loss_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_loss/3",
+   "runtime_s": 0.14437174797058105,
+   "exception": null,
+   "convert_plus_run_s": 0.170426607131958,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     315.3853582644995
+    ],
+    [
+     "recommendationservice",
+     107.87368877750009
+    ],
+    [
+     "adservice",
+     77.23061646548537
+    ],
+    [
+     "frontend",
+     54.102992828829386
+    ],
+    [
+     "productcatalogservice",
+     51.00974301333807
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_loss_4",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_loss/4",
+   "runtime_s": 0.13320350646972656,
+   "exception": null,
+   "convert_plus_run_s": 0.15624594688415527,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     450.0000000003296
+    ],
+    [
+     "checkoutservice",
+     228.94083367417102
+    ],
+    [
+     "productcatalogservice",
+     204.99999999999892
+    ],
+    [
+     "adservice",
+     117.08390030176157
+    ],
+    [
+     "frontend",
+     66.10885001223193
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_loss_5",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_loss/5",
+   "runtime_s": 0.15052390098571777,
+   "exception": null,
+   "convert_plus_run_s": 0.1728532314300537,
+   "answers": [
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "cartservice",
+     453.147928931854
+    ],
+    [
+     "recommendationservice",
+     112.67547959641038
+    ],
+    [
+     "checkoutservice",
+     81.01216293529627
+    ],
+    [
+     "adservice",
+     39.797246838698506
+    ],
+    [
+     "frontend",
+     33.49356235686606
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_mem_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_mem/1",
+   "runtime_s": 0.17518830299377441,
+   "exception": null,
+   "convert_plus_run_s": 0.2584211826324463,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     13680.999999986318
+    ],
+    [
+     "productcatalogservice",
+     6518.389756325064
+    ],
+    [
+     "cartservice",
+     3391.684314320308
+    ],
+    [
+     "checkoutservice",
+     2099.399934051122
+    ],
+    [
+     "frontend",
+     493.7636815302205
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_mem_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_mem/2",
+   "runtime_s": 0.17690014839172363,
+   "exception": null,
+   "convert_plus_run_s": 0.24507594108581543,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     2315.926267281104
+    ],
+    [
+     "recommendationservice",
+     997.000000000732
+    ],
+    [
+     "checkoutservice",
+     76.91883443759404
+    ],
+    [
+     "cartservice",
+     35.33975658399163
+    ],
+    [
+     "main",
+     17.399999999999554
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_mem_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_mem/3",
+   "runtime_s": 0.11191153526306152,
+   "exception": null,
+   "convert_plus_run_s": 0.1693897247314453,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     4285.798263025711
+    ],
+    [
+     "checkoutservice",
+     908.2564144906544
+    ],
+    [
+     "recommendationservice",
+     207.64391663899664
+    ],
+    [
+     "shippingservice",
+     159.07244506061198
+    ],
+    [
+     "cartservice",
+     137.68130757391947
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_mem_4",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_mem/4",
+   "runtime_s": 0.10442185401916504,
+   "exception": null,
+   "convert_plus_run_s": 0.17036104202270508,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     2382.8181652082517
+    ],
+    [
+     "checkoutservice",
+     712.3697232987867
+    ],
+    [
+     "recommendationservice",
+     233.8117450306169
+    ],
+    [
+     "cartservice",
+     112.51662260317035
+    ],
+    [
+     "shippingservice",
+     101.66130504525314
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  },
+  {
+   "datapack": "productcatalogservice_mem_5",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/online-boutique/productcatalogservice_mem/5",
+   "runtime_s": 0.13610148429870605,
+   "exception": null,
+   "convert_plus_run_s": 0.21186447143554688,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "main",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     1162.9444444444443
+    ],
+    [
+     "emailservice",
+     497.0000000003643
+    ],
+    [
+     "main",
+     16.958333333333435
+    ],
+    [
+     "cartservice",
+     12.295205181899036
+    ],
+    [
+     "recommendationservice",
+     9.606948335992522
+    ]
+   ],
+   "n_abnormal_logs": 0,
+   "n_abnormal_traces": 0
+  }
+ ]
+}

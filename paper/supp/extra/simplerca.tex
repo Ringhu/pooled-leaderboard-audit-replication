@@ -1,0 +1,31 @@
+\begin{table}[h]
+\caption{Authors' \simplerca branch. Top: our runs on RE2 and RE3 with the values reported in the \simplerca paper in parentheses (Top@1, Top@3, Top@5, Avg@3, Avg@5, MRR with misses counted as 0); the last column is the largest absolute difference after rounding to two decimals. RE3-SS uses the second branch the authors provide. Bottom: the same code on RE1 (20-minute window; OB \texttt{data.csv}, SS/TT \texttt{simple\_data.csv}), scored by exact service-name match; RE1 contains only metrics, so no trace or log evidence is added. Source: \texttt{simplerca\_summary.txt}.}
+\label{supp:simplerca}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrrrr@{}}
+\toprule
+Data & Method & Top@1 & Top@3 & Top@5 & Avg@3 & Avg@5 & MRR & Max diff. \\
+\midrule
+RE2-OB & \baro (authors') & 0.14 (0.14) & 0.93 (0.93) & 0.98 (0.98) & 0.64 (0.64) & 0.77 (0.77) & 0.54 (0.54) & 0.00 \\
+RE2-OB & \simplerca & 0.47 (0.47) & 0.93 (0.93) & 1.00 (1.00) & 0.68 (0.68) & 0.80 (0.80) & 0.67 (0.67) & 0.00 \\
+RE2-SS & \baro (authors') & 0.14 (0.14) & 0.82 (0.82) & 0.94 (0.94) & 0.50 (0.50) & 0.67 (0.67) & 0.47 (0.47) & 0.00 \\
+RE2-SS & \simplerca & 0.24 (0.24) & 0.88 (0.88) & 0.97 (0.97) & 0.59 (0.59) & 0.74 (0.74) & 0.55 (0.55) & 0.00 \\
+RE2-TT & \baro (authors') & 0.67 (0.67) & 0.84 (0.84) & 0.89 (0.89) & 0.77 (0.77) & 0.81 (0.81) & 0.76 (0.76) & 0.00 \\
+RE2-TT & \simplerca & 0.80 (0.80) & 0.87 (0.87) & 0.93 (0.93) & 0.84 (0.84) & 0.87 (0.87) & 0.85 (0.85) & 0.00 \\
+RE3-OB & \baro (authors') & 0.00 (0.00) & 0.90 (0.90) & 0.90 (0.90) & 0.59 (0.59) & 0.71 (0.71) & 0.45 (0.45) & 0.00 \\
+RE3-OB & \simplerca & 0.30 (0.30) & 0.90 (0.90) & 0.90 (0.90) & 0.62 (0.62) & 0.73 (0.73) & 0.56 (0.56) & 0.00 \\
+RE3-SS & \baro (authors') & 0.00 (0.00) & 0.83 (0.83) & 0.93 (0.93) & 0.46 (0.46) & 0.65 (0.65) & 0.40 (0.40) & 0.00 \\
+RE3-SS & \simplerca & 0.83 (0.83) & 0.90 (0.90) & 0.90 (0.90) & 0.88 (0.88) & 0.89 (0.89) & 0.87 (0.87) & 0.00 \\
+RE3-TT & \baro (authors') & 0.50 (0.50) & 0.93 (0.93) & 1.00 (1.00) & 0.77 (0.77) & 0.86 (0.86) & 0.72 (0.72) & 0.00 \\
+RE3-TT & \simplerca & 0.83 (0.83) & 1.00 (1.00) & 1.00 (1.00) & 0.93 (0.93) & 0.96 (0.96) & 0.91 (0.91) & 0.00 \\
+\midrule
+RE1-OB & \baro (authors') & 0.776 & 0.928 & 0.968 & 0.867 & 0.904 & 0.860 & -- \\
+RE1-OB & \simplerca & 0.784 & 0.936 & 0.976 & 0.875 & 0.912 & 0.864 & -- \\
+RE1-SS & \baro (authors') & 0.368 & 0.920 & 0.992 & 0.680 & 0.800 & 0.634 & -- \\
+RE1-SS & \simplerca & 0.368 & 0.928 & 0.992 & 0.683 & 0.803 & 0.634 & -- \\
+RE1-TT & \baro (authors') & 0.464 & 0.672 & 0.728 & 0.581 & 0.634 & 0.581 & -- \\
+RE1-TT & \simplerca & 0.568 & 0.856 & 0.952 & 0.733 & 0.813 & 0.721 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

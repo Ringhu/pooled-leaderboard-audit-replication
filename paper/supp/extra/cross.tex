@@ -1,0 +1,54 @@
+\begin{table}[h]
+\centering
+\caption{Cross-family set, held-out selection: for each of the 11 subsystems, the pooled winner of the other ten (subsystems weighted equally) is applied to it. Regret: accuracy lost on the held-out subsystem.}\label{supp:cross-loso}
+\scriptsize
+\begin{tabular}{@{}lrrrp{6.2cm}@{}}
+\toprule
+Pair & Reversals & Mean regret & Max regret & Held-out subsystems where the pooled winner loses \\
+\midrule
+\alertcount vs \baro & 4 of 11 & 0.023 & 0.091 & Bank, Market-1, Market-2, Telecom \\
+\alertcount vs \cdmin & 5 of 11 & 0.023 & 0.125 & Bank, Market-2, Telecom, High, Temporal-2 \\
+\alertcount vs \ediag & 0 of 11 & 0.000 & 0.000 &  \\
+\alertcount vs \maxz & 2 of 11 & 0.005 & 0.045 & Bank, Telecom \\
+\alertcount vs \rcd & 5 of 11 & 0.036 & 0.130 & Bank, Market-1, Market-2, Telecom, High \\
+\baro vs \cdmin & 4 of 11 & 0.025 & 0.104 & RE1-SS, Bank, Market-1, Market-2 \\
+\baro vs \ediag & 0 of 11 & 0.000 & 0.000 &  \\
+\baro vs \maxz & 10 of 11 & 0.099 & 0.232 & RE1-OB, RE1-SS, RE1-TT, Market-1, Market-2, Telecom, High, Low, Temporal-1, Temporal-2 \\
+\baro vs \rcd & 4 of 11 & 0.064 & 0.375 & Telecom, Low, Temporal-1, Temporal-2 \\
+\cdmin vs \ediag & 0 of 11 & 0.000 & 0.000 &  \\
+\cdmin vs \maxz & 4 of 11 & 0.041 & 0.224 & RE1-OB, RE1-SS, Bank, Market-1 \\
+\cdmin vs \rcd & 7 of 11 & 0.182 & 0.539 & RE1-OB, RE1-SS, RE1-TT, Telecom, Low, Temporal-1, Temporal-2 \\
+\ediag vs \maxz & 0 of 11 & 0.000 & 0.000 &  \\
+\ediag vs \rcd & 0 of 11 & 0.000 & 0.000 &  \\
+\maxz vs \rcd & 3 of 11 & 0.040 & 0.250 & RE1-OB, Low, Temporal-1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Cross-family set, robustness. Drop one family: subsystems where $A$ / $B$ is more accurate among the remaining ones. Drop two: cases (out of all 55 ways to drop two subsystems) in which both signs remain. Pooled difference under four pooling rules (trimmed: the largest and smallest subsystem differences removed). Bootstrap: share of 2{,}000 case resamples in which both signs remain.}\label{supp:cross-robust}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lp{4.6cm}rrrrrr@{}}
+\toprule
+Pair & Drop one family & Drop two & Mean & Median & Case-wtd. & Trimmed & Bootstrap \\
+\midrule
+\alertcount vs \baro & \rcaeval RE1: 4/3; \openrca: 0/6; \petshop: 4/3 & 55/55 & $-$0.145 & $-$0.115 & $-$0.202 & $-$0.131 & 1.000 \\
+\alertcount vs \cdmin & \rcaeval RE1: 5/3; \openrca: 2/5; \petshop: 3/4 & 55/55 & $-$0.095 & $-$0.017 & $-$0.175 & $-$0.069 & 0.999 \\
+\alertcount vs \ediag & \rcaeval RE1: 6/0; \openrca: 5/0; \petshop: 7/0 & 0/55 & $+$0.127 & $+$0.125 & $+$0.167 & $+$0.115 & 0.185 \\
+\alertcount vs \maxz & \rcaeval RE1: 2/6; \openrca: 0/7; \petshop: 2/5 & 54/55 & $-$0.141 & $-$0.112 & $-$0.144 & $-$0.136 & 0.997 \\
+\alertcount vs \rcd & \rcaeval RE1: 5/3; \openrca: 1/6; \petshop: 4/3 & 55/55 & $-$0.082 & $-$0.013 & $-$0.011 & $-$0.046 & 1.000 \\
+\baro vs \cdmin & \rcaeval RE1: 5/3; \openrca: 6/1; \petshop: 3/4 & 55/55 & $+$0.050 & $+$0.020 & $+$0.027 & $+$0.042 & 1.000 \\
+\baro vs \ediag & \rcaeval RE1: 8/0; \openrca: 7/0; \petshop: 7/0 & 0/55 & $+$0.272 & $+$0.154 & $+$0.369 & $+$0.252 & 0.340 \\
+\baro vs \maxz & \rcaeval RE1: 2/6; \openrca: 4/3; \petshop: 4/3 & 55/55 & $+$0.004 & $-$0.038 & $+$0.058 & $-$0.007 & 1.000 \\
+\baro vs \rcd & \rcaeval RE1: 4/4; \openrca: 4/3; \petshop: 6/1 & 55/55 & $+$0.063 & $+$0.040 & $+$0.191 & $+$0.066 & 1.000 \\
+\cdmin vs \ediag & \rcaeval RE1: 6/0; \openrca: 5/0; \petshop: 7/0 & 0/55 & $+$0.222 & $+$0.125 & $+$0.342 & $+$0.184 & 0.361 \\
+\cdmin vs \maxz & \rcaeval RE1: 2/6; \openrca: 2/5; \petshop: 4/3 & 55/55 & $-$0.046 & $-$0.069 & $+$0.031 & $-$0.053 & 1.000 \\
+\cdmin vs \rcd & \rcaeval RE1: 3/4; \openrca: 3/3; \petshop: 6/1 & 55/55 & $+$0.013 & $+$0.076 & $+$0.163 & $+$0.011 & 1.000 \\
+\ediag vs \maxz & \rcaeval RE1: 0/8; \openrca: 0/7; \petshop: 0/7 & 0/55 & $-$0.268 & $-$0.192 & $-$0.311 & $-$0.252 & 0.086 \\
+\ediag vs \rcd & \rcaeval RE1: 0/7; \openrca: 0/6; \petshop: 0/7 & 0/55 & $-$0.209 & $-$0.147 & $-$0.178 & $-$0.186 & 0.469 \\
+\maxz vs \rcd & \rcaeval RE1: 5/2; \openrca: 3/3; \petshop: 6/1 & 55/55 & $+$0.059 & $+$0.039 & $+$0.132 & $+$0.060 & 0.997 \\
+\bottomrule
+\end{tabular}
+\end{table}

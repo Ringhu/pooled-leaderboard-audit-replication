@@ -1,0 +1,9 @@
+scenario,split,issue,case_id,method,target_node,target_metric,gt_node,gt_metric,top1_node,top1_metric,hit1,hit3,hit1_nodeonly,hit3_nodeonly,n_returned,empty,err,sec
+temporal_traffic2,train,issue_0,temporal_traffic2|train|issue_0,circa,PetSite,latency,PetSearch_AWS::ECS::Fargate,,PetSearch_AWS::ECS::Fargate,latency,1,1,1,1,3,0,,0.09
+temporal_traffic2,train,issue_1,temporal_traffic2|train|issue_1,circa,PetSite,availability,PetSearch_AWS::ECS::Fargate,,servi-searc.us-west-2.elb.amazonaws.com_remote,availability,0,1,0,1,3,0,,0.09
+temporal_traffic2,test,issue_0,temporal_traffic2|test|issue_0,circa,PetSite,latency,petInfo_AWS::DynamoDB::Table,,petInfo_AWS::DynamoDB::Table,latency,1,1,1,1,3,0,,0.09
+temporal_traffic2,test,issue_1,temporal_traffic2|test|issue_1,circa,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambdastatusupdater_AWS::Lambda::Function,latency,1,1,1,1,3,0,,0.09
+temporal_traffic2,test,issue_2,temporal_traffic2|test|issue_2,circa,PetSite,latency,payforadoption_AWS::ECS::Container,,petInfo_AWS::DynamoDB::Table,latency,0,1,0,1,3,0,,0.08
+temporal_traffic2,test,issue_3,temporal_traffic2|test|issue_3,circa,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,www.amazon.com_remote,availability,0,1,0,1,3,0,,0.07
+temporal_traffic2,test,issue_4,temporal_traffic2|test|issue_4,circa,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,petlistadoptions_AWS::ECS::Fargate,availability,1,1,1,1,3,0,,0.08
+temporal_traffic2,test,issue_5,temporal_traffic2|test|issue_5,circa,PetSite,availability,payforadoption_AWS::ECS::Container,,payforadoption_AWS::ECS::Container,availability,1,1,1,1,3,0,,0.08

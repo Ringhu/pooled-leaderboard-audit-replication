@@ -1,0 +1,103 @@
+\section{RQ1 (Scope): On Which Systems Does a Pooled Advantage Hold?}
+\label{sec:rq1}
+
+\Cref{tab:main} gives every method's accuracy on every subsystem; cells with coverage below 1 are marked, and randomized methods are averaged over three seeds.
+The familiar picture of a pooled leaderboard appears only after averaging over columns.
+Within a family the best method changes from column to column: on RE1 it is \baro on two applications and \cdmin on the third; on \petshop it is a shipped baseline in all four scenarios, but not always the same one.
+RQ1 asks how often a comparison that a pooled leaderboard would report holds on each of the subsystems behind it.
+
+\begin{table}[t]
+\caption{Accuracy (\acc; \openrca: official partial score) of every method on every subsystem, over all cases (invalid outputs score 0). $^\dagger$: coverage below 1. Bold: best in column. Each panel lists the methods that run on at least one of its families (\cref{sec:design-methods}); --: the method does not run on that release. \rcd and \causalrca: mean of three seeds (\petshop's own \rcd: one run).}
+\label{tab:main}
+\footnotesize
+\input{tables/tab4_main}
+\end{table}
+
+\subsection{Comparisons Between Published Methods}
+\label{sec:rq1-pub}
+
+\Cref{fig:forest} shows every comparison between two published methods that a family allows, with each subsystem's difference and its CI.
+Of the \NMainPubPairs such comparisons in the three main families, \NMainPubRev reverse on at least one subsystem and \NMainPubRevCI do so with CI support.
+The reversing pairs are those whose pooled margin is small next to the spread of their subsystem differences (grey rows in \cref{fig:forest}); the split is partly definitional, and we use it only to read the figure.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1_forest.pdf}
+\caption{Comparisons between published methods, by family. Each row is a pair $A$ vs $B$; markers are subsystem differences $\Delta_s$ with 95\% bootstrap CIs, the vertical tick is the pooled difference (subsystems weighted equally). Orange markers have the opposite sign of the pooled difference (filled: CI excludes 0). Grey rows: pairs whose pooled margin is smaller than the between-subsystem spread of $\Delta_s$.}
+\label{fig:forest}
+\end{figure}
+
+\textbf{RCAEval RE1.}
+Of \NReOnePubPairs pairs, \NReOnePubRev reverses, without CI support.
+\baro leads each of the other four published methods on all three applications, with pooled margins from \ReOneBaroMinMargin to \ReOneBaroMaxMargin.
+The one unstable pair is \causalrca vs \rcd: its pooled difference is \ReOneCrRcdPooled \ReOneCrRcdPooledCI, made of \ReOneCrRcdOB on OB, \ReOneCrRcdSS on SS, and \ReOneCrRcdTT on TT; both methods are randomized, and the pooled sign itself changes with the seed (\ReOneCrRcdSeedZero, \ReOneCrRcdSeedOne, \ReOneCrRcdSeedTwo).
+This is RE1 under the reference configuration; on the files as shipped it is less stable (\cref{sec:rq2}).
+
+\textbf{OpenRCA.}
+These results measure each method together with our answer wrapper and the official scoring rule; they are not an audit of \openrca's agent leaderboard.
+Under the wrapper, the three methods order as \baro (\OpenrcaBaroMean), \rcd (\OpenrcaRcdMean), \ediag (\OpenrcaEdiagMean).
+\baro's lead over \rcd is \OpenrcaBaroRcdPooled \OpenrcaBaroRcdPooledCI, but Telecom reverses it (\OpenrcaBaroRcdTel \OpenrcaBaroRcdTelCI); the reversal rests on a few queries, and \OpenrcaBaroRcdSeedsWithRev of the three \rcd seeds show a reversal, on different subsystems.
+All \NOpenrcaPubPIcross of \NOpenrcaPubPIn prediction intervals include zero: none of the three orderings is established for a further subsystem like these.
+
+\textbf{PetShop.}
+The published methods are least stable here: \NPetshopPubRev of \NPetshopPubPairs pairs reverse, \NPetshopPubRevCI with CI support.
+Both CI-supported reversals come from one cell: \rcd scores \PetshopRcdHighHits of \PetshopHighN on the high-traffic scenario, so \baro (\PetshopBaroRcdHigh \PetshopBaroRcdHighCI) and \cfa (\PetshopCfaRcdHigh \PetshopCfaRcdHighCI) beat it there while trailing it on pooled accuracy, with pooled CIs that include zero.
+The prediction intervals of \NPetshopPubPIcross of the \NPetshopPubPIn pairs for which the model can be fitted include zero.
+The two temporal scenarios have 8 cases each; keeping only the two scenarios with at least 25 cases leaves \PetshopPubRevNmin reversing pairs, \PetshopPubRevCINmin with CI support.
+
+\subsection{Same Applications, Second Release}
+\label{sec:rq1-release}
+
+RE2 is a second, independently collected release of RE1's three applications, with new fault instances, a sixth fault type, and added logs and traces.
+The four published methods that use metrics only (\baro, \circa, \ediag, \causalrca) run with the same implementations on both releases, so if a pooled RE1 result were a property of the method and the application, it should carry over.
+Of the \NCrossPub application-level comparisons available in both releases (\cref{tab:release}), \NCrossPubAgree keep their sign and \NCrossPubCIopp have CIs on opposite sides of zero.
+Both of the latter are on Sock Shop: \baro vs \circa goes from \CrossBaroCircaSSOne \CrossBaroCircaSSOneCI to \CrossBaroCircaSSTwo \CrossBaroCircaSSTwoCI, and \baro vs \causalrca from \CrossBaroCrSSOne to \CrossBaroCrSSTwo \CrossBaroCrSSTwoCI.
+Restricting RE2 to RE1's five fault types leaves the count at \NCrossPubAgreeReOneFaults of \NCrossPub, so the added fault type does not explain the change.
+Within RE2 itself, \NReTwoPubRev of \NReTwoPubPairs published pairs reverse across the three applications (\NReTwoPubRevCI with CI support).
+
+\begin{table}[t]
+\caption{Same application, two releases: subsystem differences $\Delta_s$ ($A$ minus $B$) between published methods on RE1 and RE2. Bold: the two releases' 95\% CIs lie on opposite sides of zero.}
+\label{tab:release}
+\small
+\input{tables/tab5_cross_release}
+\end{table}
+
+\subsection{Choosing a Method for an Unseen Subsystem}
+\label{sec:rq1-heldout}
+
+A practitioner choosing a method for a new system has only the other subsystems to go by.
+Holding out each of the 11 subsystems in turn and ranking the published methods of its family on the remaining ones gives \HNDec adjacent-pair decisions; in \HErr of them the higher-ranked method is less accurate on the held-out subsystem (\HStrict with a CI excluding zero), and \HTies further decisions are ties.
+\Cref{tab:regret} gives the cost of such a choice as regret.
+The pooled winner chosen without the held-out subsystem has positive regret on \LosoRegPubN of the \LosoRegPubOf subsystems (up to \LosoRegPubMax), and with probes and shipped baselines on \LosoRegAllN of \LosoRegAllOf (up to \LosoRegAllMax).
+The largest costs are concrete: on RE2, \circa has the highest pooled accuracy (\RegReTwoWinnerPooled) but scores \RegReTwoTTwinner on Train Ticket against \simplerca's \RegReTwoTTbest; on \petshop the pooled winner \circa trails another published method on the high-traffic scenario by \RegPetshopHigh.
+
+\begin{table}[t]
+\caption{Pooled winner (subsystems weighted equally) and its regret: accuracy of the best method on a subsystem minus the winner's accuracy there. All subsystems: winner chosen on all subsystems of the family. Held out: for each subsystem, winner chosen on the other subsystems only (not computed for RE2, which we use only across releases).}
+\label{tab:regret}
+\small
+\input{tables/tab6_regret}
+\end{table}
+
+\subsection{Probes and Shipped Baselines}
+\label{sec:rq1-all}
+
+Adding the three probes and \petshop's shipped baselines gives \NMainAllPairs pairs in the main families, of which \NMainAllRev reverse and \NMainAllRevCI with CI support (RE1 \NReOneAllRev/\NReOneAllRevCI of \NReOneAllPairs; \openrca \NOpenrcaAllRev/\NOpenrcaAllRevCI of \NOpenrcaAllPairs; \petshop \NPetshopAllRev/\NPetshopAllRevCI of \NPetshopAllPairs).
+The probes do not win everywhere or lose everywhere: \cdmin is the best method on RE1-SS but ranks below \baro on RE1-TT, and \alertcount leads \openrca's pooled ranking.
+On \petshop, the shipped ranked-correlation baseline has the highest pooled accuracy (\PetshopRankedCorrMean), and its pooled advantage over every published method except \circa has a CI that excludes zero.
+A leaderboard that lists only published methods therefore ranks methods that a shipped baseline of the same benchmark outperforms.
+
+\subsection{Across Benchmark Families}
+\label{sec:rq1-cross}
+
+\XNMethods methods (\baro, \rcd, \ediag, and the three probes) have outputs on all 11 subsystems, so their comparisons can be followed across families (\cref{tab:cross}).
+A leaderboard spanning these benchmarks would average \openrca's partial credit with top-1 accuracy, and the sign of such an average depends on the scales; we therefore ask only which subsystems each method wins, which does not.
+Of the \XNPairs pairs, \XNBothSigns have subsystem differences of both signs; the other \XNOneSign all involve \ediag, which is never more accurate than any of the other five on any subsystem, so a ranking that places it last holds everywhere.
+Dropping any one family leaves both signs in \XLofoBoth of \XLofoN pair-by-family cases, and dropping any two subsystems in \XLksoBoth of \XLksoN.
+No order of the other five methods, on whatever scale the families were averaged, holds on every subsystem.
+
+\begin{table}[t]
+\caption{Cross-family set: the six methods with outputs on all 11 subsystems. Scores are not averaged across families (\openrca partial credit, top-1 accuracy elsewhere). $+$/$-$: subsystems where $A$ / $B$ is more accurate; CI excl.\ 0: of these, subsystems whose 95\% CI excludes zero. Both signs: the number of leave-one-family-out subsets (of three) and leave-two-subsystems-out subsets (of \XLksoPer) on which the pair still has subsystem differences of both signs.}
+\label{tab:cross}
+\small
+\input{tables/tab8_cross}
+\end{table}

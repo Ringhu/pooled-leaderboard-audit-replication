@@ -1,0 +1,30 @@
+       Table 6: RCA performance of eight baselines on the Train Ticket system of the RE2 dataset, across six fault types.
+ Data                  CPU            MEM              DISK          SOCKET           DELAY            LOSS          AVERAGE
+          Method
+Source           AC@1 AC@3 Avg@5 AC@1 AC@3 Avg@5 AC@1 AC@3 Avg@5 AC@1 AC@3 Avg@5 AC@1 AC@3 Avg@5 AC@1 AC@3 Ag@5 AC@1 AC@3 Avg@5
+       BARO       0.47  0.8 0.72 0.93     1 0.99     1     1    1  0.6 0.87 0.83 0.47 0.67 0.63 0.53     0.6 0.64 0.67 0.82   0.8
+       CausalRCA   0.4 0.63 0.59   0.1 0.27 0.24 0.43 0.83 0.75 0.23    0.5 0.45 0.13 0.23 0.21 0.03 0.37 0.33 0.22 0.47 0.43
+Metric CIRCA      0.27 0.27 0.28 0.47 0.73 0.68 0.53 0.67 0.64 0.27 0.53 0.52      0.2 0.27 0.28   0.2 0.33 0.35 0.32 0.47 0.46
+       MicroCause 0.19 0.44   0.4    0 0.09 0.07   0.4   0.4  0.4    0 0.17 0.15     0 0.22 0.13     0     0 0.07  0.1 0.22   0.2
+       RCD        0.13 0.13 0.16 0.07 0.07 0.07      0 0.07 0.05 0.13 0.33 0.29 0.13 0.13 0.15 0.07 0.07 0.07 0.09 0.13 0.13
+       MicroRank  0.21 0.43 0.34 0.25 0.38 0.33      0 0.36 0.27   0.3  0.4 0.36 0.08 0.31 0.23 0.14 0.36     0.3 0.16 0.37 0.31
+Trace
+       TraceRCA   0.64 0.79 0.74 0.63 0.88 0.83 0.64 0.71 0.74     0.6  0.8 0.76 0.85 0.85 0.88 0.57 0.71 0.67 0.66 0.79 0.77
+       BARO       0.47  0.8 0.75 0.93     1 0.99     1     1    1  0.6  0.8 0.79 0.47 0.67 0.61 0.67 0.67 0.71 0.69 0.82 0.81
+Multi- CIRCA         0 0.07 0.09 0.07 0.13 0.21      0 0.07 0.09 0.07 0.13 0.16 0.07 0.07 0.07 0.13      0.2 0.17 0.06 0.11 0.13
+Source PDiagnose   0.6 0.87 0.81   0.4 0.47 0.48 0.33 0.73 0.69 0.33 0.67     0.6 0.87 0.87 0.87 0.33    0.6 0.57 0.48   0.7 0.67
+       RCD        0.17 0.84 0.72     0 0.44 0.39 0.07 0.76 0.62 0.21 0.77 0.66 0.05 0.28 0.25 0.07 0.75       0.6  0.1 0.64 0.54
+
+works [7, 18, 19] to implement it since its source code is unavailable.     6    Conclusion
+Previous works such as PyRCA [14] and Pham et al. [15] offer only           This paper presents RCAEval, which includes three datasets col-
+a limited set of metric-based RCA methods, while our framework              lected from three microservice systems covering 735 failure cases
+provides a more comprehensive set of baselines by also including            and 11 fault types, along with a comprehensive evaluation frame-
+trace-based and multi-source RCA methods.                                   work with a wide range of reproducible RCA baselines. To the best
+                                                                            of our knowledge, this is the first comprehensive benchmark for
+4.2      Evaluation Metrics                                                 RCA of microservices. We hope that this benchmark will be useful
+We support evaluation at both the coarse-grained level (i.e., root          for industry practitioners and academic researchers in the field.
+cause service) and the fine-grained level (i.e., root cause indica-
+tor). The evaluation script executes the analysis and stores the            Acknowledgments
+results in a report file. We currently support two standard met-
+                                                                            This research was supported by the Australian Research Council
+rics [6, 16]: 𝐴𝐶@𝑘 and 𝐴𝑣𝑔@𝑘 to measure the RCA performance.

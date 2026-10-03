@@ -1,0 +1,7 @@
+,low-latency,low-availability,high-latency,high-availability,temporal-latency,temporal-availability
+traversal,0.57,0.5,0.57,0.33,1.0,0.38
+circa,0.36,0.42,0.5,0.0,0.75,0.38
+counterfactual,0.36,0.0,0.57,0.0,0.38,0.0
+epsilon_diagnosis,0.0,0.0,0.0,0.0,0.12,0.0
+rcd,0.07,0.58,0.0,0.0,0.25,0.5
+correlation,0.43,0.75,0.64,0.83,0.62,0.62

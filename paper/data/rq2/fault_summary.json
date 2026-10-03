@@ -1,0 +1,151 @@
+{
+ "config": {
+  "script_sha256": "2f56acd6a8a4a39de7576de884560c846482fd4eec3fdf8015cdf2cfe35014a0",
+  "rq1_main_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
+  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+  "B": 10000,
+  "seed": 20260929,
+  "reason_class": {
+   "cpu": [
+    "high CPU usage",
+    "high JVM CPU load",
+    "CPU fault",
+    "container CPU load",
+    "node CPU load",
+    "node CPU spike"
+   ],
+   "memory": [
+    "high memory usage",
+    "JVM Out of Memory (OOM) Heap",
+    "container memory load",
+    "node memory consumption"
+   ],
+   "disk": [
+    "high disk I/O read usage",
+    "high disk space usage",
+    "container read I/O load",
+    "container write I/O load",
+    "node disk read I/O consumption",
+    "node disk write I/O consumption",
+    "node disk space consumption"
+   ],
+   "network": [
+    "network packet loss",
+    "network latency",
+    "network delay",
+    "network loss",
+    "container network packet corruption",
+    "container network packet retransmission",
+    "container network latency",
+    "container packet loss"
+   ],
+   "other": [
+    "db connection limit",
+    "db close",
+    "container process termination"
+   ]
+  },
+  "run_utc": "2026-10-02T13:43:16Z",
+  "wall_s": 10.4
+ },
+ "summary": {
+  "fault_RE1_L1": {
+   "common_classes": "cpu;delay;disk;loss;mem",
+   "comparisons": 30,
+   "fault_sign_disagree": 6,
+   "rev_ref": 2,
+   "rev_rw": 2,
+   "rev_ci_rw": 0,
+   "rev_ref_gone": 0,
+   "rev_new": 0,
+   "sign_changes": 0
+  },
+  "fault_RE1_L2": {
+   "common_classes": "cpu;delay;disk;loss;mem",
+   "comparisons": 84,
+   "fault_sign_disagree": 27,
+   "rev_ref": 10,
+   "rev_rw": 10,
+   "rev_ci_rw": 4,
+   "rev_ref_gone": 0,
+   "rev_new": 0,
+   "sign_changes": 0
+  },
+  "fault_RE2_L1": {
+   "common_classes": "cpu;delay;disk;loss;mem;socket",
+   "comparisons": 71,
+   "fault_sign_disagree": 26,
+   "rev_ref": 12,
+   "rev_rw": 12,
+   "rev_ci_rw": 6,
+   "rev_ref_gone": 0,
+   "rev_new": 0,
+   "sign_changes": 0
+  },
+  "fault_RE2_L2": {
+   "common_classes": "cpu;delay;disk;loss;mem;socket",
+   "comparisons": 146,
+   "fault_sign_disagree": 42,
+   "rev_ref": 25,
+   "rev_rw": 25,
+   "rev_ci_rw": 14,
+   "rev_ref_gone": 0,
+   "rev_new": 0,
+   "sign_changes": 0
+  },
+  "fault_openrca_L1": {
+   "common_classes": "cpu;network",
+   "comparisons": 12,
+   "fault_sign_disagree": 7,
+   "rev_ref": 1,
+   "rev_rw": 4,
+   "rev_ci_rw": 0,
+   "rev_ref_gone": 0,
+   "rev_new": 3,
+   "sign_changes": 3
+  },
+  "fault_openrca_L2": {
+   "common_classes": "cpu;network",
+   "comparisons": 60,
+   "fault_sign_disagree": 40,
+   "rev_ref": 9,
+   "rev_rw": 16,
+   "rev_ci_rw": 0,
+   "rev_ref_gone": 4,
+   "rev_new": 11,
+   "sign_changes": 13
+  },
+  "fault_petshop_L1": {
+   "common_classes": "availability;latency",
+   "comparisons": 40,
+   "fault_sign_disagree": 6,
+   "rev_ref": 5,
+   "rev_rw": 4,
+   "rev_ci_rw": 2,
+   "rev_ref_gone": 1,
+   "rev_new": 0,
+   "sign_changes": 1
+  },
+  "fault_petshop_L2": {
+   "common_classes": "availability;latency",
+   "comparisons": 220,
+   "fault_sign_disagree": 19,
+   "rev_ref": 12,
+   "rev_rw": 11,
+   "rev_ci_rw": 4,
+   "rev_ref_gone": 1,
+   "rev_new": 0,
+   "sign_changes": 2
+  },
+  "cross_release_re1faults_L1": {
+   "comparisons": 18,
+   "agree_all_faults": 12,
+   "agree_re1_faults": 12
+  },
+  "cross_release_re1faults_L2": {
+   "comparisons": 63,
+   "agree_all_faults": 43,
+   "agree_re1_faults": 45
+  }
+ }
+}

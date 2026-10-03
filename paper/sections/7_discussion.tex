@@ -1,0 +1,37 @@
+\section{Discussion and Recommendations}
+\label{sec:discussion}
+
+\subsection{Stating Both Premises}
+\label{sec:disc-authors}
+
+A per-subsystem table states the first premise, but pooled numbers will continue to be quoted, so we suggest that every pooled comparison carry a line of context with one part per premise:
+\par\medskip\noindent\hspace*{2em}%
+{\small\begin{tabular}[t]{@{}l@{\quad}l@{}}
+\textit{scope} & pooled $\Delta$ [CI] \,$\cdot$\, subsystems won/tied/lost of $k$ \,$\cdot$\, worst subsystem $\Delta$ [CI] \\
+\textit{provenance} & coverage \,$\cdot$\, input table \,$\cdot$\, invalid outputs
+\end{tabular}}
+\par\medskip\noindent
+For \baro vs \rcd on \openrca this line reads: \OpenrcaBaroRcdPooled \OpenrcaBaroRcdPooledCI \,$\cdot$\, \LineWins/\LineTies/\LineLosses of 4 \,$\cdot$\, Telecom \LineWorst \LineWorstCI \,$\cdot$\, \LineCovBaro vs \LineCovRcd \,$\cdot$\, official telemetry, wrapped \,$\cdot$\, scored 0.
+A reader sees at once that the lead is small, that it holds on three of four subsystems, that the CI of the loss on the fourth includes zero, and on which input and denominator the numbers rest.
+The line is a reporting format, not a decision rule; it makes the evidence visible without telling a reader which method to adopt.
+Where the lead does not hold everywhere, a count such as ``leads on 3 of 4 subsystems'' says more than ``outperforms''.
+A reader choosing a method for one system should look first at the subsystem most like it: in our data, ranking methods on the other subsystems picked the less accurate method on the held-out one in \HErr of \HNDec decisions (\cref{sec:rq1-heldout}).
+
+\subsection{For Benchmark Maintainers}
+\label{sec:disc-maintainers}
+
+Each recommendation below corresponds to a problem we verified.
+(i) The runner should name the input table and preprocessing it uses, in code and not only in documentation; the two readings of RE1 reversed a comparison between published methods with CI support on both sides (\cref{sec:rq2-input}).
+(ii) Dependency versions should be pinned, and a method that fails inside the pipeline should fail visibly rather than return a default ranking; under an unpinned dependency one method returned its input column order on every case (\cref{sec:rq2-defect}).
+(iii) Input tables should be validated before release; a duplicated header in 50 tables produced a CI-supported reversal that disappeared once removed.
+(iv) Coverage and a full-case denominator should accompany every score; reported values that drop failed cases cannot be matched by a reader who keeps them (\cref{sec:rq2-denominator}).
+(v) Per-case outputs of every reported method should be released, so that readers can compute paired differences and intervals, which none of the papers we could check allows (\cref{sec:bg-survey}).
+The \rcaeval maintainers have since applied (ii) and (iii) upstream.
+
+\subsection{Relation to Benchmark-Difficulty Critiques}
+\label{sec:disc-fang}
+
+\citet{fang2025simplerca} show that a simple rule-based method reaches the reported state of the art on existing RCA benchmarks and propose a harder benchmark.
+Our audit holds the benchmarks fixed and asks what a comparison on them says and does not say.
+The two concerns are independent and their remedies combine: a harder benchmark still needs its comparisons scoped and their provenance stated, and both stated on an easy benchmark still overstate what methods can do.
+Where the results overlap they agree: the authors' \simplerca code is also best on RE2-TT in our runs.

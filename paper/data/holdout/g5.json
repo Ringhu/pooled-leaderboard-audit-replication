@@ -1,0 +1,202 @@
+{
+ "config": {
+  "script": "/tmp/rca_pkg_test/analysis/rq3_holdout.py",
+  "script_sha256": "18b052d78a70ad35f18267a4af29243c11ea524e0fffaf02c383117ad7d4ca47",
+  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+  "rq1_pair_subsystem_deltas_sha256": "8991a4e1149c864f91c95c6bebb00b3293666cd917b4a6b87b6cd1d9cd79e4e8",
+  "rq1_config": {
+   "B": 10000,
+   "seed": 20260929,
+   "script_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5"
+  },
+  "thresholds": [
+   0.0,
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0
+  ],
+  "c_frozen": 1.0,
+  "n_min": 25,
+  "reference": "baro",
+  "held_ci_checked": 689,
+  "spec": ".research/plans/2026-09-29-wp6-rq3-spec.md",
+  "python": "3.11.15",
+  "pandas": "3.0.2",
+  "run_utc": "2026-10-02T13:43:22Z",
+  "wall_s": 3.2
+ },
+ "g5": {
+  "all": {
+   "identification": true,
+   "reduction": false,
+   "n_decisions": 36,
+   "recommended": 19,
+   "coverage": 0.5277777777777778,
+   "rule_errors": 4,
+   "rule_ties": 0,
+   "rule_error_rate": 0.21052631578947367,
+   "flagged": 17,
+   "flagged_errors": 4,
+   "flagged_ties": 2,
+   "flagged_error_rate": 0.23529411764705882,
+   "pooled_only_errors": 3,
+   "pooled_only_error_rate": 0.15789473684210525,
+   "system_equal_errors": 3,
+   "system_equal_error_rate": 0.15789473684210525,
+   "random_error_rate": 0.2222222222222222,
+   "p_random_le_rule": 0.5859540904034786
+  },
+  "RE1": {
+   "identification": true,
+   "reduction": false,
+   "n_decisions": 12,
+   "recommended": 9,
+   "coverage": 0.75,
+   "rule_errors": 1,
+   "rule_ties": 0,
+   "rule_error_rate": 0.1111111111111111,
+   "flagged": 3,
+   "flagged_errors": 2,
+   "flagged_ties": 0,
+   "flagged_error_rate": 0.6666666666666666,
+   "pooled_only_errors": 0,
+   "pooled_only_error_rate": 0.0,
+   "system_equal_errors": 0,
+   "system_equal_error_rate": 0.0,
+   "random_error_rate": 0.25,
+   "p_random_le_rule": 0.12727272727272726
+  },
+  "openrca": {
+   "identification": false,
+   "reduction": false,
+   "n_decisions": 8,
+   "recommended": 4,
+   "coverage": 0.5,
+   "rule_errors": 1,
+   "rule_ties": 0,
+   "rule_error_rate": 0.25,
+   "flagged": 4,
+   "flagged_errors": 0,
+   "flagged_ties": 0,
+   "flagged_error_rate": 0.0,
+   "pooled_only_errors": 1,
+   "pooled_only_error_rate": 0.25,
+   "system_equal_errors": 1,
+   "system_equal_error_rate": 0.25,
+   "random_error_rate": 0.125,
+   "p_random_le_rule": 1.0
+  },
+  "petshop": {
+   "identification": false,
+   "reduction": false,
+   "n_decisions": 16,
+   "recommended": 6,
+   "coverage": 0.375,
+   "rule_errors": 2,
+   "rule_ties": 0,
+   "rule_error_rate": 0.3333333333333333,
+   "flagged": 10,
+   "flagged_errors": 2,
+   "flagged_ties": 2,
+   "flagged_error_rate": 0.2,
+   "pooled_only_errors": 2,
+   "pooled_only_error_rate": 0.3333333333333333,
+   "system_equal_errors": 2,
+   "system_equal_error_rate": 0.3333333333333333,
+   "random_error_rate": 0.25,
+   "p_random_le_rule": 0.8818681318681318
+  },
+  "verdict": "identification_only"
+ },
+ "crossrelease": {
+  "n": 9,
+  "recommended": 6,
+  "recommended_errors": 2,
+  "flagged_errors": 1,
+  "pooled_only_errors_all": 3,
+  "ties": 0
+ },
+ "decision_counts": [
+  {
+   "layer": "L1",
+   "set": "adjacent",
+   "family": "RE1",
+   "n": 12
+  },
+  {
+   "layer": "L1",
+   "set": "adjacent",
+   "family": "openrca",
+   "n": 8
+  },
+  {
+   "layer": "L1",
+   "set": "adjacent",
+   "family": "petshop",
+   "n": 16
+  },
+  {
+   "layer": "L1",
+   "set": "all",
+   "family": "RE1",
+   "n": 30
+  },
+  {
+   "layer": "L1",
+   "set": "all",
+   "family": "openrca",
+   "n": 12
+  },
+  {
+   "layer": "L1",
+   "set": "all",
+   "family": "petshop",
+   "n": 40
+  },
+  {
+   "layer": "L2",
+   "set": "adjacent",
+   "family": "RE1",
+   "n": 21
+  },
+  {
+   "layer": "L2",
+   "set": "adjacent",
+   "family": "openrca",
+   "n": 20
+  },
+  {
+   "layer": "L2",
+   "set": "adjacent",
+   "family": "petshop",
+   "n": 40
+  },
+  {
+   "layer": "L2",
+   "set": "all",
+   "family": "RE1",
+   "n": 84
+  },
+  {
+   "layer": "L2",
+   "set": "all",
+   "family": "openrca",
+   "n": 60
+  },
+  {
+   "layer": "L2",
+   "set": "all",
+   "family": "petshop",
+   "n": 220
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{lrrrrrrrrrrr}
+\caption{Case counts per fault class and subsystem. Fault classes that are zero in every subsystem are omitted.}\\\label{supp:s10-fault-composition}\\
+\toprule
+Subsystem & availability & cpu & delay & disk & latency & loss & mem & memory & network & other & socket \\
+\midrule
+\endfirsthead
+\caption{Case counts per fault class and subsystem. Fault classes that are zero in every subsystem are omitted.}\\
+\toprule
+Subsystem & availability & cpu & delay & disk & latency & loss & mem & memory & network & other & socket \\
+\midrule
+\endhead
+\midrule
+\multicolumn{12}{r}{\emph{Continued on next page}} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+RE1-OB & 0 & 25 & 25 & 25 & 0 & 25 & 25 & 0 & 0 & 0 & 0 \\
+RE1-SS & 0 & 25 & 25 & 25 & 0 & 25 & 25 & 0 & 0 & 0 & 0 \\
+RE1-TT & 0 & 25 & 25 & 25 & 0 & 25 & 25 & 0 & 0 & 0 & 0 \\
+RE2-OB & 0 & 15 & 15 & 15 & 0 & 15 & 15 & 0 & 0 & 0 & 15 \\
+RE2-SS & 0 & 15 & 15 & 15 & 0 & 15 & 15 & 0 & 0 & 0 & 15 \\
+RE2-TT & 0 & 15 & 15 & 15 & 0 & 15 & 15 & 0 & 0 & 0 & 15 \\
+Bank & 0 & 36 & 0 & 24 & 0 & 0 & 0 & 17 & 59 & 0 & 0 \\
+Market-1 & 0 & 13 & 0 & 24 & 0 & 0 & 0 & 12 & 17 & 4 & 0 \\
+Market-2 & 0 & 13 & 0 & 27 & 0 & 0 & 0 & 10 & 25 & 3 & 0 \\
+Telecom & 0 & 19 & 0 & 0 & 0 & 0 & 0 & 0 & 20 & 12 & 0 \\
+High & 12 & 0 & 0 & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Low & 12 & 0 & 0 & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Temporal-1 & 4 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Temporal-2 & 4 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{longtable}
+}
+
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{llllrr}
+\caption{Comparisons whose sign changes when each fault class is re-weighted to a common mix. $\Delta$ is the original per-subsystem difference; $\Delta$ re-weighted is the re-weighted difference with its 95\% CI.}\\\label{supp:s10-fault-reweighted}\\
+\toprule
+Family & Layer & Pair & Subsystem & $\Delta$ & $\Delta$ re-weighted [CI] \\
+\midrule
+\endfirsthead
+\caption{Comparisons whose sign changes when each fault class is re-weighted to a common mix. $\Delta$ is the original per-subsystem difference; $\Delta$ re-weighted is the re-weighted difference with its 95\% CI.}\\
+\toprule
+Family & Layer & Pair & Subsystem & $\Delta$ & $\Delta$ re-weighted [CI] \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\emph{Continued on next page}} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+OpenRCA & Published & BARO vs $\epsilon$-Diagnosis & Market-1 & +0.019 & $-$0.006 [$-$0.067, +0.054] \\
+OpenRCA & Published & $\epsilon$-Diagnosis vs RCD & Market-1 & $-$0.013 & +0.017 [$-$0.052, +0.081] \\
+OpenRCA & Published & $\epsilon$-Diagnosis vs RCD & Market-2 & $-$0.023 & +0.039 [$-$0.033, +0.116] \\
+OpenRCA & All & Alert-count vs BARO & Telecom & +0.059 & $-$0.004 [$-$0.037, +0.027] \\
+OpenRCA & All & Alert-count vs CD-1min & Bank & +0.007 & $-$0.030 [$-$0.121, +0.061] \\
+OpenRCA & All & Alert-count vs CD-1min & Market-1 & $-$0.017 & +0.052 [$-$0.025, +0.144] \\
+OpenRCA & All & Alert-count vs CD-1min & Market-2 & +0.004 & $-$0.010 [$-$0.146, +0.116] \\
+OpenRCA & All & Alert-count vs max-$|Z|$ & Telecom & +0.010 & $-$0.001 [$-$0.090, +0.094] \\
+OpenRCA & All & Alert-count vs RCD & Telecom & +0.049 & $-$0.010 [$-$0.066, +0.040] \\
+OpenRCA & All & BARO vs $\epsilon$-Diagnosis & Market-1 & +0.019 & $-$0.006 [$-$0.067, +0.054] \\
+OpenRCA & All & BARO vs max-$|Z|$ & Telecom & $-$0.049 & +0.003 [$-$0.086, +0.094] \\
+OpenRCA & All & CD-1min vs max-$|Z|$ & Market-1 & +0.000 & $-$0.088 [$-$0.214, +0.030] \\
+OpenRCA & All & CD-1min vs max-$|Z|$ & Market-2 & $-$0.007 & +0.000 [$-$0.145, +0.160] \\
+OpenRCA & All & $\epsilon$-Diagnosis vs RCD & Market-1 & $-$0.013 & +0.017 [$-$0.052, +0.081] \\
+OpenRCA & All & $\epsilon$-Diagnosis vs RCD & Market-2 & $-$0.023 & +0.039 [$-$0.033, +0.116] \\
+OpenRCA & All & max-$|Z|$ vs RCD & Telecom & +0.039 & $-$0.009 [$-$0.099, +0.082] \\
+PetShop & Published & BARO vs Counterfactual & Low & +0.000 & +0.018 [$-$0.173, +0.208] \\
+PetShop & All & BARO vs Counterfactual & Low & +0.000 & +0.018 [$-$0.173, +0.208] \\
+PetShop & All & Traversal vs Ranked correlation & Low & +0.000 & $-$0.012 [$-$0.238, +0.208] \\
+\end{longtable}
+}

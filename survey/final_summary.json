@@ -1,0 +1,30 @@
+{
+ "Q1": {
+  "yes": 18,
+  "not_applicable": 5,
+  "no": 3
+ },
+ "Q2": {
+  "partial": 17,
+  "no": 9
+ },
+ "Q3": {
+  "yes": 9,
+  "no": 6,
+  "partial": 5,
+  "not_applicable": 6
+ },
+ "Q4": {
+  "yes": 16,
+  "partial": 6,
+  "no": 4
+ },
+ "Q3_full_text_only": {
+  "yes": 6,
+  "no": 6,
+  "partial": 5,
+  "not_applicable": 6
+ },
+ "n_papers": 26,
+ "n_adjudicated": 27
+}

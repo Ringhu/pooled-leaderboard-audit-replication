@@ -1,0 +1,52 @@
+\setlength{\tabcolsep}{4pt}
+\centering
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrr@{}}
+\toprule
+ & \multicolumn{3}{c}{RCAEval RE1} & \multicolumn{3}{c}{RCAEval RE2} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+$n$ & 125 & 125 & 125 & 90 & 90 & 90 \\
+Method & OB & SS & TT & OB & SS & TT \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Published methods}} \\
+BARO & {\bfseries 0.736} & 0.848 & {\bfseries 0.560} & 0.144 & 0.067 & 0.667 \\
+CIRCA & 0.672 & 0.704 & 0.328 & 0.667 & 0.778 & 0.544 \\
+$\epsilon$-Diagnosis & 0.032 & 0.144 & 0.000 & 0.033 & 0.156 & 0.000 \\
+RCD & 0.541 & 0.389 & 0.088 & -- & -- & -- \\
+CausalRCA & 0.616 & 0.176 & 0.136 & 0.207 & 0.148 & 0.207$^\dagger$ \\
+SimpleRCA & -- & -- & -- & 0.467 & 0.244 & {\bfseries 0.800} \\
+TraceRCA & -- & -- & -- & 0.100 & -- & 0.533$^\dagger$ \\
+MicroRank & -- & -- & -- & 0.000 & -- & 0.122$^\dagger$ \\
+BARO (multi-source) & -- & -- & -- & 0.167 & 0.067 & 0.689$^\dagger$ \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Probes}} \\
+max-$|Z|$ & 0.504 & 0.744 & 0.424 & {\bfseries 0.778} & 0.844 & 0.411 \\
+Alert-count & 0.392 & 0.376 & 0.048 & 0.211 & 0.389 & 0.211 \\
+CD-1min & 0.728 & {\bfseries 0.928} & 0.280 & 0.733 & {\bfseries 0.944} & 0.789 \\
+\bottomrule
+\end{tabular*}
+\par\medskip
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{OpenRCA} & \multicolumn{4}{c}{PetShop} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+$n$ & 136 & 70 & 78 & 51 & 26 & 26 & 8 & 8 \\
+Method & Bank & Mkt-1 & Mkt-2 & Tel & High & Low & Tmp-1 & Tmp-2 \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Published methods}} \\
+BARO & 0.160 & 0.057 & 0.106 & 0.183 & 0.154 & 0.154 & 0.250 & 0.250 \\
+CIRCA & -- & -- & -- & -- & 0.269 & 0.385 & 0.500 & 0.625 \\
+$\epsilon$-Diagnosis & 0.036 & 0.038 & 0.044 & 0.046$^\dagger$ & 0.000$^\dagger$ & 0.000$^\dagger$ & 0.000$^\dagger$ & 0.125 \\
+RCD & 0.089 & 0.051$^\dagger$ & 0.066$^\dagger$ & 0.193$^\dagger$ & 0.000 & 0.346 & 0.625 & 0.375 \\
+Counterfactual & -- & -- & -- & -- & 0.308 & 0.154 & 0.125 & 0.250 \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Probes}} \\
+max-$|Z|$ & 0.127 & 0.161 & {\bfseries 0.200} & 0.232 & 0.077 & 0.192 & 0.375 & 0.375 \\
+Alert-count & {\bfseries 0.172} & 0.144 & 0.197 & {\bfseries 0.242} & 0.038 & 0.000 & 0.000 & 0.250 \\
+CD-1min & 0.165$^\dagger$ & {\bfseries 0.161} & 0.192 & 0.163$^\dagger$ & 0.000 & 0.038 & 0.125 & 0.125 \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Shipped baselines}} \\
+Traversal & -- & -- & -- & -- & 0.385$^\dagger$ & {\bfseries 0.577$^\dagger$} & 0.625 & {\bfseries 0.875} \\
+Ranked correlation & -- & -- & -- & -- & {\bfseries 0.731$^\dagger$} & {\bfseries 0.577$^\dagger$} & {\bfseries 0.750} & 0.500 \\
+Random walk & -- & -- & -- & -- & 0.000$^\dagger$ & 0.000$^\dagger$ & 0.125 & 0.000 \\
+\bottomrule
+\end{tabular*}

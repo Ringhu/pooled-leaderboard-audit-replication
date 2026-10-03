@@ -1,0 +1,16 @@
+a,b,B,share_both_signs
+alertcount,baro,2000,1.0
+alertcount,cd1min,2000,0.999
+alertcount,e_diagnosis,2000,0.1855
+alertcount,max_z,2000,0.997
+alertcount,rcd,2000,1.0
+baro,cd1min,2000,1.0
+baro,e_diagnosis,2000,0.34
+baro,max_z,2000,1.0
+baro,rcd,2000,1.0
+cd1min,e_diagnosis,2000,0.3615
+cd1min,max_z,2000,1.0
+cd1min,rcd,2000,1.0
+e_diagnosis,max_z,2000,0.086
+e_diagnosis,rcd,2000,0.4695
+max_z,rcd,2000,0.997

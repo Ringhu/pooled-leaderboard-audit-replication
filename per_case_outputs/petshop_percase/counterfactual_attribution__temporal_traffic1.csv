@@ -1,0 +1,9 @@
+scenario,split,issue,case_id,method,target_node,target_metric,gt_node,gt_metric,top1_node,top1_metric,hit1,hit3,hit1_nodeonly,hit3_nodeonly,n_returned,empty,err,sec
+temporal_traffic1,train,issue_0,temporal_traffic1|train|issue_0,counterfactual_attribution,PetSite,latency,PetSearch_AWS::ECS::Fargate,,invalid_AWS::DynamoDB::Table,latency,0,1,0,1,39,0,,126.17
+temporal_traffic1,train,issue_1,temporal_traffic1|train|issue_1,counterfactual_attribution,PetSite,availability,PetSearch_AWS::ECS::Fargate,,PetSite,availability,0,0,0,0,39,0,,40.58
+temporal_traffic1,test,issue_0,temporal_traffic1|test|issue_0,counterfactual_attribution,PetSite,latency,payforadoption_AWS::ECS::Container,,lambdastatusupdater_AWS::Lambda::Function,latency,0,1,0,1,39,0,,214.6
+temporal_traffic1,test,issue_1,temporal_traffic1|test|issue_1,counterfactual_attribution,PetSite,latency,petInfo_AWS::DynamoDB::Table,,lambdastatusupdater_AWS::Lambda::Function,latency,0,0,0,0,39,0,,89.56
+temporal_traffic1,test,issue_2,temporal_traffic1|test|issue_2,counterfactual_attribution,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambdastatusupdater_AWS::Lambda::Function,latency,1,1,1,1,39,0,,332.12
+temporal_traffic1,test,issue_3,temporal_traffic1|test|issue_3,counterfactual_attribution,PetSite,availability,payforadoption_AWS::ECS::Container,,PetSite,availability,0,1,0,1,39,0,,47.18
+temporal_traffic1,test,issue_4,temporal_traffic1|test|issue_4,counterfactual_attribution,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,PetSite,availability,0,0,0,0,39,0,,110.83
+temporal_traffic1,test,issue_5,temporal_traffic1|test|issue_5,counterfactual_attribution,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,PetSite,availability,0,0,0,0,39,0,,135.24

@@ -1,0 +1,16 @@
+a,b,n_drops,both_signs,pi_crosses_0
+alertcount,baro,55,55,55
+alertcount,cd1min,55,55,55
+alertcount,e_diagnosis,55,0,1
+alertcount,max_z,55,54,55
+alertcount,rcd,55,55,55
+baro,cd1min,55,55,55
+baro,e_diagnosis,55,0,55
+baro,max_z,55,55,55
+baro,rcd,55,55,55
+cd1min,e_diagnosis,55,0,10
+cd1min,max_z,55,55,55
+cd1min,rcd,55,55,10
+e_diagnosis,max_z,55,0,55
+e_diagnosis,rcd,55,0,10
+max_z,rcd,55,55,55

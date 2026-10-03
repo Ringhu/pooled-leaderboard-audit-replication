@@ -1,0 +1,9 @@
+scenario,split,issue,case_id,method,target_node,target_metric,gt_node,gt_metric,top1_node,top1_metric,hit1,hit3,hit1_nodeonly,hit3_nodeonly,n_returned,empty,err,sec
+temporal_traffic1,train,issue_0,temporal_traffic1|train|issue_0,random_walk,PetSite,latency,PetSearch_AWS::ECS::Fargate,,169.254.170.2_remote,latency,0,0,0,0,4,0,,0.73
+temporal_traffic1,train,issue_1,temporal_traffic1|train|issue_1,random_walk,PetSite,availability,PetSearch_AWS::ECS::Fargate,,Evidently_AWS::Evidently,availability,0,0,0,0,4,0,,1.11
+temporal_traffic1,test,issue_0,temporal_traffic1|test|issue_0,random_walk,PetSite,latency,payforadoption_AWS::ECS::Container,,Servi-searc.us-west-2.elb.amazonaws.com_remote,latency,0,0,0,0,4,0,,1.01
+temporal_traffic1,test,issue_1,temporal_traffic1|test|issue_1,random_walk,PetSite,latency,petInfo_AWS::DynamoDB::Table,,petInfo_AWS::DynamoDB::Table,latency,1,1,1,1,4,0,,2.68
+temporal_traffic1,test,issue_2,temporal_traffic1|test|issue_2,random_walk,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,petInfo_AWS::DynamoDB::Table,latency,0,0,0,0,4,0,,0.97
+temporal_traffic1,test,issue_3,temporal_traffic1|test|issue_3,random_walk,PetSite,availability,payforadoption_AWS::ECS::Container,,amazon.com_remote,availability,0,0,0,0,4,0,,0.39
+temporal_traffic1,test,issue_4,temporal_traffic1|test|issue_4,random_walk,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,Evidently_AWS::Evidently,availability,0,0,0,0,4,0,,0.94
+temporal_traffic1,test,issue_5,temporal_traffic1|test|issue_5,random_walk,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,invalid_AWS::DynamoDB::Table,availability,0,0,0,0,4,0,,1.31

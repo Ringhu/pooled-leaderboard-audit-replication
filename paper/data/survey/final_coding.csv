@@ -1,0 +1,125 @@
+id,item,value,source,reason,evidence_quote,location
+baro2024,Q1,yes,agree,,"Table 2. Precision, Recall, and F1-score of five anomaly detectors on three datasets: Online Boutique, Sock","Table 2 caption (cf. Table 1/3/4 captions, all ""three datasets""/""three benchmark microservice systems"")"
+baro2024,Q2,partial,agree,,"We have open-sourced BARO, which can be accessed on GitHub at [12]...an immutable
+artifact for BARO is available on Zenodo [13], together with three experimental datasets [11].",Data Availability section
+baro2024,Q3,yes,adjudicated (A),"abstract sentence: unqualified 'consistently outperforms', no per-system number in the abstract; one qualifying sentence suffices",Our comprehensive experiments conducted on three popular benchmark microservice systems demonstrate that BARO consistently outperforms state-of-the-art approaches in both anomaly detection and root cause analysis.,Abstract
+baro2024,Q4,yes,agree,,Characteristics of collected data from three benchmark microservice systems (#metrics...),Table 1
+causalrca2023,Q1,not_applicable,agree,,we evaluate the localization performance of CausalRCA on the sock-shop6 microservice benchmark.,"§I Introduction, p.2 (also §Threats to Validity)"
+causalrca2023,Q2,partial,agree,,"All codes and data can be found
+in our Github repository CausalRCA7 .",正文
+causalrca2023,Q3,no,agree,,,
+causalrca2023,Q4,yes,agree,,TABLE II: Collected monitoring metrics,"Table II caption; cf. ""network receive and transmit bytes, as shown in Table II"" in body text"
+chase2024,Q1,yes,agree,,on AIOps 2020 dataset are left blank in Table II,"正文（Table II讨论处，""OVERALL PERFORMANCE COMPARISON""含Dataset行）"
+chase2024,Q2,partial,agree,,"demonstrating that our proposal can
+outperform comparative methods in the root cause analysis task. Apart from that, we release the source code1
+to advance the developement of this field.",正文
+chase2024,Q3,partial,adjudicated (B),the abstract's next sentence gives per-dataset gains ('respectively' GAIA / AIOps 2020),"The results show that CHASE achieves the average performance gain up to 36.2%(A@1) and 29.4%(Percentage@1), respectively to its best counterpart.",Abstract
+chase2024,Q4,yes,agree,,"Following the training and testing set split setting from DiagFusion [19], we assign 160 traces for training, and the remaining for validation and testing.",正文
+circa2022,Q1,yes,adjudicated (A),"simulation study and the real dataset D_O are separate evaluation units, each in its own table",Table 1: Performance of different methods in the simulation study. We put the standard deviation in the parentheses behind,"Table 1 caption; cf. Table 3 caption ""Performance of different methods on D_O"""
+circa2022,Q2,partial,agree,,We release our code at https://github.com/NetManAIOps/CIRCA.,正文（代码发布声明处）
+circa2022,Q3,no,agree,,The simulation study illustrates the theoretical reliability of CIRCA. The performance on a real-world dataset further shows that CIRCA can improve the recall of the top-1 recommendation by 25% over the best baseline method.,Abstract
+circa2022,Q4,yes,agree,,There are 99 cases in D𝑂 . Each case comes from,§5.3.1
+dynacausal2025,Q1,yes,agree,,Table 2: Overall Performance Comparison of DynaCausal with SOTA Baseline Methods. Evaluations are conducted on two,Table 2 caption (数据集D1、D2)
+dynacausal2025,Q2,no,agree,,,
+dynacausal2025,Q3,yes,adjudicated (B),"abstract: 'average AC@1 of 0.63' = mean of D1 and D2, no per-system number in the abstract","DynaCausal consistently surpasses state-of-the-art methods, attaining an average AC@1 of 0.63 with absolute gains of 0.25–0.46",Abstract
+dynacausal2025,Q4,partial,adjudicated (A),"says data are 'preprocessed' and taken from RCAEval RE2, no file / column / version","first encoding service-internal dynamic features (i.e., preprocessed MTS data for each service) using a Transformer encoder",正文
+eadro2023,Q1,yes,agree,,"Table II displays a comparison of anomaly detection, from which we draw three observations",§V-E RQ1 (Table II为TT/SN两栏并列)
+eadro2023,Q2,partial,agree,,1 https://github.com/BEbillionaireUSD/Eadro,脚注1
+eadro2023,Q3,yes,adjudicated (A),"'F1 of 0.988 and HR@1 of 0.982 on average, vastly outperforming all competitors' is in the Abstract (coder A wrote Conclusion); no per-system number there","It achieves F1 of 0.988 and HR@1 of 0.982 on average, vastly outperforming all competitors, including derived multi-modal methods.",Conclusion
+eadro2023,Q4,yes,agree,,"We first deploy two open-source microservice benchmarks: TrainTicket [17] (TT) and SocialNetwork [42] (SN)...Afterward, we inject typical faults to simulate real-world anomalies. To our best knowledge, it is the first triple-source data collection with injected faults in the context of microservices.",§IV-A Data Collection
+fang2026,Q1,yes,agree,,"it achieves 0.93 on Nezha-TT versus Nezha’s 0.87, and 0.83 on RE3-TT and RE3-SS versus BARO’s
+0.50 and 0.00",§3.2.2 Answering RQ2
+fang2026,Q2,partial,agree,,"We promise that we will release all the code, baseline implementations, and datasets as open source.",§9 Data Availability
+fang2026,Q3,partial,adjudicated (B),claim is hedged ('comparable to or even surpassing'); results paragraph cites per-dataset numbers,"SimpleRCA’s 𝑇𝑜𝑝@1 accuracy is comparable to or surpasses SOTA methods on multiple datasets. For instance, it achieves 0.93 on Nezha-TT versus Nezha’s 0.87, and 0.83 on RE3-TT and RE3-SS versus BARO’s 0.50 and 0.00.","Sec 3.2.2 Answering RQ2: Performance Comparison, p.6"
+fang2026,Q4,yes,agree,,"All data is normalized into a unified schema and stored in ClickHouse for efficient querying. This standardized schema, publicly available in our repository, simplifies data consumption for downstream RCA algorithms.",§4.5 Multi-modal Data Collection
+howfar2024,Q1,yes,agree,,Table 5: Performance of twenty-one RCA methods in terms of Avg@5 on eight datasets.,Table 5 caption
+howfar2024,Q2,partial,agree,,"We have open-sourced our evaluation framework, RCAEval, which
+is available on GitHub [10]. Additionally, an immutable artifact is
+available on Zenodo [11], together with our experimental datasets [9].",Data Availability
+howfar2024,Q3,not_applicable,agree,,The performance of RCA methods on synthetic datasets may not accurately reflect their performance in real systems,正文
+howfar2024,Q4,yes,agree,,"Table 2: Characteristics of collected data from benchmark microservice systems (#metrics, #svc, #t_svc, #fault: number of metrics, services, targeted services, and fault types).",Table 2 caption
+lemmarca2024,Q1,yes,agree,,Table 4: Results for RCA baselines on the SWaT sub-dataset.,Table 4 caption (cf. Table 3: multi-modality Product Review/Cloud Computing results; Table 5: WADI; Table 6: caption line 793)
+lemmarca2024,Q2,partial,agree,,"info, with archival metadata and access instructions deposited under DOI: https://doi.org/10.5281/zenodo.20516735.",正文
+lemmarca2024,Q3,not_applicable,agree,,,
+lemmarca2024,Q4,yes,agree,,"extracted by Drain over 10minute
+windows with 30-second intervals",§3.2 Data Preprocessing
+mabc2024,Q1,yes,agree,,Table 4: Main Results On Train-Ticket Dataset and AIOps challenge Dataset,Table 4
+mabc2024,Q2,partial,agree,,The code and dataset are in https://github.com/zwpride/mABC.,正文
+mabc2024,Q3,yes,adjudicated (A),assertion cites the Average column (64.9); codebook: same-table per-system numbers not cited by the assertion still count as yes,"our proposed M ABC significantly outperformed all the baseline models and ReAct with GPT-4-Turbo, achieving an impressive average score of 64.9.",§3.5 Main Results
+mabc2024,Q4,partial,adjudicated (A),"data construction described (processes, users, ChaosBlade), no file / column / version; same rule as tracecontrast2024, tracerca2021","We designed 7 processes and 100 virtual users to simulate real operations...we introduce faults by ChaosBlade (alibaba, 2021) into the system as outlined in Table 3.",§3.1 Datasets
+microrank2021,Q1,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+microrank2021,Q2,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+microrank2021,Q3,yes,adjudicated (B),"abstract only (verified verbatim, Semantic Scholar): '6% to 22% improvement in recall' across the two systems","The experimental evaluations on a widely-used open-source system and a production system show that MicroRank achieves excellent results not only in one root cause situation but also in two issues that happen at the same time. Moreover, MicroRank makes 6% to 22% improvement in recall in localizing root causes compared to current state-of-the-art methods.","Abstract (via Semantic Scholar API, DOI 10.1145/3442381.3449905)"
+microrank2021,Q4,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+mrca2024,Q1,no,agree,,,
+mrca2024,Q2,no,agree,,,
+mrca2024,Q3,yes,adjudicated (B),abstract only (verified verbatim): 'Experiments on two widely-used microservice benchmarks demonstrate that MRCA outperforms state-of-the-art approaches',Experiments on two widely-used microservice benchmarks demonstrate that MRCA outperforms state-of-the-art approaches in terms of both accuracy and efficiency.,"Abstract (via Semantic Scholar API, https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145/3691620.3695485)"
+mrca2024,Q4,no,agree,,,
+mulan2024,Q1,yes,agree,,Table 2: Results on Product Review dataset w.r.t different metrics.,Table 2 caption; cf. Table 3 (Online Boutique)/Table 4 (Train Ticket) captions
+mulan2024,Q2,no,agree,,,n/a
+mulan2024,Q3,partial,adjudicated (B),the pooled sentence is followed in the same paragraph by per-dataset evidence,"MULAN consistently outperforms all baseline methods across the three datasets. Notably, MULAN exhibits a remarkable improvement in MRR on the Product Review dataset, surpassing the second competitor (i.e., REASON) by 12.5%.","Sec 4.4.1 Performance Comparison, observation (2), p.7"
+mulan2024,Q4,no,agree,,Product Review...four system faults...Online Boutique...five system faults...Train Ticket...5 system faults,§4.1.1 Datasets
+nezha2023,Q1,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+nezha2023,Q2,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+nezha2023,Q3,yes,adjudicated (B),abstract only (verified verbatim): '89.77% on average ... outperforms state-of-the-art approaches by a large margin',Practical implementation and experimental evaluations on two microservice applications show that Nezha achieves a high top1 accuracy (89.77%) on average at the code region and resource type level and outperforms state-of-the-art approaches by a large margin.,"Abstract (via Semantic Scholar API, DOI 10.1145/3611643.3616249)"
+nezha2023,Q4,no,agree,,,"Abstract only (fulltext unavailable, ACM paywall)"
+ocean2024,Q1,yes,agree,,R ESULTS ON P RODUCT R EVIEW DATASET W. R . T DIFFERENT METRICS .,Table II caption (Table III为Online Boutique、Table V为Train Ticket，同格式)
+ocean2024,Q2,no,agree,,,n/a
+ocean2024,Q3,partial,adjudicated (B),same pattern as mulan2024,OCEAN consistently ... outperforms all baseline methods across the three datasets.,"Sec IV.B Performance Evaluation, observation (3), p.7"
+ocean2024,Q4,partial,adjudicated (B),"window lengths given (8-hour history, 10-minute batches), metric set / version not given","For Product Review dataset, we set the size of historical metric ... and log data to 8-hour intervals and each batch is set to be a ... 10-minute interval.","Sec IV.A Reproducibility, p.6"
+openrca2025,Q1,yes,agree,,"We observed that models consistently perform better on less complex systems. As shown in Figure 5, all models achieve higher accuracy on Telecom system compared to others.",正文（Figure 5讨论处，需用-a模式grep因文件含NUL字节）
+openrca2025,Q2,partial,agree,,The OpenRCA code and data are available at GitHub.,正文
+openrca2025,Q3,not_applicable,adjudicated (A),"benchmark paper; the quoted sentence compares model families, not the authors' method (codebook Q3 not_applicable)",,
+openrca2025,Q4,yes,adjudicated (B),"named sampling strategies, one-minute sampling, removed columns listed (Sec 3.3)","In addition to sampling, we also removed uninformative data columns like service alias, and compressed data that could consume excessive tokens like trace IDs.","Sec 3.3 Data Preprocessing (Balanced Sampling paragraph), p.5; also Appendix, 'Prompt of sampling-based methods' p.2031"
+petshop2024,Q1,yes,adjudicated (A),Tables 3/8 report every traffic scenario x metric separately (the units this project treats as subsystems); Q1 has no benchmark-paper exemption,Table 3: Top-3 recall of the RCA methods measuring the accuracy of including the correct root-cause,Table 3
+petshop2024,Q2,partial,agree,,"Each
+split-folder contains directories with issues. Each issue contains a metrics file and a target file with
+the ground truth root cause described next.",§4.1
+petshop2024,Q3,not_applicable,agree,,,n/a
+petshop2024,Q4,yes,agree,,"Each
+split-folder contains directories with issues. Each issue contains a metrics file and a target file with
+the ground truth root cause described next.",§4.1
+rcaeval2025,Q1,not_applicable,adjudicated (B),"third value: the only results (Table 6, 'preliminary experiments') are on one system, RE2 Train Ticket","Table 6: RCA performance of eight baselines on the Train Ticket system of the RE2 dataset, across six fault types.","Table 6 caption, Sec 5 (p.4)"
+rcaeval2025,Q2,partial,agree,,"The raw telemetry data collected is stored as CSV files. The key structures are presented in Tables 3, 4, and 5. A complete dataset with full structure can be downloaded from our GitHub repository.",Data Format
+rcaeval2025,Q3,not_applicable,agree,,includes fifteen reproducible baselines,§3 (概述)
+rcaeval2025,Q4,yes,agree,,"The raw telemetry data collected is stored as CSV files...Logs for a failure case are stored in a single CSV file, with each row containing the timestamp, the service name, and the corresponding log message.",§3.4 Data Format
+rcd2022,Q1,yes,agree,,Table 1: Top-k recall of different algorithms for detecting the root cause of data from the Sock-shop application.,"Table 1 caption; cf. Table 2 caption ""summary and top-7 recall of ϵ-Diagnosis and RCD on data collected for three outages from a..."""
+rcd2022,Q2,partial,agree,,Our source code is available at https://github.com/azamikram/rcd.,正文（代码发布声明处）
+rcd2022,Q3,no,agree,,,"Abstract, p.1; Sec Case Study p.8-9; Conclusion p.10"
+rcd2022,Q4,partial,adjudicated (A),collection setup and '150 metrics' only; codebook: a column count without how it was selected is partial,We inject these two types of failures in microservices by running stress-ng,§4 (Sock-shop构造)
+run2024,Q1,yes,agree,,Figure 6: HR@k on a synthetic dataset,正文（Table 2/3为sock-shop数据，Figure 6单独给出synthetic数据集结果）
+run2024,Q2,partial,agree,,Our code is publicly available at https://github.com/zmlin1998/RUN.,正文
+run2024,Q3,yes,agree,,"Extensive experiments conducted on the synthetic and realworld microservice-based datasets demonstrate that RUN noticeably outperforms the state-of-the-art root cause analysis
+methods.",Abstract
+run2024,Q4,yes,agree,,"To generate synthetic data, we follow RCD Ikram et al. (2022) to randomly generate DAG and generate conditional probability tables (CPT)...The data are generated with node counts of 10, 20, 30, 40, and 50, spanning over 2,000 timestamps.",正文
+sparserca2024,Q1,not_applicable,agree,,We trained and evaluated SparseRCA using a dataset comprising approximately 6 thousand traces collected from the test environment in a data center of a large ecommerce company,"§VI.A.1 Datasets, p.9"
+sparserca2024,Q2,no,adjudicated (A),"no code/data release; both coders coded every other paper without released material as 'no', kept consistent",,
+sparserca2024,Q3,no,agree,,,
+sparserca2024,Q4,yes,agree,,"The training and testing workflow for SparseRCA begins with preprocessing the traces. This step maps each span of a specific trace to three observation metrics: (1) the ExL derived from the InLs of the spans, (2) the pattern of the span, and (3) the number of calls to child microservices.",§V Design
+toomanycooks2025,Q1,yes,agree,,TABLE IV: A@k (%) of different methods on different datasets in instance-level root cause localization,Table IV caption
+toomanycooks2025,Q2,partial,agree,,"Additionally, we release the implementations of PDiagnose [8],
+CloudRCA [10], RMLAD [9], TrinityRCL [11], which were
+not open-sourced, publicly accessible § to facilitate further
+research.",正文
+toomanycooks2025,Q3,not_applicable,agree,,we conduct a systematic evaluation of eleven representative failure diagnosis methods...using three public datasets and our own curated dataset,Abstract
+toomanycooks2025,Q4,yes,agree,,collected at 1-second intervals,正文（Table I: Key features of eight datasets 附近讨论）
+tracecontrast2024,Q1,not_applicable,agree,,Our experiments are conducted on a medium-scale open-source microservice benchmark system: TrainTicket,"§4.1.1 Dataset, p.7"
+tracecontrast2024,Q2,no,agree,,,
+tracecontrast2024,Q3,no,agree,,TraceContrast outperforms baseline approaches by 319.1% and 184.1% on average in term of MRR...,正文
+tracecontrast2024,Q4,partial,adjudicated (A),dataset construction and size only,"In total, we collected a
+total of 175 performance issues along with 4,331,882 traces. The
+longest trace in our dataset contains more than 400 spans; each
+span contains at least 5 attributes and at most 18 attributes.",正文
+tracediag2023,Q1,not_applicable,agree,,we employ a real dataset obtained from the Microsoft Exchange microservice system,"§5.1.1 Dataset, p.13"
+tracediag2023,Q2,no,adjudicated (A),same as sparserca2024,,
+tracediag2023,Q3,no,agree,,demonstrates superior performance compared to state-of-the-art RCA approaches,Abstract
+tracediag2023,Q4,yes,agree,,"we first randomly sample 1% of the raw trace to maintain RCA overhead without compromising RCA performance...After trace sampling, we aggregate the time series for each component using the average function",§4.2 Trace Preprocessing
+tracerca2021,Q1,yes,agree,,Table II compares the overall effectiveness...TraceRCA outperforms all the compared unsupervised approaches on both A and B. The top-1 accuracy of TraceRCA outperforms the compared unsupervised approaches by 51.02%∼81.22% on A...the top-1 accuracy of TraceRCA still outperforms the compared unsupervised approaches by 7.32%∼87.23% on B.,§IV-B (Table II讨论)
+tracerca2021,Q2,partial,agree,,"The datasets
+have been published anonymously to promote future research1",§IV-A
+tracerca2021,Q3,yes,adjudicated (A),"abstract: '44.8%' is the pooled figure, no per-system number in the abstract",The top-1 accuracy of TraceRCA outperforms the state-of-the-art unsupervised approaches by 44.8%.,Abstract
+tracerca2021,Q4,partial,adjudicated (A),"dataset construction, size and train/test split only","In total, we constructed 200 faults of 5 categories, along with 242,259 traces, 22,675 (9.36%) of which are affected by the faults...In total, there are 222 faults, 1,379,084 traces, 39,728 (2.88%) of which are affected by the faults...we randomly selected 20% traces as the training set and the remaining traces as the test set.",§IV-A
+tvdiag2024,Q1,yes,agree,,"As shown in Table 4, TVDiag",§ (Table 4讨论处)
+tvdiag2024,Q2,partial,adjudicated (B),"'The source code and experimental data are publicly available [59]' -- code open, per-case outputs not stated (codebook Q2 rule)",The source code and experimental data are publicly available [59].,"Introduction, p.6 (footnote area)"
+tvdiag2024,Q3,partial,adjudicated (B),"'at least 32.46%' is a minimum over datasets, not a pooled number; results paragraph gives per-dataset evidence and p-values","TVDiag significantly surpasses all baseline methods for the RCL task, achieving at least a 32.46% improvement in 𝐻𝑅@1 accuracy and a 17.39% improvement in 𝐴𝑣𝑔@3 compared to other methods.","Sec 5.3 Results, p.22 (same paragraph as Table 4/5 discussion)"
+tvdiag2024,Q4,yes,agree,,"A is derived from the GAIA dataset[15], and B is based on the AIOps-22 dataset[1]...because Eadro did not publish the preprocessing code, we independently completed the data preprocessing steps introduced in [26] and applied them consistently to the two open datasets.",§5.7 Threats to Validity

@@ -1,0 +1,10 @@
+\section{Can Either Premise Be Checked From Published Papers?}
+\label{sec:bg-survey}
+
+The two premises can be checked from a paper only if it reports the per-system scores behind its pooled comparisons, with enough released material to attach an uncertainty to them, and states how its scores were produced.
+To see how often this holds, we coded 26 microservice RCA method and benchmark papers from 2021 to 2026, a convenience sample, with two independent coders working from a codebook; the selection, codebook, coding, and agreement are in the replication package.
+Scope is partly visible: \SurveyQOneYes of the 26 papers report a score per system ($\kappa = \SurveyKappaQOne$), so a reader can see where a pooled lead does not hold, but not with what uncertainty.
+Checking the repositories and archives linked from each paper on 2 October 2026, we found \SurveyRelAny papers that release per-case outputs, each for one method or one setting only: the predictions of \openrca's agent with one model~\citep{xu2025openrca} and the rankings of the authors' own method in Nezha~\citep{yu2023nezha} and CausalRCA~\citep{causalrca}; for \SurveyRelFullUndet papers the linked release had expired or could not be listed.
+None of the \SurveyRelFullCheckable papers whose releases we could check releases per-case outputs for all methods of its main comparison, so for those comparisons a reader cannot compute a paired difference, its uncertainty, or a coverage figure.
+Provenance is less visible still: \SurveyQFourYes papers state which input representation or preprocessing they used and \SurveyQFourNotYes do not, with moderate agreement between coders ($\kappa = \SurveyKappaQFour$).
+Superiority claims are nonetheless stated over the benchmark as a whole, for example ``The top-1 accuracy of TraceRCA outperforms the state-of-the-art unsupervised approaches by 44.8\%''~\citep{li2021tracerca} and ``Extensive experiments conducted on the synthetic and realworld microservice-based datasets demonstrate that RUN noticeably outperforms the state-of-the-art root cause analysis methods''~\citep{lin2024run}.

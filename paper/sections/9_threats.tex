@@ -1,0 +1,25 @@
+\section{Threats to Validity}
+\label{sec:threats}
+
+\textbf{Construct validity.}
+\rcaeval and \petshop score top-1 hits, while \openrca gives partial credit for component, reason, and time.
+We compare differences within a family, except for the cross-family set (\cref{sec:rq1-cross}), where we compare only the signs of subsystem differences and do not average scores across families.
+A reversal can be defined by the point estimate or by the CI; we report both, and the conclusions of \cref{sec:rq1} hold under either.
+
+\textbf{Internal validity.}
+Our results depend on running released code correctly, which is exactly where we found problems.
+Our own first RE1 runs also read the raw exports; we noticed only because \baro's Avg@5 did not match its authors' numbers.
+We guard against similar errors in four ways: we anchor implementations to published numbers where possible (\baro on RE1, \simplerca on RE2 and RE3, and \tracerca and \microrank on RE2-TT when invalid outputs are dropped), we check every ranking against the input column order, we apply the maintainers' own fixes, and we record the configuration of every run.
+The \openrca wrapper that turns metric rankings into answers is our design; it is the same for every method, and queries where it falls back to a default answer score 0. Because methods favour different kinds of metrics, the mapping from metric type to failure reason may suit some methods better than others, so our \openrca results hold under this wrapper and not necessarily under another.
+
+\textbf{External validity.}
+We audit three benchmark families with $k=11$ subsystems in the main analysis; they are not a sample from a population of deployments, and we make no claim beyond them.
+RE2 uses the same applications as RE1, so it tests carry-over between releases, not between systems.
+Two \petshop scenarios have only 8 cases, and we report results without them.
+Our conclusions are limited to offline benchmarks with matched cases; interactive agent benchmarks may behave differently.
+We audit only methods whose code runs on a family (\cref{sec:design-methods}).
+
+\textbf{Conclusion validity.}
+We examine many comparisons, and subsystem CIs are not adjusted for multiplicity; a few CI-supported reversals are expected by chance, which is why we report counts and do not interpret single reversals.
+At a Bonferroni-adjusted level over the \NBonfComp published comparisons of the main families, \NBonfCIAdjExcl of the \NBonfCIExcl subsystem CIs that exclude zero still do so, and \NBonfRevCI of the \NMainPubRevCI CI-supported reversals of RQ1 remains (\cfa vs \rcd on the high-traffic scenario); the reversals of RQ2 have CIs excluding zero on both sides under both conditions.
+The survey is a convenience sample coded by two instances of one LLM with an adjudicating author; the main text uses its item on per-system reporting ($\kappa = \SurveyKappaQOne$) and its item on input representation ($\kappa = \SurveyKappaQFour$, moderate), and for released outputs a separate check of the linked repositories, made on one date; releases can change afterwards, and for \SurveyRelFullUndet papers it could not be checked completely.

@@ -1,0 +1,15 @@
+subsystem_id,availability,cpu,delay,disk,latency,loss,mem,memory,network,other,socket
+RE1::OB,0,25,25,25,0,25,25,0,0,0,0
+RE1::SS,0,25,25,25,0,25,25,0,0,0,0
+RE1::TT,0,25,25,25,0,25,25,0,0,0,0
+RE2::OB,0,15,15,15,0,15,15,0,0,0,15
+RE2::SS,0,15,15,15,0,15,15,0,0,0,15
+RE2::TT,0,15,15,15,0,15,15,0,0,0,15
+openrca::bank,0,36,0,24,0,0,0,17,59,0,0
+openrca::mkt1,0,13,0,24,0,0,0,12,17,4,0
+openrca::mkt2,0,13,0,27,0,0,0,10,25,3,0
+openrca::tel,0,19,0,0,0,0,0,0,20,12,0
+petshop::high_traffic,12,0,0,0,14,0,0,0,0,0,0
+petshop::low_traffic,12,0,0,0,14,0,0,0,0,0,0
+petshop::temporal_traffic1,4,0,0,0,4,0,0,0,0,0,0
+petshop::temporal_traffic2,4,0,0,0,4,0,0,0,0,0,0

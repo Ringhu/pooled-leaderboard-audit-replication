@@ -1,0 +1,43 @@
+{
+ "script": "/tmp/rca_pkg_test/analysis/rq1_crossfamily.py",
+ "script_sha256": "c4b0b8bf8d0e72e06998b6efcd8f057682af70b8943f54c9427391a0e44739cc",
+ "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+ "set4": [
+  "alertcount",
+  "baro",
+  "cd1min",
+  "e_diagnosis",
+  "max_z",
+  "rcd"
+ ],
+ "subsystems": [
+  "RE1::OB",
+  "RE1::SS",
+  "RE1::TT",
+  "openrca::bank",
+  "openrca::mkt1",
+  "openrca::mkt2",
+  "openrca::tel",
+  "petshop::high_traffic",
+  "petshop::low_traffic",
+  "petshop::temporal_traffic1",
+  "petshop::temporal_traffic2"
+ ],
+ "B": 10000,
+ "B_rev": 2000,
+ "seed": 20260929,
+ "joint_interaction": {
+  "method_x_subsystem": {
+   "lrt": 264.36902229909856,
+   "df": 50,
+   "p": 6.234037167402122e-31
+  },
+  "method_x_family": {
+   "lrt": NaN,
+   "df": 10,
+   "p": NaN
+  }
+ },
+ "run_utc": "2026-10-02T13:43:29Z",
+ "wall_s": 5.4
+}

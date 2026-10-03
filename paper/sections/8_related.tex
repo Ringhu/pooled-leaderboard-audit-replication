@@ -1,0 +1,20 @@
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Benchmark validity in machine learning.}
+Pooled leaderboards have been criticized for hiding condition-specific behavior and for depending on which benchmarks are included~\citep{dehghani2021benchmark,bowman2021will,liang2022helm}.
+Test-set replication and label errors can reorder methods~\citep{recht2019imagenet,northcutt2021pervasive}, and hidden stratification and underspecification describe models whose average performance hides failures on subgroups~\citep{oakdenrayner2020hidden,damour2022underspecification,sagawa2020distributionally}.
+Checklists for benchmark quality ask for documentation and reproducible releases~\citep{betterbench,pineau2021improving}.
+We apply this view to RCA benchmarks, where subsystems are identifiable applications, per-case scores are available, and the release itself can be under-specified.
+
+\textbf{RCA benchmarks and methods.}
+Offline RCA benchmarks include \rcaeval~\citep{pham2024rcaeval}, \openrca~\citep{xu2025openrca}, \petshop~\citep{hardt2024petshop}, and LEMMA-RCA~\citep{zheng2024lemma}; AIOpsLab and ITBench evaluate agents against live systems, and Cloud-OpsBench against recorded state snapshots replayed through diagnostic tools~\citep{aiopslab,jha2025itbench,wang2026cloudopsbench}.
+Audited methods span change-point detection (\baro~\citep{pham2024baro}), causal inference and discovery (\circa~\citep{li2022circa}, \rcd~\citep{ikram2022rcd}, \causalrca~\citep{causalrca}, \cfa~\citep{budhathoki2022causal}), anomaly scoring (\ediag~\citep{ediagnosis}), and trace analysis (\tracerca~\citep{li2021tracerca}, \microrank~\citep{yu2021microrank}).
+
+\textbf{Evaluating RCA evaluation.}
+\citet{pham2024howfar} compare causal-inference RCA methods on common data and find that no method stands out in all situations. We do not re-establish that winners differ; we ask, for the pairwise comparisons a released benchmark supports, on which subsystems a pooled lead holds and which part of it the evaluation pipeline produced, with matched per-case outputs that others can recheck.
+\citet{fang2025simplerca} question benchmark difficulty (\cref{sec:disc-fang}).
+Studies of LLM agents for cloud RCA analyze why agents fail~\citep{kim2026agentfail,riddell2026stalled}; they concern a different evaluation mode from ours.
+
+\textbf{Statistics for heterogeneous effects.}
+Our subsystem differences and prediction intervals follow standard practice for combining effects across heterogeneous units~\citep{dersimonian1986meta,higgins2009reevaluation,inthout2016plea}; we use them descriptively, since $k$ is small.

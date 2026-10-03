@@ -1,0 +1,71 @@
+table,a,b,k,pooled,abs_margin,sd_units,n_rev,units_a_wins,units_b_wins,margin_lt_sd
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),CausalRCA (metric),6,0.4466666666666667,0.4466666666666667,0.2546108141196416,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),CIRCA (metric),6,0.3433333333333333,0.3433333333333333,0.10576703960434305,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),MicroCause (metric),6,0.5683333333333334,0.5683333333333334,0.21311186420907371,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),RCD (metric),6,0.5783333333333333,0.5783333333333333,0.2815966382375093,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),MicroRank (trace),6,0.5033333333333333,0.5033333333333333,0.2843003107044849,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),TraceRCA (trace),6,0.011666666666666678,0.011666666666666678,0.2806005464475554,3,2,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),BARO (multi),6,-0.023333333333333334,0.023333333333333334,0.05715476066494083,0,0,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),CIRCA (multi),6,0.61,0.61,0.2564371267971937,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),PDiagnose (multi),6,0.18999999999999997,0.18999999999999997,0.40074929819027755,2,4,2,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (metric),RCD (multi),6,0.5716666666666667,0.5716666666666667,0.2825184359766043,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),CIRCA (metric),6,-0.10333333333333333,0.10333333333333333,0.16439789130845525,1,1,5,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),MicroCause (metric),6,0.12166666666666669,0.12166666666666669,0.08588752334691384,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),RCD (metric),6,0.13166666666666665,0.13166666666666665,0.18236410465512853,1,4,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),MicroRank (trace),6,0.056666666666666664,0.056666666666666664,0.2207864730155964,3,3,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),TraceRCA (trace),6,-0.43500000000000005,0.43500000000000005,0.1970532922840925,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),BARO (multi),6,-0.47000000000000003,0.47000000000000003,0.266608326951729,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),CIRCA (multi),6,0.16333333333333336,0.16333333333333336,0.212100605059643,1,5,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),PDiagnose (multi),6,-0.25666666666666665,0.25666666666666665,0.2801190223220598,1,1,5,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CausalRCA (metric),RCD (multi),6,0.12499999999999999,0.12499999999999999,0.1463898903613224,1,5,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),MicroCause (metric),6,0.225,0.225,0.13663820841916802,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),RCD (metric),6,0.23500000000000001,0.23500000000000001,0.18468892765945663,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),MicroRank (trace),6,0.16,0.16,0.19909796583591705,1,5,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),TraceRCA (trace),6,-0.3316666666666666,0.3316666666666666,0.19125027233096076,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),BARO (multi),6,-0.3666666666666667,0.3666666666666667,0.11707547423208105,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),CIRCA (multi),6,0.26666666666666666,0.26666666666666666,0.1725881417324686,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),PDiagnose (multi),6,-0.15333333333333332,0.15333333333333332,0.3105264347308722,2,2,4,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (metric),RCD (multi),6,0.22833333333333336,0.22833333333333336,0.18584043334717734,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),RCD (metric),6,0.01,0.01,0.2032732151563506,4,2,4,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),MicroRank (trace),6,-0.065,0.065,0.2504196477914622,1,1,5,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),TraceRCA (trace),6,-0.5566666666666666,0.5566666666666666,0.2025504052493272,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),BARO (multi),6,-0.5916666666666667,0.5916666666666667,0.21572358857266094,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),CIRCA (multi),6,0.041666666666666664,0.041666666666666664,0.20846262654650272,4,2,4,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),PDiagnose (multi),6,-0.37833333333333335,0.37833333333333335,0.29962754657518836,1,1,5,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroCause (metric),RCD (multi),6,0.003333333333333329,0.003333333333333329,0.1792949153396902,3,2,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),MicroRank (trace),6,-0.075,0.075,0.09093954035511725,1,1,4,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),TraceRCA (trace),6,-0.5666666666666665,0.5666666666666665,0.09584710046040343,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),BARO (multi),6,-0.6016666666666667,0.6016666666666667,0.2755660840282539,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),CIRCA (multi),6,0.03166666666666667,0.03166666666666667,0.06585337247754793,1,3,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),PDiagnose (multi),6,-0.38833333333333336,0.38833333333333336,0.19446507827028137,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",RCD (metric),RCD (multi),6,-0.006666666666666665,0.006666666666666665,0.06918574034197124,2,2,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroRank (trace),TraceRCA (trace),6,-0.4916666666666667,0.4916666666666667,0.1767955504719128,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroRank (trace),BARO (multi),6,-0.5266666666666667,0.5266666666666667,0.2788308925974069,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroRank (trace),CIRCA (multi),6,0.10666666666666667,0.10666666666666667,0.11075498483890765,0,5,0,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroRank (trace),PDiagnose (multi),6,-0.31333333333333335,0.31333333333333335,0.26665833320312093,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",MicroRank (trace),RCD (multi),6,0.06833333333333333,0.06833333333333333,0.10476958846281045,1,5,1,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",TraceRCA (trace),BARO (multi),6,-0.03500000000000001,0.03500000000000001,0.2812649996000214,2,2,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",TraceRCA (trace),CIRCA (multi),6,0.5983333333333334,0.5983333333333334,0.11634718160173314,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",TraceRCA (trace),PDiagnose (multi),6,0.17833333333333334,0.17833333333333334,0.13467244212037838,1,5,1,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",TraceRCA (trace),RCD (multi),6,0.5599999999999999,0.5599999999999999,0.14366627996854375,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (multi),CIRCA (multi),6,0.6333333333333334,0.6333333333333334,0.23930454794396758,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (multi),PDiagnose (multi),6,0.2133333333333333,0.2133333333333333,0.40549558156244647,2,4,2,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",BARO (multi),RCD (multi),6,0.5950000000000001,0.5950000000000001,0.2771822505139894,0,6,0,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (multi),PDiagnose (multi),6,-0.4200000000000001,0.4200000000000001,0.23108440016582688,0,0,6,False
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",CIRCA (multi),RCD (multi),6,-0.03833333333333333,0.03833333333333333,0.10342469079802302,3,3,3,True
+"RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",PDiagnose (multi),RCD (multi),6,0.38166666666666665,0.38166666666666665,0.24202616938394628,0,6,0,False
+"PetShop Table 8 (top-1, 6 strata)",traversal,circa,6,0.15666666666666665,0.15666666666666665,0.12612163441165306,0,5,0,False
+"PetShop Table 8 (top-1, 6 strata)",traversal,counterfactual,6,0.34,0.34,0.21826589289213283,0,5,0,False
+"PetShop Table 8 (top-1, 6 strata)",traversal,epsilon_diagnosis,6,0.5383333333333332,0.5383333333333332,0.1942592769127556,0,6,0,False
+"PetShop Table 8 (top-1, 6 strata)",traversal,rcd,6,0.325,0.325,0.35590729129929327,2,4,2,True
+"PetShop Table 8 (top-1, 6 strata)",traversal,correlation,6,-0.09000000000000001,0.09000000000000001,0.31317726609701413,2,2,4,True
+"PetShop Table 8 (top-1, 6 strata)",circa,counterfactual,6,0.18333333333333335,0.18333333333333335,0.22844401210508158,1,3,1,True
+"PetShop Table 8 (top-1, 6 strata)",circa,epsilon_diagnosis,6,0.38166666666666665,0.38166666666666665,0.2113212404531704,0,5,0,False
+"PetShop Table 8 (top-1, 6 strata)",circa,rcd,6,0.1683333333333333,0.1683333333333333,0.30135803733543703,2,3,2,True
+"PetShop Table 8 (top-1, 6 strata)",circa,correlation,6,-0.2466666666666667,0.2466666666666667,0.32610836644690155,1,1,5,True
+"PetShop Table 8 (top-1, 6 strata)",counterfactual,epsilon_diagnosis,6,0.19833333333333333,0.19833333333333333,0.23920005574135358,0,3,0,True
+"PetShop Table 8 (top-1, 6 strata)",counterfactual,rcd,6,-0.015000000000000005,0.015000000000000005,0.4496554236301392,3,3,2,True
+"PetShop Table 8 (top-1, 6 strata)",counterfactual,correlation,6,-0.43,0.43,0.3446157280218069,0,0,6,False
+"PetShop Table 8 (top-1, 6 strata)",epsilon_diagnosis,rcd,6,-0.2133333333333333,0.2133333333333333,0.25889508814704587,0,0,4,True
+"PetShop Table 8 (top-1, 6 strata)",epsilon_diagnosis,correlation,6,-0.6283333333333333,0.6283333333333333,0.14932068398807535,0,0,6,False
+"PetShop Table 8 (top-1, 6 strata)",rcd,correlation,6,-0.41500000000000004,0.41500000000000004,0.2738430207253783,0,0,6,False

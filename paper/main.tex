@@ -1,0 +1,46 @@
+\documentclass[acmsmall,screen,review,anonymous]{acmart}
+\acmJournal{PACMSE}
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+\input{macros}
+\input{numbers}
+
+\begin{document}
+
+\title{What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}\country{Anonymous}}
+
+\input{sections/0_abstract}
+
+\maketitle
+
+\input{sections/1_introduction}
+\input{sections/2_background}
+\input{sections/4_design}
+\input{sections/5_rq1}
+\input{sections/6_rq2}
+\input{sections/7_checkability}
+\input{sections/7_discussion}
+\input{sections/8_related}
+\input{sections/9_threats}
+\input{sections/10_conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

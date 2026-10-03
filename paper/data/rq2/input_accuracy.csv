@@ -1,0 +1,27 @@
+sub,method,acc_correct_input,acc_submitted_input,input_correct,input_submitted
+RE1::SS,alertcount,0.376,0.432,simple_data.csv,data.csv
+RE1::SS,baro,0.848,0.2,simple_data.csv,data.csv
+RE1::SS,cd1min,0.928,0.736,simple_data.csv,data.csv
+RE1::SS,circa,0.704,0.2,simple_data.csv,data.csv
+RE1::SS,e_diagnosis,0.144,0.168,simple_data.csv,data.csv
+RE1::SS,max_z,0.744,0.608,simple_data.csv,data.csv
+RE1::SS,rcd,0.3893333333333333,0.296,simple_data.csv,data.csv
+RE1::TT,alertcount,0.048,0.192,simple_data.csv,data.csv
+RE1::TT,baro,0.56,0.12,simple_data.csv,data.csv
+RE1::TT,cd1min,0.28,0.456,simple_data.csv,data.csv
+RE1::TT,circa,0.328,0.0,simple_data.csv,data.csv
+RE1::TT,e_diagnosis,0.0,0.0,simple_data.csv,data.csv
+RE1::TT,max_z,0.424,0.448,simple_data.csv,data.csv
+RE1::TT,rcd,0.088,0.09066666666666666,simple_data.csv,data.csv
+RE2::OB,alertcount,0.2111111111111111,0.28888888888888886,simple_metrics.csv,metrics.csv
+RE2::OB,cd1min,0.7333333333333333,0.4,simple_metrics.csv,metrics.csv
+RE2::OB,max_z,0.7777777777777778,0.5222222222222223,simple_metrics.csv,metrics.csv
+RE2::OB,mmbaro,0.16666666666666666,0.23333333333333334,"simple_metrics.csv + logts.csv + tracets_{lat,err}.csv","metrics.csv + logts.csv + tracets_{lat,err}.csv"
+RE2::SS,alertcount,0.3888888888888889,0.35555555555555557,simple_metrics.csv,metrics.csv
+RE2::SS,cd1min,0.9444444444444444,0.5333333333333333,simple_metrics.csv,metrics.csv
+RE2::SS,max_z,0.8444444444444444,0.5555555555555556,simple_metrics.csv,metrics.csv
+RE2::SS,mmbaro,0.06666666666666667,0.26666666666666666,"simple_metrics.csv + logts.csv + tracets_{lat,err}.csv","metrics.csv + logts.csv + tracets_{lat,err}.csv"
+RE2::TT,alertcount,0.2111111111111111,0.2777777777777778,simple_metrics.csv,metrics.csv
+RE2::TT,cd1min,0.7888888888888889,0.24444444444444444,simple_metrics.csv,metrics.csv
+RE2::TT,max_z,0.4111111111111111,0.2222222222222222,simple_metrics.csv,metrics.csv
+RE2::TT,mmbaro,0.6888888888888889,0.14444444444444443,"simple_metrics.csv + logts.csv + tracets_{lat,err}.csv","metrics.csv + logts.csv + tracets_{lat,err}.csv"

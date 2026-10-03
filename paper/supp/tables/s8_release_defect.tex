@@ -1,0 +1,51 @@
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{lrrrrr}
+\caption{Accuracy with the released RE1-OB duplicate-header silent failure left as shipped, and with that header fixed. Affected columns restrict both accuracies to the cases whose input row is changed by the fix.}\\\label{supp:s8-release-defect}\\
+\toprule
+Method & \shortstack{Acc.\\fixed} & \shortstack{Acc.\\as shipped} & \shortstack{Acc.\ fixed\\(affected)} & \shortstack{Acc.\ as shipped\\(affected)} & \shortstack{$n$\\affected} \\
+\midrule
+\endfirsthead
+\caption{Accuracy with the released RE1-OB duplicate-header silent failure left as shipped, and with that header fixed. Affected columns restrict both accuracies to the cases whose input row is changed by the fix.}\\
+\toprule
+Method & \shortstack{Acc.\\fixed} & \shortstack{Acc.\\as shipped} & \shortstack{Acc.\ fixed\\(affected)} & \shortstack{Acc.\ as shipped\\(affected)} & \shortstack{$n$\\affected} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\emph{Continued on next page}} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+CIRCA & 0.672 & 0.432 & 0.820 & 0.220 & 50 \\
+$\epsilon$-Diagnosis & 0.032 & 0.032 & 0.000 & 0.000 & 50 \\
+RCD & 0.541 & 0.547 & 0.807 & 0.820 & 50 \\
+\end{longtable}
+}
+
+{\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{lllll}
+\caption{Pair--subsystem comparisons whose sign, or whose reversal status, changes between the fixed release and the release as shipped. $\Delta$ fixed is the reference (header repaired); $\Delta$ as shipped is the alternative.}\\\label{supp:s8-release-defect-changes}\\
+\toprule
+Layer & Pair & Subsystem & $\Delta$ fixed [CI] & $\Delta$ as shipped [CI] \\
+\midrule
+\endfirsthead
+\caption{Pair--subsystem comparisons whose sign, or whose reversal status, changes between the fixed release and the release as shipped. $\Delta$ fixed is the reference (header repaired); $\Delta$ as shipped is the alternative.}\\
+\toprule
+Layer & Pair & Subsystem & $\Delta$ fixed [CI] & $\Delta$ as shipped [CI] \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\emph{Continued on next page}} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+Published & CausalRCA vs CIRCA & RE1-OB & $-$0.056 [$-$0.144, +0.035] & +0.184 [+0.077, +0.291] \\
+Published & CIRCA vs RCD & RE1-OB & +0.131 [+0.021, +0.237] & $-$0.115 [$-$0.245, +0.016] \\
+All & CausalRCA vs CIRCA & RE1-OB & $-$0.056 [$-$0.144, +0.035] & +0.184 [+0.077, +0.291] \\
+All & CIRCA vs max-$|Z|$ & RE1-OB & +0.168 [+0.064, +0.280] & $-$0.072 [$-$0.192, +0.048] \\
+All & CIRCA vs max-$|Z|$ & RE1-SS & $-$0.040 [$-$0.144, +0.064] & $-$0.040 [$-$0.144, +0.064] \\
+All & CIRCA vs max-$|Z|$ & RE1-TT & $-$0.096 [$-$0.192, +0.008] & $-$0.096 [$-$0.192, +0.008] \\
+All & CIRCA vs RCD & RE1-OB & +0.131 [+0.021, +0.237] & $-$0.115 [$-$0.245, +0.016] \\
+\end{longtable}
+}

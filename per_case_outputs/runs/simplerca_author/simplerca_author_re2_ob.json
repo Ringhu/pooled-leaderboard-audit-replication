@@ -1,0 +1,6473 @@
+{
+ "config": {
+  "method": "simplerca-author:simplerca",
+  "dataset": "rcaeval_re2_ob",
+  "input_file": "simple_metrics.csv + traces.csv + logs.csv",
+  "author_repo": "LGU-SE-Internal/Simple-RCA",
+  "author_branch_commit": "author_rcaeval:5fd1f7f",
+  "converter": "rcabench_platform==0.3.27 sources/rcaeval.py (verbatim)",
+  "no_logs": false,
+  "code_sha256_12": {
+   "author_rcaeval/__init__.py": "e3b0c44298fc",
+   "author_rcaeval/baro.py": "7c62e0d185f6",
+   "author_rcaeval/nezha_adapter.py": "2e2c3e775e79",
+   "author_rcaeval/nezha_rca.py": "8896a48e51db",
+   "author_rcaeval/time_series.py": "e44a775a6ab4",
+   "author_re3ss/__init__.py": "e3b0c44298fc",
+   "author_re3ss/baro.py": "7c62e0d185f6",
+   "author_re3ss/nezha_adapter.py": "2e2c3e775e79",
+   "author_re3ss/nezha_rca.py": "4d408e429d77",
+   "author_re3ss/time_series.py": "5c1a39773745",
+   "run_author_simplerca.py": "28edb2abea36",
+   "stub/rcabench_platform/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/algorithms/spec.py": "cdba429a62a6",
+   "stub/rcabench_platform/v2/graphs/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcabench.py": "e28531f006f5",
+   "stub/rcabench_platform/v2/graphs/sdg/build_/rcaeval.py": "6c6fa90f6e40",
+   "stub/rcabench_platform/v2/logging.py": "c89dca086541",
+   "stub/rcabench_platform/v2/sources/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/sources/_convert_stub.py": "f862981d4de9",
+   "stub/rcabench_platform/v2/sources/rcaeval.py": "58ceb0e75128",
+   "stub/rcabench_platform/v2/utils/__init__.py": "e3b0c44298fc",
+   "stub/rcabench_platform/v2/utils/env.py": "1755ee39c8f9",
+   "stub/rcabench_platform/v2/utils/serde.py": "c1b8900e5ac4"
+  },
+  "env": "$CONDA_ENVS/simplerca/bin/python",
+  "python": "3.13.15",
+  "polars": "1.31.0",
+  "argv": [
+   "run_author_simplerca.py",
+   "--dataset",
+   "rcaeval_re2_ob",
+   "--algo",
+   "simplerca",
+   "--procs",
+   "12",
+   "--out",
+   "$AUDIT_ROOT/runs/simplerca_author/simplerca_author_re2_ob.json"
+  ],
+  "run_started_utc": "2026-09-27T12:12:10.759270+00:00",
+  "limit": 0
+ },
+ "summary": {
+  "n": 90,
+  "AC@1": 0.466667,
+  "AC@2": 0.644444,
+  "AC@3": 0.933333,
+  "AC@4": 0.966667,
+  "AC@5": 1.0,
+  "Avg@3": 0.681481,
+  "Avg@5": 0.802222,
+  "MRR_platform_hit_only": 0.666852,
+  "MRR_all_cases": 0.666852,
+  "n_exceptions": 0,
+  "n_empty": 0
+ },
+ "cases": [
+  {
+   "datapack": "checkoutservice_cpu_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_cpu/1",
+   "runtime_s": 1.7386338710784912,
+   "exception": null,
+   "convert_plus_run_s": 2.5254733562469482,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     36860.261700644005
+    ],
+    [
+     "checkoutservice",
+     236.14997967497877
+    ],
+    [
+     "cartservice",
+     8.781230177825593
+    ],
+    [
+     "shippingservice",
+     6.45454545454535
+    ],
+    [
+     "emailservice",
+     6.333333333332466
+    ]
+   ],
+   "n_abnormal_logs": 85647,
+   "n_abnormal_traces": 195425
+  },
+  {
+   "datapack": "checkoutservice_cpu_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_cpu/2",
+   "runtime_s": 0.9626250267028809,
+   "exception": null,
+   "convert_plus_run_s": 1.410029649734497,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     26857.255261950035
+    ],
+    [
+     "checkoutservice",
+     211.57833378268856
+    ],
+    [
+     "emailservice",
+     16.94444444444406
+    ],
+    [
+     "productcatalogservice",
+     16.57051292591204
+    ],
+    [
+     "cartservice",
+     9.46675748766505
+    ]
+   ],
+   "n_abnormal_logs": 19847,
+   "n_abnormal_traces": 10846
+  },
+  {
+   "datapack": "checkoutservice_cpu_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_cpu/3",
+   "runtime_s": 1.8559064865112305,
+   "exception": null,
+   "convert_plus_run_s": 2.513195514678955,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24340.14150162088
+    ],
+    [
+     "adservice",
+     291.5000000000034
+    ],
+    [
+     "checkoutservice",
+     212.49341782420186
+    ],
+    [
+     "emailservice",
+     40.89038031319963
+    ],
+    [
+     "paymentservice",
+     6.153846153846154
+    ]
+   ],
+   "n_abnormal_logs": 89436,
+   "n_abnormal_traces": 205553
+  },
+  {
+   "datapack": "checkoutservice_delay_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_delay/1",
+   "runtime_s": 1.7517435550689697,
+   "exception": null,
+   "convert_plus_run_s": 2.5494964122772217,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     26965.108624094803
+    ],
+    [
+     "emailservice",
+     3230.621794871741
+    ],
+    [
+     "shippingservice",
+     2891.48369323114
+    ],
+    [
+     "paymentservice",
+     522.2191673212885
+    ],
+    [
+     "checkoutservice",
+     343.5343879134362
+    ]
+   ],
+   "n_abnormal_logs": 88036,
+   "n_abnormal_traces": 200716
+  },
+  {
+   "datapack": "checkoutservice_delay_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_delay/2",
+   "runtime_s": 1.911911964416504,
+   "exception": null,
+   "convert_plus_run_s": 2.583176612854004,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     19769.77097762869
+    ],
+    [
+     "emailservice",
+     3359.740483283666
+    ],
+    [
+     "shippingservice",
+     3111.3885978426133
+    ],
+    [
+     "paymentservice",
+     758.9241106719378
+    ],
+    [
+     "checkoutservice",
+     446.6205638930155
+    ]
+   ],
+   "n_abnormal_logs": 86638,
+   "n_abnormal_traces": 198173
+  },
+  {
+   "datapack": "checkoutservice_delay_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_delay/3",
+   "runtime_s": 1.978713035583496,
+   "exception": null,
+   "convert_plus_run_s": 2.8358867168426514,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27979.09764677755
+    ],
+    [
+     "shippingservice",
+     5548.333701660404
+    ],
+    [
+     "paymentservice",
+     733.6444852941163
+    ],
+    [
+     "checkoutservice",
+     448.2532413793103
+    ],
+    [
+     "cartservice",
+     19.15433453794962
+    ]
+   ],
+   "n_abnormal_logs": 87866,
+   "n_abnormal_traces": 200441
+  },
+  {
+   "datapack": "checkoutservice_disk_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_disk/1",
+   "runtime_s": 1.6772756576538086,
+   "exception": null,
+   "convert_plus_run_s": 2.426072835922241,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     39727.134589893634
+    ],
+    [
+     "checkoutservice",
+     450.7910447761208
+    ],
+    [
+     "cartservice",
+     32.57390820971702
+    ],
+    [
+     "recommendationservice",
+     19.432284616790714
+    ],
+    [
+     "shippingservice",
+     17.399999999999253
+    ]
+   ],
+   "n_abnormal_logs": 86303,
+   "n_abnormal_traces": 197008
+  },
+  {
+   "datapack": "checkoutservice_disk_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_disk/2",
+   "runtime_s": 1.8561069965362549,
+   "exception": null,
+   "convert_plus_run_s": 2.637711524963379,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     26366.26971355005
+    ],
+    [
+     "checkoutservice",
+     665.0026385224289
+    ],
+    [
+     "paymentservice",
+     27.33533260632495
+    ],
+    [
+     "recommendationservice",
+     17.92576402289038
+    ],
+    [
+     "cartservice",
+     10.636363636363642
+    ]
+   ],
+   "n_abnormal_logs": 88905,
+   "n_abnormal_traces": 202789
+  },
+  {
+   "datapack": "checkoutservice_disk_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_disk/3",
+   "runtime_s": 1.7958929538726807,
+   "exception": null,
+   "convert_plus_run_s": 2.5171592235565186,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25494.040394609903
+    ],
+    [
+     "checkoutservice",
+     1101.2982456140312
+    ],
+    [
+     "cartservice",
+     28.8846153846154
+    ],
+    [
+     "adservice",
+     9.051230698024728
+    ],
+    [
+     "recommendationservice",
+     6.8065521724783595
+    ]
+   ],
+   "n_abnormal_logs": 89098,
+   "n_abnormal_traces": 203766
+  },
+  {
+   "datapack": "checkoutservice_loss_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_loss/1",
+   "runtime_s": 1.6944658756256104,
+   "exception": null,
+   "convert_plus_run_s": 2.4016852378845215,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "checkoutservice",
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     40935.43873675795
+    ],
+    [
+     "checkoutservice",
+     412.1723857537811
+    ],
+    [
+     "paymentservice",
+     183.4058641975314
+    ],
+    [
+     "emailservice",
+     22.499999999996966
+    ],
+    [
+     "currencyservice",
+     11.818648308615591
+    ]
+   ],
+   "n_abnormal_logs": 81367,
+   "n_abnormal_traces": 186438
+  },
+  {
+   "datapack": "checkoutservice_loss_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_loss/2",
+   "runtime_s": 1.6797428131103516,
+   "exception": null,
+   "convert_plus_run_s": 2.3858771324157715,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25888.004045000635
+    ],
+    [
+     "emailservice",
+     2852.6959980445667
+    ],
+    [
+     "checkoutservice",
+     709.2923898531361
+    ],
+    [
+     "cartservice",
+     94.16373773825234
+    ],
+    [
+     "frontend",
+     23.29853649420903
+    ]
+   ],
+   "n_abnormal_logs": 88219,
+   "n_abnormal_traces": 202392
+  },
+  {
+   "datapack": "checkoutservice_loss_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_loss/3",
+   "runtime_s": 1.56939697265625,
+   "exception": null,
+   "convert_plus_run_s": 2.3067243099212646,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     26784.371423900604
+    ],
+    [
+     "checkoutservice",
+     2463.3138075313796
+    ],
+    [
+     "paymentservice",
+     1839.694323144116
+    ],
+    [
+     "emailservice",
+     87.33696632372556
+    ],
+    [
+     "frontend",
+     6.0
+    ]
+   ],
+   "n_abnormal_logs": 86948,
+   "n_abnormal_traces": 198961
+  },
+  {
+   "datapack": "checkoutservice_mem_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_mem/1",
+   "runtime_s": 1.8477845191955566,
+   "exception": null,
+   "convert_plus_run_s": 2.6937921047210693,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     30283.165339970918
+    ],
+    [
+     "checkoutservice",
+     1059.1729957805935
+    ],
+    [
+     "frontend",
+     14.270677675321036
+    ],
+    [
+     "emailservice",
+     13.333333333335453
+    ],
+    [
+     "adservice",
+     10.931034482758196
+    ]
+   ],
+   "n_abnormal_logs": 88521,
+   "n_abnormal_traces": 201093
+  },
+  {
+   "datapack": "checkoutservice_mem_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_mem/2",
+   "runtime_s": 1.2337682247161865,
+   "exception": null,
+   "convert_plus_run_s": 1.832244634628296,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     18502.958847178932
+    ],
+    [
+     "checkoutservice",
+     738.6904761904773
+    ],
+    [
+     "emailservice",
+     17.344276094275966
+    ],
+    [
+     "paymentservice",
+     7.323076923076914
+    ],
+    [
+     "shippingservice",
+     6.367187319685744
+    ]
+   ],
+   "n_abnormal_logs": 33613,
+   "n_abnormal_traces": 123802
+  },
+  {
+   "datapack": "checkoutservice_mem_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_mem/3",
+   "runtime_s": 1.438957929611206,
+   "exception": null,
+   "convert_plus_run_s": 2.1052889823913574,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "checkoutservice",
+     1228314.062146682
+    ],
+    [
+     "redis",
+     22006.124751517757
+    ],
+    [
+     "cartservice",
+     68.56453758823926
+    ],
+    [
+     "emailservice",
+     23.80011260631397
+    ],
+    [
+     "paymentservice",
+     12.076771155112189
+    ]
+   ],
+   "n_abnormal_logs": 88660,
+   "n_abnormal_traces": 202555
+  },
+  {
+   "datapack": "checkoutservice_socket_1",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_socket/1",
+   "runtime_s": 1.6106507778167725,
+   "exception": null,
+   "convert_plus_run_s": 2.3273932933807373,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24493.212940261914
+    ],
+    [
+     "checkoutservice",
+     180.99303397583708
+    ],
+    [
+     "emailservice",
+     5.428571428571358
+    ],
+    [
+     "adservice",
+     5.0460113979049055
+    ],
+    [
+     "productcatalogservice",
+     4.202702702702712
+    ]
+   ],
+   "n_abnormal_logs": 88271,
+   "n_abnormal_traces": 201353
+  },
+  {
+   "datapack": "checkoutservice_socket_2",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_socket/2",
+   "runtime_s": 1.5498945713043213,
+   "exception": null,
+   "convert_plus_run_s": 2.3047034740448,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "paymentservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     28679.456658731273
+    ],
+    [
+     "checkoutservice",
+     159.28596118091556
+    ],
+    [
+     "shippingservice",
+     24.74999999999943
+    ],
+    [
+     "paymentservice",
+     9.553510836777054
+    ],
+    [
+     "adservice",
+     4.962962962963053
+    ]
+   ],
+   "n_abnormal_logs": 86689,
+   "n_abnormal_traces": 198783
+  },
+  {
+   "datapack": "checkoutservice_socket_3",
+   "label": "checkoutservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/checkoutservice_socket/3",
+   "runtime_s": 1.4818949699401855,
+   "exception": null,
+   "convert_plus_run_s": 2.1987857818603516,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24120.595582025868
+    ],
+    [
+     "checkoutservice",
+     167.0815237450992
+    ],
+    [
+     "emailservice",
+     34.00000000002602
+    ],
+    [
+     "shippingservice",
+     10.000000000000144
+    ],
+    [
+     "paymentservice",
+     6.341075268817216
+    ]
+   ],
+   "n_abnormal_logs": 89325,
+   "n_abnormal_traces": 204156
+  },
+  {
+   "datapack": "currencyservice_cpu_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_cpu/1",
+   "runtime_s": 1.7759594917297363,
+   "exception": null,
+   "convert_plus_run_s": 2.472351312637329,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     22696.29301268909
+    ],
+    [
+     "currencyservice",
+     244.14752108288513
+    ],
+    [
+     "cartservice",
+     57.59190825680816
+    ],
+    [
+     "checkoutservice",
+     37.54464755391901
+    ],
+    [
+     "recommendationservice",
+     30.59625710665748
+    ]
+   ],
+   "n_abnormal_logs": 85596,
+   "n_abnormal_traces": 196605
+  },
+  {
+   "datapack": "currencyservice_cpu_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_cpu/2",
+   "runtime_s": 1.6099696159362793,
+   "exception": null,
+   "convert_plus_run_s": 2.349357843399048,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     28152.170177669337
+    ],
+    [
+     "cartservice",
+     4089.6882484067614
+    ],
+    [
+     "currencyservice",
+     333.7718907339635
+    ],
+    [
+     "checkoutservice",
+     123.35343618513346
+    ],
+    [
+     "frontend",
+     42.277882779127815
+    ]
+   ],
+   "n_abnormal_logs": 86505,
+   "n_abnormal_traces": 198078
+  },
+  {
+   "datapack": "currencyservice_cpu_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_cpu/3",
+   "runtime_s": 1.4765956401824951,
+   "exception": null,
+   "convert_plus_run_s": 2.085353136062622,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25859.40212759241
+    ],
+    [
+     "currencyservice",
+     258.3553099268045
+    ],
+    [
+     "checkoutservice",
+     125.60581289736653
+    ],
+    [
+     "cartservice",
+     54.495269914271994
+    ],
+    [
+     "frontend",
+     23.890977695544287
+    ]
+   ],
+   "n_abnormal_logs": 85894,
+   "n_abnormal_traces": 197417
+  },
+  {
+   "datapack": "currencyservice_delay_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_delay/1",
+   "runtime_s": 1.6305656433105469,
+   "exception": null,
+   "convert_plus_run_s": 2.3672609329223633,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     26623.334416639584
+    ],
+    [
+     "currencyservice",
+     441.08474787212924
+    ],
+    [
+     "checkoutservice",
+     203.87538846079465
+    ],
+    [
+     "frontend",
+     95.19393136695287
+    ],
+    [
+     "recommendationservice",
+     6.800000000000138
+    ]
+   ],
+   "n_abnormal_logs": 71257,
+   "n_abnormal_traces": 179060
+  },
+  {
+   "datapack": "currencyservice_delay_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_delay/2",
+   "runtime_s": 1.5370392799377441,
+   "exception": null,
+   "convert_plus_run_s": 2.202195167541504,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27445.72500670062
+    ],
+    [
+     "currencyservice",
+     2230.8630553854805
+    ],
+    [
+     "frontend",
+     384.01084433967605
+    ],
+    [
+     "checkoutservice",
+     347.51724137931024
+    ],
+    [
+     "emailservice",
+     32.00000000002255
+    ]
+   ],
+   "n_abnormal_logs": 53096,
+   "n_abnormal_traces": 178657
+  },
+  {
+   "datapack": "currencyservice_delay_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_delay/3",
+   "runtime_s": 1.4792265892028809,
+   "exception": null,
+   "convert_plus_run_s": 2.205495595932007,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     26906.654404519475
+    ],
+    [
+     "currencyservice",
+     1424.9325290949644
+    ],
+    [
+     "checkoutservice",
+     370.693008814102
+    ],
+    [
+     "frontend",
+     330.0535667739359
+    ],
+    [
+     "emailservice",
+     30.999999999968775
+    ]
+   ],
+   "n_abnormal_logs": 52402,
+   "n_abnormal_traces": 175049
+  },
+  {
+   "datapack": "currencyservice_disk_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_disk/1",
+   "runtime_s": 1.4261672496795654,
+   "exception": null,
+   "convert_plus_run_s": 2.181544303894043,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     50263.998773068866
+    ],
+    [
+     "currencyservice",
+     361.33779109935756
+    ],
+    [
+     "recommendationservice",
+     77.87130214452695
+    ],
+    [
+     "paymentservice",
+     66.24121779859502
+    ],
+    [
+     "frontend",
+     65.3101696937635
+    ]
+   ],
+   "n_abnormal_logs": 70851,
+   "n_abnormal_traces": 163398
+  },
+  {
+   "datapack": "currencyservice_disk_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_disk/2",
+   "runtime_s": 1.4442698955535889,
+   "exception": null,
+   "convert_plus_run_s": 2.179027795791626,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     33768.22553897181
+    ],
+    [
+     "cartservice",
+     972.5194366804008
+    ],
+    [
+     "currencyservice",
+     333.3841463414615
+    ],
+    [
+     "checkoutservice",
+     68.29891605659103
+    ],
+    [
+     "frontend",
+     34.124084692594984
+    ]
+   ],
+   "n_abnormal_logs": 84512,
+   "n_abnormal_traces": 193077
+  },
+  {
+   "datapack": "currencyservice_disk_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_disk/3",
+   "runtime_s": 1.5126924514770508,
+   "exception": null,
+   "convert_plus_run_s": 2.2111430168151855,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24977.132751997073
+    ],
+    [
+     "cartservice",
+     1805.974997783422
+    ],
+    [
+     "currencyservice",
+     433.723821662931
+    ],
+    [
+     "checkoutservice",
+     115.3903762936111
+    ],
+    [
+     "recommendationservice",
+     91.7063596988026
+    ]
+   ],
+   "n_abnormal_logs": 86282,
+   "n_abnormal_traces": 197291
+  },
+  {
+   "datapack": "currencyservice_loss_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_loss/1",
+   "runtime_s": 1.1026313304901123,
+   "exception": null,
+   "convert_plus_run_s": 1.7293996810913086,
+   "answers": [
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice",
+    "currencyservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     33850.30715407289
+    ],
+    [
+     "currencyservice",
+     24390.641408751642
+    ],
+    [
+     "frontend",
+     3331.9727135625853
+    ],
+    [
+     "cartservice",
+     2518.1352500470607
+    ],
+    [
+     "recommendationservice",
+     1872.5046291503586
+    ]
+   ],
+   "n_abnormal_logs": 45052,
+   "n_abnormal_traces": 87959
+  },
+  {
+   "datapack": "currencyservice_loss_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_loss/2",
+   "runtime_s": 1.3303184509277344,
+   "exception": null,
+   "convert_plus_run_s": 2.0171685218811035,
+   "answers": [
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice",
+    "currencyservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     25051.987767584098
+    ],
+    [
+     "frontend",
+     3737.211507159576
+    ],
+    [
+     "recommendationservice",
+     2498.951287378852
+    ],
+    [
+     "currencyservice",
+     1184.373320749085
+    ],
+    [
+     "checkoutservice",
+     342.39401193172307
+    ]
+   ],
+   "n_abnormal_logs": 62346,
+   "n_abnormal_traces": 157113
+  },
+  {
+   "datapack": "currencyservice_loss_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_loss/3",
+   "runtime_s": 1.3699073791503906,
+   "exception": null,
+   "convert_plus_run_s": 1.9590373039245605,
+   "answers": [
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    false,
+    true
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     24718.626474759363
+    ],
+    [
+     "recommendationservice",
+     3739.407509245787
+    ],
+    [
+     "frontend",
+     2372.952618650867
+    ],
+    [
+     "checkoutservice",
+     1991.8293524077155
+    ],
+    [
+     "currencyservice",
+     620.6605873619891
+    ]
+   ],
+   "n_abnormal_logs": 65612,
+   "n_abnormal_traces": 150393
+  },
+  {
+   "datapack": "currencyservice_mem_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_mem/1",
+   "runtime_s": 1.5131604671478271,
+   "exception": null,
+   "convert_plus_run_s": 2.297619581222534,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     39147.47204434675
+    ],
+    [
+     "currencyservice",
+     503.1159839848616
+    ],
+    [
+     "recommendationservice",
+     337.07200106095786
+    ],
+    [
+     "checkoutservice",
+     188.7455676227605
+    ],
+    [
+     "frontend",
+     117.19085316660642
+    ]
+   ],
+   "n_abnormal_logs": 76865,
+   "n_abnormal_traces": 175624
+  },
+  {
+   "datapack": "currencyservice_mem_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_mem/2",
+   "runtime_s": 1.565610647201538,
+   "exception": null,
+   "convert_plus_run_s": 2.3147943019866943,
+   "answers": [
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     19632.372324873584
+    ],
+    [
+     "currencyservice",
+     679.0827115101757
+    ],
+    [
+     "frontend",
+     226.72316589984572
+    ],
+    [
+     "checkoutservice",
+     184.11260138001816
+    ],
+    [
+     "recommendationservice",
+     113.89263780854688
+    ]
+   ],
+   "n_abnormal_logs": 80932,
+   "n_abnormal_traces": 184461
+  },
+  {
+   "datapack": "currencyservice_mem_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_mem/3",
+   "runtime_s": 1.5171756744384766,
+   "exception": null,
+   "convert_plus_run_s": 2.235089063644409,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "recommendationservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     27076.516278301107
+    ],
+    [
+     "currencyservice",
+     612.5295774647867
+    ],
+    [
+     "checkoutservice",
+     147.7654910534493
+    ],
+    [
+     "recommendationservice",
+     113.32834338728614
+    ],
+    [
+     "frontend",
+     95.2502750378182
+    ]
+   ],
+   "n_abnormal_logs": 79358,
+   "n_abnormal_traces": 180730
+  },
+  {
+   "datapack": "currencyservice_socket_1",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_socket/1",
+   "runtime_s": 1.7308390140533447,
+   "exception": null,
+   "convert_plus_run_s": 2.4134557247161865,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    false,
+    true,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     40642.98471919031
+    ],
+    [
+     "checkoutservice",
+     24.734229840667282
+    ],
+    [
+     "frontend",
+     13.172344035613754
+    ],
+    [
+     "currencyservice",
+     9.743455497382188
+    ],
+    [
+     "recommendationservice",
+     7.999999999998699
+    ]
+   ],
+   "n_abnormal_logs": 89223,
+   "n_abnormal_traces": 202089
+  },
+  {
+   "datapack": "currencyservice_socket_2",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_socket/2",
+   "runtime_s": 1.65226411819458,
+   "exception": null,
+   "convert_plus_run_s": 2.369187831878662,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     28836.94733877781
+    ],
+    [
+     "cartservice",
+     2239.0179449970187
+    ],
+    [
+     "currencyservice",
+     254.9683500652236
+    ],
+    [
+     "checkoutservice",
+     63.676605085055975
+    ],
+    [
+     "recommendationservice",
+     55.87853798187801
+    ]
+   ],
+   "n_abnormal_logs": 85888,
+   "n_abnormal_traces": 195420
+  },
+  {
+   "datapack": "currencyservice_socket_3",
+   "label": "currencyservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/currencyservice_socket/3",
+   "runtime_s": 1.8211486339569092,
+   "exception": null,
+   "convert_plus_run_s": 2.5902960300445557,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24520.524701960636
+    ],
+    [
+     "cartservice",
+     1903.4803600547293
+    ],
+    [
+     "currencyservice",
+     551.5812179487694
+    ],
+    [
+     "checkoutservice",
+     224.352904513319
+    ],
+    [
+     "recommendationservice",
+     139.28969412882114
+    ]
+   ],
+   "n_abnormal_logs": 84025,
+   "n_abnormal_traces": 190918
+  },
+  {
+   "datapack": "emailservice_cpu_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_cpu/1",
+   "runtime_s": 1.5114493370056152,
+   "exception": null,
+   "convert_plus_run_s": 2.3478870391845703,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     41092.866936427774
+    ],
+    [
+     "cartservice",
+     1302.547610518524
+    ],
+    [
+     "emailservice",
+     702.4771433727066
+    ],
+    [
+     "recommendationservice",
+     35.89170829795291
+    ],
+    [
+     "currencyservice",
+     7.124999999999943
+    ]
+   ],
+   "n_abnormal_logs": 84897,
+   "n_abnormal_traces": 194241
+  },
+  {
+   "datapack": "emailservice_cpu_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_cpu/2",
+   "runtime_s": 1.6787633895874023,
+   "exception": null,
+   "convert_plus_run_s": 2.312746047973633,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25366.9412274726
+    ],
+    [
+     "emailservice",
+     1159.4999999999911
+    ],
+    [
+     "checkoutservice",
+     102.04353964193835
+    ],
+    [
+     "cartservice",
+     13.711291561371592
+    ],
+    [
+     "shippingservice",
+     4.793103448275879
+    ]
+   ],
+   "n_abnormal_logs": 90228,
+   "n_abnormal_traces": 205489
+  },
+  {
+   "datapack": "emailservice_cpu_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_cpu/3",
+   "runtime_s": 1.5739657878875732,
+   "exception": null,
+   "convert_plus_run_s": 2.3432235717773438,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25940.46865104497
+    ],
+    [
+     "emailservice",
+     1454.9999999985446
+    ],
+    [
+     "adservice",
+     23.32277578223538
+    ],
+    [
+     "checkoutservice",
+     10.548570019723883
+    ],
+    [
+     "productcatalogservice",
+     5.019230769230772
+    ]
+   ],
+   "n_abnormal_logs": 90671,
+   "n_abnormal_traces": 206588
+  },
+  {
+   "datapack": "emailservice_delay_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_delay/1",
+   "runtime_s": 1.558969497680664,
+   "exception": null,
+   "convert_plus_run_s": 2.4449055194854736,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24479.306738383384
+    ],
+    [
+     "checkoutservice",
+     24.499049373432655
+    ],
+    [
+     "emailservice",
+     18.9999999999974
+    ],
+    [
+     "cartservice",
+     3.571428571428477
+    ],
+    [
+     "productcatalogservice",
+     3.3898305084745766
+    ]
+   ],
+   "n_abnormal_logs": 90283,
+   "n_abnormal_traces": 205640
+  },
+  {
+   "datapack": "emailservice_delay_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_delay/2",
+   "runtime_s": 1.4899852275848389,
+   "exception": null,
+   "convert_plus_run_s": 2.313162088394165,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24396.650454206236
+    ],
+    [
+     "emailservice",
+     2621.6969696969913
+    ],
+    [
+     "checkoutservice",
+     17.07237524537815
+    ],
+    [
+     "shippingservice",
+     11.420898343162902
+    ],
+    [
+     "cartservice",
+     3.797533944664719
+    ]
+   ],
+   "n_abnormal_logs": 89174,
+   "n_abnormal_traces": 202769
+  },
+  {
+   "datapack": "emailservice_delay_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_delay/3",
+   "runtime_s": 1.687027931213379,
+   "exception": null,
+   "convert_plus_run_s": 2.4421281814575195,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24132.364993711202
+    ],
+    [
+     "emailservice",
+     2625.5294117647277
+    ],
+    [
+     "adservice",
+     112.63636363636945
+    ],
+    [
+     "checkoutservice",
+     51.170943865374966
+    ],
+    [
+     "cartservice",
+     19.440548566807465
+    ]
+   ],
+   "n_abnormal_logs": 90354,
+   "n_abnormal_traces": 205591
+  },
+  {
+   "datapack": "emailservice_disk_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_disk/1",
+   "runtime_s": 1.4638562202453613,
+   "exception": null,
+   "convert_plus_run_s": 2.288343667984009,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     40214.68778635947
+    ],
+    [
+     "emailservice",
+     5561.249999999262
+    ],
+    [
+     "cartservice",
+     11.168282269848305
+    ],
+    [
+     "recommendationservice",
+     5.666666666665799
+    ],
+    [
+     "paymentservice",
+     4.366588602654172
+    ]
+   ],
+   "n_abnormal_logs": 84159,
+   "n_abnormal_traces": 193236
+  },
+  {
+   "datapack": "emailservice_disk_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_disk/2",
+   "runtime_s": 1.6457316875457764,
+   "exception": null,
+   "convert_plus_run_s": 2.407640218734741,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     55191.00000004054
+    ],
+    [
+     "redis",
+     25610.404226717106
+    ],
+    [
+     "adservice",
+     9.793103448275424
+    ],
+    [
+     "checkoutservice",
+     8.898580937751436
+    ],
+    [
+     "paymentservice",
+     4.8904639175257705
+    ]
+   ],
+   "n_abnormal_logs": 90282,
+   "n_abnormal_traces": 205733
+  },
+  {
+   "datapack": "emailservice_disk_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_disk/3",
+   "runtime_s": 1.4435629844665527,
+   "exception": null,
+   "convert_plus_run_s": 2.1953835487365723,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     33963.850553730066
+    ],
+    [
+     "emailservice",
+     27397.999999996362
+    ],
+    [
+     "recommendationservice",
+     46.061149808775546
+    ],
+    [
+     "cartservice",
+     24.57855333361725
+    ],
+    [
+     "checkoutservice",
+     13.264148233266276
+    ]
+   ],
+   "n_abnormal_logs": 73262,
+   "n_abnormal_traces": 167091
+  },
+  {
+   "datapack": "emailservice_loss_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_loss/1",
+   "runtime_s": 1.4396820068359375,
+   "exception": null,
+   "convert_plus_run_s": 2.2751660346984863,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     38031.56917363045
+    ],
+    [
+     "emailservice",
+     10723.00000000788
+    ],
+    [
+     "cartservice",
+     2046.5679773067486
+    ],
+    [
+     "checkoutservice",
+     28.143908122096413
+    ],
+    [
+     "currencyservice",
+     24.94136514861889
+    ]
+   ],
+   "n_abnormal_logs": 84619,
+   "n_abnormal_traces": 193271
+  },
+  {
+   "datapack": "emailservice_loss_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_loss/2",
+   "runtime_s": 1.555851697921753,
+   "exception": null,
+   "convert_plus_run_s": 2.204766273498535,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "checkoutservice"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     42213.74832526023
+    ],
+    [
+     "emailservice",
+     21084.999999978914
+    ],
+    [
+     "checkoutservice",
+     60.02179610538874
+    ],
+    [
+     "adservice",
+     5.536068247181595
+    ],
+    [
+     "cartservice",
+     5.14893617021254
+    ]
+   ],
+   "n_abnormal_logs": 89596,
+   "n_abnormal_traces": 205268
+  },
+  {
+   "datapack": "emailservice_loss_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_loss/3",
+   "runtime_s": 1.642371416091919,
+   "exception": null,
+   "convert_plus_run_s": 2.2815349102020264,
+   "answers": [
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     25773.163441875095
+    ],
+    [
+     "emailservice",
+     18782.602816901628
+    ],
+    [
+     "checkoutservice",
+     195.21014217797787
+    ],
+    [
+     "cartservice",
+     25.027032522248025
+    ],
+    [
+     "paymentservice",
+     5.544642857142845
+    ]
+   ],
+   "n_abnormal_logs": 88489,
+   "n_abnormal_traces": 200641
+  },
+  {
+   "datapack": "emailservice_mem_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_mem/1",
+   "runtime_s": 1.6460583209991455,
+   "exception": null,
+   "convert_plus_run_s": 2.401716470718384,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     54909.99999994509
+    ],
+    [
+     "redis",
+     36790.719326116676
+    ],
+    [
+     "checkoutservice",
+     205.08983153670263
+    ],
+    [
+     "recommendationservice",
+     5.666666666665799
+    ],
+    [
+     "frontend",
+     4.6420115610839146
+    ]
+   ],
+   "n_abnormal_logs": 88624,
+   "n_abnormal_traces": 201680
+  },
+  {
+   "datapack": "emailservice_mem_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_mem/2",
+   "runtime_s": 1.8147106170654297,
+   "exception": null,
+   "convert_plus_run_s": 2.587306261062622,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "emailservice",
+    "checkoutservice",
+    "paymentservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     54799.00000004026
+    ],
+    [
+     "redis",
+     25614.408104558817
+    ],
+    [
+     "checkoutservice",
+     98.57549063336322
+    ],
+    [
+     "recommendationservice",
+     49.238354130168744
+    ],
+    [
+     "adservice",
+     17.4994505884557
+    ]
+   ],
+   "n_abnormal_logs": 89808,
+   "n_abnormal_traces": 203114
+  },
+  {
+   "datapack": "emailservice_mem_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_mem/3",
+   "runtime_s": 1.5579631328582764,
+   "exception": null,
+   "convert_plus_run_s": 2.2225334644317627,
+   "answers": [
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "emailservice",
+     55235.99999994476
+    ],
+    [
+     "redis",
+     26539.670197946027
+    ],
+    [
+     "checkoutservice",
+     114.17019168291068
+    ],
+    [
+     "recommendationservice",
+     16.501680772796437
+    ],
+    [
+     "shippingservice",
+     7.411764705882329
+    ]
+   ],
+   "n_abnormal_logs": 89375,
+   "n_abnormal_traces": 193381
+  },
+  {
+   "datapack": "emailservice_socket_1",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_socket/1",
+   "runtime_s": 1.6105833053588867,
+   "exception": null,
+   "convert_plus_run_s": 2.331719398498535,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     33291.04848946433
+    ],
+    [
+     "emailservice",
+     1381.5921052631566
+    ],
+    [
+     "checkoutservice",
+     8.149350649350628
+    ],
+    [
+     "cartservice",
+     7.5920986660609735
+    ],
+    [
+     "paymentservice",
+     5.516199446811767
+    ]
+   ],
+   "n_abnormal_logs": 90243,
+   "n_abnormal_traces": 205337
+  },
+  {
+   "datapack": "emailservice_socket_2",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_socket/2",
+   "runtime_s": 1.7243256568908691,
+   "exception": null,
+   "convert_plus_run_s": 2.437607765197754,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice",
+    "emailservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     23621.68396770473
+    ],
+    [
+     "emailservice",
+     1575.4999999997915
+    ],
+    [
+     "cartservice",
+     28.40000000000111
+    ],
+    [
+     "paymentservice",
+     8.705882352941172
+    ],
+    [
+     "checkoutservice",
+     7.94034346995021
+    ]
+   ],
+   "n_abnormal_logs": 91444,
+   "n_abnormal_traces": 208147
+  },
+  {
+   "datapack": "emailservice_socket_3",
+   "label": "emailservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/emailservice_socket/3",
+   "runtime_s": 1.7378489971160889,
+   "exception": null,
+   "convert_plus_run_s": 2.435797691345215,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25676.22629681868
+    ],
+    [
+     "emailservice",
+     1033.000000000162
+    ],
+    [
+     "cartservice",
+     12.953244642152304
+    ],
+    [
+     "checkoutservice",
+     12.911111111111094
+    ],
+    [
+     "recommendationservice",
+     12.000000000001736
+    ]
+   ],
+   "n_abnormal_logs": 89092,
+   "n_abnormal_traces": 203577
+  },
+  {
+   "datapack": "productcatalogservice_cpu_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_cpu/1",
+   "runtime_s": 1.590686321258545,
+   "exception": null,
+   "convert_plus_run_s": 2.410778284072876,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25498.007968127487
+    ],
+    [
+     "productcatalogservice",
+     1694.9178498548272
+    ],
+    [
+     "recommendationservice",
+     344.9959166112156
+    ],
+    [
+     "cartservice",
+     26.655821062677944
+    ],
+    [
+     "emailservice",
+     7.000000000002168
+    ]
+   ],
+   "n_abnormal_logs": 84966,
+   "n_abnormal_traces": 193907
+  },
+  {
+   "datapack": "productcatalogservice_cpu_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_cpu/2",
+   "runtime_s": 1.6472883224487305,
+   "exception": null,
+   "convert_plus_run_s": 2.4521913528442383,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     46024.43572629541
+    ],
+    [
+     "productcatalogservice",
+     3927.966907388947
+    ],
+    [
+     "recommendationservice",
+     1045.6123254801773
+    ],
+    [
+     "frontend",
+     66.73927899802369
+    ],
+    [
+     "checkoutservice",
+     30.983333333333434
+    ]
+   ],
+   "n_abnormal_logs": 86395,
+   "n_abnormal_traces": 196313
+  },
+  {
+   "datapack": "productcatalogservice_cpu_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_cpu/3",
+   "runtime_s": 1.6836614608764648,
+   "exception": null,
+   "convert_plus_run_s": 2.4818575382232666,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     34883.32481689661
+    ],
+    [
+     "productcatalogservice",
+     4942.562080859121
+    ],
+    [
+     "recommendationservice",
+     1514.0556791350548
+    ],
+    [
+     "frontend",
+     148.86626258826422
+    ],
+    [
+     "cartservice",
+     53.03521546961203
+    ]
+   ],
+   "n_abnormal_logs": 87482,
+   "n_abnormal_traces": 199803
+  },
+  {
+   "datapack": "productcatalogservice_delay_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_delay/1",
+   "runtime_s": 1.6970579624176025,
+   "exception": null,
+   "convert_plus_run_s": 2.3800435066223145,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice",
+    "productcatalogservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     41157.18565466604
+    ],
+    [
+     "productcatalogservice",
+     8719.891458418437
+    ],
+    [
+     "recommendationservice",
+     3930.0572840485916
+    ],
+    [
+     "frontend",
+     288.03094053169724
+    ],
+    [
+     "checkoutservice",
+     220.32178140191488
+    ]
+   ],
+   "n_abnormal_logs": 69249,
+   "n_abnormal_traces": 158104
+  },
+  {
+   "datapack": "productcatalogservice_delay_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_delay/2",
+   "runtime_s": 1.4918427467346191,
+   "exception": null,
+   "convert_plus_run_s": 2.2167441844940186,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice",
+    "productcatalogservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27669.13229979397
+    ],
+    [
+     "productcatalogservice",
+     9906.92486359372
+    ],
+    [
+     "recommendationservice",
+     2099.0358128889548
+    ],
+    [
+     "frontend",
+     1387.0588360943912
+    ],
+    [
+     "paymentservice",
+     202.13815789473696
+    ]
+   ],
+   "n_abnormal_logs": 69570,
+   "n_abnormal_traces": 160216
+  },
+  {
+   "datapack": "productcatalogservice_delay_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_delay/3",
+   "runtime_s": 1.540280818939209,
+   "exception": null,
+   "convert_plus_run_s": 2.2104227542877197,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice",
+    "productcatalogservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     22612.34404328144
+    ],
+    [
+     "productcatalogservice",
+     8391.190134367052
+    ],
+    [
+     "recommendationservice",
+     3374.6491931051637
+    ],
+    [
+     "frontend",
+     717.0285531212166
+    ],
+    [
+     "checkoutservice",
+     150.72782173044638
+    ]
+   ],
+   "n_abnormal_logs": 69106,
+   "n_abnormal_traces": 158208
+  },
+  {
+   "datapack": "productcatalogservice_disk_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_disk/1",
+   "runtime_s": 1.4542741775512695,
+   "exception": null,
+   "convert_plus_run_s": 2.2803115844726562,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     40419.72303542647
+    ],
+    [
+     "productcatalogservice",
+     4241.807888729608
+    ],
+    [
+     "recommendationservice",
+     497.49984806252957
+    ],
+    [
+     "currencyservice",
+     24.79011202466285
+    ],
+    [
+     "cartservice",
+     21.744516197652644
+    ]
+   ],
+   "n_abnormal_logs": 83524,
+   "n_abnormal_traces": 190138
+  },
+  {
+   "datapack": "productcatalogservice_disk_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_disk/2",
+   "runtime_s": 1.4570045471191406,
+   "exception": null,
+   "convert_plus_run_s": 2.1529221534729004,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     39849.52652743547
+    ],
+    [
+     "productcatalogservice",
+     4368.575583126927
+    ],
+    [
+     "cartservice",
+     1974.7168594254165
+    ],
+    [
+     "recommendationservice",
+     1424.6127718550501
+    ],
+    [
+     "frontend",
+     148.99949529099322
+    ]
+   ],
+   "n_abnormal_logs": 84505,
+   "n_abnormal_traces": 193617
+  },
+  {
+   "datapack": "productcatalogservice_disk_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_disk/3",
+   "runtime_s": 1.5956289768218994,
+   "exception": null,
+   "convert_plus_run_s": 2.2227654457092285,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     30224.321133412042
+    ],
+    [
+     "productcatalogservice",
+     3554.847608520059
+    ],
+    [
+     "recommendationservice",
+     535.8485249319377
+    ],
+    [
+     "checkoutservice",
+     35.4170392266774
+    ],
+    [
+     "frontend",
+     34.78714124321294
+    ]
+   ],
+   "n_abnormal_logs": 86258,
+   "n_abnormal_traces": 197066
+  },
+  {
+   "datapack": "productcatalogservice_loss_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_loss/1",
+   "runtime_s": 0.9634017944335938,
+   "exception": null,
+   "convert_plus_run_s": 1.593144178390503,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "productcatalogservice",
+    "frontend",
+    "recommendationservice"
+   ],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     943469.4579682722
+    ],
+    [
+     "recommendationservice",
+     205811.19214911858
+    ],
+    [
+     "redis",
+     25515.479972590794
+    ],
+    [
+     "cartservice",
+     3763.202257155383
+    ],
+    [
+     "frontend",
+     1202.6984150670178
+    ]
+   ],
+   "n_abnormal_logs": 32662,
+   "n_abnormal_traces": 61423
+  },
+  {
+   "datapack": "productcatalogservice_loss_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_loss/2",
+   "runtime_s": 1.075167179107666,
+   "exception": null,
+   "convert_plus_run_s": 1.6620151996612549,
+   "answers": [
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice",
+    "productcatalogservice"
+   ],
+   "log_top5": [
+    "productcatalogservice",
+    "recommendationservice",
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     2751579.0049876533
+    ],
+    [
+     "recommendationservice",
+     207030.89075344105
+    ],
+    [
+     "frontend",
+     33590.08367694904
+    ],
+    [
+     "redis",
+     24199.3443889251
+    ],
+    [
+     "cartservice",
+     4678.451940400171
+    ]
+   ],
+   "n_abnormal_logs": 30890,
+   "n_abnormal_traces": 55213
+  },
+  {
+   "datapack": "productcatalogservice_loss_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_loss/3",
+   "runtime_s": 1.3067073822021484,
+   "exception": null,
+   "convert_plus_run_s": 1.9860203266143799,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend",
+    "recommendationservice"
+   ],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     4155381.316606394
+    ],
+    [
+     "recommendationservice",
+     128023.22383448217
+    ],
+    [
+     "redis",
+     34335.07360586658
+    ],
+    [
+     "cartservice",
+     2869.05382501117
+    ],
+    [
+     "frontend",
+     1513.5001320301974
+    ]
+   ],
+   "n_abnormal_logs": 56957,
+   "n_abnormal_traces": 127350
+  },
+  {
+   "datapack": "productcatalogservice_mem_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_mem/1",
+   "runtime_s": 1.0850951671600342,
+   "exception": null,
+   "convert_plus_run_s": 1.7835066318511963,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     71343.54109961209
+    ],
+    [
+     "redis",
+     39142.483993246904
+    ],
+    [
+     "recommendationservice",
+     15503.065475965645
+    ],
+    [
+     "frontend",
+     215.8224200846944
+    ],
+    [
+     "cartservice",
+     206.52339309143596
+    ]
+   ],
+   "n_abnormal_logs": 53766,
+   "n_abnormal_traces": 122695
+  },
+  {
+   "datapack": "productcatalogservice_mem_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_mem/2",
+   "runtime_s": 1.2241737842559814,
+   "exception": null,
+   "convert_plus_run_s": 1.9333992004394531,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "productcatalogservice",
+     43271.98649842514
+    ],
+    [
+     "redis",
+     35481.63548163547
+    ],
+    [
+     "recommendationservice",
+     18233.412769787352
+    ],
+    [
+     "cartservice",
+     6748.43709143972
+    ],
+    [
+     "frontend",
+     579.3416798593228
+    ]
+   ],
+   "n_abnormal_logs": 70461,
+   "n_abnormal_traces": 148057
+  },
+  {
+   "datapack": "productcatalogservice_mem_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_mem/3",
+   "runtime_s": 1.0944609642028809,
+   "exception": null,
+   "convert_plus_run_s": 1.8307573795318604,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     34488.601526612096
+    ],
+    [
+     "productcatalogservice",
+     31977.38841436335
+    ],
+    [
+     "recommendationservice",
+     21874.13191483174
+    ],
+    [
+     "cartservice",
+     2673.7415164546587
+    ],
+    [
+     "frontend",
+     436.6378696887718
+    ]
+   ],
+   "n_abnormal_logs": 65821,
+   "n_abnormal_traces": 70154
+  },
+  {
+   "datapack": "productcatalogservice_socket_1",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_socket/1",
+   "runtime_s": 1.6943819522857666,
+   "exception": null,
+   "convert_plus_run_s": 2.3633320331573486,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     35193.03471187994
+    ],
+    [
+     "productcatalogservice",
+     4328.233538573282
+    ],
+    [
+     "recommendationservice",
+     1642.0447395470032
+    ],
+    [
+     "cartservice",
+     973.9100139303996
+    ],
+    [
+     "frontend",
+     83.21503095112554
+    ]
+   ],
+   "n_abnormal_logs": 78883,
+   "n_abnormal_traces": 180167
+  },
+  {
+   "datapack": "productcatalogservice_socket_2",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_socket/2",
+   "runtime_s": 1.681222677230835,
+   "exception": null,
+   "convert_plus_run_s": 2.38059401512146,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27024.708870781513
+    ],
+    [
+     "productcatalogservice",
+     3939.649427696075
+    ],
+    [
+     "recommendationservice",
+     1076.3777628643254
+    ],
+    [
+     "frontend",
+     100.04442605582707
+    ],
+    [
+     "cartservice",
+     31.335538005079577
+    ]
+   ],
+   "n_abnormal_logs": 87668,
+   "n_abnormal_traces": 200095
+  },
+  {
+   "datapack": "productcatalogservice_socket_3",
+   "label": "productcatalogservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/productcatalogservice_socket/3",
+   "runtime_s": 1.6942832469940186,
+   "exception": null,
+   "convert_plus_run_s": 2.369046688079834,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27693.451877894597
+    ],
+    [
+     "productcatalogservice",
+     2143.6506390577574
+    ],
+    [
+     "recommendationservice",
+     1414.6561197811075
+    ],
+    [
+     "frontend",
+     133.38511430109895
+    ],
+    [
+     "cartservice",
+     34.76190476190445
+    ]
+   ],
+   "n_abnormal_logs": 89325,
+   "n_abnormal_traces": 203367
+  },
+  {
+   "datapack": "recommendationservice_cpu_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_cpu/1",
+   "runtime_s": 1.5709125995635986,
+   "exception": null,
+   "convert_plus_run_s": 2.2940022945404053,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     35861.01155549156
+    ],
+    [
+     "recommendationservice",
+     888.0106827943334
+    ],
+    [
+     "currencyservice",
+     15.44154702046837
+    ],
+    [
+     "cartservice",
+     9.868362622713704
+    ],
+    [
+     "frontend",
+     8.543434583095864
+    ]
+   ],
+   "n_abnormal_logs": 85367,
+   "n_abnormal_traces": 194465
+  },
+  {
+   "datapack": "recommendationservice_cpu_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_cpu/2",
+   "runtime_s": 1.4619016647338867,
+   "exception": null,
+   "convert_plus_run_s": 2.2027428150177,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25516.27472356331
+    ],
+    [
+     "recommendationservice",
+     2214.9769602454744
+    ],
+    [
+     "emailservice",
+     32.08333333333327
+    ],
+    [
+     "frontend",
+     22.776275920206974
+    ],
+    [
+     "cartservice",
+     20.592842941095903
+    ]
+   ],
+   "n_abnormal_logs": 88305,
+   "n_abnormal_traces": 201144
+  },
+  {
+   "datapack": "recommendationservice_cpu_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_cpu/3",
+   "runtime_s": 1.4687612056732178,
+   "exception": null,
+   "convert_plus_run_s": 2.1364808082580566,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24540.749575757574
+    ],
+    [
+     "recommendationservice",
+     873.1615576356438
+    ],
+    [
+     "frontend",
+     20.553416214581496
+    ],
+    [
+     "productcatalogservice",
+     5.322580645161261
+    ],
+    [
+     "cartservice",
+     3.6720808983142073
+    ]
+   ],
+   "n_abnormal_logs": 88647,
+   "n_abnormal_traces": 202376
+  },
+  {
+   "datapack": "recommendationservice_delay_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_delay/1",
+   "runtime_s": 1.521803617477417,
+   "exception": null,
+   "convert_plus_run_s": 2.2767176628112793,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     36467.947851279576
+    ],
+    [
+     "recommendationservice",
+     6649.013303156566
+    ],
+    [
+     "paymentservice",
+     57.46820467317368
+    ],
+    [
+     "frontend",
+     52.253459500343055
+    ],
+    [
+     "productcatalogservice",
+     25.541839718757704
+    ]
+   ],
+   "n_abnormal_logs": 83279,
+   "n_abnormal_traces": 189829
+  },
+  {
+   "datapack": "recommendationservice_delay_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_delay/2",
+   "runtime_s": 1.7038483619689941,
+   "exception": null,
+   "convert_plus_run_s": 2.367751121520996,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24967.23659748255
+    ],
+    [
+     "recommendationservice",
+     6014.15647433958
+    ],
+    [
+     "frontend",
+     173.76304761578962
+    ],
+    [
+     "productcatalogservice",
+     21.585157592786306
+    ],
+    [
+     "checkoutservice",
+     12.26133333333334
+    ]
+   ],
+   "n_abnormal_logs": 83739,
+   "n_abnormal_traces": 191645
+  },
+  {
+   "datapack": "recommendationservice_delay_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_delay/3",
+   "runtime_s": 1.4580814838409424,
+   "exception": null,
+   "convert_plus_run_s": 2.1100685596466064,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     23743.55109848704
+    ],
+    [
+     "recommendationservice",
+     4897.531128994397
+    ],
+    [
+     "frontend",
+     124.0697200089676
+    ],
+    [
+     "productcatalogservice",
+     16.34654140528398
+    ],
+    [
+     "adservice",
+     6.8359437328722485
+    ]
+   ],
+   "n_abnormal_logs": 85335,
+   "n_abnormal_traces": 194464
+  },
+  {
+   "datapack": "recommendationservice_disk_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_disk/1",
+   "runtime_s": 1.5774154663085938,
+   "exception": null,
+   "convert_plus_run_s": 2.298640251159668,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "currencyservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     34205.54503952789
+    ],
+    [
+     "recommendationservice",
+     4349.208333333385
+    ],
+    [
+     "currencyservice",
+     19.680149356416972
+    ],
+    [
+     "adservice",
+     6.373702282617542
+    ],
+    [
+     "emailservice",
+     6.000000000005204
+    ]
+   ],
+   "n_abnormal_logs": 83870,
+   "n_abnormal_traces": 193535
+  },
+  {
+   "datapack": "recommendationservice_disk_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_disk/2",
+   "runtime_s": 1.4981815814971924,
+   "exception": null,
+   "convert_plus_run_s": 2.273023843765259,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25253.552822220165
+    ],
+    [
+     "recommendationservice",
+     23038.888888883608
+    ],
+    [
+     "cartservice",
+     37.04786117710058
+    ],
+    [
+     "frontend",
+     37.02311434415709
+    ],
+    [
+     "emailservice",
+     11.25925925925934
+    ]
+   ],
+   "n_abnormal_logs": 87476,
+   "n_abnormal_traces": 199570
+  },
+  {
+   "datapack": "recommendationservice_disk_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_disk/3",
+   "runtime_s": 1.5551893711090088,
+   "exception": null,
+   "convert_plus_run_s": 2.315037727355957,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24573.7747193046
+    ],
+    [
+     "recommendationservice",
+     7972.30769230823
+    ],
+    [
+     "cartservice",
+     31.86760666413077
+    ],
+    [
+     "frontend",
+     12.310591101683839
+    ],
+    [
+     "productcatalogservice",
+     6.684210526315815
+    ]
+   ],
+   "n_abnormal_logs": 89457,
+   "n_abnormal_traces": 204138
+  },
+  {
+   "datapack": "recommendationservice_loss_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_loss/1",
+   "runtime_s": 1.3137428760528564,
+   "exception": null,
+   "convert_plus_run_s": 1.9141759872436523,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice",
+    "paymentservice"
+   ],
+   "log_top5": [
+    "frontend",
+    "recommendationservice"
+   ],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     374872.66141744924
+    ],
+    [
+     "redis",
+     36261.69327470712
+    ],
+    [
+     "cartservice",
+     1143.0925628901991
+    ],
+    [
+     "adservice",
+     929.1820275961046
+    ],
+    [
+     "productcatalogservice",
+     361.8557895448815
+    ]
+   ],
+   "n_abnormal_logs": 62480,
+   "n_abnormal_traces": 105725
+  },
+  {
+   "datapack": "recommendationservice_loss_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_loss/2",
+   "runtime_s": 1.371020793914795,
+   "exception": null,
+   "convert_plus_run_s": 1.9917590618133545,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [
+    "frontend",
+    "recommendationservice"
+   ],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     185546.9643633316
+    ],
+    [
+     "redis",
+     24717.134839936036
+    ],
+    [
+     "frontend",
+     607.0212180141369
+    ],
+    [
+     "productcatalogservice",
+     119.08857748953565
+    ],
+    [
+     "paymentservice",
+     110.90260061190924
+    ]
+   ],
+   "n_abnormal_logs": 78753,
+   "n_abnormal_traces": 167769
+  },
+  {
+   "datapack": "recommendationservice_loss_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_loss/3",
+   "runtime_s": 1.497333288192749,
+   "exception": null,
+   "convert_plus_run_s": 2.1553683280944824,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice",
+    "checkoutservice"
+   ],
+   "log_top5": [
+    "frontend",
+    "recommendationservice"
+   ],
+   "metric_top5": [
+    [
+     "recommendationservice",
+     519397.63862843945
+    ],
+    [
+     "redis",
+     25232.550976406084
+    ],
+    [
+     "productcatalogservice",
+     1213.118760199341
+    ],
+    [
+     "frontend",
+     1048.5507940031684
+    ],
+    [
+     "adservice",
+     256.5001383776823
+    ]
+   ],
+   "n_abnormal_logs": 76246,
+   "n_abnormal_traces": 160986
+  },
+  {
+   "datapack": "recommendationservice_mem_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_mem/1",
+   "runtime_s": 1.5619947910308838,
+   "exception": null,
+   "convert_plus_run_s": 2.2739920616149902,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     29117.793417217603
+    ],
+    [
+     "recommendationservice",
+     26132.667606487492
+    ],
+    [
+     "frontend",
+     77.15568050834196
+    ],
+    [
+     "paymentservice",
+     38.75219683655543
+    ],
+    [
+     "checkoutservice",
+     9.12991398684507
+    ]
+   ],
+   "n_abnormal_logs": 85021,
+   "n_abnormal_traces": 195524
+  },
+  {
+   "datapack": "recommendationservice_mem_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_mem/2",
+   "runtime_s": 1.5301508903503418,
+   "exception": null,
+   "convert_plus_run_s": 2.192380666732788,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "paymentservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     27094.426988589385
+    ],
+    [
+     "recommendationservice",
+     20712.078512488548
+    ],
+    [
+     "frontend",
+     77.70646208629836
+    ],
+    [
+     "cartservice",
+     26.31579569699498
+    ],
+    [
+     "paymentservice",
+     24.615961732124934
+    ]
+   ],
+   "n_abnormal_logs": 84202,
+   "n_abnormal_traces": 192113
+  },
+  {
+   "datapack": "recommendationservice_mem_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_mem/3",
+   "runtime_s": 1.4295132160186768,
+   "exception": null,
+   "convert_plus_run_s": 2.011747360229492,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "productcatalogservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25485.316077650576
+    ],
+    [
+     "recommendationservice",
+     20540.188706403474
+    ],
+    [
+     "frontend",
+     68.67820381659114
+    ],
+    [
+     "cartservice",
+     21.669108443804635
+    ],
+    [
+     "productcatalogservice",
+     8.204274295524131
+    ]
+   ],
+   "n_abnormal_logs": 83255,
+   "n_abnormal_traces": 190505
+  },
+  {
+   "datapack": "recommendationservice_socket_1",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_socket/1",
+   "runtime_s": 1.2665009498596191,
+   "exception": null,
+   "convert_plus_run_s": 1.9405434131622314,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "checkoutservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "emailservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [
+    "checkoutservice",
+    "emailservice",
+    "paymentservice",
+    "shippingservice",
+    "frontend"
+   ],
+   "metric_top5": [
+    [
+     "redis",
+     40045.62489815871
+    ],
+    [
+     "recommendationservice",
+     12513.365568902178
+    ],
+    [
+     "checkoutservice",
+     88.7148494918714
+    ],
+    [
+     "frontend",
+     46.57320945230116
+    ],
+    [
+     "emailservice",
+     13.000000000002313
+    ]
+   ],
+   "n_abnormal_logs": 43066,
+   "n_abnormal_traces": 102306
+  },
+  {
+   "datapack": "recommendationservice_socket_2",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_socket/2",
+   "runtime_s": 1.4964275360107422,
+   "exception": null,
+   "convert_plus_run_s": 2.2342007160186768,
+   "answers": [
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "shippingservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    true,
+    false,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "recommendationservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     24270.435220572985
+    ],
+    [
+     "recommendationservice",
+     4539.571721658418
+    ],
+    [
+     "cartservice",
+     34.60557621974504
+    ],
+    [
+     "frontend",
+     25.25646872459575
+    ],
+    [
+     "shippingservice",
+     5.705882352941139
+    ]
+   ],
+   "n_abnormal_logs": 89614,
+   "n_abnormal_traces": 203963
+  },
+  {
+   "datapack": "recommendationservice_socket_3",
+   "label": "recommendationservice",
+   "src": "$HOME/rcaeval_repo/data/RE2/RE2-OB/recommendationservice_socket/3",
+   "runtime_s": 1.6009440422058105,
+   "exception": null,
+   "convert_plus_run_s": 2.276144504547119,
+   "answers": [
+    {
+     "level": "service",
+     "name": "redis",
+     "rank": 1
+    },
+    {
+     "level": "service",
+     "name": "recommendationservice",
+     "rank": 2
+    },
+    {
+     "level": "service",
+     "name": "frontend",
+     "rank": 3
+    },
+    {
+     "level": "service",
+     "name": "adservice",
+     "rank": 4
+    },
+    {
+     "level": "service",
+     "name": "cartservice",
+     "rank": 5
+    }
+   ],
+   "hits": [
+    false,
+    true,
+    false,
+    false,
+    false
+   ],
+   "trace_top5": [
+    "paymentservice"
+   ],
+   "log_top5": [],
+   "metric_top5": [
+    [
+     "redis",
+     25608.00250078149
+    ],
+    [
+     "recommendationservice",
+     4009.5398318802036
+    ],
+    [
+     "frontend",
+     22.317347925445695
+    ],
+    [
+     "adservice",
+     7.067415308982204
+    ],
+    [
+     "cartservice",
+     2.5307534302294963
+    ]
+   ],
+   "n_abnormal_logs": 88412,
+   "n_abnormal_traces": 203054
+  }
+ ]
+}

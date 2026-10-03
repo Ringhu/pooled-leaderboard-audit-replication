@@ -1,0 +1,9 @@
+scenario,split,issue,case_id,method,target_node,target_metric,gt_node,gt_metric,top1_node,top1_metric,hit1,hit3,hit1_nodeonly,hit3_nodeonly,n_returned,empty,err,sec
+temporal_traffic1,train,issue_0,temporal_traffic1|train|issue_0,epsilon_diagnosis,PetSite,latency,PetSearch_AWS::ECS::Fargate,,payforadoption_AWS::ECS::Container,latency,0,0,0,0,3,0,,1.3
+temporal_traffic1,train,issue_1,temporal_traffic1|train|issue_1,epsilon_diagnosis,PetSite,availability,PetSearch_AWS::ECS::Fargate,,PetSite,availability,0,0,0,0,1,0,,0.38
+temporal_traffic1,test,issue_0,temporal_traffic1|test|issue_0,epsilon_diagnosis,PetSite,latency,payforadoption_AWS::ECS::Container,,servi-petsi.us-west-2.elb.amazonaws.com_remote,latency,0,0,0,0,3,0,,1.32
+temporal_traffic1,test,issue_1,temporal_traffic1|test|issue_1,epsilon_diagnosis,PetSite,latency,petInfo_AWS::DynamoDB::Table,,AWS::StepFunctions::StateMachine,latency,0,0,0,0,3,0,,1.5
+temporal_traffic1,test,issue_2,temporal_traffic1|test|issue_2,epsilon_diagnosis,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambda_step_priceLessThan55,latency,0,0,0,0,3,0,,1.4
+temporal_traffic1,test,issue_3,temporal_traffic1|test|issue_3,epsilon_diagnosis,PetSite,availability,payforadoption_AWS::ECS::Container,,AWS::StepFunctions::StateMachine,availability,0,0,0,0,2,0,,0.35
+temporal_traffic1,test,issue_4,temporal_traffic1|test|issue_4,epsilon_diagnosis,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.34
+temporal_traffic1,test,issue_5,temporal_traffic1|test|issue_5,epsilon_diagnosis,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,,,0,0,0,0,0,1,,0.39

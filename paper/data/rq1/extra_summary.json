@@ -1,0 +1,195 @@
+{
+ "config": {
+  "script_sha256": "08a9f5e562bea71aea3c7da2ac1a2dddddcad61ef837397efaa4f3a151b47984",
+  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+  "inputs": {
+   "petshop_2311.04806.txt": "5210a1a0e5a12fd904c516412be3d73498b9aa7d3a24d487c5df6b70bf0fa955",
+   "rcaeval_2412.17015.txt": "000ad6d21719b2ec3057cc5ffe565ea6cd0bc77239730c8984eb1d9ee930750a"
+  },
+  "rq1_main_config": {
+   "script": "/tmp/rca_pkg_test/analysis/rq1_main.py",
+   "script_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
+   "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
+   "B": 10000,
+   "seed": 20260929,
+   "python": "3.11.15",
+   "pandas": "3.0.2",
+   "run_utc": "2026-10-02T13:42:42Z",
+   "wall_s": 21.5
+  },
+  "run_utc": "2026-10-02T13:42:44Z",
+  "wall_s": 0.8
+ },
+ "summary": {
+  "published_tables": [
+   {
+    "table": "PetShop Table 8 (top-1, 6 strata)",
+    "margin_lt_sd": false,
+    "pairs": 7,
+    "reverse": 0
+   },
+   {
+    "table": "PetShop Table 8 (top-1, 6 strata)",
+    "margin_lt_sd": true,
+    "pairs": 8,
+    "reverse": 6
+   },
+   {
+    "table": "RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",
+    "margin_lt_sd": false,
+    "pairs": 32,
+    "reverse": 2
+   },
+   {
+    "table": "RCAEval Table 6 (RE2-TT, AC@1, 6 fault types)",
+    "margin_lt_sd": true,
+    "pairs": 23,
+    "reverse": 21
+   }
+  ],
+  "cross_release": [
+   {
+    "layer": "L1",
+    "comparisons": 18,
+    "sign_agree": 12,
+    "ci_opposite": 2
+   },
+   {
+    "layer": "L2",
+    "comparisons": 63,
+    "sign_agree": 43,
+    "ci_opposite": 9
+   }
+  ],
+  "small_sample": [
+   {
+    "n_min": 0,
+    "family": "RE1",
+    "layer": "L1",
+    "pairs": 10,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 0,
+    "family": "RE1",
+    "layer": "L2",
+    "pairs": 28,
+    "rev": 8,
+    "rev_ci": 4
+   },
+   {
+    "n_min": 0,
+    "family": "openrca",
+    "layer": "L1",
+    "pairs": 3,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 0,
+    "family": "openrca",
+    "layer": "L2",
+    "pairs": 15,
+    "rev": 7,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 0,
+    "family": "petshop",
+    "layer": "L1",
+    "pairs": 10,
+    "rev": 5,
+    "rev_ci": 2
+   },
+   {
+    "n_min": 0,
+    "family": "petshop",
+    "layer": "L2",
+    "pairs": 55,
+    "rev": 12,
+    "rev_ci": 4
+   },
+   {
+    "n_min": 25,
+    "family": "RE1",
+    "layer": "L1",
+    "pairs": 10,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 25,
+    "family": "RE1",
+    "layer": "L2",
+    "pairs": 28,
+    "rev": 8,
+    "rev_ci": 4
+   },
+   {
+    "n_min": 25,
+    "family": "openrca",
+    "layer": "L1",
+    "pairs": 3,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 25,
+    "family": "openrca",
+    "layer": "L2",
+    "pairs": 15,
+    "rev": 7,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 25,
+    "family": "petshop",
+    "layer": "L1",
+    "pairs": 10,
+    "rev": 3,
+    "rev_ci": 1
+   },
+   {
+    "n_min": 25,
+    "family": "petshop",
+    "layer": "L2",
+    "pairs": 55,
+    "rev": 7,
+    "rev_ci": 1
+   },
+   {
+    "n_min": 50,
+    "family": "RE1",
+    "layer": "L1",
+    "pairs": 10,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 50,
+    "family": "RE1",
+    "layer": "L2",
+    "pairs": 28,
+    "rev": 8,
+    "rev_ci": 4
+   },
+   {
+    "n_min": 50,
+    "family": "openrca",
+    "layer": "L1",
+    "pairs": 3,
+    "rev": 1,
+    "rev_ci": 0
+   },
+   {
+    "n_min": 50,
+    "family": "openrca",
+    "layer": "L2",
+    "pairs": 15,
+    "rev": 7,
+    "rev_ci": 0
+   }
+  ]
+ }
+}

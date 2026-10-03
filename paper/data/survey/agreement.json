@@ -1,0 +1,95 @@
+{
+ "Q1": {
+  "n": 26,
+  "percent_agreement": 0.8846153846153846,
+  "chance_agreement": 0.5014792899408284,
+  "cohen_kappa": 0.7685459940652819,
+  "values_A": {
+   "yes": 18,
+   "not_applicable": 4,
+   "no": 3,
+   "partial": 1
+  },
+  "values_B": {
+   "yes": 17,
+   "not_applicable": 6,
+   "no": 3
+  },
+  "confusion": {
+   "yes|yes": 16,
+   "not_applicable|not_applicable": 4,
+   "yes|not_applicable": 2,
+   "no|no": 3,
+   "partial|yes": 1
+  }
+ },
+ "Q2": {
+  "n": 26,
+  "percent_agreement": 0.8846153846153846,
+  "chance_agreement": 0.5059171597633136,
+  "cohen_kappa": 0.7664670658682634,
+  "values_A": {
+   "partial": 16,
+   "no": 10
+  },
+  "values_B": {
+   "partial": 17,
+   "no": 7,
+   "not_applicable": 2
+  },
+  "confusion": {
+   "partial|partial": 16,
+   "no|no": 7,
+   "no|not_applicable": 2,
+   "no|partial": 1
+  }
+ },
+ "Q3": {
+  "n": 26,
+  "percent_agreement": 0.46153846153846156,
+  "chance_agreement": 0.21005917159763315,
+  "cohen_kappa": 0.3183520599250937,
+  "values_A": {
+   "yes": 8,
+   "no": 12,
+   "not_applicable": 6
+  },
+  "values_B": {
+   "partial": 10,
+   "no": 6,
+   "yes": 5,
+   "not_applicable": 5
+  },
+  "confusion": {
+   "yes|partial": 7,
+   "no|no": 6,
+   "no|yes": 4,
+   "not_applicable|not_applicable": 5,
+   "no|partial": 2,
+   "not_applicable|partial": 1,
+   "yes|yes": 1
+  }
+ },
+ "Q4": {
+  "n": 26,
+  "percent_agreement": 0.7307692307692307,
+  "chance_agreement": 0.4881656804733728,
+  "cohen_kappa": 0.47398843930635826,
+  "values_A": {
+   "yes": 15,
+   "partial": 6,
+   "no": 5
+  },
+  "values_B": {
+   "yes": 20,
+   "no": 6
+  },
+  "confusion": {
+   "yes|yes": 15,
+   "partial|no": 2,
+   "no|no": 4,
+   "no|yes": 1,
+   "partial|yes": 4
+  }
+ }
+}

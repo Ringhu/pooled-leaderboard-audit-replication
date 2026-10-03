@@ -1,0 +1,4 @@
+method,acc_fixed,acc_shipped,acc_fixed_affected,acc_shipped_affected,n_affected
+circa,0.672,0.432,0.82,0.22,50
+e_diagnosis,0.032,0.032,0.0,0.0,50
+rcd,0.5413333333333334,0.5466666666666667,0.8066666666666665,0.82,50

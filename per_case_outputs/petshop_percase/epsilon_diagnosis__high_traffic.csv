@@ -1,0 +1,27 @@
+scenario,split,issue,case_id,method,target_node,target_metric,gt_node,gt_metric,top1_node,top1_metric,hit1,hit3,hit1_nodeonly,hit3_nodeonly,n_returned,empty,err,sec
+high_traffic,train,issue_0,high_traffic|train|issue_0,epsilon_diagnosis,PetSite,latency,PetSearch_AWS::ECS::Fargate,,SimpleSystemsManagement_AWS::SimpleSystemsManagement,latency,0,0,0,0,2,0,,1.31
+high_traffic,train,issue_1,high_traffic|train|issue_1,epsilon_diagnosis,PetSite,latency,PetSearch_AWS::ECS::Fargate,,DynamoDB_AWS::DynamoDB,latency,0,0,0,0,3,0,,1.41
+high_traffic,train,issue_2,high_traffic|train|issue_2,epsilon_diagnosis,PetSite,latency,PetSearch_AWS::ECS::Fargate,,Servi-searc.us-west-2.elb.amazonaws.com_remote,latency,0,0,0,0,3,0,,1.52
+high_traffic,train,issue_3,high_traffic|train|issue_3,epsilon_diagnosis,PetSite,latency,PetSearch_AWS::ECS::Fargate,,lambdastatusupdater_AWS::Lambda::Function,latency,0,0,0,0,3,0,,1.3
+high_traffic,train,issue_4,high_traffic|train|issue_4,epsilon_diagnosis,PetSite,availability,PetSearch_AWS::ECS::Fargate,,PetSite,availability,0,0,0,0,1,0,,0.34
+high_traffic,train,issue_5,high_traffic|train|issue_5,epsilon_diagnosis,PetSite,availability,PetSearch_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.5
+high_traffic,train,issue_6,high_traffic|train|issue_6,epsilon_diagnosis,PetSite,availability,PetSearch_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.38
+high_traffic,train,issue_7,high_traffic|train|issue_7,epsilon_diagnosis,PetSite,availability,PetSearch_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.44
+high_traffic,test,issue_0,high_traffic|test|issue_0,epsilon_diagnosis,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambda_step_priceLessThan55_AWS::Lambda,latency,0,0,0,0,3,0,,1.23
+high_traffic,test,issue_1,high_traffic|test|issue_1,epsilon_diagnosis,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,petlistadoptions_AWS::ECS::Fargate,latency,0,0,0,0,3,0,,1.29
+high_traffic,test,issue_10,high_traffic|test|issue_10,epsilon_diagnosis,PetSite,availability,payforadoption_AWS::ECS::Container,,,,0,0,0,0,0,1,,0.37
+high_traffic,test,issue_11,high_traffic|test|issue_11,epsilon_diagnosis,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,,,0,0,0,0,0,1,,0.32
+high_traffic,test,issue_12,high_traffic|test|issue_12,epsilon_diagnosis,PetSite,availability,payforadoption_AWS::ECS::Container,,,,0,0,0,0,0,1,,0.35
+high_traffic,test,issue_13,high_traffic|test|issue_13,epsilon_diagnosis,PetSite,availability,lambdastatusupdater_AWS::Lambda::Function,,,,0,0,0,0,0,1,,0.51
+high_traffic,test,issue_14,high_traffic|test|issue_14,epsilon_diagnosis,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.48
+high_traffic,test,issue_15,high_traffic|test|issue_15,epsilon_diagnosis,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,AWS::StepFunctions::StateMachine,availability,0,0,0,0,1,0,,0.38
+high_traffic,test,issue_16,high_traffic|test|issue_16,epsilon_diagnosis,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,,,0,0,0,0,0,1,,0.34
+high_traffic,test,issue_17,high_traffic|test|issue_17,epsilon_diagnosis,PetSite,availability,petlistadoptions_AWS::ECS::Fargate,,AWS::StepFunctions::StateMachine,availability,0,0,0,0,1,0,,0.35
+high_traffic,test,issue_2,high_traffic|test|issue_2,epsilon_diagnosis,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambda_step_readDDB_AWS::Lambda::Function,latency,0,0,0,0,3,0,,1.33
+high_traffic,test,issue_3,high_traffic|test|issue_3,epsilon_diagnosis,PetSite,latency,petInfo_AWS::DynamoDB::Table,,,,0,0,0,0,0,1,,1.27
+high_traffic,test,issue_4,high_traffic|test|issue_4,epsilon_diagnosis,PetSite,latency,lambdastatusupdater_AWS::Lambda::Function,,lambda_step_priceGreaterThan55_AWS::Lambda,latency,0,0,0,0,3,0,,2.18
+high_traffic,test,issue_5,high_traffic|test|issue_5,epsilon_diagnosis,PetSite,latency,petInfo_AWS::DynamoDB::Table,,petlistadoptions_client,latency,0,0,0,0,3,0,,1.75
+high_traffic,test,issue_6,high_traffic|test|issue_6,epsilon_diagnosis,PetSite,latency,payforadoption_AWS::ECS::Container,,PGSQL Query_remote,latency,0,0,0,0,3,0,,2.05
+high_traffic,test,issue_7,high_traffic|test|issue_7,epsilon_diagnosis,PetSite,latency,payforadoption_AWS::ECS::Container,,lambda_step_priceGreaterThan55,latency,0,0,0,0,3,0,,2.4
+high_traffic,test,issue_8,high_traffic|test|issue_8,epsilon_diagnosis,PetSite,latency,payforadoption_AWS::ECS::Container,,SSM_AWS::SSM,latency,0,0,0,0,3,0,,1.84
+high_traffic,test,issue_9,high_traffic|test|issue_9,epsilon_diagnosis,PetSite,latency,payforadoption_AWS::ECS::Container,,PetSearch_client,latency,0,0,0,0,3,0,,1.86
