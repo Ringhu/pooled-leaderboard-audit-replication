@@ -12,7 +12,7 @@ mabc2024,yes,Table 4
 mulan2024,yes,Table 2 caption; cf. Table 3 (Online Boutique)/Table 4 (Train Ticket) captions
 ocean2024,yes,"Table II caption (Table III: Online Boutique; Table V: Train Ticket, same format)"
 openrca2025,yes,Text at the discussion of Figure 5
-petshop2024,yes,Table 3
+petshop2024,single_system,"Sec. 4.1, Sec. 4.4, Table 3: one pet-adoption application under three traffic scenarios (low, high, temporal), with a score per scenario"
 rcaeval2025,single_system,"Table 6 caption, Sec 5 (p.4)"
 rcd2022,yes,"Table 1 caption; cf. Table 2 caption ""summary and top-7 recall of epsilon-Diagnosis and RCD on data collected for three outages from a..."""
 run2024,yes,"Text (Tables 2 and 3: sock-shop; Figure 6: synthetic dataset, reported separately)"

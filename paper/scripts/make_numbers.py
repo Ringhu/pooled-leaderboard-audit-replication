@@ -353,11 +353,16 @@ assert set(q1_.per_system) == {"yes", "single_system"}  # every multi-system pap
 put("SurveyN", len(q1_))
 put("SurveyMulti", int((q1_.per_system == "yes").sum()))
 put("SurveySingle", int((q1_.per_system == "single_system").sum()))
-assert set(rc_[rc_.L1 == "yes"].id) == {"openrca2025", "causalrca2023"}  # named in sec:bg-survey
+kind_ = rc_.kind.fillna("")
+assert set(rc_[rc_.L1 == "yes"].id) == {"baro2024", "circa2022", "rcaeval2025", "howfar2024", "chase2024", "openrca2025", "causalrca2023"}  # named in sec:bg-survey
+assert set(kind_[rc_.L1 == "yes"]) == {"demo_case", "own_method", "all_methods_one_table"} and (kind_[rc_.L1 != "yes"] == "").all()
 put("SurveyRelAny", int((rc_.L1 == "yes").sum()))
-put("SurveyRelAnyUndet", int((rc_.L1 == "undeterminable").sum()))
-assert int((rc_.L3 == "yes").sum()) + int((rc_.L3 == "partial").sum()) == 0
-put("SurveyRelFullUndet", int((rc_.L3 == "undeterminable").sum()))
+put("SurveyRelDemo", int((kind_ == "demo_case").sum()))
+put("SurveyRelOwn", int((kind_ == "own_method").sum()))
+assert int((kind_ == "all_methods_one_table").sum()) == 1 and set(rc_[kind_ == "all_methods_one_table"].id) == {"circa2022"}
+assert set(rc_[rc_.L1 == "undeterminable"].id) == {"tracerca2021", "toomanycooks2025"} and (rc_[rc_.L1 == "undeterminable"].L3 == "undeterminable").all()
+put("SurveyRelUndet", int((rc_.L1 == "undeterminable").sum()))
+assert int((rc_.L3 == "yes").sum()) == 0 and set(rc_[rc_.L3 == "partial"].id) == {"circa2022"}
 put("SurveyRelFullCheckable", int((rc_.L3 != "undeterminable").sum()))
 
 # ------------------------------------------------------------------ restored analyses (user 2026-09-30)

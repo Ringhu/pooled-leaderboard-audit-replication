@@ -119,3 +119,19 @@ For the 3 papers whose full text was unavailable (microrank2021, nezha2023, mrca
 - **microrank2021, nezha2023**: full text likewise unavailable; the checking scope was limited to the presumed-official repository itself, with no way to cross-validate against the case count/dataset count in the paper's original text; nezha2023's log format is unstructured text, so a unified total case count across configurations could not be given.
 - **Methodological note**: the 12 paper full-text `.txt` files misclassified as binary by the `file` command were re-searched with `grep -a` (see the Method section), confirming that no other key information was missed apart from toomanycooks2025's second anonymous link; however, a small probability cannot be ruled out that some release-channel phrasing is still not covered by the current keyword list.
 - This check does not address at all whether the numbers in the papers themselves are correct, or other known issues with benchmarks such as RCAEval/OpenRCA; it answers only the single factual question of "whether the release artifact contains per-case output."
+
+
+## Author verification, 3 October 2026
+
+Every record above was verified by an author on 3 October 2026 against the repository at the recorded commit (all commit SHAs unchanged), and the following records were corrected. The `kind` column of `release_check.csv` summarizes what each positive release contains.
+
+- **baro2024**: yes (demonstration case). `tutorials/how-to-use-baro.ipynb` stores, in the outputs of cell 16, the ranking BARO produced on one case. The earlier record ("code only") was wrong.
+- **circa2022**: yes (all methods of one experiment). The README links Figshare article 19085855; `circa.zip` contains `circa/cache.zip`, whose `output/sim/{50,100,500}/{0..9}/*.json` are 330 files with the rankings of all 11 methods of Table 1 on 100 cases per run (`circa/circa/alg/common.py`, `Evaluation.dump()`; method names mapped by `circa/img/utils.R`). Means recomputed from the summary CSVs at 50 nodes match Table 1 (NSigma 0.432, RHT 0.598, RHT-PG 0.615). `report/oracle/` holds summary CSVs only, so L3 = partial.
+- **rcaeval2025** and **howfar2024** (same repository): yes (demonstration cases). `docs/code-level-rca.ipynb` (cell 9) and `docs/multi-source-rca-demo.ipynb` (cell 10) store the output of one case each. The repository was checked at its current HEAD, not at the commit of the ASE 2024 paper.
+- **chase2024**: yes (own method). The Google Drive link gives `CHASE.7z` (47 files, 14 Python sources), downloaded by an author. `data/gaia/demo/demo_1100/dgl/stratification_10/9/preds/multitask_seed2_instance_pred_multi_v0.csv` has 939 rows (index, Top1..Top5, GroundTruth) whose indices equal the test split of `gaia_resplit.csv`; `models/He_DGL.py` writes these files. No baseline outputs; `evaluations/*.csv` are empty.
+- **openrca2025**: confirmed, 335 rows (136 + 70 + 78 + 51). The files record neither the model nor the setting, so the record now says "one archived run" rather than naming a model.
+- **causalrca2023**: confirmed, 36 files under `pa_result/`.
+- **tracerca2021**: undeterminable. The code repository has no outputs; the data archive linked from the paper is no longer reachable.
+- **lemmarca2024**: still no. The two Hugging Face dataset repositories are public; the outer directories of 9 of their 10 zips (45,433 entries) show telemetry, logs, traces, and load-test results, no prediction files; one 136 MB directory and the nested archives were not examined.
+- **eadro2023**: still no. Both Zenodo zips and all 8 nested archives were listed: metrics, spans, logs, fault labels.
+- Papers without a link to a release of the authors' own (mulan2024, ocean2024, sparserca2024, tracecontrast2024, tracediag2023, dynacausal2025) are recorded as "no release linked", not as "no outputs".

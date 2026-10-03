@@ -149,16 +149,17 @@ def release():
     rows = [r for r in csv.DictReader(open(os.path.join(ROOT, "paper", "data", "survey", "release_check.csv"))) if r["id"] not in excluded]
     assert len(rows) == 23, len(rows)
     ab = {"undeterminable": "undet."}
+    kinds = {"": "--", "demo_case": "one demonstration case", "own_method": "own method, all test cases", "all_methods_one_table": "all methods, simulation study only"}
     out = []
     for r in rows:
         m = re.search(r"([\w.-]+/[\w.-]+)@([0-9a-f]{7})", r["repo_ref"])
-        ref = f"{m.group(1)}@{m.group(2)}" if m else "--"
+        ref = f"{m.group(1)}@{m.group(2)}" if m else ("Drive archive" if r["id"] == "chase2024" else "--")
         ref = ref.replace("_", r"\_")
-        out.append(f"{r['id']} & {ab.get(r['L1'], r['L1'])} & {ab.get(r['L3'], r['L3'])} & \\texttt{{\\footnotesize {ref}}} \\\\")
-    return r"""\begin{longtable}{lllp{7.6cm}}
-\caption{Released per-case outputs in the 23 surveyed papers with full text, checked on 2 October 2026 (UTC). Any: the release contains per-case predictions or scores of any method. All: it contains them for every method of the paper's main comparison. undet.: the linked release had expired or could not be listed. Release: first repository checked, at the commit checked (--: no repository linked, or the link is not a listable repository); the notes in the package give every link and the files found.}\label{supp:release}\\
+        out.append(f"{r['id']} & {ab.get(r['L1'], r['L1'])} & {kinds[r.get('kind') or '']} & {ab.get(r['L3'], r['L3'])} & \\texttt{{\\scriptsize {ref}}} \\\\")
+    return r"""\begin{longtable}{lcp{2.7cm}cp{7.3cm}}
+\caption{Released per-case outputs in the 23 surveyed papers with full text, checked on 2 and 3 October 2026. Any: the release contains per-case predictions or scores of at least one method; What: which outputs. All: it contains them for every method on every dataset of the paper's main comparison (partial: for every method of one of its experiments). undet.: a linked release had expired or could not be reached. Release: first repository checked, at the commit checked (--: no release linked); the notes in the package give every link and the files found.}\label{supp:release}\\
 \toprule
-Paper & Any & All & Release \\
+Paper & Any & What & All & Release \\
 \midrule
 \endhead
 """ + "\n".join(out) + r"""
