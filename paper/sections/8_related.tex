@@ -7,6 +7,11 @@ Test-set replication and label errors can reorder methods~\citep{recht2019imagen
 Checklists for benchmark quality ask for documentation and reproducible releases~\citep{betterbench,pineau2021improving}.
 We apply this view to RCA benchmarks, where subsystems are identifiable applications, per-case scores are available, and the release itself can be under-specified.
 
+\textbf{Empirical software engineering.}
+Guidelines for empirical research in software engineering ask that a study state its population, treatments, and analysis in enough detail to be repeated~\citep{kitchenham2002guidelines}, and catalogues of recurring problems in software analytics papers include inadequate reporting of data preparation and conclusions whose stability is never tested~\citep{menzies2019badsmells}.
+In defect prediction, the research group explained more of the variation in reported performance than the classifier did~\citep{shepperd2014researcher}; cross-project experiments found that whether a predictor transfers depends on the projects involved~\citep{zimmermann2009crossproject}, a benchmark of cross-project approaches found their ranking to depend on the datasets and metrics used~\citep{herbold2018comparative}, and the model-validation technique was shown to change performance estimates and rankings~\citep{tantithamthavorn2017validation}.
+We ask the same questions of RCA benchmarks: whether a comparison holds on each evaluated system, and which part of a score the evaluation procedure produced.
+
 \textbf{RCA benchmarks and methods.}
 Offline RCA benchmarks include \rcaeval~\citep{pham2024rcaeval}, \openrca~\citep{xu2025openrca}, \petshop~\citep{hardt2024petshop}, and LEMMA-RCA~\citep{zheng2024lemma}; AIOpsLab and ITBench evaluate agents against live systems, and Cloud-OpsBench against recorded state snapshots replayed through diagnostic tools~\citep{aiopslab,jha2025itbench,wang2026cloudopsbench}.
 Audited methods span change-point detection (\baro~\citep{pham2024baro}), causal inference and discovery (\circa~\citep{li2022circa}, \rcd~\citep{ikram2022rcd}, \causalrca~\citep{causalrca}, \cfa~\citep{budhathoki2022causal}), anomaly scoring (\ediag~\citep{ediagnosis}), and trace analysis (\tracerca~\citep{li2021tracerca}, \microrank~\citep{yu2021microrank}).

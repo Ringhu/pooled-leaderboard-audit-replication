@@ -17,7 +17,11 @@ RQ1 asks how often a comparison that a pooled leaderboard would report holds on 
 \label{sec:rq1-pub}
 
 \Cref{fig:forest} shows every comparison between two published methods that a family allows, with each subsystem's difference and its CI.
-Of the \NMainPubPairs such comparisons in the three main families, \NMainPubRev reverse on at least one subsystem and \NMainPubRevCI do so with CI support.
+Two families carry comparisons that exist in the literature, RE1 and \petshop; the \openrca comparisons are our construction (\cref{sec:design-bench}) and are reported separately below.
+Of the \NAudPubPairs pairs on RE1 and \petshop, \NAudPubRev reverse on at least one subsystem and \NAudPubRevCI do so with CI support; with the \NOpenrcaPubPairs \openrca pairs the counts are \NMainPubRev and \NMainPubRevCI of \NMainPubPairs.
+\NAudPubEdiagPairs of the \NAudPubPairs pairs involve \ediag, which is never more accurate than the other method on any subsystem, so their stability is expected, and none of them reverses.
+Dropping the two \petshop scenarios with 8 cases leaves \NAudPubRevNmin reversing pairs, \NAudPubRevCINmin with CI support, and at a Bonferroni-adjusted level \NBonfRevCI CI-supported reversal remains (\cref{sec:threats}).
+Within a benchmark, then, a pooled lead between published methods mostly holds on every subsystem, and the exceptions are on \petshop; the rest of this section asks what the lead says beyond the subsystems it was computed on.
 The reversing pairs are those whose pooled margin is small next to the spread of their subsystem differences (grey rows in \cref{fig:forest}); the split is partly definitional, and we use it only to read the figure.
 
 \begin{figure}[t]
@@ -34,26 +38,35 @@ The one unstable pair is \causalrca vs \rcd: its pooled difference is \ReOneCrRc
 This is RE1 under the reference configuration; on the files as shipped it is less stable (\cref{sec:rq2}).
 
 \textbf{OpenRCA.}
-These results measure each method together with our answer wrapper and the official scoring rule; they are not an audit of \openrca's agent leaderboard.
+These results measure each method together with our answer wrapper and the official scoring rule; no published paper compares these methods on \openrca, and they are not an audit of its agent leaderboard.
 Under the wrapper, the three methods order as \baro (\OpenrcaBaroMean), \rcd (\OpenrcaRcdMean), \ediag (\OpenrcaEdiagMean).
 \baro's lead over \rcd is \OpenrcaBaroRcdPooled \OpenrcaBaroRcdPooledCI, but Telecom reverses it (\OpenrcaBaroRcdTel \OpenrcaBaroRcdTelCI); the reversal rests on a few queries, and \OpenrcaBaroRcdSeedsWithRev of the three \rcd seeds show a reversal, on different subsystems.
-All \NOpenrcaPubPIcross of \NOpenrcaPubPIn prediction intervals include zero: none of the three orderings is established for a further subsystem like these.
 
 \textbf{PetShop.}
 The published methods are least stable here: \NPetshopPubRev of \NPetshopPubPairs pairs reverse, \NPetshopPubRevCI with CI support.
 Both CI-supported reversals come from one cell: \rcd scores \PetshopRcdHighHits of \PetshopHighN on the high-traffic scenario, so \baro (\PetshopBaroRcdHigh \PetshopBaroRcdHighCI) and \cfa (\PetshopCfaRcdHigh \PetshopCfaRcdHighCI) beat it there while trailing it on pooled accuracy, with pooled CIs that include zero.
-The prediction intervals of \NPetshopPubPIcross of the \NPetshopPubPIn pairs for which the model can be fitted include zero.
 The two temporal scenarios have 8 cases each; keeping only the two scenarios with at least 25 cases leaves \PetshopPubRevNmin reversing pairs, \PetshopPubRevCINmin with CI support.
 
 \subsection{Same Applications, Second Release}
 \label{sec:rq1-release}
 
 RE2 is a second, independently collected release of RE1's three applications, with new fault instances, a sixth fault type, and added logs and traces.
-The four published methods that use metrics only (\baro, \circa, \ediag, \causalrca) run with the same implementations on both releases, so if a pooled RE1 result were a property of the method and the application, it should carry over.
+Its metric tables are also sampled differently (\ReTwoRows rows per case against \ReOneSSRows on RE1-SS) and record more metric kinds per service (\ReTwoOBCols columns on OB against \ReOneOBCols on RE1).
+The four published methods that use metrics only (\baro, \circa, \ediag, \causalrca) run with the same implementations on both releases.
+If a pooled RE1 lead were a property of the method and the application, it should carry over.
+A release differs from its predecessor in collection as well as in faults, so what this section tests is carry-over between two releases of the same applications, not between systems.
 Of the \NCrossPub application-level comparisons available in both releases (\cref{tab:release}), \NCrossPubAgree keep their sign and \NCrossPubCIopp have CIs on opposite sides of zero.
 Both of the latter are on Sock Shop: \baro vs \circa goes from \CrossBaroCircaSSOne \CrossBaroCircaSSOneCI to \CrossBaroCircaSSTwo \CrossBaroCircaSSTwoCI, and \baro vs \causalrca from \CrossBaroCrSSOne to \CrossBaroCrSSTwo \CrossBaroCrSSTwoCI.
-Restricting RE2 to RE1's five fault types leaves the count at \NCrossPubAgreeReOneFaults of \NCrossPub, so the added fault type does not explain the change.
+Restricting RE2 to RE1's five fault types leaves the count at \NCrossPubAgreeReOneFaults of \NCrossPub, so the added fault type alone does not explain the change; the released data do not allow the other differences between the releases to be separated.
 Within RE2 itself, \NReTwoPubRev of \NReTwoPubPairs published pairs reverse across the three applications (\NReTwoPubRevCI with CI support).
+
+The largest change between the releases is \baro's.
+Its accuracy falls from \BaroAccReOneOB to \BaroAccReTwoOB on OB and from \BaroAccReOneSS to \BaroAccReTwoSS on SS, and a drop of this size calls for the checks of RQ2 before it is read as a property of the method.
+It passes them: the ranking is not the input column order, every case has a valid output, and the root cause is still among \baro's first three candidates in \BaroReTwoOBAccThree of the OB cases and \BaroReTwoSSAccThree of the SS cases.
+What changes is the first position.
+RE2's reduced table adds disk I/O and socket metrics for every service, which RE1's tables do not contain, and \baro ranks the disk I/O of the application's database first in \BaroReTwoOBTopMetricN of the 90 OB cases and \BaroReTwoSSTopMetricN of the 90 SS cases, whatever the injected fault.
+\citet{fang2025simplerca} report top-1 accuracies of 0.14 on both applications for their own \baro baseline on RE2, which places the drop in the release rather than in our runs.
+A method's lead can thus depend on which metric kinds a release records, a part of a score's provenance that neither a leaderboard nor a per-system table states.
 
 \begin{table}[t]
 \caption{Same application, two releases: subsystem differences $\Delta_s$ ($A$ minus $B$) between published methods on RE1 and RE2. Bold: the two releases' 95\% CIs lie on opposite sides of zero.}
@@ -66,9 +79,13 @@ Within RE2 itself, \NReTwoPubRev of \NReTwoPubPairs published pairs reverse acro
 \label{sec:rq1-heldout}
 
 A practitioner choosing a method for a new system has only the other subsystems to go by.
-Holding out each of the 11 subsystems in turn and ranking the published methods of its family on the remaining ones gives \HNDec adjacent-pair decisions; in \HErr of them the higher-ranked method is less accurate on the held-out subsystem (\HStrict with a CI excluding zero), and \HTies further decisions are ties.
+Holding out each of the 11 subsystems in turn and ranking the published methods of its family on the remaining ones gives \HNDec adjacent-pair decisions.
+In \HErr of them the higher-ranked method is less accurate on the held-out subsystem (\HStrict with a CI excluding zero), and \HTies further decisions are ties.
+A ranking drawn at random would err in half of the \HNonTie non-tied decisions, \HRandErr; the pooled ranking is informative, and the question is where it is not.
 \Cref{tab:regret} gives the cost of such a choice as regret.
 The pooled winner chosen without the held-out subsystem has positive regret on \LosoRegPubN of the \LosoRegPubOf subsystems (up to \LosoRegPubMax), and with probes and shipped baselines on \LosoRegAllN of \LosoRegAllOf (up to \LosoRegAllMax).
+For comparison, choosing a published method at random has an expected regret of \RegRandReOne on RE1, \RegRandOpenrca on \openrca, and \RegRandPetshop on \petshop, against mean regrets of \RegWinnerMeanReOne, \RegWinnerMeanOpenrca, and \RegWinnerMeanPetshop for the pooled winner.
+The pooled winner is a far better default than a random choice; its cost is concentrated on particular subsystems.
 The largest costs are concrete: on RE2, \circa has the highest pooled accuracy (\RegReTwoWinnerPooled) but scores \RegReTwoTTwinner on Train Ticket against \simplerca's \RegReTwoTTbest; on \petshop the pooled winner \circa trails another published method on the high-traffic scenario by \RegPetshopHigh.
 
 \begin{table}[t]

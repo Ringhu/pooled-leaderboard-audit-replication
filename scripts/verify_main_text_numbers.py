@@ -39,7 +39,7 @@ LITERALS = {
     "0.33.0": "scikit-network in the ts env", "0.31.0": "scikit-network in rcaeval_rcd env",
     "0.960": "BARO Avg@5 RE1-SS simple_data (runs/baro, recomputed 2026-09-30)", "0.779": "BARO Avg@5 RE1-TT simple_data",
     "0.576": "BARO Avg@5 RE1-SS data.csv", "0.261": "BARO Avg@5 RE1-TT data.csv",
-    "0.95": "BARO paper Avg@5 SS (FSE'24 §4.6.1)", "0.81": "BARO paper Avg@5 TT", "0.66": "RCAEval Table 6 TraceRCA RE2-TT AC@1",
+    "0.95": "BARO paper Avg@5 SS (FSE'24 §4.6.1)", "0.81": "BARO paper Avg@5 TT", "0.14": "Fang et al. Table 2, BARO AC@1 on RE2-OB and RE2-SS (.research/verifications/2026-09-27-simplerca-author-g1.md)", "0.66": "RCAEval Table 6 TraceRCA RE2-TT AC@1",
     "0.22": "RCAEval Table 6 CausalRCA RE2-TT AC@1", "0.01": "tolerance for Table 6 match", "0.5": "OpenRCA >=0.5 rule",
     "44.8": "TraceRCA abstract quote", "4,900": "CausalRCA OpenRCA GPU-hour estimate (verifications/2026-09-29-openrca-extra-methods-cost.md)",
     "10,000": "bootstrap B (rq1/config.json)", "20260929": "bootstrap seed (rq1/config.json)",

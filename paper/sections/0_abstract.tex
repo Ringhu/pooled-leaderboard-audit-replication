@@ -1,11 +1,17 @@
 \begin{abstract}
-Offline benchmarks for microservice root cause analysis (RCA) rank methods by scores pooled over several applications, and such rankings are read as evidence of which method to adopt.
-A pooled lead is a statement about the evaluated mixture; it leaves two things unstated: on which of the systems it holds, and how the score was produced.
-We audit both on three public benchmark families (\openrca, \rcaeval, and \petshop): 11 subsystems, plus a second, independently collected release of three of the applications, running the released implementations of 16 methods under recorded configurations and scoring them on every case of the subsystems where they run.
-Of \NMainPubPairs pooled comparisons between published methods, \NMainPubRev reverse on some subsystem, \NMainPubRevCI with confidence-interval support, both on one \petshop scenario; of \NCrossPub comparisons repeated on the second release, \NCrossPubAgree keep their sign; and a ranking computed on all subsystems but one picks the less accurate of two adjacent methods on the held-out subsystem in \HErr of \HNDec decisions.
-The released pipelines leave the score's provenance open: the input table that one released runner reads is not the one its documentation describes, and on the same cases this choice reverses \circa against \rcd with intervals excluding zero in both directions.
-Two further choices fail silently: an unpinned dependency and a duplicated column header each make a method return its input column order without an error, and the second produces a reversal between published methods, with interval support, that disappears once the header is removed.
-Published papers do not release what is needed to check either premise: of \SurveyN RCA papers we examined, \SurveyRelAny release per-case outputs of at least one method, and none of the \SurveyRelFullCheckable whose releases we could check releases enough to recompute every paired comparison of its main results without rerunning the methods.
+Offline benchmarks for microservice root cause analysis (RCA) rank methods by a score pooled over several applications, and such rankings are read as evidence of which method to adopt.
+A pooled lead leaves two things unstated: on which of the systems it holds, and how the score was produced.
+We audit both on three public benchmark families (\openrca, \rcaeval, and \petshop): 11 subsystems, plus a second, independently collected release of three of the applications.
+We run the released implementations of 16 methods under recorded configurations and score them on every case.
+Within a benchmark, pooled leads between published methods mostly hold: of \NAudPubPairs such comparisons, \NAudPubRev reverse on some subsystem by point estimate and \NAudPubRevCI with confidence-interval support, both on one \petshop scenario.
+They hold less well beyond it.
+Of \NCrossPub comparisons repeated on the second release, \NCrossPubAgree keep their sign.
+A ranking computed without one subsystem picks the less accurate of two adjacent methods on that subsystem in \HErr of \HNDec decisions.
+On several subsystems a simple probe, or a baseline shipped by the benchmark itself, is more accurate than every published method.
+The released pipelines leave the score's provenance open.
+The input table that one released runner reads is not the one its documentation describes, and on the same cases this choice reverses a comparison between two published methods, with intervals excluding zero in both directions.
+An unpinned dependency and a duplicated column header each make a method return its input column order without an error, and the header produces a further such reversal that disappears once it is removed.
+Published papers do not release what is needed to check either premise: of \SurveyN RCA papers we examined, none of the \SurveyRelFullCheckable whose releases we could reach releases the per-case outputs of every method it compares.
 We recommend that a pooled comparison state the subsystems it covers, the input table, the handling of failed outputs, and the denominator, and be accompanied by per-case outputs.
 Our per-case data and scripts are in an anonymous replication package.
 \end{abstract}

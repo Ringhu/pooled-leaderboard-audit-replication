@@ -18,8 +18,11 @@ A \emph{subsystem} is one application or scenario inside a family. It is the uni
 
 \textbf{\openrca}~\citep{xu2025openrca} contains four subsystems (Bank, Market-1, Market-2, Telecom).
 Each query asks for one or more of the root-cause component, the failure reason, and the occurrence time; the official scorer awards the fraction of the required items that match (component and reason by exact string, time within 60\,s).
-The audited methods rank metrics, so we wrap them: a method ranks the metrics of the query window (a 4-hour baseline plus 30 minutes on either side of the window midpoint); the answer component is the first ranked metric that belongs to the query's candidate set, the reason is mapped from that metric's type, and the time is the moment of largest deviation.
+The audited methods rank metrics, so we wrap them.
+A method ranks the metrics of the query window (a 4-hour baseline plus 30 minutes on either side of the window midpoint).
+The answer component is the first ranked metric that belongs to the query's candidate set, the reason is mapped from that metric's type, and the time is the moment of largest deviation.
 For a query that states $n$ failures, the wrapper returns the first $n$ distinct candidate components.
+No published work compares these methods on \openrca, whose own leaderboard ranks LLM agents; the comparison is our construction through this wrapper, and RQ1 reports it separately from the comparisons that exist in the literature.
 \cdmin runs on one-minute data with a detection window that ends one minute after the query midpoint, the setting for which it was written.
 
 \textbf{\rcaeval}~\citep{pham2024rcaeval} releases three suites over the same three applications (Online Boutique, Sock Shop, Train Ticket).
@@ -56,7 +59,7 @@ Family & Subsystems (cases) & Input used & Scoring & Role \\
 Methods enter the audit in one of three roles.
 \emph{Published methods} are the objects of the audit: \baro~\citep{pham2024baro}, \circa~\citep{li2022circa}, \ediag~\citep{ediagnosis}, \rcd~\citep{ikram2022rcd}, and \causalrca~\citep{causalrca} on RE1; on RE2 additionally \simplerca~\citep{fang2025simplerca}, \tracerca~\citep{li2021tracerca}, \microrank~\citep{yu2021microrank}, and the multi-source variant of \baro shipped with \rcaeval; on \openrca \baro, \ediag, and \rcd; on \petshop \circa, \rcd, \ediag, \cfa~\citep{budhathoki2022causal}, and \baro.
 We run the implementations that the benchmarks ship, at the release current when the audit began; the version is recorded in the replication package.
-For \simplerca we use the \rcaeval branch of the authors' released code, which reproduces to two decimals every value the authors report for \simplerca and their \baro baseline on RE2 and RE3.
+For \simplerca we use the \rcaeval branch of the authors' released code, which reproduces to two decimals every value the authors report for \simplerca and their \baro baseline on RE2 and on RE3, a third release of the same applications that we do not otherwise use.
 On RE1, which provides only metrics, that branch reduces to its \baro-based metric ranking, so we do not count it as a separate method there.
 
 \emph{Probes} are three simple rules that we add to test whether a leaderboard orders even simple alternatives consistently.
@@ -79,7 +82,7 @@ Before comparing methods we therefore fix a reference configuration and check th
 \textbf{Input representation.}
 RE1-SS and RE1-TT ship two metric tables per case: a raw export with several hundred to over a thousand columns, and a reduced table with a few dozen to about two hundred.\footnote{The raw export is \texttt{data.csv} (421--439 columns on SS, 1,180--1,446 on TT) and the reduced table \texttt{simple\_data.csv} (58--64 and 199--239 columns). The two tables of a case cover the same time points; the reduced table keeps a few aggregated metrics per service (CPU, memory, workload, latency percentiles, errors), the raw export the per-container series they are derived from. RE1-OB ships a single table of 51--60 columns, which we use. RE2 ships the reduced table \texttt{simple\_metrics.csv}.}
 The released runner reads the raw export, and the code that would switch to the reduced table is commented out; the metric counts in the repository's documentation, however, match the reduced table.
-The choice matters: \baro's Avg@5 on the reduced tables is 0.960 (SS) and 0.779 (TT), close to the 0.95 and 0.81 that its authors, who also built \rcaeval, report, but 0.576 and 0.261 on the raw exports.
+The choice matters: \baro's Avg@5 (the metric its authors report) on the reduced tables is 0.960 (SS) and 0.779 (TT), close to the 0.95 and 0.81 that its authors, who also built \rcaeval, report, but 0.576 and 0.261 on the raw exports.
 % src: runs/baro/baro_re1-{ss,tt}_{len20,datacsv_len20}.json, Avg@5 from ranks; BARO paper §4.6.1
 \baro is the only method whose reported values identify the file in this way, so we take the reduced tables as the reference on these two grounds.
 The raw exports remain an equally literal reading of the runner; we keep every method's outputs on them and compare the two conditions in \cref{sec:rq2-input}.
@@ -91,12 +94,14 @@ The first is dependency drift: \causalrca calls a PageRank function that scikit-
 Under scikit-network 0.33.0, \causalrca's ranking equalled the column order in 30 of 30 cases of a permutation test; under 0.31.0 in 0 of 30, and we run it under that version.
 The second is a duplicated column header in 50 of the 125 RE1-OB tables, on which \circa fails and returns the column order, and \ediag ranks the duplicated column first, in 49 cases each.
 % src: .research/verifications/2026-09-30-re1ob-duplicate-time-column.md §3
-The maintainers have since fixed both upstream.
+Both are fixed in the current upstream release.
 We apply the same fix to the input, rerun the affected methods on the affected cases, and keep the as-shipped outputs for \cref{sec:rq2-defect}.
 
 \textbf{Conventions.}
 All RE1 and RE2 methods use the 20-minute default window.
-An output is invalid if the method raised an error, returned no candidate, or, on \openrca, the wrapper fell back to a fixed default answer; invalid outputs score 0, the denominator is always the full case set, and we mark every accuracy whose coverage (the share of valid outputs) is below 1 and report the coverage values in \cref{sec:rq2-denominator} and the replication package.
+An output is invalid if the method raised an error, returned no candidate, or, on \openrca, the wrapper fell back to a fixed default answer.
+Invalid outputs score 0 and the denominator is always the full case set.
+We mark every accuracy whose coverage (the share of valid outputs) is below 1 and report the coverage values in \cref{sec:rq2-denominator} and the replication package.
 All per-case outputs, each with the configuration of the run that produced it, are merged into one table of \NlongRows rows; after freezing, every analysis reads only this table.
 
 \subsection{Statistics}
@@ -105,6 +110,7 @@ All per-case outputs, each with the configuration of the run that produced it, a
 For methods $A$ and $B$ on subsystem $s$ with $n_s$ matched cases, the subsystem effect is the mean paired difference $\Delta_s = n_s^{-1}\sum_i (y^A_{s,i} - y^B_{s,i})$, where $y$ is the case score (top-1 hit, or the \openrca partial score).
 Its 95\% confidence interval (CI) is a percentile bootstrap over cases within the subsystem ($B = 10{,}000$)~\citep{efron1993bootstrap}.
 The \emph{pooled} difference $\bar\Delta$ is the unweighted mean of $\Delta_s$ over the $k$ subsystems of a family, so that each subsystem counts once, and its CI averages the subsystems' bootstrap replicates with the same weights; weighting by cases instead changes the reversal count of \NcwDiff pair only.
+The pooled CI describes the evaluated set of subsystems; it makes no claim about a subsystem outside it.
 % src: pairs.csv, variant mean: compare n_rev_cw vs n_rev_se
 
 A \emph{point-estimate reversal} is a subsystem whose $\Delta_s$ has the opposite sign of a non-zero pooled difference; a \emph{CI-supported reversal} additionally has its CI entirely on the opposite side of zero.
@@ -112,11 +118,12 @@ The pooled difference itself need not exclude zero: a CI-supported reversal says
 The CIs are nominal and not adjusted for the number of comparisons (\cref{sec:threats}).
 A \emph{sign change} between two conditions includes a difference that becomes or stops being zero.
 We also describe each comparison by its \emph{pooled margin} $|\bar\Delta|$ and its \emph{between-subsystem spread}, the sample standard deviation of $\Delta_s$ over the $k$ subsystems.
-For families with $k \geq 4$ we report a random-effects prediction interval~\citep{inthout2016plea}, with the between-subsystem variance estimated by the Paule--Mandel method and a $t$ distribution with $k-2$ degrees of freedom; it cannot be fitted when some $\Delta_s$ has zero sampling variance.
+For families with $k \geq 4$ the replication package also gives a random-effects prediction interval~\citep{inthout2016plea}, with the between-subsystem variance estimated by the Paule--Mandel method and a $t$ distribution with $k-2$ degrees of freedom; with $k=4$ it rests on two degrees of freedom and almost always includes zero, so we draw no conclusion from it.
 A case-level test of the method-by-subsystem interaction for every pair is in the replication package.
 
 \emph{Held-out subsystems.}
-To ask whether a pooled ranking chooses correctly on a subsystem it has not seen, we hold out each subsystem of a family in turn, rank the methods by their mean over the remaining subsystems, and check for every adjacent pair in that ranking whether the higher-ranked method is also more accurate on the held-out subsystem.
+To ask whether a pooled ranking chooses correctly on a subsystem it has not seen, we hold out each subsystem of a family in turn and rank the methods by their mean over the remaining subsystems.
+For every adjacent pair in that ranking we check whether the higher-ranked method is also more accurate on the held-out subsystem.
 The \emph{regret} of a pooled winner on subsystem $s$ is the accuracy of the best method on $s$ minus the winner's accuracy there.
 
 \emph{Cross-family set.}

@@ -41,3 +41,5 @@ For double-anonymous review, file paths, user and host names, and internal proje
 ## LLM tools
 
 The scripts in this package were written with LLM coding assistants from specifications by the authors; see paper §3.5. No LLM produced or scored a method output.
+
+- `paper/data/supp/baro_re2_top1.json`: diagnostic on BARO's RE2 outputs (first-ranked metric per case, top-3 accuracy, column counts of the RE1 and RE2 metric tables), produced by `scripts/baro_re2_top1.py` from the stored run outputs; read by `make_numbers.py` for paper Section 4.2.

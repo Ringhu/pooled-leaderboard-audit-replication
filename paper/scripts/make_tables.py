@@ -261,6 +261,51 @@ def _tab4_panel(acc, cov_map, counts, best, groups_cols, colspec_prefix=""):
     return lines, stats
 
 
+
+VENUE_FIX = {
+    "petshop2024": "CLeaR 2024", "tvdiag2024": "TOSEM", "chase2024": "arXiv 2024", "lemmarca2024": "OpenReview 2024",
+    "dynacausal2025": "arXiv 2025", "baro2024": "FSE 2024", "fang2026": "FSE 2026", "rcaeval2025": "WWW 2025 Companion",
+    "causalrca2023": "JSS 2023", "mabc2024": "EMNLP 2024 Findings",
+}
+
+
+def make_tab1() -> None:
+    """Table 1: the 23 surveyed papers (main text), one row per paper. Source: data/survey/{papers,per_system,release_check,excluded}.csv."""
+    papers = pd.read_csv(DATA / "survey" / "papers.csv")
+    per_system = pd.read_csv(DATA / "survey" / "per_system.csv").set_index("id")
+    rc = pd.read_csv(DATA / "survey" / "release_check.csv").set_index("id")
+    excluded = set(pd.read_csv(DATA / "survey" / "excluded.csv").id)
+    kinds = {"demo_case": "one demonstration case", "own_method": "own method, all test cases", "all_methods_one_table": "all methods, simulation study only"}
+    rows = []
+    for r in papers.itertuples(index=False):
+        pid = str(r.id)
+        if pid in excluded:
+            continue
+        author = str(getattr(r, "_2")).replace(" et al.", " et al.")
+        venue = VENUE_FIX.get(pid) or str(r.venue).split("（")[0].split(" (")[0].strip()
+        ps = {"yes": "yes", "single_system": "single system"}[str(per_system.loc[pid, "per_system"])]
+        l1, kind, l3 = str(rc.loc[pid, "L1"]), str(rc.loc[pid, "kind"]) if pd.notna(rc.loc[pid, "kind"]) else "", str(rc.loc[pid, "L3"])
+        if l1 == "undeterminable":
+            rel, full = "release unreachable", "--"
+        elif l1 == "yes":
+            rel, full = kinds[kind], {"no": "no", "partial": "partial"}[l3]
+        else:
+            rel, full = "--", "no"
+        rows.append(f"{tex_escape(author)} & {int(r.year)} & {tex_escape(venue)} & {ps} & {rel} & {full} \\\\")
+    if len(rows) != 23:
+        raise ValueError(f"expected 23 papers, got {len(rows)}")
+    body = "\n".join([
+        r"\setlength{\tabcolsep}{3pt}",
+        r"\begin{tabular}{@{}lllllc@{}}",
+        r"\toprule",
+        r"Paper & Year & Venue & Per-system & Per-case outputs released & All methods \\",
+        r"\midrule",
+        *rows,
+        r"\bottomrule",
+        r"\end{tabular}",
+    ]) + "\n"
+    write("tab1_survey.tex", body)
+
 def make_tab4() -> None:
     """Main table as two full-width panels (2026-10-03): RCAEval RE1+RE2, then OpenRCA+PetShop.
     Each panel lists only the methods that run on at least one of its families."""
@@ -528,6 +573,7 @@ def make_tab8() -> None:
 
 
 def main() -> None:
+    make_tab1()
     make_tab4()
     make_tab5()
     make_tab6()

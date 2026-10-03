@@ -103,3 +103,12 @@ Also print the full summary to stdout as a plain table so it can be checked.
 ## Acceptance
 `python3 paper/scripts/make_figures.py && python3 paper/scripts/make_tables.py` runs from repo root without error,
 writes all files above, and prints for each output the key counts it computed.
+
+## Table 1 — `tab1_survey.tex` (surveyed papers, main text)
+
+Source: `data/survey/papers.csv` (id, first author, year, venue), `per_system.csv` (per_system ∈ {yes, single_system}),
+`release_check.csv` (L1 ∈ {yes, no, undeterminable}; kind ∈ {demo_case, own_method, all_methods_one_table}; L3 ∈ {no, partial, undeterminable}),
+`excluded.csv` (ids without full text; dropped). One row per full-text paper (23), in `papers.csv` order.
+Columns: Paper (first author et al.) | Year | Venue (ASCII; `VENUE_FIX` overrides the annotated strings) | Per-system (yes / single system) |
+Per-case outputs released (-- / one demonstration case / own method, all test cases / all methods, simulation study only / release unreachable) |
+All methods (no / partial / --). Plain `tabular`, `@{}lllllc@{}`.
