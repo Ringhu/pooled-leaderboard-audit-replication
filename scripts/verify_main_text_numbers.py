@@ -16,6 +16,11 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = os.path.join(ROOT, "paper")
 
+# The abstract is also uploaded as plain text, so it carries literal numbers; each must equal the current value of
+# one of these macros (checked below against numbers.tex).
+ABSTRACT_MACROS = ["NPubAbove", "NPubAboveHold", "NPubBelow", "NPubBelowRev", "HErr", "HNDec", "NCrossPub",
+                   "NCrossPubChange", "NCrossPubChangeBaro", "SurveyN", "SurveyRelFullCheckable"]
+
 # literal -> source (dataset facts, published values, code facts); checked by hand against the named source
 LITERALS = {
     "0,1": "interval [0,1] of the case score (design, GLM response)",
@@ -65,7 +70,10 @@ def main():
     r = subprocess.run([sys.executable, os.path.join(P, "scripts", "make_numbers.py"), "--check"], capture_output=True, text=True)
     print(r.stdout.strip() or r.stderr.strip())
     ok &= r.returncode == 0
-    defined = set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}", open(os.path.join(P, "numbers.tex")).read()))
+    numbers_src = open(os.path.join(P, "numbers.tex")).read()
+    defined = set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}", numbers_src))
+    values = dict(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}\{([^}\\]*)", numbers_src))
+    abstract_ok = {values[m] for m in ABSTRACT_MACROS}
     used, unknown = set(), {}
     for f in sorted(glob.glob(os.path.join(P, "sections", "*.tex"))):
         t = open(f).read()
@@ -76,6 +84,8 @@ def main():
         body = re.sub(r"\\[A-Za-z]+", " ", body)  # drop macro names
         for lit in re.findall(r"(?<![A-Za-z0-9.])\d[\d,]*(?:\.\d+)*", body):
             lit = lit.rstrip(",")
+            if os.path.basename(f) == "0_abstract.tex" and lit in abstract_ok:
+                continue
             if lit not in LITERALS:
                 unknown.setdefault(lit, set()).add(os.path.basename(f))
     unused = sorted(defined - used)

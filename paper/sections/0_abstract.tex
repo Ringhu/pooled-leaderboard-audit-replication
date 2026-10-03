@@ -3,15 +3,15 @@ Offline benchmarks for microservice root cause analysis (RCA) rank methods by a 
 A pooled lead leaves two things unstated: on which of the systems it holds, and how the score was produced.
 We audit both on three public benchmark families (\openrca, \rcaeval, and \petshop): 11 subsystems, plus a second, independently collected release of three of the applications.
 We run the released implementations of 16 methods under recorded configurations and score them on every case.
-Within a benchmark, whether a pooled lead between published methods holds on every subsystem is decided by a quantity the leaderboard withholds, the spread of the lead across subsystems: of \NPubAbove leads whose pooled margin exceeds this spread, \NPubAboveHold hold everywhere; of the \NPubBelow whose margin is below it, \NPubBelowRev reverse.
+Within a benchmark, whether a pooled lead between published methods holds on every subsystem is decided by a quantity the leaderboard withholds, the spread of the lead across subsystems: of 15 leads whose pooled margin exceeds this spread, 14 hold everywhere; of the 8 whose margin is below it, 6 reverse.
 The per-fault and per-scenario tables that the benchmark papers themselves publish split the same way.
-A ranking computed without one subsystem picks the less accurate of two adjacent methods on that subsystem in \HErr of \HNDec decisions, every one on a lead of the second kind.
-Of \NCrossPub comparisons repeated on the second release, \NCrossPubChange change sign, \NCrossPubChangeBaro of them through one method's response to the metric kinds the new release records.
+A ranking computed without one subsystem picks the less accurate of two adjacent methods on that subsystem in 8 of 36 decisions, every one on a lead of the second kind.
+Of 18 comparisons repeated on the second release, 6 change sign, 5 of them through one method's response to the metric kinds the new release records.
 On several subsystems a simple probe, or a baseline shipped by the benchmark itself, is more accurate than every published method.
 The released pipelines leave the score's provenance open.
 The input table that one released runner reads is not the one its documentation describes, and on the same cases this choice reverses a comparison between two published methods, with intervals excluding zero in both directions.
 An unpinned dependency and a duplicated column header each make a method return its input column order without an error, and the header produces a further such reversal that disappears once it is removed.
-Published papers do not release what is needed to check either premise: of \SurveyN RCA papers we examined, none of the \SurveyRelFullCheckable whose releases we could reach releases the per-case outputs of every method it compares.
+Published papers do not release what is needed to check either premise: of 23 RCA papers we examined, none of the 21 whose releases we could reach releases the per-case outputs of every method it compares.
 We recommend that a pooled comparison state the subsystems it covers and its spread across them, the input table, the handling of failed outputs, and the denominator, and be accompanied by per-case outputs.
 Our per-case data and scripts are in an anonymous replication package.
 \end{abstract}

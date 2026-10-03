@@ -1,0 +1,33 @@
+{
+ "n_comparisons": 82,
+ "alpha_adj": 0.0006097560975609756,
+ "B": 400000,
+ "seed": 20260929,
+ "n_rev_ci95": 2,
+ "n_rev_ci_adj": 1,
+ "rev_ci95": [
+  {
+   "family": "petshop",
+   "a": "baro",
+   "b": "rcd",
+   "sub": "petshop::high_traffic",
+   "delta": 0.15384615384615385,
+   "lo95": 0.038461538461538464,
+   "lo_adj": 0.0,
+   "hi_adj": 0.4230769230769231
+  },
+  {
+   "family": "petshop",
+   "a": "counterfactual_attribution",
+   "b": "rcd",
+   "sub": "petshop::high_traffic",
+   "delta": 0.3076923076923077,
+   "lo95": 0.15384615384615385,
+   "lo_adj": 0.038461538461538464,
+   "hi_adj": 0.6153846153846154
+  }
+ ],
+ "n_ci95_excl0": 46,
+ "n_ci_adj_excl0": 31,
+ "seconds": 13.627671718597412
+}

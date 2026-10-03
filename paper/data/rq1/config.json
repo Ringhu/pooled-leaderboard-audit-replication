@@ -1,11 +1,11 @@
 {
- "script": "/tmp/rca_pkg_test/analysis/rq1_main.py",
+ "script": "/home/cris/Research/FSE2027-RCABenchmarkAudit-replication/analysis/rq1_main.py",
  "script_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
  "B": 10000,
  "seed": 20260929,
- "python": "3.11.15",
- "pandas": "3.0.2",
- "run_utc": "2026-10-02T13:42:42Z",
- "wall_s": 21.5
+ "python": "3.12.3",
+ "pandas": "2.3.3",
+ "run_utc": "2026-10-03T10:12:48Z",
+ "wall_s": 18.4
 }

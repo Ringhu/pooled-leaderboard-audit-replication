@@ -3,22 +3,22 @@
   "script_sha256": "08a9f5e562bea71aea3c7da2ac1a2dddddcad61ef837397efaa4f3a151b47984",
   "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
   "inputs": {
-   "petshop_2311.04806.txt": "5210a1a0e5a12fd904c516412be3d73498b9aa7d3a24d487c5df6b70bf0fa955",
-   "rcaeval_2412.17015.txt": "000ad6d21719b2ec3057cc5ffe565ea6cd0bc77239730c8984eb1d9ee930750a"
+   "rcaeval_2412.17015.txt": "000ad6d21719b2ec3057cc5ffe565ea6cd0bc77239730c8984eb1d9ee930750a",
+   "petshop_2311.04806.txt": "5210a1a0e5a12fd904c516412be3d73498b9aa7d3a24d487c5df6b70bf0fa955"
   },
   "rq1_main_config": {
-   "script": "/tmp/rca_pkg_test/analysis/rq1_main.py",
+   "script": "/home/cris/Research/FSE2027-RCABenchmarkAudit-replication/analysis/rq1_main.py",
    "script_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
    "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
    "B": 10000,
    "seed": 20260929,
-   "python": "3.11.15",
-   "pandas": "3.0.2",
-   "run_utc": "2026-10-02T13:42:42Z",
-   "wall_s": 21.5
+   "python": "3.12.3",
+   "pandas": "2.3.3",
+   "run_utc": "2026-10-03T10:12:48Z",
+   "wall_s": 18.4
   },
-  "run_utc": "2026-10-02T13:42:44Z",
-  "wall_s": 0.8
+  "run_utc": "2026-10-03T10:12:49Z",
+  "wall_s": 0.7
  },
  "summary": {
   "published_tables": [
