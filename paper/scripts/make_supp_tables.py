@@ -663,56 +663,42 @@ def shorten_venue(venue: str, limit: int = 30) -> str:
     return tex_escape(cut) + r"\ldots"
 
 
-def coding_cell(value: str) -> str:
-    mapping = {
-        "yes": "Yes",
-        "no": "No",
-        "partial": "Partial",
-        "not_applicable": "N/A",
-    }
-    if value not in mapping:
-        raise KeyError(f"unexpected coding value {value!r}")
-    return mapping[value]
-
-
 def make_s11() -> int:
     papers = load("survey/papers.csv")
-    coding = load("survey/final_coding.csv")
-    wide = coding.pivot(index="id", columns="item", values="value")
-    for item in ["Q1", "Q2", "Q3", "Q4"]:
-        if item not in wide.columns:
-            raise KeyError(f"final_coding.csv has no item {item}")
-    merged = papers.merge(wide[["Q1", "Q2", "Q3", "Q4"]], left_on="id", right_index=True, how="left")
-    if merged[["Q1", "Q2", "Q3", "Q4"]].isna().any().any():
-        missing = merged.loc[merged[["Q1", "Q2", "Q3", "Q4"]].isna().any(axis=1), "id"].tolist()
-        raise ValueError(f"papers with missing coding: {missing}")
-    colspec = "lllcccc"
-    header = r"ID & Year & Venue & Q1 & Q2 & Q3 & Q4"
+    per_system = load("survey/per_system.csv").set_index("id")
+    excluded = load("survey/excluded.csv").set_index("id")
+    cell = {"yes": "Yes", "single_system": "Single system"}
+    colspec = "lllcp{5.2cm}"
+    header = r"ID & Year & Venue & Per-system results & Location"
     lines = []
-    for r in merged.itertuples(index=False):
-        cells = [
-            tex_escape(str(r.id)),
-            str(int(r.year)),
-            shorten_venue(r.venue),
-            coding_cell(r.Q1),
-            coding_cell(r.Q2),
-            coding_cell(r.Q3),
-            coding_cell(r.Q4),
-        ]
+    n = 0
+    for r in papers.itertuples(index=False):
+        pid = str(r.id)
+        if pid in excluded.index:
+            status, loc = "Excluded (no full text)", "--"
+        else:
+            if pid not in per_system.index:
+                raise KeyError(f"per_system.csv has no row for {pid}")
+            status = cell[str(per_system.loc[pid, "per_system"])]
+            loc = tex_escape(str(per_system.loc[pid, "location"]))
+            n += 1
+        cells = [tex_escape(pid), str(int(r.year)), shorten_venue(r.venue), status, loc]
         lines.append(" & ".join(cells) + r" \\" + "\n")
         title = tex_escape(str(r.title)).replace("\u2014", "---")
-        lines.append(rf"\multicolumn{{7}}{{l}}{{\scriptsize\textit{{{title}}}}} \\" + "\n")
+        lines.append(rf"\multicolumn{{5}}{{l}}{{\scriptsize\textit{{{title}}}}} \\" + "\n")
+    if n != 23:
+        raise ValueError(f"expected 23 full-text papers, found {n}")
     caption = (
-        "Report-practice coding for each surveyed paper. "
-        "Q1 reports per-system results; Q2 releases per-case outputs; "
-        "Q3 makes a cross-system claim from pooled numbers; "
-        "Q4 documents the input representation or preprocessing. "
+        "The surveyed papers. Per-system results: Yes if the paper evaluates more than one system "
+        "and reports a score for each; Single system if it evaluates one system; "
+        "Excluded if no full text was obtained (not counted in the paper). "
+        "Location: the table, figure, or passage checked. "
         "Venue names longer than 30 characters are truncated. "
         "The italic line under each row is the paper title."
     )
     body = longtable(colspec, caption, "supp:s11-survey", header, "".join(lines))
     write_tex("s11_survey.tex", body)
-    return len(merged)
+    return n
 
 
 # ---------------------------------------------------------------------------
@@ -824,8 +810,8 @@ INDEX_ENTRIES = [
     ),
     (
         "s11_survey.tex",
-        "Survey coding",
-        "Per-paper answers to the four report-practice items, joined to the paper list.",
+        "Surveyed papers",
+        "The paper list with the per-system reporting check and the three papers excluded for lack of full text.",
         "paper/data/survey/papers.csv",
     ),
     (

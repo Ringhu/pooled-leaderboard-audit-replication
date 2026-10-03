@@ -1,4 +1,4 @@
-# Q2 Re-check: Verifying Per-Case Output in the Public Release Artifacts of 26 RCA Papers
+# Release check: per-case outputs in the public release artifacts of the 26 listed RCA papers (the three papers in excluded.csv are not counted in the paper)
 
 Check time: 2026-10-02T13:45:20Z (all checked_utc timestamps uniformly use this moment, which is the snapshot time at the end of a continuous checking session; the actual access to some repositories happened a few hours earlier, but all checks were completed on the same day, and no inconsistency arose from repository content changes in between).
 

@@ -70,13 +70,6 @@ Data `data/rq2/input_accuracy.csv`. One row per method (display names), two mark
 `acc_correct_input` (label "simple_data.csv (reduced table)") and `acc_submitted_input` (label "data.csv (raw export)").
 x axis Acc@1 in [0,1]. Same row order in both panels (sort by SS reduced-table accuracy).
 
-## Table 1 — `tables/tab1_survey.tex`
-Data `data/survey/final_summary.json`, `data/survey/agreement.json` (`cohen_kappa`).
-Rows Q1–Q4 plus a row "Q3 (full text only)" from `Q3_full_text_only` (κ cell "—").
-Columns: Item | Yes | Partial | No | N/A | Cohen's κ. Short item texts:
-Q1 "Reports per-system results"; Q2 "Releases per-case outputs"; Q3 "Makes cross-system claim from pooled numbers";
-Q4 "Documents input representation / preprocessing". Missing categories = 0. κ with 2 decimals.
-
 ## Table 4 — `tables/tab4_main.tex` (full width, `\scriptsize`, `tabular*` with `\extracolsep{\fill}`)
 Data `data/rq1/accuracy_by_subsystem.csv` (wide: method × subsystem), coverage from `data/rq2/coverage.csv`
 (for seeded methods average `coverage` over seeds). Rows grouped under three sub-headings

@@ -145,7 +145,9 @@ Fault & All cases & Valid outputs only & Table 6 \\
 
 def release():
     import csv
-    rows = list(csv.DictReader(open(os.path.join(ROOT, "paper", "data", "survey", "release_check.csv"))))
+    excluded = {r["id"] for r in csv.DictReader(open(os.path.join(ROOT, "paper", "data", "survey", "excluded.csv")))}
+    rows = [r for r in csv.DictReader(open(os.path.join(ROOT, "paper", "data", "survey", "release_check.csv"))) if r["id"] not in excluded]
+    assert len(rows) == 23, len(rows)
     ab = {"undeterminable": "undet."}
     out = []
     for r in rows:
@@ -153,8 +155,8 @@ def release():
         ref = f"{m.group(1)}@{m.group(2)}" if m else "--"
         ref = ref.replace("_", r"\_")
         out.append(f"{r['id']} & {ab.get(r['L1'], r['L1'])} & {ab.get(r['L3'], r['L3'])} & \\texttt{{\\footnotesize {ref}}} \\\\")
-    return r"""\begin{longtable}{lllp{7cm}}
-\caption{Released per-case outputs in the 26 surveyed papers, checked on 2 October 2026 (UTC). Any: the release contains per-case predictions or scores of any method. All: it contains them for every method of the paper's main comparison. undet.: the linked release had expired or could not be listed. Release: first repository checked, at the commit checked (--: no repository linked, or the link is not a listable repository); the notes in the package give every link and the files found.}\label{supp:release}\\
+    return r"""\begin{longtable}{lllp{7.6cm}}
+\caption{Released per-case outputs in the 23 surveyed papers with full text, checked on 2 October 2026 (UTC). Any: the release contains per-case predictions or scores of any method. All: it contains them for every method of the paper's main comparison. undet.: the linked release had expired or could not be listed. Release: first repository checked, at the commit checked (--: no repository linked, or the link is not a listable repository); the notes in the package give every link and the files found.}\label{supp:release}\\
 \toprule
 Paper & Any & All & Release \\
 \midrule

@@ -25,8 +25,8 @@ S8 `s8_release_defect.tex` — data/rq2/release_defect_accuracy.csv (all columns
 S9 `s9_published_tables.tex` — data/rq1/published_tables_margin_dispersion.csv: table | pair | k | pooled | |margin| | SD | below line | #strata reversing.
 S10 `s10_fault_composition.tex` — data/rq2/fault_composition.csv (case counts per fault class, drop all-zero columns) and
    data/rq2/fault_reweighted.csv rows with sign_change == True: family | layer | pair | subsystem | Δ | Δ re-weighted [CI].
-S11 `s11_survey.tex` — data/survey/papers.csv joined with data/survey/final_coding.csv (pivot item → value):
-   id | year | venue (shorten to ≤ 30 chars) | Q1 | Q2 | Q3 | Q4. Title in a second line in \scriptsize italics is fine.
+S11 `s11_survey.tex` — data/survey/papers.csv joined with data/survey/per_system.csv and data/survey/excluded.csv:
+   id | year | venue (shorten to ≤ 30 chars) | per-system results (Yes / Single system / Excluded: no full text) | location (per_system.csv). Title in a second line in \scriptsize italics is fine.
 S12 `s12_cross_release.tex` — data/rq1/cross_release.csv, layer == L2 (all pairs): pair | app | Δ RE1 [CI] | Δ RE2 [CI] | same sign | CIs opposite.
 
 Acceptance: `python3 paper/scripts/make_supp_tables.py` from repo root writes all files and prints row counts; a test document

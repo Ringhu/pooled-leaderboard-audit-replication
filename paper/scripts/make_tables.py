@@ -156,65 +156,6 @@ def write(name: str, body: str) -> Path:
     return path
 
 
-def cat_count(block: dict, key: str) -> int:
-    return int(block.get(key, 0))
-
-
-def make_tab1() -> None:
-    summary = json.loads((DATA / "survey" / "final_summary.json").read_text())
-    agreement = json.loads((DATA / "survey" / "agreement.json").read_text())
-    items = [
-        ("Q1", "Reports per-system results", summary["Q1"], True),
-        ("Q2", "Releases per-case outputs", summary["Q2"], True),
-        ("Q3", "Makes cross-system claim from pooled numbers", summary["Q3"], True),
-        ("Q3ft", "Q3 (full text only)", summary["Q3_full_text_only"], False),
-        ("Q4", "Documents input representation / preprocessing", summary["Q4"], True),
-    ]
-    lines = [
-        r"\begin{tabular}{lrrrrr}",
-        r"\toprule",
-        r"Item & Yes & Partial & No & N/A & Cohen's $\kappa$ \\",
-        r"\midrule",
-    ]
-    counts = {}
-    for key, text, block, has_kappa in items:
-        yes = cat_count(block, "yes")
-        partial = cat_count(block, "partial")
-        no = cat_count(block, "no")
-        na = cat_count(block, "not_applicable")
-        if has_kappa:
-            kappa = agreement[key]["cohen_kappa"]
-            kappa_cell = f"{kappa:.2f}"
-        else:
-            kappa = None
-            kappa_cell = "---"
-        counts[key] = {
-            "yes": yes,
-            "partial": partial,
-            "no": no,
-            "na": na,
-            "kappa": None if kappa is None else round(kappa, 2),
-            "sum": yes + partial + no + na,
-        }
-        lines.append(
-            f"{text} & {yes} & {partial} & {no} & {na} & {kappa_cell} \\\\"
-        )
-    lines += [r"\bottomrule", r"\end{tabular}", ""]
-    path = write("tab1_survey.tex", "\n".join(lines))
-    print(f"tab1_survey.tex -> {path}")
-    print(
-        "  rows={0} n_papers={1} n_adjudicated={2}".format(
-            len(items), summary["n_papers"], summary["n_adjudicated"]
-        )
-    )
-    for key, rec in counts.items():
-        kappa_txt = "—" if rec["kappa"] is None else f"{rec['kappa']:.2f}"
-        print(
-            f"  {key}: yes={rec['yes']} partial={rec['partial']} no={rec['no']} "
-            f"na={rec['na']} sum={rec['sum']} kappa={kappa_txt}"
-        )
-
-
 def coverage_by_method_sub() -> pd.DataFrame:
     """Mean coverage over seeds when a method is seeded; otherwise the single row."""
     cov = pd.read_csv(DATA / "rq2" / "coverage.csv")
@@ -587,7 +528,6 @@ def make_tab8() -> None:
 
 
 def main() -> None:
-    make_tab1()
     make_tab4()
     make_tab5()
     make_tab6()

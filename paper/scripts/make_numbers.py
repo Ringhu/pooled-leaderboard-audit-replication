@@ -339,26 +339,26 @@ put("NBonfComp", bf["n_comparisons"]); put("NBonfRevCI", bf["n_rev_ci_adj"])
 put("NBonfCIExcl", bf["n_ci95_excl0"]); put("NBonfCIAdjExcl", bf["n_ci_adj_excl0"])
 
 # ------------------------------------------------------------------ survey
-sv = json.load(open(os.path.join(D, "survey/final_summary.json")))
-ag = json.load(open(os.path.join(D, "survey/agreement.json")))
-assert sv["n_papers"] == 26 and sv["n_adjudicated"] == 27
-put("SurveyQOneYes", sv["Q1"].get("yes", 0))
-put("SurveyQTwoPartial", sv["Q2"].get("partial", 0)); put("SurveyQTwoNo", sv["Q2"].get("no", 0))
-assert sv["Q2"].get("yes", 0) == 0
-put("SurveyQThreeYes", sv["Q3"]["yes"]); put("SurveyQThreeYesFull", sv["Q3_full_text_only"]["yes"])
-put("SurveyQFourYes", sv["Q4"]["yes"]); put("SurveyQFourNotYes", 26 - sv["Q4"]["yes"])
-for q, qn in (("Q1", "One"), ("Q2", "Two"), ("Q3", "Three"), ("Q4", "Four")):
-    put(f"SurveyKappaQ{qn}", f"{ag[q]['cohen_kappa']:.2f}")
-fc_ = rd("survey/final_coding.csv")
+# Sample: the papers in survey/papers.csv minus survey/excluded.csv (no full text obtained).
+# Items reported: per-system reporting (survey/per_system.csv) and the repository release check.
+ex_ = rd("survey/excluded.csv")
+assert len(ex_) == 3
+q1_ = rd("survey/per_system.csv")
 rc_ = rd("survey/release_check.csv")
 assert len(rc_) == 26 and set(rc_.L1) <= {"yes", "no", "undeterminable"}
-assert set(rc_[rc_.L1 == "yes"].id) == {"openrca2025", "nezha2023", "causalrca2023"}  # named in Background
+assert not q1_.id.isin(ex_.id).any()
+rc_ = rc_[~rc_.id.isin(ex_.id)]
+assert len(q1_) == 23 and len(rc_) == 23 and set(q1_.id) == set(rc_.id)
+assert set(q1_.per_system) == {"yes", "single_system"}  # every multi-system paper reports per-system scores
+put("SurveyN", len(q1_))
+put("SurveyMulti", int((q1_.per_system == "yes").sum()))
+put("SurveySingle", int((q1_.per_system == "single_system").sum()))
+assert set(rc_[rc_.L1 == "yes"].id) == {"openrca2025", "causalrca2023"}  # named in sec:bg-survey
 put("SurveyRelAny", int((rc_.L1 == "yes").sum()))
 put("SurveyRelAnyUndet", int((rc_.L1 == "undeterminable").sum()))
-put("SurveyRelFull", int((rc_.L3 == "yes").sum()) + int((rc_.L3 == "partial").sum()))
+assert int((rc_.L3 == "yes").sum()) + int((rc_.L3 == "partial").sum()) == 0
 put("SurveyRelFullUndet", int((rc_.L3 == "undeterminable").sum()))
 put("SurveyRelFullCheckable", int((rc_.L3 != "undeterminable").sum()))
-put("SurveyQThreeYesAgree", int(((fc_["item"] == "Q3") & (fc_.value == "yes") & (fc_.source == "agree")).sum()))
 
 # ------------------------------------------------------------------ restored analyses (user 2026-09-30)
 # per-family I^2 and interaction tests, published layer

@@ -1,0 +1,24 @@
+id,per_system,location
+baro2024,yes,"Table 2 caption (cf. Table 1/3/4 captions, all ""three datasets""/""three benchmark microservice systems"")"
+causalrca2023,single_system,"Sec. I Introduction, p.2 (also Sec. Threats to Validity)"
+chase2024,yes,"Text at the discussion of Table II (overall performance comparison, one row per dataset)"
+circa2022,yes,"Table 1 caption; cf. Table 3 caption ""Performance of different methods on D_O"""
+dynacausal2025,yes,Table 2 caption (datasets D1 and D2)
+eadro2023,yes,Sec. V-E RQ1 (Table II lists TT and SN side by side)
+fang2026,yes,Sec. 3.2.2 Answering RQ2
+howfar2024,yes,Table 5 caption
+lemmarca2024,yes,Table 4 caption (cf. Table 3: multi-modality Product Review/Cloud Computing results; Table 5: WADI; Table 6: caption line 793)
+mabc2024,yes,Table 4
+mulan2024,yes,Table 2 caption; cf. Table 3 (Online Boutique)/Table 4 (Train Ticket) captions
+ocean2024,yes,"Table II caption (Table III: Online Boutique; Table V: Train Ticket, same format)"
+openrca2025,yes,Text at the discussion of Figure 5
+petshop2024,yes,Table 3
+rcaeval2025,single_system,"Table 6 caption, Sec 5 (p.4)"
+rcd2022,yes,"Table 1 caption; cf. Table 2 caption ""summary and top-7 recall of epsilon-Diagnosis and RCD on data collected for three outages from a..."""
+run2024,yes,"Text (Tables 2 and 3: sock-shop; Figure 6: synthetic dataset, reported separately)"
+sparserca2024,single_system,"Sec. VI.A.1 Datasets, p.9"
+toomanycooks2025,yes,Table IV caption
+tracecontrast2024,single_system,"Sec. 4.1.1 Dataset, p.7"
+tracediag2023,single_system,"Sec. 5.1.1 Dataset, p.13"
+tracerca2021,yes,Sec. IV-B (discussion of Table II)
+tvdiag2024,yes,Discussion of Table 4
