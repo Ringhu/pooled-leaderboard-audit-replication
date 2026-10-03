@@ -3,8 +3,7 @@
 
 The two premises can be checked from a paper only if it reports the per-system scores behind its pooled comparisons, releases enough to attach an uncertainty to them, and states how its scores were produced.
 We read \SurveyN microservice RCA method and benchmark papers from 2021 to 2026, a convenience sample built from the benchmark papers, the method papers they compare, and the papers citing them for which we obtained the full text (\cref{tab:survey}), and checked these three things.
-A paper counts as reporting per-system results if it gives a score for each evaluated system or dataset.
-A release counts as containing per-case outputs if a file in the linked repository or archive gives a method's ranking or prediction for an identifiable case, and as complete if such files exist for every method on every dataset of the paper's main comparison.
+A paper counts as reporting per-system results if it gives a score for each evaluated system or dataset; a release counts as containing per-case outputs if a file in it gives a method's ranking or prediction for an identifiable case, and as complete if such files exist for every method on every dataset of the main comparison.
 Scope is reported: \SurveyMulti of the \SurveyN papers evaluate more than one system, and all \SurveyMulti give a score per system, so a reader can see where a pooled lead does not hold, but not with what uncertainty.
 Checking the repositories and archives linked from each paper on 2 and 3 October 2026, we found \SurveyRelAny papers whose release contains per-case outputs of at least one method.
 For \SurveyRelDemo of them (\baro~\citep{pham2024baro}, \rcaeval~\citep{pham2024rcaeval}, and a study that shares \rcaeval's repository~\citep{pham2024howfar}) the outputs are those a tutorial notebook saved for a single case.
@@ -15,10 +14,10 @@ None of the \SurveyRelFullCheckable papers whose releases we could check release
 \begin{table}[t]
 \caption{The \SurveyN surveyed papers. Per-system: a score per evaluated system is reported (single system: one system evaluated). Per-case outputs released: what the release linked from the paper contains, checked on 2 and 3 October 2026. All methods: whether per-case outputs exist for every method on every dataset of the main comparison (partial: for every method of one experiment).}
 \label{tab:survey}
-\footnotesize
+\scriptsize
 \input{tables/tab1_survey}
 \end{table}
 
 Whether a number was computed on the raw or the reduced table is a question that even the benchmark's own paper does not answer.
 \rcaeval's paper describes the file format of its release but not which of the two tables its reported numbers use, and \cref{sec:rq2-input} shows that the two rank the methods differently.
-Superiority claims are nonetheless stated over the benchmark as a whole, for example ``The top-1 accuracy of TraceRCA outperforms the state-of-the-art unsupervised approaches by 44.8\%''~\citep{li2021tracerca} and ``Extensive experiments conducted on the synthetic and realworld microservice-based datasets demonstrate that RUN noticeably outperforms the state-of-the-art root cause analysis methods''~\citep{lin2024run}.
+Superiority claims are nonetheless stated over the benchmark as a whole, for example ``Extensive experiments conducted on the synthetic and realworld microservice-based datasets demonstrate that RUN noticeably outperforms the state-of-the-art root cause analysis methods''~\citep{lin2024run}.

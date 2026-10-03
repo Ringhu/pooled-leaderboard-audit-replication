@@ -321,16 +321,20 @@ for m, mn in (("baro", "Baro"), ("rcd", "Rcd"), ("e_diagnosis", "Ediag")):
     r = osa[(osa.subsystem_id == "openrca::mkt1") & (osa.method == m)].iloc[0]
     put(f"ScMktOne{mn}Strict", f3(r.score_strict)); put(f"ScMktOne{mn}Partial", f3(r.score))
 
-# ------------------------------------------------------------------ one-line summary example (OpenRCA, BARO vs RCD)
-r = pair("openrca", "L1", "baro", "rcd")
-put("LineCw", sg(r.pooled_cw)); put("LineSe", sg(r.pooled_se))
-put("LineSD", f3(r.sd_sub_delta)); put("LineWins", int(r.n_pos)); put("LineLosses", int(r.n_neg)); put("LineTies", int(r.k - r.n_pos - r.n_neg))
-oc = cv[cv.subsystem_id.str.startswith("openrca::")]
+# ------------------------------------------------------------------ one-line summary example (PetShop, RCD vs BARO; 2026-10-03)
+# pairs.csv stores a=baro, b=rcd; the line reads RCD vs BARO (the pooled leader first), so signs are flipped.
+r = pair("petshop", "L1", "baro", "rcd")
+assert r.pooled_se < 0 and r.pooled_se_lo < 0 < r.pooled_se_hi  # RCD leads on pooled accuracy; pooled CI includes zero
+put("LinePooled", sg(-r.pooled_se)); put("LinePooledCI", ci(-r.pooled_se_hi, -r.pooled_se_lo))
+put("LineSD", f3(r.sd_sub_delta)); put("LineWins", int(r.n_neg)); put("LineLosses", int(r.n_pos)); put("LineTies", int(r.k - r.n_pos - r.n_neg))
+assert int(r.n_pos) == 1
+oc = cv[cv.subsystem_id.str.startswith("petshop::")]
 for m, mn in (("baro", "Baro"), ("rcd", "Rcd")):
     y = oc[oc.method == m]
     put(f"LineCov{mn}", f"{y.n_valid.sum() / y.n.sum():.2f}")
-t = sd("openrca", "L1", "baro", "rcd", "openrca::tel")
-put("LineWorst", sg(t.delta)); put("LineWorstCI", ci(t.lo, t.hi))
+t = sd("petshop", "L1", "baro", "rcd", "petshop::high_traffic")
+assert t.delta > 0 and t.lo > 0  # the one scenario RCD loses, with a CI excluding zero
+put("LineWorst", sg(-t.delta)); put("LineWorstCI", ci(-t.hi, -t.lo))
 
 # ------------------------------------------------------------------ multiplicity check (rq1_bonferroni.py)
 bf = json.load(open(os.path.join(D, "rq1/bonferroni.json")))
@@ -463,17 +467,64 @@ put("NMainPubRevNmin", int(N["NReOnePubRev"]) + int(N["NOpenrcaPubRev"]) + int(N
 put("NMainPubRevCINmin", int(N["NReOnePubRevCI"]) + int(N["NOpenrcaPubRevCI"]) + int(N["PetshopPubRevCINmin"]))
 put("NAudPubRevNmin", int(N["NReOnePubRev"]) + int(N["PetshopPubRevNmin"]))
 put("NAudPubRevCINmin", int(N["NReOnePubRevCI"]) + int(N["PetshopPubRevCINmin"]))
-# held-out null: a random order errs on half of the non-tied decisions
-put("HNonTie", int(c0.n_decisions) - int(c0.system_equal_ties)); put("HRandErr", (int(c0.n_decisions) - int(c0.system_equal_ties)) // 2)
-assert (int(c0.n_decisions) - int(c0.system_equal_ties)) % 2 == 0
-# regret null: expected regret of choosing a published method uniformly at random, vs the pooled winner's mean regret
-for fam, pref, nm in (("RE1", "RE1::", "ReOne"), ("openrca", "openrca::", "Openrca"), ("petshop", "petshop::", "Petshop")):
-    x = pm[(pm.family == fam) & (pm.layer == "L1")]
-    ms = sorted(set(x.a) | set(x.b)); cols = [c for c in acc.columns if c.startswith(pref)]
-    A = acc.loc[ms, cols]
-    put(f"RegRand{nm}", f3((A.max() - A.mean()).mean()))
-    w = A.mean(axis=1).idxmax()
-    put(f"RegWinnerMean{nm}", f3((A.max() - A.loc[w]).mean()))
+# ------------------------------------------------------------------ final revision (2026-10-03): margin vs spread as the RQ1 reading
+# published pairs: the one above-spread reversal (PetShop CIRCA vs counterfactual attribution) has a CI including zero
+t_ = sd("petshop", "L1", "circa", "counterfactual_attribution", "petshop::high_traffic")
+assert t_.lo < 0 < t_.hi
+put("ExAboveRevHighCI", ci(t_.lo, t_.hi))
+assert N["NPubAboveRev"] == "1" and N["NPubAboveRevCI"] == "0" and N["NPubBelowRevCI"] == N["NMainPubRevCI"]
+put("NPubAboveHold", int(N["NPubAbove"]) - int(N["NPubAboveRev"]))
+put("NPubBelowNoRev", int(N["NPubBelow"]) - int(N["NPubBelowRev"]))
+put("NAllBelowNoRev", int(N["NAllBelow"]) - int(N["NAllBelowRev"]))
+# held-out decisions (published layer, adjacent pairs): where the 8 wrong choices fall
+hd = rd("holdout/decisions.csv")
+hd = hd[(hd.layer == "L1") & (hd.set == "adjacent")]
+assert len(hd) == int(N["HNDec"]) and int((hd.out_rule == "error").sum()) == int(N["HErr"]) and int((hd.out_rule == "tie").sum()) == int(N["HTies"])
+he = hd[hd.out_rule == "error"]
+for fam, nm in (("RE1", "ReOne"), ("openrca", "Openrca"), ("petshop", "Petshop")):
+    put(f"HDec{nm}", int((hd.family == fam).sum())); put(f"HErr{nm}", int((he.family == fam).sum()))
+assert set(map(frozenset, he[he.family == "RE1"][["a", "b"]].to_numpy())) == {frozenset({"rcd", "causalrca"})}  # all three RE1 errors: the same pair
+assert set(map(frozenset, he[he.family == "openrca"][["a", "b"]].to_numpy())) == {frozenset({"baro", "rcd"})}
+o_ = he[he.family == "openrca"].iloc[0]; assert o_.held_out == "openrca::tel" and o_.lo_held < 0 < o_.hi_held
+put("HErrPetshopHigh", int(((he.family == "petshop") & (he.held_out == "petshop::high_traffic")).sum()))
+put("HErrPetshopTmpOne", int(((he.family == "petshop") & (he.held_out == "petshop::temporal_traffic1")).sum()))
+assert int(N["HErrPetshopHigh"]) + int(N["HErrPetshopTmpOne"]) == int(N["HErrPetshop"])
+assert set(map(frozenset, he[he.held_out == "petshop::high_traffic"][["a", "b"]].to_numpy())) >= {frozenset({"rcd", "baro"})}
+# every wrong choice is on a pair whose pooled margin, over all subsystems of the family, is below the between-subsystem spread
+m1_ = md[md.layer == "L1"]
+below_ = 0
+for r_ in he.itertuples():
+    q = m1_[(m1_.family == r_.family) & (((m1_.a == r_.a) & (m1_.b == r_.b)) | ((m1_.a == r_.b) & (m1_.b == r_.a)))]
+    assert len(q) == 1; below_ += int(q.margin_lt_sd.iloc[0])
+put("HErrBelow", below_); assert below_ == int(N["HErr"])
+ed_dec = hd[hd.a.str.contains("diagnosis") | hd.b.str.contains("diagnosis")]
+put("HEdiagDec", len(ed_dec)); assert (ed_dec.out_rule == "correct").all()
+# cross-release sign changes: how many involve BARO; the remaining one
+cx = cr[cr.layer == "L1"]; chg = cx[~cx.sign_agree]
+put("NCrossPubChange", len(chg)); assert len(chg) == int(N["NCrossPub"]) - int(N["NCrossPubAgree"])
+put("NCrossPubChangeBaro", int(((chg.a == "baro") | (chg.b == "baro")).sum()))
+rest_ = chg[(chg.a != "baro") & (chg.b != "baro")]; assert len(rest_) == 1
+r_ = rest_.iloc[0]; assert (r_.a, r_.b, r_.app) == ("causalrca", "e_diagnosis", "SS") and r_.lo_re1 < 0 < r_.hi_re1 and r_.lo_re2 < 0 < r_.hi_re2
+put("CrossCrEdSSOne", sg(r_.delta_re1)); put("CrossCrEdSSOneCI", ci(r_.lo_re1, r_.hi_re1))
+put("CrossCrEdSSTwo", sg(r_.delta_re2)); put("CrossCrEdSSTwoCI", ci(r_.lo_re2, r_.hi_re2))
+# scoring rule on OpenRCA: the range of every method's score under the official and the strict rule (floor)
+put("ScOpenrcaOfficialMin", f3(osa.score.min())); put("ScOpenrcaOfficialMax", f3(osa.score.max()))
+put("ScOpenrcaStrictMin", f3(osa.score_strict.min())); put("ScOpenrcaStrictMax", f3(osa.score_strict.max()))
+assert osa.score_strict.min() == 0
+# strict rule, all pairs: reversal-status changes that remain non-zero differences vs. those that become ties
+st_ = cc[(cc.factor == "scoring_strict") & (cc.layer == "L2") & (cc.rev_ref != cc.rev_alt)]
+put("ScStrictAllRevNonzero", int((st_.delta_alt != 0).sum())); put("ScStrictAllRevToZero", int((st_.delta_alt == 0).sum()))
+assert (st_[st_.delta_alt == 0].rev_ref == True).all()  # noqa: E712  a reversal that disappears, never a new one
+# input representation, published pairs: reversal-status changes outside SS/TT (the OB difference is identical under both conditions)
+ir_ = cc[(cc.factor == "input_representation") & (cc.layer == "L1") & (cc.rev_ref != cc.rev_alt)]
+ob_ = ir_[ir_["sub"] == "RE1::OB"]
+assert len(ir_) == int(N["InReOnePubRevRaw"]) and len(ob_) == 1 and (ob_.iloc[0].a, ob_.iloc[0].b) == ("circa", "rcd") and ob_.iloc[0].delta_ref == ob_.iloc[0].delta_alt
+put("InReOnePubRevRawOB", len(ob_))
+# seed: any single seed against the three-seed mean (same counting as the Table 6 row; make_tables.seed_rows)
+from make_tables import seed_rows  # noqa: E402
+for r_ in seed_rows().itertuples():
+    nm = f"Seed{FAM[r_.family]}{LAY[r_.layer]}"
+    put(f"{nm}Comp", int(r_.n)); put(f"{nm}Sign", int(r_.sign)); put(f"{nm}Rev", int(r_.rev))
 # BARO on RE2: diagnostic from stored run outputs (scripts/baro_re2_top1.py)
 bt = json.load(open(os.path.join(D, "supp/baro_re2_top1.json")))
 for s in ("ob", "ss"):
@@ -486,10 +537,16 @@ assert abs(bt["runs"]["re2-ob"]["acc1"] - float(acc.loc["baro", "RE2::OB"])) < 5
 assert not bt["tables"]["re1-ob"]["has_diskio"] and not bt["tables"]["re1-ss"]["has_diskio"] and bt["tables"]["re2-ob"]["has_diskio"] and bt["tables"]["re2-ss"]["has_diskio"]
 for sub_, nm in (("RE1::OB", "ReOneOB"), ("RE1::SS", "ReOneSS"), ("RE2::OB", "ReTwoOB"), ("RE2::SS", "ReTwoSS")):
     put(f"BaroAcc{nm}", f3(float(acc.loc["baro", sub_])))
-put("ReOneOBCols", bt["tables"]["re1-ob"]["n_cols"]); put("ReOneSSCols", bt["tables"]["re1-ss"]["n_cols"])
-put("ReTwoOBCols", bt["tables"]["re2-ob"]["n_cols"]); put("ReTwoSSCols", bt["tables"]["re2-ss"]["n_cols"])
-put("ReOneSSRows", bt["tables"]["re1-ss"]["n_rows"]); put("ReTwoRows", bt["tables"]["re2-ss"]["n_rows"])
-assert bt["tables"]["re2-ob"]["n_rows"] == bt["tables"]["re2-ss"]["n_rows"]
+# table shapes over all cases (scripts/table_shapes.py on the 3090 workspace): column and row ranges quoted in the text
+ts = json.load(open(os.path.join(D, "supp/table_shapes.json")))
+for k, nm in (("re1-ob-data", "ReOneOB"), ("re1-ss-simple", "ReOneSS"), ("re2-ob-simple", "ReTwoOB"), ("re2-ss-simple", "ReTwoSS"),
+              ("re1-ss-data", "ReOneSSRaw"), ("re1-tt-data", "ReOneTTRaw"), ("re1-tt-simple", "ReOneTT")):
+    put(f"{nm}ColsMin", f"{ts[k]['n_cols_min']:,}"); put(f"{nm}ColsMax", f"{ts[k]['n_cols_max']:,}")
+for k in ("re1-ob-data", "re1-ss-simple", "re2-ob-simple", "re2-ss-simple"):  # the first case of each subsystem lies inside its range
+    assert ts[k]["n_cols_min"] <= bt["tables"][k.replace("-data", "").replace("-simple", "")]["n_cols"] <= ts[k]["n_cols_max"]
+assert ts["re1-ss-simple"]["n_rows_min"] == ts["re1-ss-simple"]["n_rows_max"] and ts["re2-ss-simple"]["n_rows_min"] == ts["re2-ss-simple"]["n_rows_max"]
+assert ts["re2-ob-simple"]["n_rows_mode"] == ts["re2-ss-simple"]["n_rows_min"]
+put("ReOneSSRows", f"{ts['re1-ss-simple']['n_rows_min']:,}"); put("ReTwoRows", f"{ts['re2-ss-simple']['n_rows_min']:,}")
 
 # ------------------------------------------------------------------ write / check
 body = "% generated by paper/scripts/make_numbers.py from paper/data/ -- do not edit\n" + "".join(

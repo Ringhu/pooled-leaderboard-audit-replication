@@ -159,18 +159,10 @@ The accuracy changes by up to 0.208 (\maxz on RE1-OB); we report this as a diagn
 \section{Margin and Spread}
 \label{sec:margin}
 
-The paper describes comparisons by margin and spread only to read the forest figure; this section gives the counts.
-A pooled comparison can be described by its margin $|\bar\Delta|$ and the spread of its subsystem differences, and the audited comparisons sort along this description.
+Paper \S4.1 describes every pooled comparison by its margin $|\bar\Delta|$ and the spread of its subsystem differences, and gives the counts for our audit; this section gives the counts for the two published tables separately.
 Among published pairs, \NPubBelow have a margin smaller than the spread; \NPubBelowRev of them reverse, \NPubBelowRevCI with CI support, whereas of the \NPubAbove whose margin exceeds the spread \NPubAboveRev reverses, without CI support (with probes and shipped baselines: \NAllBelowRev of \NAllBelow, and \NAllAboveRev of \NAllAbove).
-The same split appears in two tables that the benchmarks' authors published: in \rcaeval's RE2-TT accuracy by fault type (RCAEval paper, Table 6), \NTabRcaevalBelowRev of the \NTabRcaevalBelow pairs with margin below spread reverse on some fault type, against \NTabRcaevalAboveRev of \NTabRcaevalAbove above it; in \petshop's accuracy by scenario and fault type (PetShop paper, Table 8), \NTabPetshopBelowRev of \NTabPetshopBelow and \NTabPetshopAboveRev of \NTabPetshopAbove.
-The split is partly definitional, since a pair whose differences change sign has a spread comparable to its mean, and it describes these samples rather than giving a selection rule: applied to the remaining subsystems in the held-out analysis, it did not reduce the \HErr wrong choices (\cref{supp:heldout-sec}).
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{../figures/fig2_margin_spread.pdf}
-\caption{Pooled margin $|\bar\Delta|$ against between-subsystem spread (sample standard deviation of $\Delta_s$). Left: every pair in the main analysis, coloured by family (filled: pairs of published methods); orange marks pairs that reverse on some subsystem. Right: pairs inside two published tables, RCAEval Table 6 (RE2-TT by fault type) and PetShop Table 8 (by scenario and fault type). The diagonal is margin = spread.}
-\label{fig:margin}
-\end{figure}
+In \rcaeval's RE2-TT accuracy by fault type (RCAEval paper, Table 6), \NTabRcaevalBelowRev of the \NTabRcaevalBelow pairs with margin below spread reverse on some fault type, against \NTabRcaevalAboveRev of \NTabRcaevalAbove above it; in \petshop's accuracy by scenario and fault type (PetShop paper, Table 8), \NTabPetshopBelowRev of \NTabPetshopBelow and \NTabPetshopAboveRev of \NTabPetshopAbove.
+Margin and spread computed on the subsystems other than a held-out one do not single out the wrong choices of the held-out analysis (\cref{supp:heldout-sec}, $c = 1$).
 
 \section{Held-Out Subsystems}
 \label{supp:heldout-sec}
@@ -180,7 +172,15 @@ For each family, each subsystem is held out in turn; methods present on every su
 
 \section{Cross-Family Comparison Set}
 \label{supp:cross-sec}
-Six methods have outputs on all 11 subsystems of the main analysis: \baro, \rcd, \ediag, and the three probes (on \petshop, \rcd and \ediag are the implementations \petshop ships). \Cref{supp:cross-loso} lists, for each of the 15 pairs, the held-out subsystems on which the pooled winner of the other ten is less accurate; \cref{supp:cross-robust} gives the robustness checks summarized in the main text.
+Six methods have outputs on all 11 subsystems of the main analysis: \baro, \rcd, \ediag, and the three probes (on \petshop, \rcd and \ediag are the implementations \petshop ships). \Cref{supp:cross-signs} gives, for each of the 15 pairs, the subsystems each method wins; \cref{supp:cross-loso} lists the held-out subsystems on which the pooled winner of the other ten is less accurate; \cref{supp:cross-robust} gives the robustness checks summarized in paper \S4.5.
+
+\begin{table}[h]
+\centering
+\caption{Cross-family set: the six methods with outputs on all 11 subsystems. Scores are not averaged across families (\openrca partial credit, top-1 accuracy elsewhere). $+$/$-$: subsystems where $A$ / $B$ is more accurate; CI excl.\ 0: of these, subsystems whose 95\% CI excludes zero. Both signs: the number of leave-one-family-out subsets (of three) and leave-two-subsystems-out subsets (of \XLksoPer) on which the pair still has subsystem differences of both signs.}
+\label{supp:cross-signs}
+\small
+\input{../tables/tab8_cross}
+\end{table}
 
 \input{extra/cross}
 

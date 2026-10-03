@@ -2,15 +2,15 @@
 \label{sec:rq2}
 
 A benchmark score is the output of a pipeline, and the released pipeline leaves choices open at four stages: which representation of the telemetry the method reads, what happens when the method fails, how invalid outputs enter the denominator, and how cases are weighted and scored.
-RQ1 treated a subsystem difference as a property of the method and the subsystem.
-Before it is read that way, one has to ask whether the pipeline produced it; the duplicated header of \cref{sec:design-protocol} is such a case, a subsystem anomaly that disappears once the input is fixed.
+RQ1 read each subsystem difference as a property of the method and the subsystem; this section asks which choices of the released pipeline produced it.
+The duplicated header of \cref{sec:design-protocol} is one such choice's effect, a subsystem anomaly that disappears once the input is fixed.
 For each stage we compare the reference configuration of \cref{sec:design-protocol} with one alternative on the same cases and the same methods, and record for every pair and subsystem whether $\Delta_s$ changes sign and whether the comparison's reversal status changes (\cref{tab:factors}).
-The stages are not equal: the first two produced opposite conclusions with CIs excluding zero on both sides; the last two moved only differences that were already close to zero.
+The stages are not equal: the first two produced opposite conclusions with CIs excluding zero on both sides; the last two moved, on \openrca, only differences that were already close to zero.
 
 \begin{table}[t]
-\caption{Pipeline stages that change comparison conclusions. Comp.: comparisons (one method pair on one subsystem); Sign: comparisons whose $\Delta_s$ changes sign; Rev.: comparisons that are a reversal under exactly one of the two conditions. All pairs include probes and shipped baselines; --: no published pair has outputs under both conditions.}
+\caption{Pipeline stages that change comparison conclusions. Comp.: comparisons (one method pair on one subsystem); Sign: comparisons whose $\Delta_s$ changes sign; Rev.: comparisons that are a reversal under exactly one of the two conditions. All pairs include probes and shipped baselines; --: no published pair has outputs under both conditions. Seed: the three-seed mean of a randomized method against any single seed, over the comparisons that involve such a method (\cref{sec:rq2-denominator}).}
 \label{tab:factors}
-\small
+\footnotesize
 \input{tables/tab7_factors}
 \end{table}
 
@@ -21,8 +21,7 @@ RE1-SS and RE1-TT can be read from the raw export or from the reduced table (\cr
 \Cref{fig:input} shows each method's accuracy under both.
 \baro falls from \InSSBaroSimple to \InSSBaroRaw on SS and from \InTTBaroSimple to \InTTBaroRaw on TT, and \circa from \InSSCircaSimple to \InSSCircaRaw and from \InTTCircaSimple to \InTTCircaRaw, while \alertcount and \cdmin improve on TT and \ediag and \rcd barely move.
 The raw export is not a uniform penalty; it reorders the methods.
-If the reduced table is the intended input, as \cref{sec:design-protocol} argues, the raw reading is an error of the runner; but the release does not say which table it intends, and a reader who runs it as shipped obtains the raw numbers without any warning.
-That is the sense in which the input representation is a stage of a score's provenance and not only a defect.
+The release does not state which table its reported numbers use, and a reader who runs it as shipped obtains the raw numbers.
 
 \begin{figure}[t]
 \centering
@@ -35,7 +34,8 @@ Among published methods, \InReOnePubSign of the \InReOnePubComp SS and TT compar
 \circa leads \rcd by \InCircaRcdSSOk \InCircaRcdSSOkCI on SS and \InCircaRcdTTOk \InCircaRcdTTOkCI on TT with the reduced tables; with the raw exports \rcd leads, by \InCircaRcdSSRaw \InCircaRcdSSRawCI and \InCircaRcdTTRaw \InCircaRcdTTRawCI.
 All four intervals exclude zero: two analyses of the same released cases, each a literal reading of the release, report opposite conclusions with the same apparent support.
 On SS the best published method changes from \baro to \rcd.
-The raw exports add \InReOnePubRevRaw reversals among published pairs (\InReOnePubRevCIRaw with CI support) that are absent with the reduced tables, and among all pairs \InReOneAllSign of \InReOneAllComp comparisons change sign, each condition showing reversals the other lacks: the input representation replaces one set of conclusions with another.
+The raw exports add \InReOnePubRevRaw reversals among published pairs (\InReOnePubRevCIRaw with CI support) that are absent with the reduced tables; \InReOnePubRevRawOB of them is on OB, whose data are the same under both conditions, because the pooled sign of \circa vs \rcd changes (\cref{tab:factors} counts the SS and TT comparisons).
+Among all pairs \InReOneAllSign of \InReOneAllComp comparisons change sign, each condition showing reversals the other lacks: the input representation replaces one set of conclusions with another.
 RE2 ships the same two kinds of table, and there the runner reads the reduced one; the raw table changes \InReTwoSign of \InReTwoComp comparisons among the methods we could run on it.
 
 \subsection{Silent Failures}
@@ -55,11 +55,12 @@ Neither failure raises an error or lowers coverage; the one check that reveals b
 
 \NCovBelowOne of \NCovCells method-by-subsystem cells (seeds counted separately) have coverage below 1, for method-specific reasons: \tracerca and \microrank fail on the same 17 RE2-TT cases with a missing-key error, leaving \CovTraceValid valid outputs of 90; \ediag returns three metrics per query, none of which belongs to the candidate set in most \openrca Telecom queries (\CovEdTelValid of \CovEdTelN valid); and one seed of \causalrca learns an empty graph in 43 RE2-TT cases (\CovCrSeedOneValid valid).
 Scoring valid outputs only, instead of all cases, changes \DenReTwoPubSign of \DenReTwoPubComp comparisons between published methods on RE2 and \DenReTwoAllSign of \DenReTwoAllComp among all pairs, all on RE2-TT (\circa vs \tracerca moves from \DenCircaTraceAll to \DenCircaTraceValid), and none of the \DenOtherComp comparisons in the other families.
-The denominator matters more when a number is compared with a published one, and so does a second thing a reported number does not state, the seed.
+Two things a reported number does not state matter when it is compared with a published one: the denominator and the seed.
 Our \tracerca and \microrank outputs match every per-fault value that \rcaeval reports for RE2-TT (18 cells each, within 0.01) only if the 17 failed cases are dropped, although the paper's definition of the metric divides by all cases.
 Over all cases, \tracerca's \acc is \CovTraceAll instead of the reported 0.66.
 % src: .research/verifications/2026-09-27-re2-rcaeval-table6.md
 \causalrca's code defines a seed but never applies it, and on RE2-TT, where \rcaeval reports 0.22, our three seeds give \CovCrReTwoTTSeedZero, \CovCrReTwoTTSeedOne, and \CovCrReTwoTTSeedTwo.
+Taking any single seed instead of the three-seed mean changes the sign of \SeedReOnePubSign of the \SeedReOnePubComp comparisons between published methods that involve a randomized method on RE1, \SeedReTwoPubSign of \SeedReTwoPubComp on RE2, and \SeedOpenrcaPubSign of \SeedOpenrcaPubComp on \openrca (last row of \cref{tab:factors}).
 
 \subsection{Fault Composition}
 \label{sec:rq2-fault}
@@ -76,11 +77,15 @@ Both \rcaeval releases contain the same number of cases for every fault type in 
 Counting only fully correct answers changes the sign of \ScStrictPubSign of \ScStrictPubComp comparisons between published methods (\ScStrictAllSign of \ScStrictAllComp overall); requiring a score of at least 0.5 changes \ScHalfPubSign and \ScHalfAllSign.
 All \ScStrictPubToZero sign changes between published methods under the strict rule are differences that become exactly zero, and none changes a reversal status (\cref{tab:factors}): on Market-1, \baro, \rcd, and \ediag score \ScMktOneBaroStrict, \ScMktOneRcdStrict, and \ScMktOneEdiagStrict under the strict rule and \ScMktOneBaroPartial, \ScMktOneRcdPartial, and \ScMktOneEdiagPartial with partial credit.
 Under the strict rule the published methods are indistinguishable on that subsystem; the ordering reported under partial credit comes entirely from partially correct answers.
+Among all pairs, \ScStrictAllRevNonzero of the reversal-status changes remain non-zero differences and \ScStrictAllRevToZero is a reversal that becomes a tie.
+Every method's score on \openrca lies between \ScOpenrcaOfficialMin and \ScOpenrcaOfficialMax under the official rule and between \ScOpenrcaStrictMin and \ScOpenrcaStrictMax under the strict one, so the differences a scoring rule can move there are of this size.
+Where scores are not at the floor the rule moves more: on RE2-OB, \baro's accuracy is \BaroAccReTwoOB at top-1 and \BaroReTwoOBAccThree at top-3 (\cref{sec:rq1-release}).
 
 \subsection{Reading the Four Stages Together}
 \label{sec:rq2-summary}
 
-The first two stages changed conclusions between published methods with CI support; the last two changed the sign only of differences that were close to zero in the reference analysis, or turned them into ties.
+The first two stages changed conclusions between published methods with CI support; the last two changed, on \openrca, the sign only of differences that were close to zero in the reference analysis, or turned them into ties.
 Both silent failures were found in \rcaeval, the one family whose released runner we could execute as shipped; \openrca releases no runner for these methods, and we found none in \petshop's harness.
+The largest provenance effect we measured is a choice of the release rather than of the runner: which metric kinds it records (\cref{sec:rq1-release}) changed \baro's accuracy by as much as the input representation did.
 The denominator, the fault weighting, and the scoring rule are choices every benchmark makes, and they are the ones a reader can usually see.
-An audit should therefore start with what is least visible, which table the runner reads and whether rankings equal the input column order, then ask how invalid outputs enter the denominator, and only then turn to the weighting and the scoring rule.
+An audit should therefore start with what is least visible, which table the runner reads, which metric kinds it contains, and whether rankings equal the input column order, then ask how invalid outputs enter the denominator, and only then turn to the weighting and the scoring rule.

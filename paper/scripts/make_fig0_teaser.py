@@ -265,13 +265,19 @@ def draw_group(ax, pair: dict, xlim) -> None:
     else:
         assert all(not f[2] for f in flags) and len(rows) == 3
         sub_text, sub_colour = "same sign on all three applications", "#333333"
-    ax.set_title(pair["group_title"], fontsize=6.3, loc="left", pad=9)
-    ax.text(0.0, 1.02, sub_text, transform=ax.transAxes, ha="left", va="bottom",
-            fontsize=5.6, color=sub_colour)
+    # Title and two subtitle lines, spaced in points so both groups look alike (2026-10-03): the second line gives
+    # the number the leaderboard reports (pooled margin) next to the one it withholds (between-subsystem spread).
+    ax.set_title(pair["group_title"], fontsize=6.3, loc="left", pad=18)
+    rel = "<" if pair["margin_lt_sd"] else ">"
+    assert (abs(pair["pooled"]) < pair["sd"]) == pair["margin_lt_sd"]
+    for dy, text, colour in ((10.5, sub_text, sub_colour),
+                             (2.5, f"margin {abs(pair['pooled']):.3f} {rel} spread {pair['sd']:.3f}", "#555555")):
+        ax.annotate(text, xy=(0.0, 1.0), xycoords="axes fraction", xytext=(0, dy), textcoords="offset points",
+                    ha="left", va="bottom", fontsize=5.6, color=colour)
 
 
 def draw_panel_b(fig, cell, pair1: dict, pair2: dict):
-    sub_gs = cell.subgridspec(2, 1, height_ratios=[3, 4], hspace=0.95)
+    sub_gs = cell.subgridspec(2, 1, height_ratios=[3, 4], hspace=1.25)
     ax1 = fig.add_subplot(sub_gs[0, 0])
     ax2 = fig.add_subplot(sub_gs[1, 0], sharex=ax1)
     lo = min(r["lo"] for p in (pair1, pair2) for r in p["rows"])
@@ -283,7 +289,7 @@ def draw_panel_b(fig, cell, pair1: dict, pair2: dict):
 
 
 def draw_panel_c(fig, cell, panel_c: dict):
-    sub_gs = cell.subgridspec(2, 1, height_ratios=[3, 4], hspace=0.95)
+    sub_gs = cell.subgridspec(2, 1, height_ratios=[3, 4], hspace=1.25)
     ax = fig.add_subplot(sub_gs[:, 0])
     rows, labels = [], []
     for app, key in (("Sock Shop", "RE1-SS"), ("Train Ticket", "RE1-TT")):
@@ -322,7 +328,7 @@ def main() -> None:
     panel_c = load_panel_c()
 
     fig = plt.figure(figsize=(FULL_W, 2.45))
-    fig.subplots_adjust(left=0.01, right=0.99, top=0.80, bottom=0.21)
+    fig.subplots_adjust(left=0.01, right=0.99, top=0.76, bottom=0.20)
     outer = fig.add_gridspec(1, 3, width_ratios=[0.62, 1.25, 1.0], wspace=0.42)
 
     ax_a = fig.add_subplot(outer[0, 0])

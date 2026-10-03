@@ -12,22 +12,18 @@ Our own first RE1 runs also read the raw exports; we noticed only because \baro'
 We guard against similar errors in four ways.
 We anchor implementations to published numbers where possible (\baro on RE1, \simplerca on RE2 and RE3, and \tracerca and \microrank on RE2-TT when invalid outputs are dropped); we check every ranking against the input column order; we apply the fixes of the current upstream release; and we record the configuration of every run.
 The \openrca wrapper that turns metric rankings into answers is our design; it is the same for every method, and queries where it falls back to a default answer score 0.
-Because methods favour different kinds of metrics, the mapping from metric type to failure reason may suit some methods better than others.
-Our \openrca results therefore hold under this wrapper and not necessarily under another.
+Because methods favour different kinds of metrics, the mapping from metric type to failure reason may suit some methods better than others, so our \openrca results hold under this wrapper and not necessarily under another.
 The three probes have no parameter chosen on the data they are scored on: \maxz and \alertcount are fixed z-score rules, and \cdmin's thresholds were set on \openrca before this audit, so its \openrca results are not out of sample while its results on the other families are.
-Two randomized methods are averaged over three seeds; the seed is a further unstated part of a reported number (\cref{sec:rq2-denominator}), which we do not treat as a pipeline stage because it affects only these two methods, and the per-seed values are in the replication package.
+Two randomized methods are averaged over three seeds; the last row of \cref{tab:factors} gives what a single seed changes, and the per-seed values are in the replication package.
 
 \textbf{External validity.}
 We audit three benchmark families with $k=11$ subsystems in the main analysis; they are not a sample from a population of deployments, and we make no claim beyond them.
 RE2 uses the same applications as RE1, so it tests carry-over between releases, not between systems; it differs from RE1 in collection, sampling, and recorded metric kinds as well as in faults, and the released data do not allow these to be separated.
-The \openrca comparisons are our construction and have no published counterpart, which is why the headline counts of RQ1 use RE1 and \petshop only.
 Two \petshop scenarios have only 8 cases, and we report results without them.
 Our conclusions are limited to offline benchmarks with matched cases; interactive agent benchmarks may behave differently.
-We audit only methods whose code runs on a family (\cref{sec:design-methods}).
 
 \textbf{Conclusion validity.}
 We examine many comparisons, and subsystem CIs are not adjusted for multiplicity; a few CI-supported reversals are expected by chance, which is why we report counts and do not interpret single reversals.
 At a Bonferroni-adjusted level over the \NBonfComp subsystem comparisons between published methods in the main families, \NBonfCIAdjExcl of the \NBonfCIExcl subsystem CIs that exclude zero still do so, and \NBonfRevCI of the \NMainPubRevCI CI-supported reversals of RQ1 remains (\cfa vs \rcd on the high-traffic scenario).
 The reversals of RQ2 have CIs excluding zero on both sides under both conditions.
-The survey of \cref{sec:bg-survey} is a convenience sample of \SurveyN papers checked by one author on two dates, following only the links given in the papers.
-Releases can change afterwards, the demonstration outputs we counted appear in the current repositories and not necessarily in those at publication, and for \SurveyRelUndet papers a linked release could not be reached.
+The survey of \cref{sec:bg-survey} is a convenience sample of \SurveyN papers checked by one author on two dates through the links given in the papers; releases can change afterwards, and for \SurveyRelUndet papers a linked release could not be reached.

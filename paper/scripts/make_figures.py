@@ -195,7 +195,7 @@ def make_fig1() -> None:
     # Two columns (2026-10-03): RE1 and PetShop (10 pairs each) side by side,
     # OpenRCA (3 pairs) below left, shared legend below right.
     apply_style()
-    fig = plt.figure(figsize=(FULL_W, 4.0))
+    fig = plt.figure(figsize=(FULL_W, 3.4))
     gs = fig.add_gridspec(2, 2, height_ratios=[10, 3.6], width_ratios=[1, 1],
                           left=0.19, right=0.99, top=0.91, bottom=0.07,
                           wspace=0.78, hspace=0.62)
@@ -252,7 +252,7 @@ def make_fig2() -> None:
     ours["layer"] = ["L1" if tuple(r) in l1_keys else "L2" for r in ours[key].to_numpy()]
     assert len(ours) == (md["layer"] == "L2").sum() and (ours["layer"] == "L1").sum() == len(l1_keys)
     apply_style()
-    fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 2.6), sharex=True, sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 2.35), sharex=True, sharey=True)
 
     family_marker = {"RE1": "o", "openrca": "s", "petshop": "D"}
     ax = axes[0]

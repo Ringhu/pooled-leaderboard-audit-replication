@@ -263,9 +263,23 @@ def _tab4_panel(acc, cov_map, counts, best, groups_cols, colspec_prefix=""):
 
 
 VENUE_FIX = {
-    "petshop2024": "CLeaR 2024", "tvdiag2024": "TOSEM", "chase2024": "arXiv 2024", "lemmarca2024": "OpenReview 2024",
+    "petshop2024": "CLeaR 2024", "tvdiag2024": "TOSEM", "chase2024": "arXiv 2024", "lemmarca2024": "arXiv 2024",
     "dynacausal2025": "arXiv 2025", "baro2024": "FSE 2024", "fang2026": "FSE 2026", "rcaeval2025": "WWW 2025 Companion",
     "causalrca2023": "JSS 2023", "mabc2024": "EMNLP 2024 Findings",
+}
+
+# survey id -> (short name used in the table, key in references.bib); every surveyed paper is cited (2026-10-03)
+SURVEY_CITE = {
+    "baro2024": ("BARO", "pham2024baro"), "circa2022": ("CIRCA", "li2022circa"), "rcd2022": ("RCD", "ikram2022rcd"),
+    "tracerca2021": ("TraceRCA", "li2021tracerca"), "rcaeval2025": ("RCAEval", "pham2024rcaeval"),
+    "fang2026": ("SimpleRCA", "fang2025simplerca"), "openrca2025": ("OpenRCA", "xu2025openrca"),
+    "petshop2024": ("PetShop", "hardt2024petshop"), "eadro2023": ("Eadro", "lee2023eadro"), "mabc2024": ("mABC", "zhang2024mabc"),
+    "mulan2024": ("MULAN", "zheng2024mulan"), "ocean2024": ("OCEAN", "zheng2025ocean"), "tvdiag2024": ("TVDiag", "xie2025tvdiag"),
+    "chase2024": ("CHASE", "zhao2024chase"), "howfar2024": ("How Far Are We", "pham2024howfar"),
+    "lemmarca2024": ("LEMMA-RCA", "zheng2024lemma"), "sparserca2024": ("SparseRCA", "yao2024sparserca"),
+    "tracecontrast2024": ("TraceContrast", "zhang2024tracecontrast"), "tracediag2023": ("TraceDiag", "ding2023tracediag"),
+    "run2024": ("RUN", "lin2024run"), "dynacausal2025": ("DynaCausal", "zhang2025dynacausal"),
+    "causalrca2023": ("CausalRCA", "causalrca"), "toomanycooks2025": ("Too Many Cooks", "zhang2025toomanycooks"),
 }
 
 
@@ -281,7 +295,8 @@ def make_tab1() -> None:
         pid = str(r.id)
         if pid in excluded:
             continue
-        author = str(getattr(r, "_2")).replace(" et al.", " et al.")
+        short, bibkey = SURVEY_CITE[pid]
+        author = f"{short}~\\citep{{{bibkey}}}"
         venue = VENUE_FIX.get(pid) or str(r.venue).split("（")[0].split(" (")[0].strip()
         ps = {"yes": "yes", "single_system": "single system"}[str(per_system.loc[pid, "per_system"])]
         l1, kind, l3 = str(rc.loc[pid, "L1"]), str(rc.loc[pid, "kind"]) if pd.notna(rc.loc[pid, "kind"]) else "", str(rc.loc[pid, "L3"])
@@ -291,9 +306,13 @@ def make_tab1() -> None:
             rel, full = kinds[kind], {"no": "no", "partial": "partial"}[l3]
         else:
             rel, full = "--", "no"
-        rows.append(f"{tex_escape(author)} & {int(r.year)} & {tex_escape(venue)} & {ps} & {rel} & {full} \\\\")
-    if len(rows) != 23:
-        raise ValueError(f"expected 23 papers, got {len(rows)}")
+        rows.append(f"{author} & {int(r.year)} & {tex_escape(venue)} & {ps} & {rel} & {full} \\\\")
+    if len(rows) != 23 or len(SURVEY_CITE) != 23:
+        raise ValueError(f"expected 23 papers, got {len(rows)} rows and {len(SURVEY_CITE)} citation keys")
+    bib = (ROOT / "paper" / "references.bib").read_text()
+    missing = [k for _, k in SURVEY_CITE.values() if f"{{{k}," not in bib]
+    if missing:
+        raise ValueError(f"bib keys missing from references.bib: {missing}")
     body = "\n".join([
         r"\setlength{\tabcolsep}{3pt}",
         r"\begin{tabular}{@{}lllllc@{}}",
@@ -464,6 +483,53 @@ def _factor_rows(df: pd.DataFrame, rev_alt_col: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def seed_rows() -> pd.DataFrame:
+    """Seed as a condition (2026-10-03): for every comparison (pair x subsystem) that involves a randomized method, the
+    three-seed mean (the reference) against any single seed. Sign: the subsystem difference has a different sign under
+    some seed; Rev: the comparison is a reversal (opposite sign to the pooled difference of the same variant) under the
+    mean or under some seed but not under both. Source: rq1/pairs.csv and rq1/pair_subsystem_deltas.csv, variants
+    mean/seed0/seed1/seed2 (PetShop's RCD is run once, so PetShop has no row)."""
+    pairs = pd.read_csv(DATA / "rq1" / "pairs.csv")
+    deltas = pd.read_csv(DATA / "rq1" / "pair_subsystem_deltas.csv")
+    seeds = sorted(v for v in pairs["variant"].unique() if v != "mean")
+    if seeds != ["seed0", "seed1", "seed2"]:
+        raise ValueError(f"unexpected seed variants: {seeds}")
+
+    def sgn(x: float) -> int:
+        return int(np.sign(np.round(x, 12)))
+
+    rows = []
+    for (fam, layer), pm in pairs.groupby(["family", "layer"], sort=False):
+        seeded = pm[pm["variant"] != "mean"][["a", "b"]].drop_duplicates()
+        if seeded.empty:
+            continue
+        n = sign = rev = 0
+        for a, b in seeded.itertuples(index=False):
+            pooled = {}
+            for v in ["mean"] + seeds:
+                r = pm[(pm["a"] == a) & (pm["b"] == b) & (pm["variant"] == v)]
+                if len(r) != 1:
+                    raise ValueError(f"{fam} {layer} {a} vs {b} {v}: {len(r)} pair rows")
+                pooled[v] = float(r["pooled_se"].iloc[0])
+            d = deltas[(deltas["family"] == fam) & (deltas["layer"] == layer) & (deltas["a"] == a) & (deltas["b"] == b)]
+            for sub in d[d["variant"] == "mean"]["sub"]:
+                delta = {}
+                for v in pooled:
+                    r = d[(d["variant"] == v) & (d["sub"] == sub)]
+                    if len(r) != 1:
+                        raise ValueError(f"{fam} {layer} {a} vs {b} {sub} {v}: {len(r)} delta rows")
+                    delta[v] = float(r["delta"].iloc[0])
+
+                def is_rev(v: str) -> bool:
+                    return pooled[v] != 0 and sgn(delta[v]) != 0 and sgn(delta[v]) != sgn(pooled[v])
+
+                n += 1
+                sign += any(sgn(delta[v]) != sgn(delta["mean"]) for v in seeds)
+                rev += any(is_rev(v) != is_rev("mean") for v in seeds)
+        rows.append({"family": fam, "layer": layer, "n": n, "sign": sign, "rev": rev})
+    return pd.DataFrame(rows)
+
+
 def make_tab7() -> None:
     cond = pd.read_csv(DATA / "rq2" / "condition_comparisons.csv")
     blocks = []
@@ -489,6 +555,9 @@ def make_tab7() -> None:
 
     ge05 = cond[cond["factor"] == "scoring_ge05"]
     blocks.append((r"Scoring ($\geq 0.5$)", _factor_rows(ge05, "rev_alt")))
+
+    # not a stage of the released pipeline, but an unstated part of a reported number (2026-10-03)
+    blocks.append(("Seed (one seed vs.\\ three-seed mean)", seed_rows()))
 
     family_order = ["RE1", "RE2", "openrca", "petshop"]
     layer_order = ["L1", "L2"]
