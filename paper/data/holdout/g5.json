@@ -1,6 +1,6 @@
 {
  "config": {
-  "script": "/home/cris/Research/FSE2027-RCABenchmarkAudit-replication/analysis/rq3_holdout.py",
+  "script": "analysis/rq3_holdout.py",
   "script_sha256": "18b052d78a70ad35f18267a4af29243c11ea524e0fffaf02c383117ad7d4ca47",
   "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
   "rq1_pair_subsystem_deltas_sha256": "8991a4e1149c864f91c95c6bebb00b3293666cd917b4a6b87b6cd1d9cd79e4e8",

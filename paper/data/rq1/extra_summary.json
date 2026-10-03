@@ -7,7 +7,7 @@
    "petshop_2311.04806.txt": "5210a1a0e5a12fd904c516412be3d73498b9aa7d3a24d487c5df6b70bf0fa955"
   },
   "rq1_main_config": {
-   "script": "/home/cris/Research/FSE2027-RCABenchmarkAudit-replication/analysis/rq1_main.py",
+   "script": "analysis/rq1_main.py",
    "script_sha256": "1f0ab15a063c5fe32906c876610fd6e49e2384c394123f1fa0ba11edaabe1eb5",
    "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
    "B": 10000,

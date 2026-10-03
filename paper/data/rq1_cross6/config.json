@@ -1,5 +1,5 @@
 {
- "script": "/home/cris/Research/FSE2027-RCABenchmarkAudit-replication/analysis/rq1_crossfamily.py",
+ "script": "analysis/rq1_crossfamily.py",
  "script_sha256": "c4b0b8bf8d0e72e06998b6efcd8f057682af70b8943f54c9427391a0e44739cc",
  "long_sha256": "78b24273444465dadce151d6452519f251fa482b7afa878d8fae5931dd180295",
  "set4": [
